@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { SpinnerService } from './shared/services/spinner/spinner.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 /**
  * @author: Shoukath Mohammed
@@ -13,7 +14,8 @@ import { SpinnerComponent } from './shared/components/spinner/spinner.component'
 @NgModule({
   declarations: [
     AppComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
