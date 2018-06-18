@@ -1,0 +1,9 @@
+<div class="mdcps-spinner mdcps-spinner-backdrop" *ngIf="display"
+[ngClass]="{'white-backdrop': config.backdrop == 'white', 'black-backdrop': config.backdrop != 'white'}">
+    <div class="mdcps-spinner-wrapper">
+        <div class="mdcps-spinner-container">
+            <img class="mdcps-spinner-img" [src]="config.imageSource"/>
+            <div class="mdcps-spinner-text bold black f18">{{config.spinnerText}}</div>
+        </div>
+    </div>
+</div>

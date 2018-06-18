@@ -1,0 +1,19 @@
+ .mat-sidenav-container {
+    background: rgba(0, 0, 0, 0.08);
+
+    .mat-toolbar.mat-primary {
+        font-size: 18px;
+        font-weight: 100;
+
+        .header-tabs {
+          color: #fff;
+          padding: 0 20px;
+          box-shadow: none;
+          text-decoration: none;
+        }
+
+        .header-fill-spaces {
+          flex: 1 1 auto;
+        }
+    }
+  }

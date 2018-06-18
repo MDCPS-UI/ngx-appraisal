@@ -1,28 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
-import {  NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { RouterModule } from '@angular/router';
-import { HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
-
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { SpinnerService } from './shared/services/spinner/spinner.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 
-import {  AppComponent } from './app.component';
-
-
+/**
+ * @author: Shoukath Mohammed
+ */
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
-    HttpModule,
-    HttpClientModule
+    NgbModule.forRoot(),
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    SpinnerService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
