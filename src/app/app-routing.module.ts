@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
-import { MaterialModule } from './shared/modules/material/material.module';
 
 // Components
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -36,7 +35,6 @@ const ROUTES: Route[] = [
   imports: [
     NgbModule,
     CommonModule,
-    MaterialModule,
     RouterModule.forRoot(ROUTES)
   ],
   exports: [RouterModule],

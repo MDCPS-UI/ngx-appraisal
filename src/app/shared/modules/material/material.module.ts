@@ -21,12 +21,13 @@ import {
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { ModuleWithProviders } from '@angular/compiler/src/core';
 
 
 // load all the modules that need to imported and exported
 const Modules: any[] = [
     MatIconModule
-  , MatCardModule  
+  , MatCardModule
   , MatSortModule
   , MatListModule
   , MatMenuModule
@@ -56,4 +57,10 @@ const Modules: any[] = [
   ],
   exports: [...Modules]
 })
-export class MaterialModule { }
+export class MaterialModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: MaterialModule
+    }
+  }
+}
