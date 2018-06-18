@@ -24,6 +24,11 @@
         "styles.scss"
       ],
       "scripts": [],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "./app/shared/scss"
+        ]
+      },
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
