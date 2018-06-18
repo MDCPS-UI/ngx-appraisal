@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+$fa-font-path : '../node_modules/font-awesome/fonts';
+
+@import '~bootstrap/scss/bootstrap';
+@import "material/material-mdcps-theme";
+@import '../node_modules/font-awesome/scss/font-awesome';
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+.CodeMirror {
+    border: 1px solid #eee;
+}
+
+.bg-white {
+    .mat-sidenav-container {
+        background-color: #fff !important;
+    }
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+legend {
+    width: auto !important;
+    border: none;
+    font-size: 14px;
+    padding: 0 5px;
+}
+
+fieldset {
+    border: solid 1px #DDD !important;
+    padding: 15px;
+    border-bottom: none;
+}
+
+/* Vendor Styling */
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #3f51b5 !important;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: rgba(54, 69, 244, 0.5) !important;
+}
+
+.mat-radio-outer-circle {
+    .mat-radio-checked & {
+        border-color: #3f51b5 !important;
+    }
+}
+
+.mat-radio-inner-circle {
+    background-color: #3f51b5 !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #3f51b5 !important;
+}
+
+.mat-slide-toggle-ripple .mat-ripple,
+.mat-radio-ripple .mat-ripple-element {
+    background-color: rgba(#3f51b5, 0.26) !important;
+}
