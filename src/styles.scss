@@ -67,3 +67,33 @@ fieldset {
 .mdcps-input {
     border-radius: 0;
 }
+
+.mdcps-youth-appr-container {
+    border: 1px solid rgba(0,0,0,.03);
+    box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    background: white;
+    margin: 20px;
+
+    .mdcps-youth-appr-header {
+        padding: 20px;
+        font-size: 17px;
+        font-weight: 600;
+        color: rgba(0,0,0,.54);
+        background: rgba(0, 0, 0, 0.06);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    }
+    .mdcps-youth-appr-wrapper {
+        padding: 30px;
+
+        .mdcps-input {
+            line-height: 2.2;
+        }
+        .mdcps-text {
+            padding-top: 6px;
+        }
+        .mdcps-label {
+            font-variant: all-small-caps;
+            font-weight: 500;
+        }
+    }
+}
