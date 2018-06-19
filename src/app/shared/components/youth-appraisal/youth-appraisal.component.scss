@@ -1,0 +1,24 @@
+.mdcps-youth-appr-container {
+    padding: 15px 40px;
+
+    .mdcps-card {
+        .mdcps-youth-appr-fieldset {
+            padding: 30px;
+
+            >legend {
+                font-weight: 500;
+                font-size: 16px;
+            }
+        }
+        .mdcps-input {
+            line-height: 2.2;
+        }
+        .mdcps-text {
+            padding-top: 6px;
+        }
+        .mdcps-label {
+            font-variant: all-small-caps;
+            font-weight: 500;
+        }
+    }
+}
