@@ -1,29 +1,27 @@
 <div class="mdcps-youth-appr-container">
-  <mat-card class="mdcps-card">
-    <fieldset class="mdcps-youth-appr-fieldset">
-      <legend>Youth Appraisal</legend>
-      <form class="form-horizontal" [formGroup]="youthApprForm" (ngSubmit)="onSubmit(youthApprForm, youthApprForm.value)">
-        <div class="row">
-          <div class="col-xs-12 col-md-4">
-            <label for="youthName" class="mdcps-label">Youth Name:</label>
-            <input class="form-control form-control-sm mdcps-input" id="youthName" placeholder="Enter Youth Name" formControlName="youthName">
-          </div>
-          <div class="col-xs-12 col-md-2 pt-2 pt-md-0">
-            <label for="youthId" class="mdcps-label">Youth Id:</label>
-            <input type="text" class="form-control form-control-sm mdcps-input" id="youthId" placeholder="Id" formControlName="youthId">
-          </div>
-          <div class="col-xs-12 col-md-3 pt-2 pt-md-0">
-            <label for="appraisalDate" class="mdcps-label">Appraisal Date:</label>
-            <p class="mdcps-text">{{ youthApprForm?.get('appraisalDate')?.value || '5/17/2018'}}</p>
-            <input type="text" class="form-control form-control-sm" id="appraisalDate" formControlName="appraisalDate" [hidden]="true">
-          </div>
-          <div class="col-xs-12 col-md-3 pt-2 pt-md-0">
-            <label for="status" class="mdcps-label">Status:</label>
-            <p class="mdcps-text">{{ youthApprForm?.get('status')?.value || 'In Progress'}}</p>
-            <input type="text" class="form-control form-control-sm" id="status" formControlName="status" [hidden]="true">
-          </div>
+  <div class="mdcps-youth-appr-header">Youth Appraisal</div>
+  <div class="mdcps-youth-appr-wrapper">
+    <form class="form-horizontal" [formGroup]="youthApprForm" (ngSubmit)="onSubmit(youthApprForm, youthApprForm.value)">
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <label for="youthName" class="mdcps-label">Youth Name:</label>
+          <input class="form-control form-control-sm mdcps-input" id="youthName" placeholder="Enter Youth Name" formControlName="youthName">
         </div>
-      </form>
-    </fieldset>
-  </mat-card>
+        <div class="col-xs-12 col-md-2 pt-2 pt-md-0">
+          <label for="youthId" class="mdcps-label">Youth Id:</label>
+          <input type="text" class="form-control form-control-sm mdcps-input" id="youthId" placeholder="Id" formControlName="youthId">
+        </div>
+        <div class="col-xs-12 col-md-3 pt-2 pt-md-0">
+          <label for="appraisalDate" class="mdcps-label">Appraisal Date:</label>
+          <p class="mdcps-text">{{ youthApprForm?.get('appraisalDate')?.value || '5/17/2018'}}</p>
+          <input type="text" class="form-control form-control-sm" id="appraisalDate" formControlName="appraisalDate" [hidden]="true">
+        </div>
+        <div class="col-xs-12 col-md-3 pt-2 pt-md-0">
+          <label for="status" class="mdcps-label">Status:</label>
+          <p class="mdcps-text">{{ youthApprForm?.get('status')?.value || 'In Progress'}}</p>
+          <input type="text" class="form-control form-control-sm" id="status" formControlName="status" [hidden]="true">
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
