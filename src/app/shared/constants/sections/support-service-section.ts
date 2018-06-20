@@ -1,64 +1,8 @@
-export const HOUSING: any = {
+export const SERVICES: any = {
     questions: [
         {
             id: 1,
-            key: 'Current housing situation',
-            value: '',
-            isRadio: false,
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: true,
-            dropdownOptions: [
-                {
-                    key: 'Paying rent or mortgage',
-                    value: ''
-                },
-                {
-                    key: 'Living with a relative',
-                    value: ''
-                },
-                {
-                    key: 'College dorm',
-                    value: ''
-                },
-                {
-                    key: 'Transitional living program',
-                    value: ''
-                },
-                {
-                    key: 'Emergency shelter',
-                    value: ''
-                },
-                {
-                    key: 'Homeless',
-                    value: ''
-                },
-                {
-                    key: 'Motel\/Hotel',
-                    value: ''
-                }
-            ],
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Please select'
-        },
-        {
-            id: 2,
-            key: 'Length of time in current housing',
-            value: '',
-            isRadio: false,
-            isInput: true,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Time in Current Housing'
-        },
-        {
-            id: 3,
-            key: 'Have you ever been homelessness?',
+            key: 'If the youth is enrolled in a Post-secondary institution, is he/she enrolled in the Educational Training Voucher program (ETV)?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -68,6 +12,76 @@ export const HOUSING: any = {
                 },
                 {
                     key: 'No',
+                    value: ''
+                },
+                {
+                    key: 'Requested',
+                    value: ''
+                },
+                {
+                    key: 'Not Applicable',
+                    value: ''
+                }
+            ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: false,
+            placeHolderValue: ''
+        },
+        {
+            id: 2,
+            key: 'Has the youth been assisted with applying for Medicaid?',
+            value: '',
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
+                    value: ''
+                },
+                {
+                    key: 'No',
+                    value: ''
+                },
+                {
+                    key: 'Requested',
+                    value: ''
+                },
+                {
+                    key: 'Not Applicable',
+                    value: ''
+                }
+            ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: false,
+            placeHolderValue: ''
+        },
+        {
+            id: 3,
+            key: 'Have other health care options been explored?',
+            value: '',
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
+                    value: ''
+                },
+                {
+                    key: 'No',
+                    value: ''
+                },
+                {
+                    key: 'Requested',
+                    value: ''
+                },
+                {
+                    key: 'Not Applicable',
                     value: ''
                 }
             ],
@@ -81,39 +95,7 @@ export const HOUSING: any = {
         },
         {
             id: 4,
-            key: 'If yes, How long?',
-            value: '',
-            isRadio: true,
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: false,
-            radioOptions: [
-                {
-                    key: '0-6 months',
-                    value: ''
-                },
-                {
-                    key: '6-12 months',
-                    value: ''
-                },
-                {
-                    key: '12-18 months',
-                    value: ''
-                },
-                {
-                    key: '18-24 months',
-                    value: ''
-                }
-            ],
-            isDate: false,
-            hasDependency: true,
-            dependsOn: 3,
-            hasPlaceholder: true,
-            placeHolderValue: ''
-        },
-        {
-            id: 5,
-            key: 'Have you ever been evicted?',
+            key: 'Have extended permanent connections been made for needed support services (i.e mental health services, Substance Abuse counseling, parenting classes, counseling, financial support).',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -123,6 +105,45 @@ export const HOUSING: any = {
                 },
                 {
                     key: 'No',
+                    value: ''
+                },
+                {
+                    key: 'Requested',
+                    value: ''
+                },
+                {
+                    key: 'Not Applicable',
+                    value: ''
+                }
+            ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: false,
+            placeHolderValue: ''
+        },
+        {
+            id: 5,
+            key: 'Have transportation needs been identified and addressed?',
+            value: '',
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
+                    value: ''
+                },
+                {
+                    key: 'No',
+                    value: ''
+                },
+                {
+                    key: 'Requested',
+                    value: ''
+                },
+                {
+                    key: 'Not Applicable',
                     value: ''
                 }
             ],
@@ -136,39 +157,7 @@ export const HOUSING: any = {
         },
         {
             id: 6,
-            key: 'If yes, How long?',
-            value: '',
-            isRadio: true,
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: false,
-            radioOptions: [
-                {
-                    key: '0-3 months',
-                    value: ''
-                },
-                {
-                    key: '3-6 months',
-                    value: ''
-                },
-                {
-                    key: '6-9 months',
-                    value: ''
-                },
-                {
-                    key: '9-12 months',
-                    value: ''
-                }
-            ],
-            isDate: false,
-            hasDependency: true,
-            dependsOn: 5,
-            hasPlaceholder: true,
-            placeHolderValue: ''
-        },
-        {
-            id: 7,
-            key: 'Are you able to meet all of your monthly obligations?',
+            key: 'Has the youth applied for any available public assistance? (SNAP, TANF, Housing voucher, daycare voucher, etc)',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -178,6 +167,14 @@ export const HOUSING: any = {
                 },
                 {
                     key: 'No',
+                    value: ''
+                },
+                {
+                    key: 'Requested',
+                    value: ''
+                },
+                {
+                    key: 'Not Applicable',
                     value: ''
                 }
             ],
@@ -190,18 +187,18 @@ export const HOUSING: any = {
             placeHolderValue: ''
         },
         {
-            id: 8,
-            key: 'If no, explain',
+            id: 7,
+            key: 'Notes',
             value: '',
             isRadio: false,
-            isInput: true,
+            isInput: false,
+            isTextbox: true,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
-            hasDependency: true,
-            dependsOn: 7,
+            hasDependency: false,
             hasPlaceholder: true,
-            placeHolderValue: 'Obligations'
+            placeHolderValue: 'Notes'
         }
     ]
 };

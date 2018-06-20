@@ -7,9 +7,7 @@ import { SpinnerService } from './shared/services/spinner/spinner.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 
-/**
- * @author: Shoukath Mohammed
- */
+
 @NgModule({
   declarations: [
     AppComponent,

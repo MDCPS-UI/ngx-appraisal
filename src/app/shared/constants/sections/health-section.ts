@@ -1,8 +1,22 @@
-export const EDUCATION: any = {
+export const HEALTH: any = {
     questions: [
         {
             id: 1,
-            key: 'Current Education Track',
+            key: 'Do you have any medical issues to address?',
+            value: '',
+            isRadio: false,
+            isInput: false,
+            isTextbox: true,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: true,
+            placeHolderValue: 'Medical Issues?'
+        },
+        {
+            id: 2,
+            key: 'Have you ever witnessed or experienced a traumatic event?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -24,35 +38,34 @@ export const EDUCATION: any = {
             placeHolderValue: ''
         },
         {
-            id: 2,
-            key: 'Grade',
+            id: 3,
+            key: 'Have you ever been the victim of any of the following types of abuse?',
             value: '',
             isRadio: false,
-            isInput: true,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Grade'
-        },
-        {
-            id: 3,
-            key: 'Correct Grade for Age?',
-            value: '',
-            isRadio: true,
-            radioOptions: [
+            isCheckbox: true,
+            checkBoxOptions: [
                 {
-                    key: 'Yes',
+                    key: 'Physical',
                     value: ''
                 },
                 {
-                    key: 'No',
+                    key: 'Emotional',
+                    value: ''
+                },
+                {
+                    key: 'Sexual',
+                    value: ''
+                },
+                {
+                    key: 'Neglect',
+                    value: ''
+                },
+                {
+                    key: 'Other',
                     value: ''
                 }
             ],
             isInput: false,
-            isCheckbox: false,
             isDropdown: false,
             isDate: false,
             hasDependency: false,
@@ -61,60 +74,63 @@ export const EDUCATION: any = {
         },
         {
             id: 4,
-            key: 'If no, reason',
+            key: 'Dental',
             value: '',
             isRadio: false,
-            isInput: false,
-            isTextbox: true,
+            isInput: true,
+            isTextbox: false,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
-            hasDependency: true,
-            dependsOn: 3,
-            hasPlaceholder: false,
-            placeHolderValue: ''
+            hasDependency: false,
+            hasPlaceholder: true,
+            placeHolderValue: 'Grade'
         },
         {
             id: 5,
-            key: 'Duel Enrollment?',
+            key: 'Medical',
             value: '',
-            isRadio: true,
-            radioOptions: [
-                {
-                    key: 'Yes',
-                    value: ''
-                },
-                {
-                    key: 'No',
-                    value: ''
-                }
-            ],
-            isInput: false,
+            isRadio: false,
+            isInput: true,
+            isTextbox: false,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
             hasDependency: false,
-            hasPlaceholder: false,
-            placeHolderValue: ''
+            hasPlaceholder: true,
+            placeHolderValue: 'Grade'
         },
         {
             id: 6,
-            key: 'If yes, please explain:',
+            key: 'Vision',
             value: '',
             isRadio: false,
-            isInput: false,
-            isTextbox: true,
+            isInput: true,
+            isTextbox: false,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
-            hasDependency: true,
-            dependsOn: 5,
-            hasPlaceholder: false,
-            placeHolderValue: ''
+            hasDependency: false,
+            hasPlaceholder: true,
+            placeHolderValue: 'Grade'
         },
         {
             id: 7,
-            key: 'GED?',
+            key: 'Psycological',
+            value: '',
+            isRadio: false,
+            isInput: true,
+            isTextbox: false,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: true,
+            placeHolderValue: 'Grade'
+        },
+        {
+            id: 8,
+            key: 'Are you sexually active?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -128,20 +144,6 @@ export const EDUCATION: any = {
                 }
             ],
             isInput: false,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: false,
-            placeHolderValue: ''
-        },
-        {
-            id: 8,
-            key: 'GED Progress',
-            value: '',
-            isRadio: false,
-            isInput: false,
-            isTextbox: true,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
@@ -151,20 +153,30 @@ export const EDUCATION: any = {
         },
         {
             id: 9,
-            key: 'Expected Test Date',
+            key: 'Do you have an adult to talk to about safe sex and reproductive health?',
             value: '',
-            isRadio: false,
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
+                    value: ''
+                },
+                {
+                    key: 'No',
+                    value: ''
+                }
+            ],
             isInput: false,
             isCheckbox: false,
             isDropdown: false,
-            isDate: true,
+            isDate: false,
             hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'mm/dd/yyy'
+            hasPlaceholder: false,
+            placeHolderValue: ''
         },
         {
             id: 10,
-            key: 'Vocatiional?',
+            key: 'Have you been tested for HIV/AIDS?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -187,112 +199,7 @@ export const EDUCATION: any = {
         },
         {
             id: 11,
-            key: 'Occupational Certificate?',
-            value: '',
-            isRadio: true,
-            radioOptions: [
-                {
-                    key: 'Yes',
-                    value: ''
-                },
-                {
-                    key: 'No',
-                    value: ''
-                }
-            ],
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: false,
-            placeHolderValue: ''
-        },
-        {
-            id: 12,
-            key: 'Post Secondary Education?',
-            value: '',
-            isRadio: true,
-            radioOptions: [
-                {
-                    key: 'Yes',
-                    value: ''
-                },
-                {
-                    key: 'No',
-                    value: ''
-                }
-            ],
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: false,
-            placeHolderValue: ''
-        },
-        {
-            id: 13,
-            key: 'Year',
-            value: '',
-            isRadio: false,
-            isInput: true,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Year'
-        },
-        {
-            id: 14,
-            key: 'Type?',
-            value: '',
-            isRadio: true,
-            radioOptions: [
-                {
-                    key: 'Part-Time',
-                    value: ''
-                },
-                {
-                    key: 'Full-Time',
-                    value: ''
-                }
-            ],
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: false,
-            placeHolderValue: ''
-        },
-        {
-            id: 15,
-            key: 'ETV?',
-            value: '',
-            isRadio: true,
-            radioOptions: [
-                {
-                    key: 'Yes',
-                    value: ''
-                },
-                {
-                    key: 'No',
-                    value: ''
-                }
-            ],
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: false,
-            placeHolderValue: ''
-        },
-        {
-            id: 16,
-            key: 'When did you last receive ETV funds',
+            key: 'HIV/AIDS Date',
             value: '',
             isRadio: false,
             isInput: false,
@@ -304,102 +211,178 @@ export const EDUCATION: any = {
             placeHolderValue: 'mm/dd/yyy'
         },
         {
-            id: 17,
-            key: 'Where are you enrolled in an educational program?',
+            id: 12,
+            key: 'Test Results?',
             value: '',
             isRadio: false,
-            isInput: true,
+            isInput: false,
+            isTextbox: true,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
             hasDependency: false,
             hasPlaceholder: true,
-            placeHolderValue: 'Where enrolled'
+            placeHolderValue: 'Test Results'
+        },
+        {
+            id: 13,
+            key: 'Have you been tested for STD/STI?',
+            value: '',
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
+                    value: ''
+                },
+                {
+                    key: 'No',
+                    value: ''
+                }
+            ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: false,
+            placeHolderValue: ''
+        },
+        {
+            id: 14,
+            key: 'STD/STI Date',
+            value: '',
+            isRadio: false,
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: true,
+            hasDependency: false,
+            hasPlaceholder: true,
+            placeHolderValue: 'mm/dd/yyy'
+        },
+        {
+            id: 15,
+            key: 'Test Results?',
+            value: '',
+            isRadio: false,
+            isInput: false,
+            isTextbox: true,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: true,
+            placeHolderValue: 'Test Results'
+        },
+        {
+            id: 16,
+            key: 'Are you currently receiving services or treatment for any of the following:',
+            value: '',
+            isRadio: false,
+            isCheckbox: true,
+            checkBoxOptions: [
+                {
+                    key: 'Mental Health',
+                    value: ''
+                },
+                {
+                    key: 'Substance Abuse',
+                    value: ''
+                },
+                {
+                    key: 'Learning Disability',
+                    value: ''
+                },
+                {
+                    key: 'Developmental Disability',
+                    value: ''
+                },
+                {
+                    key: 'Physical Disability',
+                    value: ''
+                }
+            ],
+            isInput: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: false,
+            placeHolderValue: ''
+        },
+        {
+            id: 17,
+            key: 'Are you taking any medications?',
+            value: '',
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
+                    value: ''
+                },
+                {
+                    key: 'No',
+                    value: ''
+                }
+            ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: false,
+            placeHolderValue: ''
         },
         {
             id: 18,
-            key: 'What is the highest level of education (18 or older)?',
+            key: 'If yes, please list',
             value: '',
-            isRadio: true,
-            radioOptions: [
-                {
-                    key: 'Some High School',
-                    value: ''
-                },
-                {
-                    key: 'Some Middle School',
-                    value: ''
-                },
-                {
-                    key: 'Diploma',
-                    value: ''
-                },
-                {
-                    key: 'GED',
-                    value: ''
-                },
-                {
-                    key: 'Certificate',
-                    value: ''
-                },
-                {
-                    key: 'Vocational training',
-                    value: ''
-                },
-                {
-                    key: 'Other',
-                    value: ''
-                }
-            ],
+            isRadio: false,
             isInput: false,
+            isTextbox: true,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
-            hasDependency: false,
-            hasPlaceholder: false,
-            placeHolderValue: ''
+            hasDependency: true,
+            dependsOn: 17,
+            hasPlaceholder: true,
+            placeHolderValue: 'Test Results'
         },
         {
             id: 19,
-            key: 'What are your goals',
-            value: '',
-            isRadio: false,
-            isInput: true,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Goals'
-        },
-        {
-            id: 20,
-            key: 'Do you plan to attend a',
+            key: 'Are your medications administered to you?',
             value: '',
             isRadio: true,
             radioOptions: [
                 {
-                    key: 'Four Year Program',
+                    key: 'Yes',
                     value: ''
                 },
                 {
-                    key: 'Two Year Program',
+                    key: 'No',
+                    value: ''
+                }
+            ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: true,
+            dependsOn: 17,
+            hasPlaceholder: false,
+            placeHolderValue: ''
+        },
+        {
+            id: 20,
+            key: 'Do you keep track of your medical appointments?',
+            value: '',
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
                     value: ''
                 },
                 {
-                    key: 'Vocational Program',
-                    value: ''
-                },
-                {
-                    key: 'Military',
-                    value: ''
-                },
-                {
-                    key: 'Not Applicable',
-                    value: ''
-                },
-                {
-                    key: 'Other',
+                    key: 'No',
                     value: ''
                 }
             ],
@@ -410,19 +393,6 @@ export const EDUCATION: any = {
             hasDependency: false,
             hasPlaceholder: false,
             placeHolderValue: ''
-        },
-        {
-            id: 21,
-            key: 'Expected area of study',
-            value: '',
-            isRadio: false,
-            isInput: true,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Expected area of study'
         }
     ]
 };

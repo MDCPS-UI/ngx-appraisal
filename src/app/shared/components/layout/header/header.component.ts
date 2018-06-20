@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-/**
- * @author: Shoukath Mohammed
- */
+
 @Component({
   selector: 'mdcps-header',
   templateUrl: './header.component.html',

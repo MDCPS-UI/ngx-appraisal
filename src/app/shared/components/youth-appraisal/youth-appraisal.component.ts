@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
-/**
- * @author: Shoukath Mohammed
- */
 @Component({
   selector: 'mdcps-youth-appraisal',
   templateUrl: './youth-appraisal.component.html',
