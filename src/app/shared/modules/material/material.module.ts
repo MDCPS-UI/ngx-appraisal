@@ -11,6 +11,7 @@ import {
   MatSelectModule,
   MatSidenavModule,
   MatToolbarModule,
+  MatStepperModule,
   MatCheckboxModule,
   MatPaginatorModule,
   MatExpansionModule,
@@ -36,6 +37,7 @@ const Modules: any[] = [
   , MatSelectModule
   , MatSidenavModule
   , MatToolbarModule
+  , MatStepperModule
   , MatCheckboxModule
   , MatFormFieldModule
   , MatPaginatorModule

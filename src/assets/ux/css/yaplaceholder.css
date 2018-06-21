@@ -1,0 +1,140 @@
+/******************************************/
+/* HELPERS
+/******************************************/
+
+.bold {
+    font-weight: bold;
+}
+
+.front-page-heading {
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+.front-page-heading:first-of-type {
+    margin-top: 0;
+}
+
+.green {
+    color: #8dc63f;
+}
+.blue {
+    color: #00a79d;
+}
+.red {
+    color: #ef4136;
+}
+.orange {
+    color: #fbb040;
+}
+/******************************************/
+/* STRUCTURE
+/******************************************/
+
+.header {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.header .logo {
+    margin: 20px 0;
+    width: 600px;
+}
+
+.gradient {
+    background-color: rgba(255, 255, 255, 0);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(255, 255, 255, 0)));
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    background-image:    -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    background-image:      -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+}
+
+.navbar {
+    background-color: #414141;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.wrapper {
+    padding-bottom: 8rem;
+}
+
+.content {
+    padding: 0 40px 40px 0;
+}
+
+
+/******************************************/
+/* BREAKPOINTS
+/******************************************/
+
+@media (max-width: 767px) {
+    #chandler-photo {
+        width: 150px;
+        margin-top: 0px;
+    }
+
+    .icon-label img {
+        height: 45px;
+        display:block;
+    }
+
+    .icon-label {
+        height:45px;
+        font-size: .7em;
+        line-height: .7em;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /*.header {
+      height: 22vh;
+    }*/
+    .header .logo {
+        margin: 50px 0;
+    }
+
+    #chandler-photo {
+        width: 200px;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .footer-logo-area img {
+        width: 90%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width:  1200px) {
+}
+
+/******************************************/
+/* BOOTSTRAP OVERRIDES
+/******************************************/
+.lead {
+    color: #666;
+}
+
+a.olivia {
+    color: #999;
+}
+
+a.bio {
+    color: #666;
+}
