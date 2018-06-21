@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-/**
- * @author: Shoukath Mohammed
- */
 @Component({
   selector: 'mdcps-dashboard',
   templateUrl: './dashboard.component.html',

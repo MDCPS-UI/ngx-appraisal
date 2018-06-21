@@ -1,64 +1,54 @@
-export const HOUSING: any = {
+export const CRIMINAL: any = {
     questions: [
         {
             id: 1,
-            key: 'Current housing situation',
+            key: 'Have you ever been arrested?',
             value: '',
-            isRadio: false,
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: true,
-            dropdownOptions: [
+            isRadio: true,
+            radioOptions: [
                 {
-                    key: 'Paying rent or mortgage',
+                    key: 'Yes',
                     value: ''
                 },
                 {
-                    key: 'Living with a relative',
-                    value: ''
-                },
-                {
-                    key: 'College dorm',
-                    value: ''
-                },
-                {
-                    key: 'Transitional living program',
-                    value: ''
-                },
-                {
-                    key: 'Emergency shelter',
-                    value: ''
-                },
-                {
-                    key: 'Homeless',
-                    value: ''
-                },
-                {
-                    key: 'Motel\/Hotel',
+                    key: 'No',
                     value: ''
                 }
             ],
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Please select'
-        },
-        {
-            id: 2,
-            key: 'Length of time in current housing',
-            value: '',
-            isRadio: false,
-            isInput: true,
+            isInput: false,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
             hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Time in Current Housing'
+            hasPlaceholder: false,
+            placeHolderValue: ''
+        },
+        {
+            id: 2,
+            key: 'Have you ever been convicted of a crime?',
+            value: '',
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
+                    value: ''
+                },
+                {
+                    key: 'No',
+                    value: ''
+                }
+            ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: false,
+            placeHolderValue: ''
         },
         {
             id: 3,
-            key: 'Have you ever been homelessness?',
+            key: 'Do you currently have a warrant for your arrest?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -81,39 +71,30 @@ export const HOUSING: any = {
         },
         {
             id: 4,
-            key: 'If yes, How long?',
+            key: 'Are you on probation?',
             value: '',
             isRadio: true,
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: false,
             radioOptions: [
                 {
-                    key: '0-6 months',
+                    key: 'Yes',
                     value: ''
                 },
                 {
-                    key: '6-12 months',
-                    value: ''
-                },
-                {
-                    key: '12-18 months',
-                    value: ''
-                },
-                {
-                    key: '18-24 months',
+                    key: 'No',
                     value: ''
                 }
             ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
             isDate: false,
-            hasDependency: true,
-            dependsOn: 3,
-            hasPlaceholder: true,
+            hasDependency: false,
+            hasPlaceholder: false,
             placeHolderValue: ''
         },
         {
             id: 5,
-            key: 'Have you ever been evicted?',
+            key: 'If applicable, do you have legal representation?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -136,39 +117,30 @@ export const HOUSING: any = {
         },
         {
             id: 6,
-            key: 'If yes, How long?',
+            key: 'Are you on parole?',
             value: '',
             isRadio: true,
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: false,
             radioOptions: [
                 {
-                    key: '0-3 months',
+                    key: 'Yes',
                     value: ''
                 },
                 {
-                    key: '3-6 months',
-                    value: ''
-                },
-                {
-                    key: '6-9 months',
-                    value: ''
-                },
-                {
-                    key: '9-12 months',
+                    key: 'No',
                     value: ''
                 }
             ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
             isDate: false,
-            hasDependency: true,
-            dependsOn: 5,
-            hasPlaceholder: true,
+            hasDependency: false,
+            hasPlaceholder: false,
             placeHolderValue: ''
         },
         {
             id: 7,
-            key: 'Are you able to meet all of your monthly obligations?',
+            key: 'Do you have an open court/criminal case?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -191,17 +163,72 @@ export const HOUSING: any = {
         },
         {
             id: 8,
-            key: 'If no, explain',
+            key: 'Are you free on bond?',
             value: '',
-            isRadio: false,
-            isInput: true,
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
+                    value: ''
+                },
+                {
+                    key: 'No',
+                    value: ''
+                }
+            ],
+            isInput: false,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
-            hasDependency: true,
-            dependsOn: 7,
-            hasPlaceholder: true,
-            placeHolderValue: 'Obligations'
+            hasDependency: false,
+            hasPlaceholder: false,
+            placeHolderValue: ''
+        },
+        {
+            id: 9,
+            key: 'Are you involved in gang related activity?',
+            value: '',
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
+                    value: ''
+                },
+                {
+                    key: 'No',
+                    value: ''
+                }
+            ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: false,
+            placeHolderValue: ''
+        },
+        {
+            id: 10,
+            key: 'Do you possess a weapon?',
+            value: '',
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
+                    value: ''
+                },
+                {
+                    key: 'No',
+                    value: ''
+                }
+            ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: false,
+            placeHolderValue: ''
         }
     ]
 };

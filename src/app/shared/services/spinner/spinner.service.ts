@@ -1,9 +1,7 @@
 import { Subject } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 
-/**
- * @author: Shoukath Mohammed
- */
+
 @Injectable()
 export class SpinnerService {
 

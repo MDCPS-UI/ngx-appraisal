@@ -4,9 +4,6 @@ import { Injectable } from '@angular/core';
 // access the native window object.
 declare const window: any;
 
-/**
- * @author: Shoukath Mohammed
- */
 @Injectable()
 export class UtilService {
 

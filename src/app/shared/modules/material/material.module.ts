@@ -46,9 +46,6 @@ const Modules: any[] = [
   , MatProgressSpinnerModule
 ];
 
-/**
- * @author: Shoukath Mohammed
- */
 @NgModule({
   imports: [
       ...Modules

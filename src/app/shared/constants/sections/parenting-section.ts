@@ -1,8 +1,8 @@
-export const EDUCATION: any = {
+export const PARENTING: any = {
     questions: [
         {
             id: 1,
-            key: 'Current Education Track',
+            key: 'Are currently pregnant or gotten someone pregnant?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -25,20 +25,22 @@ export const EDUCATION: any = {
         },
         {
             id: 2,
-            key: 'Grade',
+            key: 'If yes, are you receiving pre-natal care?',
             value: '',
             isRadio: false,
             isInput: true,
+            isTextbox: false,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
-            hasDependency: false,
+            hasDependency: true,
+            dependsOn: 1,
             hasPlaceholder: true,
-            placeHolderValue: 'Grade'
+            placeHolderValue: 'Prenatal Care?'
         },
         {
             id: 3,
-            key: 'Correct Grade for Age?',
+            key: 'Are you a parent?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -61,7 +63,7 @@ export const EDUCATION: any = {
         },
         {
             id: 4,
-            key: 'If no, reason',
+            key: 'If yes, list names/ages of child(ren)',
             value: '',
             isRadio: false,
             isInput: false,
@@ -71,12 +73,12 @@ export const EDUCATION: any = {
             isDate: false,
             hasDependency: true,
             dependsOn: 3,
-            hasPlaceholder: false,
-            placeHolderValue: ''
+            hasPlaceholder: true,
+            placeHolderValue: 'List Name/Ages'
         },
         {
             id: 5,
-            key: 'Duel Enrollment?',
+            key: 'Do they live with you?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -99,11 +101,20 @@ export const EDUCATION: any = {
         },
         {
             id: 6,
-            key: 'If yes, please explain:',
+            key: 'If Yes, do you have legal custody?',
             value: '',
-            isRadio: false,
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
+                    value: ''
+                },
+                {
+                    key: 'No',
+                    value: ''
+                }
+            ],
             isInput: false,
-            isTextbox: true,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
@@ -114,7 +125,22 @@ export const EDUCATION: any = {
         },
         {
             id: 7,
-            key: 'GED?',
+            key: 'If no, explain',
+            value: '',
+            isRadio: false,
+            isInput: false,
+            isTextbox: true,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: true,
+            dependsOn: 5,
+            hasPlaceholder: true,
+            placeHolderValue: 'List Name/Ages'
+        },
+        {
+            id: 8,
+            key: 'Have you had to miss school because of parenting/pregnancy responsibilities?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -136,12 +162,21 @@ export const EDUCATION: any = {
             placeHolderValue: ''
         },
         {
-            id: 8,
-            key: 'GED Progress',
+            id: 9,
+            key: 'As a parent, have you had a MDCPS investigation done on you?',
             value: '',
-            isRadio: false,
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
+                    value: ''
+                },
+                {
+                    key: 'No',
+                    value: ''
+                }
+            ],
             isInput: false,
-            isTextbox: true,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
@@ -150,21 +185,8 @@ export const EDUCATION: any = {
             placeHolderValue: ''
         },
         {
-            id: 9,
-            key: 'Expected Test Date',
-            value: '',
-            isRadio: false,
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: true,
-            hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'mm/dd/yyy'
-        },
-        {
             id: 10,
-            key: 'Vocatiional?',
+            key: 'Does your child have any medical issues?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -187,30 +209,22 @@ export const EDUCATION: any = {
         },
         {
             id: 11,
-            key: 'Occupational Certificate?',
+            key: 'If yes, explain',
             value: '',
-            isRadio: true,
-            radioOptions: [
-                {
-                    key: 'Yes',
-                    value: ''
-                },
-                {
-                    key: 'No',
-                    value: ''
-                }
-            ],
+            isRadio: false,
             isInput: false,
+            isTextbox: true,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
-            hasDependency: false,
-            hasPlaceholder: false,
-            placeHolderValue: ''
+            hasDependency: true,
+            dependsOn: 10,
+            hasPlaceholder: true,
+            placeHolderValue: 'Explain'
         },
         {
             id: 12,
-            key: 'Post Secondary Education?',
+            key: 'Are you currently receiving child support for your child/children?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -233,43 +247,37 @@ export const EDUCATION: any = {
         },
         {
             id: 13,
-            key: 'Year',
+            key: 'If yes, enter support amount',
             value: '',
             isRadio: false,
             isInput: true,
+            isTextbox: false,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
-            hasDependency: false,
+            hasDependency: true,
+            dependsOn: 12,
             hasPlaceholder: true,
-            placeHolderValue: 'Year'
+            placeHolderValue: 'Prenatal Care?'
         },
         {
             id: 14,
-            key: 'Type?',
+            key: 'If no, reason',
             value: '',
-            isRadio: true,
-            radioOptions: [
-                {
-                    key: 'Part-Time',
-                    value: ''
-                },
-                {
-                    key: 'Full-Time',
-                    value: ''
-                }
-            ],
+            isRadio: false,
             isInput: false,
+            isTextbox: true,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
-            hasDependency: false,
-            hasPlaceholder: false,
-            placeHolderValue: ''
+            hasDependency: true,
+            dependsOn: 12,
+            hasPlaceholder: true,
+            placeHolderValue: 'Why no child support'
         },
         {
             id: 15,
-            key: 'ETV?',
+            key: 'Are you currently paying child support for your child(ren)?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -292,62 +300,54 @@ export const EDUCATION: any = {
         },
         {
             id: 16,
-            key: 'When did you last receive ETV funds',
-            value: '',
-            isRadio: false,
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: true,
-            hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'mm/dd/yyy'
-        },
-        {
-            id: 17,
-            key: 'Where are you enrolled in an educational program?',
-            value: '',
-            isRadio: false,
-            isInput: true,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Where enrolled'
-        },
-        {
-            id: 18,
-            key: 'What is the highest level of education (18 or older)?',
+            key: 'Is the other parent involved with the child(ren)?',
             value: '',
             isRadio: true,
             radioOptions: [
                 {
-                    key: 'Some High School',
+                    key: 'Yes',
                     value: ''
                 },
                 {
-                    key: 'Some Middle School',
+                    key: 'No',
+                    value: ''
+                }
+            ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: false,
+            placeHolderValue: ''
+        },
+        {
+            id: 17,
+            key: 'If no, how',
+            value: '',
+            isRadio: false,
+            isInput: false,
+            isTextbox: true,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: true,
+            dependsOn: 16,
+            hasPlaceholder: true,
+            placeHolderValue: 'Why not involved'
+        },
+        {
+            id: 18,
+            key: 'Is your child/children currently enrolled in daycare, pre-school or elementary school?',
+            value: '',
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
                     value: ''
                 },
                 {
-                    key: 'Diploma',
-                    value: ''
-                },
-                {
-                    key: 'GED',
-                    value: ''
-                },
-                {
-                    key: 'Certificate',
-                    value: ''
-                },
-                {
-                    key: 'Vocational training',
-                    value: ''
-                },
-                {
-                    key: 'Other',
+                    key: 'No',
                     value: ''
                 }
             ],
@@ -361,45 +361,16 @@ export const EDUCATION: any = {
         },
         {
             id: 19,
-            key: 'What are your goals',
-            value: '',
-            isRadio: false,
-            isInput: true,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Goals'
-        },
-        {
-            id: 20,
-            key: 'Do you plan to attend a',
+            key: 'If no, is your child(ren) regularly cared for by another adult?',
             value: '',
             isRadio: true,
             radioOptions: [
                 {
-                    key: 'Four Year Program',
+                    key: 'Yes',
                     value: ''
                 },
                 {
-                    key: 'Two Year Program',
-                    value: ''
-                },
-                {
-                    key: 'Vocational Program',
-                    value: ''
-                },
-                {
-                    key: 'Military',
-                    value: ''
-                },
-                {
-                    key: 'Not Applicable',
-                    value: ''
-                },
-                {
-                    key: 'Other',
+                    key: 'No',
                     value: ''
                 }
             ],
@@ -407,22 +378,45 @@ export const EDUCATION: any = {
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
-            hasDependency: false,
+            hasDependency: true,
+            dependsOn: 18,
             hasPlaceholder: false,
             placeHolderValue: ''
         },
         {
-            id: 21,
-            key: 'Expected area of study',
+            id: 20,
+            key: 'How do you pay for childcare services?',
             value: '',
             isRadio: false,
-            isInput: true,
-            isCheckbox: false,
+            isCheckbox: true,
+            checkBoxOptions: [
+                {
+                    key: 'Childcare Voucher',
+                    value: ''
+                },
+                {
+                    key: 'With your own funds',
+                    value: ''
+                },
+                {
+                    key: 'Child Support',
+                    value: ''
+                },
+                {
+                    key: 'Assistance from an outside source',
+                    value: ''
+                },
+                {
+                    key: 'N/A',
+                    value: ''
+                }
+            ],
+            isInput: false,
             isDropdown: false,
             isDate: false,
             hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Expected area of study'
+            hasPlaceholder: false,
+            placeHolderValue: ''
         }
     ]
 };

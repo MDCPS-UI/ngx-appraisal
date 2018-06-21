@@ -1,64 +1,62 @@
-export const HOUSING: any = {
+export const RELATIONSHIPS: any = {
     questions: [
         {
             id: 1,
-            key: 'Current housing situation',
+            key: 'Are you currently in a relationship with someone?',
             value: '',
-            isRadio: false,
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: true,
-            dropdownOptions: [
+            isRadio: true,
+            radioOptions: [
                 {
-                    key: 'Paying rent or mortgage',
+                    key: 'Yes',
                     value: ''
                 },
                 {
-                    key: 'Living with a relative',
-                    value: ''
-                },
-                {
-                    key: 'College dorm',
-                    value: ''
-                },
-                {
-                    key: 'Transitional living program',
-                    value: ''
-                },
-                {
-                    key: 'Emergency shelter',
-                    value: ''
-                },
-                {
-                    key: 'Homeless',
-                    value: ''
-                },
-                {
-                    key: 'Motel\/Hotel',
+                    key: 'No',
                     value: ''
                 }
             ],
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Please select'
-        },
-        {
-            id: 2,
-            key: 'Length of time in current housing',
-            value: '',
-            isRadio: false,
-            isInput: true,
+            isInput: false,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
             hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Time in Current Housing'
+            hasPlaceholder: false,
+            placeHolderValue: ''
+        },
+        {
+            id: 2,
+            key: 'Are you currently in a relationship with a partner who is',
+            value: '',
+            isRadio: false,
+            isCheckbox: true,
+            checkBoxOptions: [
+                {
+                    key: 'Physically',
+                    value: ''
+                },
+                {
+                    key: 'Emotionally',
+                    value: ''
+                },
+                {
+                    key: 'Verbally abusive',
+                    value: ''
+                },
+                {
+                    key: 'None',
+                    value: ''
+                }
+            ],
+            isInput: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: false,
+            placeHolderValue: ''
         },
         {
             id: 3,
-            key: 'Have you ever been homelessness?',
+            key: 'Do you ever feel afraid of a current or former partner?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -81,39 +79,30 @@ export const HOUSING: any = {
         },
         {
             id: 4,
-            key: 'If yes, How long?',
+            key: 'Are you currently leaving a violent or threatening relationship?',
             value: '',
             isRadio: true,
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: false,
             radioOptions: [
                 {
-                    key: '0-6 months',
+                    key: 'Yes',
                     value: ''
                 },
                 {
-                    key: '6-12 months',
-                    value: ''
-                },
-                {
-                    key: '12-18 months',
-                    value: ''
-                },
-                {
-                    key: '18-24 months',
+                    key: 'No',
                     value: ''
                 }
             ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
             isDate: false,
-            hasDependency: true,
-            dependsOn: 3,
-            hasPlaceholder: true,
+            hasDependency: false,
+            hasPlaceholder: false,
             placeHolderValue: ''
         },
         {
             id: 5,
-            key: 'Have you ever been evicted?',
+            key: 'Have you ever received housing, food or money for sexual services?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -136,39 +125,30 @@ export const HOUSING: any = {
         },
         {
             id: 6,
-            key: 'If yes, How long?',
+            key: 'Have you ever hurt or threatened someone to have sex with you or tried to have sexual contact with someone against their will?',
             value: '',
             isRadio: true,
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: false,
             radioOptions: [
                 {
-                    key: '0-3 months',
+                    key: 'Yes',
                     value: ''
                 },
                 {
-                    key: '3-6 months',
-                    value: ''
-                },
-                {
-                    key: '6-9 months',
-                    value: ''
-                },
-                {
-                    key: '9-12 months',
+                    key: 'No',
                     value: ''
                 }
             ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
             isDate: false,
-            hasDependency: true,
-            dependsOn: 5,
-            hasPlaceholder: true,
+            hasDependency: false,
+            hasPlaceholder: false,
             placeHolderValue: ''
         },
         {
             id: 7,
-            key: 'Are you able to meet all of your monthly obligations?',
+            key: 'Has anyone ever tried to have sex with you against your will?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -191,17 +171,26 @@ export const HOUSING: any = {
         },
         {
             id: 8,
-            key: 'If no, explain',
+            key: 'Are you currently involved in prostitution or pimping?',
             value: '',
-            isRadio: false,
-            isInput: true,
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
+                    value: ''
+                },
+                {
+                    key: 'No',
+                    value: ''
+                }
+            ],
+            isInput: false,
             isCheckbox: false,
             isDropdown: false,
             isDate: false,
-            hasDependency: true,
-            dependsOn: 7,
-            hasPlaceholder: true,
-            placeHolderValue: 'Obligations'
+            hasDependency: false,
+            hasPlaceholder: false,
+            placeHolderValue: ''
         }
     ]
 };

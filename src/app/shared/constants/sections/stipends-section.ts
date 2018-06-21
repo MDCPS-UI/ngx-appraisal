@@ -1,64 +1,8 @@
-export const HOUSING: any = {
+export const STIPENDS: any = {
     questions: [
         {
             id: 1,
-            key: 'Current housing situation',
-            value: '',
-            isRadio: false,
-            isInput: false,
-            isCheckbox: false,
-            isDropdown: true,
-            dropdownOptions: [
-                {
-                    key: 'Paying rent or mortgage',
-                    value: ''
-                },
-                {
-                    key: 'Living with a relative',
-                    value: ''
-                },
-                {
-                    key: 'College dorm',
-                    value: ''
-                },
-                {
-                    key: 'Transitional living program',
-                    value: ''
-                },
-                {
-                    key: 'Emergency shelter',
-                    value: ''
-                },
-                {
-                    key: 'Homeless',
-                    value: ''
-                },
-                {
-                    key: 'Motel\/Hotel',
-                    value: ''
-                }
-            ],
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Please select'
-        },
-        {
-            id: 2,
-            key: 'Length of time in current housing',
-            value: '',
-            isRadio: false,
-            isInput: true,
-            isCheckbox: false,
-            isDropdown: false,
-            isDate: false,
-            hasDependency: false,
-            hasPlaceholder: true,
-            placeHolderValue: 'Time in Current Housing'
-        },
-        {
-            id: 3,
-            key: 'Have you ever been homelessness?',
+            key: 'Stipend Requested?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -68,6 +12,52 @@ export const HOUSING: any = {
                 },
                 {
                     key: 'No',
+                    value: ''
+                },
+                {
+                    key: 'Other',
+                    value: ''
+                }
+            ],
+            isInput: false,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: false,
+            hasDependency: false,
+            hasPlaceholder: false,
+            placeHolderValue: ''
+        },
+        {
+            id: 2,
+            key: 'Request Date',
+            value: '',
+            isRadio: false,
+            isInput: false,
+            isTextbox: false,
+            isCheckbox: false,
+            isDropdown: false,
+            isDate: true,
+            hasDependency: true,
+            dependsOn: 1,
+            hasPlaceholder: true,
+            placeHolderValue: 'Date'
+        },
+        {
+            id: 3,
+            key: 'Stipend Requested?',
+            value: '',
+            isRadio: true,
+            radioOptions: [
+                {
+                    key: 'Yes',
+                    value: ''
+                },
+                {
+                    key: 'No',
+                    value: ''
+                },
+                {
+                    key: 'Other',
                     value: ''
                 }
             ],
@@ -81,39 +71,22 @@ export const HOUSING: any = {
         },
         {
             id: 4,
-            key: 'If yes, How long?',
+            key: 'Request Date',
             value: '',
-            isRadio: true,
+            isRadio: false,
             isInput: false,
+            isTextbox: false,
             isCheckbox: false,
             isDropdown: false,
-            radioOptions: [
-                {
-                    key: '0-6 months',
-                    value: ''
-                },
-                {
-                    key: '6-12 months',
-                    value: ''
-                },
-                {
-                    key: '12-18 months',
-                    value: ''
-                },
-                {
-                    key: '18-24 months',
-                    value: ''
-                }
-            ],
-            isDate: false,
+            isDate: true,
             hasDependency: true,
             dependsOn: 3,
             hasPlaceholder: true,
-            placeHolderValue: ''
+            placeHolderValue: 'Date'
         },
         {
             id: 5,
-            key: 'Have you ever been evicted?',
+            key: 'Stipend Requested?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -123,6 +96,10 @@ export const HOUSING: any = {
                 },
                 {
                     key: 'No',
+                    value: ''
+                },
+                {
+                    key: 'Other',
                     value: ''
                 }
             ],
@@ -136,39 +113,22 @@ export const HOUSING: any = {
         },
         {
             id: 6,
-            key: 'If yes, How long?',
+            key: 'Request Date',
             value: '',
-            isRadio: true,
+            isRadio: false,
             isInput: false,
+            isTextbox: false,
             isCheckbox: false,
             isDropdown: false,
-            radioOptions: [
-                {
-                    key: '0-3 months',
-                    value: ''
-                },
-                {
-                    key: '3-6 months',
-                    value: ''
-                },
-                {
-                    key: '6-9 months',
-                    value: ''
-                },
-                {
-                    key: '9-12 months',
-                    value: ''
-                }
-            ],
-            isDate: false,
+            isDate: true,
             hasDependency: true,
             dependsOn: 5,
             hasPlaceholder: true,
-            placeHolderValue: ''
+            placeHolderValue: 'Date'
         },
         {
             id: 7,
-            key: 'Are you able to meet all of your monthly obligations?',
+            key: 'Stipend Requested?',
             value: '',
             isRadio: true,
             radioOptions: [
@@ -178,6 +138,10 @@ export const HOUSING: any = {
                 },
                 {
                     key: 'No',
+                    value: ''
+                },
+                {
+                    key: 'Other',
                     value: ''
                 }
             ],
@@ -191,17 +155,18 @@ export const HOUSING: any = {
         },
         {
             id: 8,
-            key: 'If no, explain',
+            key: 'Request Date',
             value: '',
             isRadio: false,
-            isInput: true,
+            isInput: false,
+            isTextbox: false,
             isCheckbox: false,
             isDropdown: false,
-            isDate: false,
+            isDate: true,
             hasDependency: true,
             dependsOn: 7,
             hasPlaceholder: true,
-            placeHolderValue: 'Obligations'
+            placeHolderValue: 'Date'
         }
     ]
 };
