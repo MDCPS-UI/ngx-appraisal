@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DashboardComponent } from './dashboard.component';
+import { YaDashboardComponent } from './ya-dashboard.component';
 import { MaterialModule } from './../shared/modules/material/material.module';
 import { HeaderComponent } from './../shared/components/layout/header/header.component';
 import { YouthAppraisalComponent } from './../shared/components/youth-appraisal/youth-appraisal.component';
@@ -11,7 +11,7 @@ import { YouthAppraisalComponent } from './../shared/components/youth-appraisal/
 const ROUTES: Route[] = [
   {
     path: '',
-    component: DashboardComponent
+    component: YaDashboardComponent
   }
 ];
 
@@ -25,9 +25,9 @@ const ROUTES: Route[] = [
   ],
   declarations: [
     HeaderComponent,
-    DashboardComponent,
+    YaDashboardComponent,
     YouthAppraisalComponent
   ],
   exports: [RouterModule]
 })
-export class DashboardModule { }
+export class YaDashboardModule { }
