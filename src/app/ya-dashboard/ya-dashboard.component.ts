@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'mdcps-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  templateUrl: './ya-dashboard.component.html',
+  styleUrls: ['./ya-dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class YaDashboardComponent implements OnInit {
   public isLinear: boolean = false;
   public firstFormGroup: FormGroup;
   public secondFormGroup: FormGroup;

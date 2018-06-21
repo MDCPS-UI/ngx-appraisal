@@ -3,10 +3,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BrowserModule } from '@angular/platform-browser';
 
 // Components
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 // Services
 import { UtilService } from './shared/services/util/util.service';
@@ -23,7 +21,7 @@ const ROUTES: Route[] = [
     data: {
       bgClass: 'bg-white'
     },
-    loadChildren: './dashboard/dashboard.module#DashboardModule'
+    loadChildren: './ya-dashboard/ya-dashboard.module#YaDashboardModule'
   }
 ];
 
