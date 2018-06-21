@@ -11,7 +11,13 @@ import { YouthAppraisalComponent } from './../shared/components/youth-appraisal/
 const ROUTES: Route[] = [
   {
     path: '',
-    component: YaDashboardComponent
+    component: YaDashboardComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: './../ya-forms/ya-forms.module#YaFormsModule'
+      }
+    ]
   }
 ];
 

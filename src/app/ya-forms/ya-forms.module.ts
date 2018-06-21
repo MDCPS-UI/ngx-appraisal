@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { YaFormsComponent } from './ya-forms.component';
+import { YaFormsRoutingModule } from './ya-forms-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    YaFormsRoutingModule
   ],
-  declarations: [YaFormsComponent]
+  declarations: []
 })
 export class YaFormsModule { }
