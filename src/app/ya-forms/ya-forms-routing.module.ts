@@ -6,7 +6,23 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Components
 import { YaFormsComponent } from './ya-forms.component';
+import { YaReviewComponent } from './ya-review/ya-review.component';
+import { YaHealthComponent } from './ya-health/ya-health.component';
+import { YaSkillsComponent } from './ya-skills/ya-skills.component';
+import { YaActionsComponent } from './ya-actions/ya-actions.component';
+import { YaHousingComponent } from './ya-housing/ya-housing.component';
+import { YaStipendsComponent } from './ya-stipends/ya-stipends.component';
+import { YaServicesComponent } from './ya-services/ya-services.component';
+import { YaPersonalComponent } from './ya-personal/ya-personal.component';
+import { YaCriminalComponent } from './ya-criminal/ya-criminal.component';
+import { YaDocumentsComponent } from './ya-documents/ya-documents.component';
+import { YaEducationComponent } from './ya-education/ya-education.component';
+import { YaInterestsComponent } from './ya-interests/ya-interests.component';
+import { YaParentingComponent } from './ya-parenting/ya-parenting.component';
+import { YaEmploymentComponent } from './ya-employment/ya-employment.component';
+import { YaPlacementsComponent } from './ya-placements/ya-placements.component';
 import { YaDemographicsComponent } from './ya-demographics/ya-demographics.component';
+import { YaRelationshipsComponent } from './ya-relationships/ya-relationships.component';
 
 // YA Routes
 const ROUTES: Route[] = [{
@@ -23,67 +39,67 @@ const ROUTES: Route[] = [{
     },
     {
       path: 'housing',
-      component: YaFormsComponent
+      component: YaHousingComponent
     },
     {
       path: 'education',
-      component: YaFormsComponent
+      component: YaEducationComponent
     },
     {
       path: 'employment',
-      component: YaFormsComponent
+      component: YaEmploymentComponent
     },
     {
       path: 'interests',
-      component: YaFormsComponent
+      component: YaInterestsComponent
     },
     {
       path: 'placements',
-      component: YaFormsComponent
+      component: YaPlacementsComponent
     },
     {
       path: 'parenting',
-      component: YaFormsComponent
+      component: YaParentingComponent
     },
     {
       path: 'health',
-      component: YaFormsComponent
+      component: YaHealthComponent
     },
     {
       path: 'relationships',
-      component: YaFormsComponent
+      component: YaRelationshipsComponent
     },
     {
       path: 'criminal',
-      component: YaFormsComponent
+      component: YaCriminalComponent
     },
     {
       path: 'skills',
-      component: YaFormsComponent
+      component: YaSkillsComponent
     },
     {
       path: 'stipends',
-      component: YaFormsComponent
+      component: YaStipendsComponent
     },
     {
       path: 'services',
-      component: YaFormsComponent
+      component: YaServicesComponent
     },
     {
       path: 'personal',
-      component: YaFormsComponent
+      component: YaPersonalComponent
     },
     {
       path: 'actions',
-      component: YaFormsComponent
+      component: YaActionsComponent
     },
     {
       path: 'documents',
-      component: YaFormsComponent
+      component: YaDocumentsComponent
     },
     {
       path: 'review',
-      component: YaFormsComponent
+      component: YaReviewComponent
     }]
 }];
 
@@ -98,7 +114,23 @@ const ROUTES: Route[] = [{
   ],
   declarations: [
     YaFormsComponent,
-    YaDemographicsComponent
+    YaReviewComponent,
+    YaHealthComponent,
+    YaSkillsComponent,
+    YaHousingComponent,
+    YaActionsComponent,
+    YaCriminalComponent,
+    YaStipendsComponent,
+    YaServicesComponent,
+    YaPersonalComponent,
+    YaDocumentsComponent,
+    YaParentingComponent,
+    YaEducationComponent,
+    YaInterestsComponent,
+    YaPlacementsComponent,
+    YaEmploymentComponent,
+    YaDemographicsComponent,
+    YaRelationshipsComponent
   ],
   exports: [RouterModule]
 })
