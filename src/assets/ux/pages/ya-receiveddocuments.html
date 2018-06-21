@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Youth Appraisal Received Documents</title>
+
+    <!-- Bootstrap Core -->
+
+    <!--<link href="../css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <!--<link href="../css/yaappraisal.css" rel="stylesheet">-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="../vendor/open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via  -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+
+</head>
+<body>
+
+<!-- Top Navigation -->
+<nav class="navbar navbar-expand-md navbar-dark bg-success mb-3"
+     style="border-top: solid 8px #fbb040;">
+    <div class="container">
+        <div class="row w-100">
+            <a class="navbar-brand col-12 col-md-3" href="#">
+                <h4 class="pt-3">MDCPS Youth Transition</h4>
+            </a>
+            <span class="col-12 col-md-6 text-md-right">
+                    <h5 class="text-light">Beth Jones</h5>
+                    <p class="text-light">Youth Transition Worker</p>
+                </span>
+            <button class="navbar-toggler"
+                    data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse col-12 col-md-2 " id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign Off</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-3 collapse" id="navsidebarNav">
+                <!-- Sidebar Holder -->
+                <nav class="mt-2" id="sidebar">
+                    <div>
+                        <h4>Pages</h4>
+                        <ul class="navbar-nav ">
+                            <li class="nav-item">
+                                <a class="nav-link " href="ya-demographics.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Demographics
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-housing.html">
+                                    <!--<i class="fa fa-home fa-fw" style="font-size: 20px;"></i>-->
+                                    Housing
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="ya-education.html">
+                                    <!--<i class="fa fa-school fa-fw" style="font-size: 20px;"></i>-->
+                                    Education
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-employment.html">
+                                    <!--<i class="fa fa-toolbox fa-fw" style="font-size: 20px;"></i>-->
+                                    Employment
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-socialinterests.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Social Interests
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-placementandsafety.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Placement & Safety
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-pregnantparenting.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Pregnant / Parenting
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-health.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Health
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-relationships.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Relationships
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-criminaljusticesystem.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Criminal Justice System
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-lifeskills.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Life Skills
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-stipends.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Stipends
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-continuingsupportservices.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Continuing Support/Services
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-personal.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Personal
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-goalsandactions.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Goals and Actions
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="./ya-receiveddocuments.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Received Documents
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-reviewandsign.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Review & Sign
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="col ml-auto">
+                <div class="card d-flex">
+                    <div class="card-header">
+                        <div class="container">
+                            <div class="row ">
+                                <button class="col-sm-3  navbar-light navbar-toggler "
+                                        data-toggle="collapse" href="#navsidebarNav"
+                                        aria-expanded="false" aria-controls="navsidebarNav">
+                                    <span class="navbar-light navbar-toggler-icon"></span>
+                                </button>
+                                <h4 class="col-sm-6 text-center">
+                                    Youth Appraisal
+                                </h4>
+                                <div class="col-sm-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="headerForm" (ngSubmit)="onNext()">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label for="header.youthName">Youth Name</label>
+                                    <input class="form-control form-control-sm"
+                                           id="header.youthName" placeholder="Enter Youth Name"
+                                           formControlName="youthName">
+                                </div>
+                                <div class="col-xs-12 col-md-2 pt-2 pt-md-0">
+                                    <label for="header.youthId">Id</label>
+                                    <input type="text" class="form-control form-control-sm"
+                                           id="header.youthId" placeholder="Id"
+                                           formControlName="youthId">
+                                </div>
+                                <div class="col-xs-12 col-md-3 pt-2 pt-md-0">
+                                    <label for="header.appraisalDate">Appraisal Date</label>
+                                    <p id="header.appraisalDate" name="appraisalDate">5/17/2018</p>
+                                </div>
+                                <div class="col-xs-12 col-md-3 pt-2 pt-md-0">
+                                    <label for="header.status">Status</label>
+                                    <p class="w-100" id="header.status" name="status">In Progress</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card d-flex">
+                    <div class="card-header">
+                        <h4 class="text-center">Received Documents upon Release from Custody</h4>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="receiveddocumentsForm" (ngSubmit)="onNext()">
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Received Documents</th>
+                                            <th>Status</th>
+                                            <th>If no, explain</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                His/her original Birth Certificate
+                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                His/her original Social Security Card
+                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Medicaid Card
+                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                His/her original State I.D. or Drivers License
+                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Court Orders
+                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Education Documents (report card etc.)
+                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Original Death Certificates (if parents are deceased)                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Original Documentation of citizenship or naturalization if applicable.
+                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Medical/immunization records
+                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Religious documents and Information
+                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                List of known relatives with relationship and contact information.
+                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Previous placement information
+                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Passport (if applicable)
+                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Photographs (if applicable)
+                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Resource Guide
+                                            </td>
+                                            <td>
+                                                <fieldset class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="yes"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input"
+                                                                   name="regularlyCaredFor" value="no"
+                                                                   formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm"
+                                                       formControlName="contactPhone">
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                </table>
+                            </div>
+                        </div> <!-- form-row -->
+                        <hr/>
+
+                            <a class="btn btn-outline-primary float-left" href="./ya-goalsandactions.html">
+                                <!--<i class="fa fa-home fa-fw" style="font-size: 20px;"></i>-->
+                                Previous: Goals & Actions
+                            </a>
+                            <!-- ***Note: the above link is just for html demo below is for submission to Angular
+                            <button type="submit" class="btn btn-outline-primary float-right" >
+                                Previous: Goals & Actions
+                            </button>
+                            -->
+                            <a class="btn btn-outline-primary float-right" href="./ya-reviewandsign.html">
+                                <!--<i class="fa fa-home fa-fw" style="font-size: 20px;"></i>-->
+                                Next: Review & Sign
+                            </a>
+                            <!-- ***Note: the above link is just for html demo below is for submission to Angular
+                            <button type="submit" class="btn btn-outline-primary float-right" >
+                                Next: Review & Sign
+                            </button>
+                            -->
+                        </form>
+                        <!-- #EndLibraryItem -->
+                    </div> <!-- col-xs-12 -->
+                </div> <!-- row -->
+        </div> <!-- row -->
+    </div> <!-- container-fluid -->
+
+        <!-- jQuery -->
+        <!--<script src="../vendor/jquery/jquery.min.js"></script>-->
+
+        <!-- Bootstrap Core JavaScript -->
+        <!--    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+        <!--<script src="../js/bootstrap.min.js"></script>-->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+        <script>
+            $( function() {
+                $( ".datepicker" ).datepicker({ minDate: -20, maxDate: "+1M +10D" });
+            } );
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Youth Appraisal Demographics</title>
+
+    <!-- Bootstrap Core -->
+
+    <!--<link href="../css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <!--<link href="../css/yaappraisal.css" rel="stylesheet">-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="../vendor/open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via  -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-success mb-3"
+         style="border-top: solid 8px #fbb040;">
+        <div class="container">
+            <div class="row w-100">
+                <a class="navbar-brand col-12 col-md-3" href="#">
+                    <h4 class="pt-3">MDCPS Youth Transition</h4>
+                </a>
+                <span class="col-12 col-md-6 text-md-right">
+                    <h5 class="text-light">Beth Jones</h5>
+                    <p class="text-light">Youth Transition Worker</p>
+                </span>
+                <button class="navbar-toggler"
+                        data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse col-12 col-md-2 " id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign Off</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-3 collapse" id="navsidebarNav">
+                    <!-- Sidebar Holder -->
+                <nav class="mt-2" id="sidebar">
+                    <div>
+                        <h4>Pages</h4>
+                        <ul class="navbar-nav ">
+                            <li class="nav-item active">
+                                <a class="nav-link " href="ya-demographics.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Demographics
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-housing.html">
+                                    <!--<i class="fa fa-home fa-fw" style="font-size: 20px;"></i>-->
+                                    Housing
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="ya-education.html">
+                                    <!--<i class="fa fa-school fa-fw" style="font-size: 20px;"></i>-->
+                                    Education
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-employment.html">
+                                    <!--<i class="fa fa-toolbox fa-fw" style="font-size: 20px;"></i>-->
+                                    Employment
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-socialinterests.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Social Interests
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-placementandsafety.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Placement & Safety
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-pregnantparenting.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Pregnant / Parenting
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-health.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Health
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-relationships">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Relationships
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-criminaljusticesystem.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Criminal Justice System
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-lifeskills.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Life Skills
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-stipends.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Stipends
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-continuingsupportservices.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Continuing Support/Services
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-personal.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Personal
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-goalsandactions.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Goals and Actions
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-receiveddocuments.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Received Documents
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./ya-reviewandsign.html">
+                                    <!--<i class="fa fa-user fa-fw" style="font-size: 20px;"></i>-->
+                                    Review & Sign
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="col ml-auto">
+                <div class="card d-flex">
+                    <div class="card-header">
+                        <div class="container">
+                            <div class="row ">
+                                <button class="col-sm-3  navbar-light navbar-toggler "
+                                    data-toggle="collapse" href="#navsidebarNav"
+                                    aria-expanded="false" aria-controls="navsidebarNav">
+                                    <span class="navbar-light navbar-toggler-icon"></span>
+                                </button>
+                                <h4 class="col-sm-6 text-center">
+                                    Youth Appraisal
+                                </h4>
+                                <div class="col-sm-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="headerForm" (ngSubmit)="onNext()">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-4">
+                                    <label for="header.youthName">Youth Name</label>
+                                    <input class="form-control form-control-sm"
+                                           id="header.youthName" placeholder="Enter Youth Name"
+                                           formControlName="youthName">
+                                </div>
+                                <div class="col-xs-12 col-md-2 pt-2 pt-md-0">
+                                    <label for="header.youthId">Id</label>
+                                    <input type="text" class="form-control form-control-sm"
+                                           id="header.youthId" placeholder="Id"
+                                           formControlName="youthId">
+                                </div>
+                                <div class="col-xs-12 col-md-3 pt-2 pt-md-0">
+                                    <label for="header.appraisalDate">Appraisal Date</label>
+                                    <p id="header.appraisalDate" name="appraisalDate">5/17/2018</p>
+                                </div>
+                                <div class="col-xs-12 col-md-3 pt-2 pt-md-0">
+                                    <label for="header.status">Status</label>
+                                    <p class="w-100" id="header.status" name="status">In Progress</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card d-flex">
+                    <div class="card-header">
+                        <h4 class="text-center">Demographics</h4>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="demographicsForm" (ngSubmit)="onNext()">
+                            <!-- DOB & Age -->
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label for="demographics.dateofbirth">Date of Birth</label>
+                                    <input type="text" class="form-control form-control-sm w-50 datepicker"
+                                           id="demographics.dateofbirth" placeholder="Date of Birth"
+                                           formControlName="dateOfBirth">
+                                    <div class="form-control-feedback"
+                                         *ngIf="!demographicsForm.get('dateOfBirth').valid && (demographicsForm.get('dateOfBirth').dirty || demographicsForm.get('dateOfBirth')?.touched)">
+                                        <small *ngIf="!demographicsForm.get('dateOfBirth').valid"
+                                           class="has-error small-text text-danger">
+                                            Please enter the valid date of birth
+                                        </small>
+                                    </div>
+
+                                </div>
+                                <div class="col-12 col-md-6 pt-2 pt-md-0">
+                                    <label for="demographics.age">Age</label>
+                                    <input type="text" class="form-control form-control-sm w-50"
+                                       id="demographics.age" placeholder="Age"
+                                           formControlName="age">
+                                    <div class="form-control-feedback"
+                                         *ngIf="!demographicsForm.get('age').valid && (demographicsForm.get('age').dirty || demographicsForm.get('dateOfBirth')?.touched)">
+                                        <small *ngIf="!demographicsForm.get('age').valid"
+                                               class="has-error small-text text-danger">
+                                            Please enter a valid age
+                                        </small>
+                                    </div>
+                                </div>
+                            </div> <!-- form-row -->
+                            <hr/>
+                            <!-- Phone / Email -->
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label for="demographics.phone">Phone</label>
+                                    <input type="tel" class="form-control form-control-sm w-50"
+                                           id="demographics.phone" placeholder="Phone"
+                                           formControlName="phone">
+                                </div>
+                                <div class="col-12 col-md-6 pt-2 pt-md-0">
+                                    <label for="demographics.email">Email</label>
+                                    <input type="email" class="form-control form-control-sm"
+                                           id="demographics.email" placeholder="Email"
+                                           formControlName="email">
+                                </div> <!-- col-12 -->
+                            </div> <!-- form-row -->
+                            <hr/>
+                            <!-- Permenancy Goal -->
+                            <div class="row">
+                                <div class="col">
+                                    <label for="demographics.permenancygoal">Permenancy Goal</label>
+                                    <textarea type="text" class="form-control form-control-sm"
+                                              id="demographics.permenancygoal"
+                                              placeholder="Enter Permenancy Goal" rows="2"
+                                              formControlName="permenancygoal">
+                                    </textarea>
+                                </div> <!-- col -->
+                            </div> <!-- form-row -->
+                            <hr/>
+                            <!-- Custody Status -->
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label class="col-form-label">Custody?</label>
+                                    <fieldset class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                       name="custodystatus" value="yes"
+                                                       formControlName="custodystatus"> Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                       name="custodystatus" value="no"
+                                                       formControlName="custodystatus"> No
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-12 col-md-6 pt-2 pt-md-0">
+                                    <label for="demographics.dischargedate"
+                                           class="col-form-label">Discharge Date</label>
+                                    <input type="text" class="form-control form-control-sm datepicker w-50"
+                                           id="demographics.dischargeDate" placeholder="Date of Discharge"
+                                           formControlName="dischargeDate">
+                                </div>
+                            </div> <!-- form-row -->
+                            <hr/>
+                            <!-- Address -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="demographics.address">Address</label>
+                                    <textarea class="form-control form-control-sm"
+                                              id="demographics.address" placeholder="Address"
+                                              rows="3" formControlName="address">
+                                    </textarea>
+                                </div>
+                            </div> <!-- form-row -->
+                            <hr/>
+                            <!-- Race / Gender -->
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label for="demographics.race">Race</label>
+                                    <input type="text" class="form-control form-control-sm w-75"
+                                           id="demographics.race" placeholder="Race"
+                                           formControlName="race">
+                                </div>
+                                <div class="col-12 col-md-6 pt-2 pt-md-0">
+                                    <label for="demographics.gender">Gender</label>
+                                    <input type="text" class="form-control form-control-sm w-50"
+                                           id="demographics.gender" placeholder="Gender"
+                                           formControlName="gender">
+                                </div>
+                            </div> <!-- form-row -->
+                            <hr/>
+                            <!-- LGBTQ? -->
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label class="col-form-label">Do You Identify as LGBTQ?</label>
+                                    <fieldset class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                       name="LGBTQ" value="yes"
+                                                       formControlName="LGBTQ"> Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                       name="LGBTQ" value="no"
+                                                       formControlName="LGBTQ"> No
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-12 col-6 pt-2 pt-md-0">
+                                    <label for="demographics.LGBTQType" class="pr-2">If Yes, Please Select</label>
+                                    <select class="custom-select form-control form-control-sm"
+                                            id="demographics.LGBTQType">
+                                        <option selected>Choose Category</option>
+                                        <option value="lesbian">Lesbian</option>
+                                        <option value="gay">Gay</option>
+                                        <option value="bisexual">Bi-sexual</option>
+                                        <option value="transgender">Transgender</option>
+                                        <option value="questioning">Questioning</option>
+                                        <option value="declined">Declined</option>
+                                    </select>
+                                </div>
+                            </div> <!-- form-row -->
+                            <hr/>
+                            <!-- COR / COS -->
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label for="demographics_COR">COR</label>
+                                    <input type="text" class="form-control w-75"
+                                           id="demographics_COR" placeholder="COR"
+                                           formControlName="COR">
+                                </div>
+                                <div class="col-12 col-md-6 pt-2 pt-md-0">
+                                    <label for="demographics.COS">COS</label>
+                                    <input type="text" class="form-control w-75"
+                                           id="demographics.COS" placeholder="COS"
+                                           formControlName="COS">
+                                </div>
+                            </div> <!-- form-row -->
+                            <hr/>
+                            <!-- Health Insurance / Medicaid? -->
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label class="col-form-label">Do you have health insurance?</label>
+                                    <fieldset class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                       name="healthInsurance" value="yes"
+                                                       formControlName="healthInsurance"> Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                       name="healthInsurance" value="no"
+                                                       formControlName="healthInsurance"> No
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-12 col-md-6 pt-2 pt-md-0">
+                                    <label class="col-form-label">Do you have Medicaid?</label>
+                                    <fieldset class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                       name="medicaid" value="yes"
+                                                       formControlName="medicaid"> Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                       name="medicaid" value="no"
+                                                       formControlName="medicaid"> No
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div> <!-- form-row -->
+                            <hr/>
+                            <!-- Language Barriers -->
+                            <div class="row bg-transparent">
+                                <div class="col-12 col-md-6">
+                                    <label class="col-form-label">Do you have language barriers or need an interperter?</label>
+                                    <fieldset class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                       name="languageBarriers" value="yes"
+                                                       formControlName="languageBarriers"> Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                       name="languageBarriers" value="no"
+                                                       formControlName="languageBarriers"> No
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-12 col-md-6 pt-2 pt-md-0">
+                                    <label for="inputAddress2">If yes explain?</label>
+                                    <textarea class="form-control form-control-sm" id="inputAddress2"
+                                              placeholder="Explain Needs for an interpreter" rows="3"
+                                              formControlName="explainLanguageBarriers">
+                                    </textarea>
+                                </div>
+                            </div> <!-- form-row -->
+                            <hr/>
+                            <!-- Mentor Or Identified Supportive Connection -->
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label class="col-form-label">Do you have a mentor or identified supportive connection?</label>
+                                    <fieldset class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                       name="mentor" value="yes"
+                                                       formControlName="mentor"> Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                       name="mentor" value="no"
+                                                       formControlName="mentor"> No
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-12 col-md-6 pt-2 pt-md-0">
+                                    <label class="col-form-label">If yes, would you like this person to be involved in your transition planning?</label>
+                                    <fieldset class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                       name="transitionplanning" value="yes"
+                                                       formControlName="transitionplanning"> Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input"
+                                                       name="transitionplanning" value="no"
+                                                       formControlName="transitionplanning"> No
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div> <!-- form-row -->
+                            <hr/>
+                            <!-- COR MDCPS Worker / Transition Worker -->
+                            <div class="form-row">
+                                <div class="col-12 col-md-6">
+                                    <label for="demographics.corWorker">COR MDCPS Worker</label>
+                                    <input type="phone" class="form-control form-control-sm"
+                                           id="demographics.corWorker" placeholder="MDCPS Worker"
+                                           formControlName="corWorker">
+                                </div>
+                                <div class="col-12 col-md-6 pt-2 pt-md-0">
+                                    <label for="transitionNavigator">Assigned Transition Navigator</label>
+                                    <select class="custom-select form-control form-control-sm">
+                                        <option selected>Choose Transition Navigator</option>
+                                        <option value="jazminhawthorne">Jazmin Hawthorne</option>
+                                        <option value="sharoncable">Sharon Cable</option>
+                                        <option value="kenikahudaon">Kenika Hudson</option>
+                                        <option value="natashaivory">Natasha Ivory</option>
+                                        <option value="gingerlambert">Ginger Lambert</option>
+                                        <option value="teresamoore">Teresa Moore</option>
+                                        <option value="jackiepotters">Jackie Potters</option>
+                                        <option value="temcularobinson">Temcula Robinson</option>
+                                    </select>
+                                </div>
+                            </div> <!-- form-row -->
+                            <hr/>
+
+                            <a class="btn btn-outline-primary float-right" href="./ya-housing.html">
+                                <!--<i class="fa fa-home fa-fw" style="font-size: 20px;"></i>-->
+                                Next: Housing
+                            </a>
+                            <!-- ***Note: the above link is just for html demo below is for submission to Angular
+                            <button type="submit" class="btn btn-outline-primary float-right" >
+                                Next: Housing
+                            </button>
+                            -->
+                        </form>
+                    </div>
+                        <!-- #EndLibraryItem -->
+                    </div> <!-- col-xs-12 -->
+                </div> <!-- row -->
+            </div> <!-- col-md-8 col-lg-10 -->
+    </div> <!-- container -->
+
+    <!-- jQuery -->
+    <!--<script src="../vendor/jquery/jquery.min.js"></script>-->
+
+    <!-- Bootstrap Core JavaScript -->
+    <!--    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+    <!--<script src="../js/bootstrap.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    <script>
+        $( function() {
+            $( ".datepicker" ).datepicker({ minDate: -20, maxDate: "+1M +10D" });
+        } );
+    </script>
+
+
+
+</body>
+</html>
