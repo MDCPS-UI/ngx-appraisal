@@ -15,12 +15,13 @@ import { YaStipendsComponent } from './ya-stipends/ya-stipends.component';
 import { YaServicesComponent } from './ya-services/ya-services.component';
 import { YaPersonalComponent } from './ya-personal/ya-personal.component';
 import { YaActionsComponent } from './ya-actions/ya-actions.component';
+import { YaDocumentsComponent } from './ya-documents/ya-documents.component';
 
 @NgModule({
   imports: [
     CommonModule,
     YaFormsRoutingModule
   ],
-  declarations: [YaHousingComponent, YaEducationComponent, YaEmploymentComponent, YaInterestsComponent, YaPlacementsComponent, YaParentingComponent, YaHealthComponent, YaRelationshipsComponent, YaCriminalComponent, YaSkillsComponent, YaStipendsComponent, YaServicesComponent, YaPersonalComponent, YaActionsComponent]
+  declarations: [YaHousingComponent, YaEducationComponent, YaEmploymentComponent, YaInterestsComponent, YaPlacementsComponent, YaParentingComponent, YaHealthComponent, YaRelationshipsComponent, YaCriminalComponent, YaSkillsComponent, YaStipendsComponent, YaServicesComponent, YaPersonalComponent, YaActionsComponent, YaDocumentsComponent]
 })
 export class YaFormsModule { }
