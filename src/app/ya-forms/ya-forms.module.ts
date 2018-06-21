@@ -9,12 +9,13 @@ import { YaPlacementsComponent } from './ya-placements/ya-placements.component';
 import { YaParentingComponent } from './ya-parenting/ya-parenting.component';
 import { YaHealthComponent } from './ya-health/ya-health.component';
 import { YaRelationshipsComponent } from './ya-relationships/ya-relationships.component';
+import { YaCriminalComponent } from './ya-criminal/ya-criminal.component';
 
 @NgModule({
   imports: [
     CommonModule,
     YaFormsRoutingModule
   ],
-  declarations: [YaHousingComponent, YaEducationComponent, YaEmploymentComponent, YaInterestsComponent, YaPlacementsComponent, YaParentingComponent, YaHealthComponent, YaRelationshipsComponent]
+  declarations: [YaHousingComponent, YaEducationComponent, YaEmploymentComponent, YaInterestsComponent, YaPlacementsComponent, YaParentingComponent, YaHealthComponent, YaRelationshipsComponent, YaCriminalComponent]
 })
 export class YaFormsModule { }
