@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Services
 import { UtilService } from './shared/services/util/util.service';
+import { ProfileService } from './shared/services/profile/profile.service';
 
 // MDCPS Routes
 const ROUTES: Route[] = [
@@ -36,6 +37,6 @@ const ROUTES: Route[] = [
     RouterModule.forRoot(ROUTES)
   ],
   exports: [RouterModule],
-  providers: [UtilService]
+  providers: [UtilService, ProfileService]
 })
 export class AppRoutingModule { }

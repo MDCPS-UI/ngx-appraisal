@@ -2,7 +2,7 @@
   <mat-sidenav #sidenav mode="side" opened="true" class="sidebar-nav"
   [fixedInViewport]="false" [fixedTopGap]="true"[fixedBottomGap]="true">
     <mat-nav-list class="sidebar-nav-list">
-      <a mat-list-item class="header-toggle-tabs" *ngFor="let tab of tabs" [routerLink]="('/dashboard' + tab.navigationUrl)">
+      <a href="#" mat-list-item class="header-toggle-tabs" *ngFor="let tab of tabs" (click)="onNavigate($event, '/dashboard', tab)">
         <span mat-line>{{tab.label}}</span>
       </a>
     </mat-nav-list>

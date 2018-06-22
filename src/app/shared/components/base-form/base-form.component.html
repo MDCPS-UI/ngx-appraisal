@@ -3,3 +3,21 @@
   <button *ngIf="config?.previousBtn" class="btn btn-outline-primary pull-left" type="button" (click)="onPrevious($event)">Previous: {{config?.previousBtnLabel}}</button>
   <button *ngIf="config?.nextBtn" class="btn btn-outline-primary pull-right" type="submit">Next: {{config?.nextBtnLabel}}</button>
 </form>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title">Unsaved Changes</h5>
+    <button type="button" class="close" aria-label="Close" (click)="d('Dismiss')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <h6>Do you want to save the changes you made to {{formName}}?</h6>
+    <p class="mdcps-helper-text">Your changes will be lost if you don't save them.</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="onAction(c, 'save')">Save</button>
+    <button type="button" class="btn btn-danger" (click)="onAction(c, 'discard')">Discard</button>
+    <button type="button" class="btn btn-link" (click)="c('Close')">Cancel</button>
+  </div>
+</ng-template>

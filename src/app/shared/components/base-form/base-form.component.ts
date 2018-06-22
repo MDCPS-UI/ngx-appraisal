@@ -1,5 +1,8 @@
+import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, AbstractControl } from '@angular/forms';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ProfileService, MdcpsNavigationEvent } from '../../services/profile/profile.service';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 /**
  * @interface
@@ -10,7 +13,9 @@ interface BaseFormEvent {
   value: AbstractControl;
 };
 
-
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-base-form',
   templateUrl: './base-form.component.html',
@@ -32,6 +37,17 @@ export class BaseFormComponent implements OnInit {
   /**
    * @public
    */
+  @ViewChild('content')
+  public content: ElementRef;
+
+  /**
+   * @public
+   */
+  public navEvent: MdcpsNavigationEvent;
+
+  /**
+   * @public
+   */
   @Output()
   public next: EventEmitter<BaseFormEvent> = new EventEmitter<BaseFormEvent>();
 
@@ -44,7 +60,12 @@ export class BaseFormComponent implements OnInit {
   /**
    * @constructor
    */
-  constructor() { }
+  constructor(
+    private router: Router,
+    private modalService: NgbModal,
+    private profileService: ProfileService) {
+    this.subscribeToNavigationReq();
+  }
 
   /**
    * @public
@@ -54,20 +75,76 @@ export class BaseFormComponent implements OnInit {
   /**
    * @public
    */
-  public onNext(form: FormGroup, value: any): void {
+  public onNext(form?: FormGroup, value?: any): void {
     this.next.emit({
-      form: form,
-      value: value
+      form: form || this.baseFormGroup,
+      value: value || this.baseFormGroup.value
     });
   }
 
   /**
    * @public
    */
-  public onPrevious(e: MouseEvent): void {
-    this.previous.emit({e: e,
+  public onPrevious(e?: MouseEvent): void {
+    this.previous.emit({
+      e: e,
       form: this.baseFormGroup,
       value: this.baseFormGroup.value
     });
+  }
+
+  /**
+   * @public
+   */
+  public subscribeToNavigationReq(): void {
+    this.profileService.getNavigation()
+      .subscribe((config: MdcpsNavigationEvent) => {
+        this.navEvent = config;
+
+        // in case if the form is dirty, prompt
+        // user to save or discard it.
+        if (this.baseFormGroup.dirty) {
+          this.openVerticallyCentered(this.content);
+        } else {
+          this.proceedWithNavigation(config);
+        }
+      });
+  }
+
+  /**
+   * @public
+   */
+  public proceedWithNavigation(config?: MdcpsNavigationEvent): void {
+    config = config || this.navEvent;
+
+    // construct the navigation url
+    const url: string = ((config.routePrefix || '')
+      + config.navigationUrl + (config.routeSuffix || ''));
+
+    // navigate to the requested route
+    this.router.navigate([url]);
+  }
+
+  /**
+   * @public
+   */
+  public openVerticallyCentered(content: any) {
+    this.modalService.open(content, {
+      centered: true,
+      windowClass: 'mdcps-modal'
+    });
+  }
+
+  /**
+   * @public
+   */
+  public onAction(dismiss: Function, action: string): void {
+    if (action == 'save') {
+      dismiss('save');
+      this.onNext();
+    } else if (action == 'discard') {
+      dismiss('discard');
+      this.proceedWithNavigation();
+    }
   }
 }
