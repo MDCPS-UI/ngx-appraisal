@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 /**
  * @author: Shoukath Mohammed
@@ -9,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.scss']
 })
 export class SideBarComponent implements OnInit {
+  /**
+   * @public
+   */
+  @Input()
   public tabs: any[] = [];
 
   /**
@@ -22,20 +26,5 @@ export class SideBarComponent implements OnInit {
    *  @return: void
    *  @description: N/A
    */
-  public ngOnInit(): void {
-    this.tabs = [
-      {
-        label: 'Demographics',
-        navigationUrl: '/demographics'
-      },
-      {
-        label: 'Skills',
-        navigationUrl: '/skills'
-      },
-      {
-        label: 'Stipends',
-        navigationUrl: '/stipends'
-      }
-    ];
-  }
+  public ngOnInit(): void { }
 }

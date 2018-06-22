@@ -1,15 +1,9 @@
 <!-- Injection Point For Dashboard Routes-->
 <mdcps-header>
-    <mdcps-side-bar>
+    <mdcps-side-bar [tabs]="tabs">
         <div class="container-fluid">
             <mdcps-youth-appraisal></mdcps-youth-appraisal>
-
-            <div class="mdcps-youth-appr-container">
-                <div class="mdcps-youth-appr-header">Questionnaire</div>
-                <div class="mdcps-youth-appr-wrapper">
-                    <router-outlet></router-outlet>
-                </div>
-            </div>
+            <router-outlet></router-outlet>
         </div>
     </mdcps-side-bar>
 </mdcps-header>

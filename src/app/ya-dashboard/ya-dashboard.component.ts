@@ -1,31 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { SIDE_NAV_TABS } from './../shared/constants/side-nav.constants';
 
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-dashboard',
   templateUrl: './ya-dashboard.component.html',
   styleUrls: ['./ya-dashboard.component.scss']
 })
 export class YaDashboardComponent implements OnInit {
-  public isLinear: boolean = false;
-  public firstFormGroup: FormGroup;
-  public secondFormGroup: FormGroup;
+  /**
+   * @public
+   */
+  public tabs: any[] = [];
 
   /**
    * @constructor
-   * @param fb
    */
-  constructor(private fb: FormBuilder) { }
+  constructor() { }
 
   /**
    * @public
    */
   public ngOnInit(): void {
-    this.firstFormGroup = this.fb.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this.fb.group({
-      secondCtrl: ['', Validators.required]
-    });
+    this.tabs = SIDE_NAV_TABS;
   }
 }
