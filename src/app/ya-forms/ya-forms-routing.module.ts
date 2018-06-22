@@ -35,71 +35,122 @@ const ROUTES: Route[] = [{
     },
     {
       path: 'demographics',
-      component: YaDemographicsComponent
+      component: YaDemographicsComponent,
+      data: {
+        formName: 'Demographics'
+      }
     },
     {
       path: 'housing',
-      component: YaHousingComponent
+      component: YaHousingComponent,
+      data: {
+        formName: 'Housing'
+      }
     },
     {
       path: 'education',
-      component: YaEducationComponent
+      component: YaEducationComponent,
+      data: {
+        formName: 'Education'
+      }
     },
     {
       path: 'employment',
-      component: YaEmploymentComponent
+      component: YaEmploymentComponent,
+      data: {
+        formName: 'Employment'
+      }
     },
     {
       path: 'interests',
-      component: YaInterestsComponent
+      component: YaInterestsComponent,
+      data: {
+        formName: 'Social Interests'
+      }
     },
     {
       path: 'placements',
-      component: YaPlacementsComponent
+      component: YaPlacementsComponent,
+      data: {
+        formName: 'Placement & Safety'
+      }
     },
     {
       path: 'parenting',
-      component: YaParentingComponent
+      component: YaParentingComponent,
+      data: {
+        formName: 'Pregnant/Parenting'
+      }
     },
     {
       path: 'health',
-      component: YaHealthComponent
+      component: YaHealthComponent,
+      data: {
+        formName: 'Health'
+      }
     },
     {
       path: 'relationships',
-      component: YaRelationshipsComponent
+      component: YaRelationshipsComponent,
+      data: {
+        formName: 'Relationships'
+      }
     },
     {
       path: 'criminal',
-      component: YaCriminalComponent
+      component: YaCriminalComponent,
+      data: {
+        formName: 'Criminal Justice System'
+      }
     },
     {
       path: 'skills',
-      component: YaSkillsComponent
+      component: YaSkillsComponent,
+      data: {
+        formName: 'Life Skills'
+      }
     },
     {
       path: 'stipends',
-      component: YaStipendsComponent
+      component: YaStipendsComponent,
+      data: {
+        formName: 'Stipends'
+      }
     },
     {
       path: 'services',
-      component: YaServicesComponent
+      component: YaServicesComponent,
+      data: {
+        formName: 'Continuing Support/Services'
+      }
     },
     {
       path: 'personal',
-      component: YaPersonalComponent
+      component: YaPersonalComponent,
+      data: {
+        formName: 'Personal'
+      }
     },
     {
       path: 'actions',
-      component: YaActionsComponent
+      component: YaActionsComponent,
+      data: {
+        formName: 'Goals and Actions'
+      }
     },
     {
       path: 'documents',
-      component: YaDocumentsComponent
+      component: YaDocumentsComponent,
+      data: {
+        formName: 'Received Documents'
+      }
     },
     {
       path: 'review',
-      component: YaReviewComponent
+      component: YaReviewComponent,
+      data: {
+        formName: 'Review & Sign'
+      }
     }]
 }];
 
