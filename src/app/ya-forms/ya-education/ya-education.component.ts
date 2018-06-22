@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'mdcps-ya-education',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YaEducationComponent implements OnInit {
 
-  constructor() { }
+ /**
+   * @public
+   */
+  public educationForm: FormGroup;
+
+  /**
+   * @constructor
+   * @param {fb<FormBuilder>}
+   */
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }

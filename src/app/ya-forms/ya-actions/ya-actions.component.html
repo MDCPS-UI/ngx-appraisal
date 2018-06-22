@@ -1,3 +1,207 @@
-<p>
-  ya-actions works!
-</p>
+<mdcps-base-form [baseFormGroup]="actionsForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Received Documents'}"
+  [formGroup]="actionsForm">
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.educationGoals" class="col-form-label">
+        1. Education Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.educationGoals" placeholder="Goals" formControlName="educationGoals"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.educationGoalTasks" class="col-form-label">
+        Task to Reach Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.educationGoalTasks" placeholder="Tasks" formControlName="educationGoalTasks"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.educationGoalProgress" class="col-form-label">
+        Progress to Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.educationGoalProgress" placeholder="Progress"
+        formControlName="educationGoalProgress"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label class="col-form-label" for="goalsandactions.educationGoalsCompletionDate">
+        Completion Date
+      </label>
+      <input type="text" class="form-control datepicker w-75" id="goalsandactions.educationGoalsCompletionDate" placeholder="Completion"
+        rows="2" formControlName="educationGoalsCompletionDate">
+      </input>
+    </div>
+
+  </div>
+  <!-- 1. Education -->
+  <hr/>
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.educationGoals" class="col-form-label">
+        2. Housing Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.housingGoals" placeholder="Goals" formControlName="housingGoals"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.housingGoalTasks" class="col-form-label">
+        Task to Reach Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.housingGoalTasks" placeholder="Tasks" formControlName="housingGoalTasks"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.housingGoalProgress" class="col-form-label">
+        Progress to Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.housingGoalProgress" placeholder="Progress"
+        formControlName="housingGoalProgress"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label class="col-form-label" for="goalsandactions.goalsCompletionDate">
+        Completion Date
+      </label>
+      <input type="text" class="form-control datepicker w-75" id="goalsandactions.housingGoalsCompletionDate" placeholder="Completion"
+        rows="2" formControlName="goalsCompletionDate">
+      </input>
+    </div>
+
+  </div>
+  <!-- 2. Housing -->
+  <hr/>
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.educationGoals" class="col-form-label">
+        3. Employment Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.employmentGoals" placeholder="Goals" formControlName="employmentGoals"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.employmentGoalsTasks" class="col-form-label">
+        Task to Reach Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.employmentGoalsTasks" placeholder="Tasks" formControlName="employmentGoalsTasks"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.employmentGoalProgress" class="col-form-label">
+        Progress to Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.employmentGoalProgress" placeholder="Progress"
+        formControlName="employmentGoalProgress"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label class="col-form-label" for="goalsandactions.goalsCompletionDate">
+        Completion Date
+      </label>
+      <input type="text" class="form-control datepicker w-75" id="goalsandactions.employmentGoalsCompletionDate" placeholder="Completion"
+        rows="2" formControlName="employmentGoalsCompletionDate">
+      </input>
+    </div>
+
+  </div>
+  <!-- 3. Employment -->
+  <hr/>
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.educationGoals" class="col-form-label">
+        4. Transportation Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.educationGoals" placeholder="Goals" formControlName="educationGoals"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.educationGoalTasks" class="col-form-label">
+        Task to Reach Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.educationGoalTasks" placeholder="Tasks" id="goalsandactions.educationGoalTasks"
+        placeholder="Tasks" formControlName="educationGoalTasks"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.educationGoalProgress" class="col-form-label">
+        Progress to Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.educationGoalProgress" placeholder="Progress"
+        formControlName="educationGoalProgress"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label class="col-form-label" for="goalsandactions.goalsCompletionDate">
+        Completion Date
+      </label>
+      <input type="text" class="form-control datepicker w-75" id="goalsandactions.goalsCompletionDate" placeholder="Completion"
+        rows="2" formControlName="goalsCompletionDate">
+      </input>
+    </div>
+
+  </div>
+  <!-- 4. Transportation -->
+  <hr/>
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.educationGoals" class="col-form-label">
+        5. Supportive Connections Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.educationGoals" placeholder="Goals" formControlName="educationGoals"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.educationGoalTasks" class="col-form-label">
+        Task to Reach Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.educationGoalTasks" placeholder="Tasks" formControlName="educationGoalTasks"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.educationGoalProgress" class="col-form-label">
+        Progress to Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.educationGoalProgress" placeholder="Progress"
+        formControlName="educationGoalProgress"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label class="col-form-label" for="goalsandactions.goalsCompletionDate">
+        Completion Date
+      </label>
+      <input type="text" class="form-control datepicker w-75" id="goalsandactions.supportiveConnectionsGoalsCompletionDate" placeholder="Completion"
+        rows="2" formControlName="goalsCompletionDate">
+      </input>
+    </div>
+
+  </div>
+  <!-- 5. Supportive Connections -->
+  <hr/>
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.educationGoals" class="col-form-label">
+        6. Other
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.educationGoals" placeholder="Goals" formControlName="educationGoals"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.educationGoalTasks" class="col-form-label">
+        Task to Reach Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.educationGoalTasks" placeholder="Tasks" formControlName="educationGoalTasks"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label for="goalsandactions.educationGoalProgress" class="col-form-label">
+        Progress to Goals
+      </label>
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.educationGoalProgress" placeholder="Progress"
+        formControlName="educationGoalProgress"></textarea>
+    </div>
+    <div class="col-12 col-md-3">
+      <label class="col-form-label" for="goalsandactions.goalsCompletionDate">
+        Completion Date
+      </label>
+      <input type="text" class="form-control datepicker w-75" id="goalsandactions.goalsCompletionDate" placeholder="Completion"
+        rows="2" formControlName="goalsCompletionDate">
+      </input>
+    </div>
+
+  </div>
+  <!-- 6. Other -->
+  <hr/>
+  <div class="row">
+    <div class="col-12 ">
+      <label class="col-form-label" for="education.notes">
+        Notes
+      </label>
+      <textarea type="text" class="form-control" id="education.gedProgress" placeholder="Reason" rows="4" formControlName="notes">
+      </textarea>
+    </div>
+  </div>
+  <!-- form-row -->
+  <hr/>
+</mdcps-base-form>

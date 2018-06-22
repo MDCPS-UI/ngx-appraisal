@@ -1,3 +1,75 @@
-<p>
-  ya-interests works!
-</p>
+<mdcps-base-form [baseFormGroup]="interestsForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Placement & Safety'}"
+  [formGroup]="interestsForm">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label class="col-form-label">Are you involved in extracurricular activities?</label>
+      <fieldset class="form-group">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="extraActivities" value="yes" formControlName="extraActivities"> &nbsp;Yes
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="extraActivities" value="no" formControlName="extraActivities"> &nbsp;No
+          </label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+      <label for="socialinterests.listActivities">If Yes, list:</label>
+      <textarea type="tel" class="form-control" id="socialinterests.listActivities" placeholder="List your activities" formControlName="listActivities"
+        rows="3"></textarea>
+    </div>
+  </div>
+  <!-- form-row -->
+  <hr/>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label class="col-form-label">Are you involved in religious activities or spiritual practices?</label>
+      <fieldset class="form-group">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="religiousActivities" value="yes" formControlName="religiousActivities"> &nbsp;Yes
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="religiousActivities" value="no" formControlName="religiousActivities"> &nbsp;No
+          </label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+      <label for="socialinterests.listActivities">If Yes, list:</label>
+      <textarea type="tel" class="form-control" id="socialinterests.listReligiousActivities" placeholder="List your activities"
+        formControlName="listReligiousActivities" rows="3"></textarea>
+    </div>
+  </div>
+  <!-- form-row -->
+  <hr/>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label class="col-form-label">Do you have hobbies or other interests?</label>
+      <fieldset class="form-group">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="hobbies" value="yes" formControlName="hobbies"> &nbsp;Yes
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="hobbies" value="no" formControlName="hobbies"> &nbsp;No
+          </label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+      <label for="socialinterests.listActivities">If Yes, list:</label>
+      <textarea type="tel" class="form-control" id="socialinterests.listhobbies" placeholder="List your hobbies or other interests"
+        formControlName="listhobbies" rows="3"></textarea>
+    </div>
+  </div>
+  <!-- form-row -->
+  <hr/>
+</mdcps-base-form>

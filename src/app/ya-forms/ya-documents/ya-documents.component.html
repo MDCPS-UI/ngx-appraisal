@@ -1,3 +1,349 @@
-<p>
-  ya-documents works!
-</p>
+<mdcps-base-form [baseFormGroup]="housingForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Review & Sign'}"
+  [formGroup]="housingForm">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Received Documents</th>
+            <th>Status</th>
+            <th>If no, explain</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              His/her original Birth Certificate
+            </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              His/her original Social Security Card
+            </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Medicaid Card
+            </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              His/her original State I.D. or Drivers License
+            </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Court Orders
+            </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Education Documents (report card etc.)
+            </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Original Death Certificates (if parents are deceased) </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Original Documentation of citizenship or naturalization if applicable.
+            </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Medical/immunization records
+            </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Religious documents and Information
+            </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              List of known relatives with relationship and contact information.
+            </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Previous placement information
+            </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Passport (if applicable)
+            </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Photographs (if applicable)
+            </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Resource Guide
+            </td>
+            <td>
+              <fieldset class="form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                  </label>
+                </div>
+              </fieldset>
+            </td>
+            <td>
+              <input class="form-control form-control-sm" formControlName="contactPhone">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- form-row -->
+  <hr/>
+</mdcps-base-form>

@@ -1,3 +1,215 @@
-<p>
-  ya-skills works!
-</p>
+<mdcps-base-form [baseFormGroup]="skillsForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Stipends'}"
+  [formGroup]="skillsForm">
+  <div class="row">
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">Please indicate which of the following skills apply?</label>
+        <fieldset class="form-group">
+            <div class="form-check">
+                <label class="form-check-label ">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="01"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I know how to use my email account
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="02"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I can make meals without using a recipe
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label ">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="03"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I know how to do my own laundry
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="04"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I can get medical and dental care when I need it
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label ">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="05"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I bathe daily
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="06"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I brush my teeth daily
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label ">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="07"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I know how to get myself away from harmful situations
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="08"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I can speak up for myself
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label ">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="09"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I know the signs of an abusive relationship
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="10"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I can deal with anger without hurting myself or others
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label ">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="11"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I know how to balance my bank account
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="12"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I know how to develop a budget
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label ">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="13"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I know how to create a resume
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="14"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I can complete a job application
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label ">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="15"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I know how to prepare for a job interview
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="16"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I can describe my vision for myself
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="lifeSkills" value="17"
+                           formControlName="lifeSkills"> &nbsp;
+                    &nbsp;I know how to drive
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">Which of the following Independent Living Services have you received?</label>
+        <fieldset class="form-group">
+            <div class="form-check">
+                <label class="form-check-label ">
+                    <input type="checkbox" class="form-check-input"
+                           name="independentLivingServices" value="01"
+                           formControlName="independentLivingServices"> &nbsp;
+                    &nbsp;Educational Support
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="independentLivingServices" value="02"
+                           formControlName="independentLivingServices"> &nbsp;
+                    &nbsp;Employment Services
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label ">
+                    <input type="checkbox" class="form-check-input"
+                           name="independentLivingServices" value="03"
+                           formControlName="independentLivingServices"> &nbsp;
+                    &nbsp;Health Care
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="independentLivingServices" value="04"
+                           formControlName="independentLivingServices"> &nbsp;
+                    &nbsp;Money Management
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label ">
+                    <input type="checkbox" class="form-check-input"
+                           name="independentLivingServices" value="05"
+                           formControlName="independentLivingServices"> &nbsp;
+                    &nbsp;Housing
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="independentLivingServices" value="06"
+                           formControlName="independentLivingServices"> &nbsp;
+                    &nbsp;After Care
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label ">
+                    <input type="checkbox" class="form-check-input"
+                           name="independentLivingServices" value="07"
+                           formControlName="independentLivingServices"> &nbsp;
+                    &nbsp;ETV
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    </div>
+</div> <!-- form-row -->
+<hr/>
+</mdcps-base-form>

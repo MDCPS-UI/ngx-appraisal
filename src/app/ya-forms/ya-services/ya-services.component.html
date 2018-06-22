@@ -1,3 +1,281 @@
-<p>
-  ya-services works!
-</p>
+<mdcps-base-form [baseFormGroup]="servicesForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Personal'}"
+  [formGroup]="servicesForm">
+  <div class="row">
+    <div class="col-12">
+        <label class="col-form-label">
+            If the youth is enrolled in a Post-secondary institution, is he/she enrolled in the Educational Training Voucher program (ETV)?
+        </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="yes"
+                           formControlName="etv"> Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="no"
+                           formControlName="etv"> No
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="requested"
+                           formControlName="etv"> Requested
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="no"
+                           formControlName="etv"> Not Applicable
+                </label>
+            </div>
+        </fieldset>
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12">
+        <label class="col-form-label">
+            Has the youth been assisted with applying for Medicaid?
+        </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="appliedMedicaid" value="yes"
+                           formControlName="appliedMedicaid"> Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="appliedMedicaid" value="no"
+                           formControlName="appliedMedicaid"> No
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="appliedMedicaid" value="requested"
+                           formControlName="appliedMedicaid"> Requested
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="appliedMedicaid" value="no"
+                           formControlName="appliedMedicaid"> Not Applicable
+                </label>
+            </div>
+        </fieldset>
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12">
+        <label class="col-form-label">
+            Have other health care options been explored?
+        </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="yes"
+                           formControlName="etv"> Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="no"
+                           formControlName="etv"> No
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="requested"
+                           formControlName="etv"> Requested
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="no"
+                           formControlName="etv"> Not Applicable
+                </label>
+            </div>
+        </fieldset>
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12">
+        <label class="col-form-label">
+            Have extended permanent connections been made for needed support services (i.e mental health services, Substance Abuse counseling, parenting classes, counseling, financial support).
+        </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="yes"
+                           formControlName="etv"> Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="no"
+                           formControlName="etv"> No
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="requested"
+                           formControlName="etv"> Requested
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="no"
+                           formControlName="etv"> Not Applicable
+                </label>
+            </div>
+        </fieldset>
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12">
+        <label class="col-form-label">
+            Have transportation needs been identified and addressed?
+        </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="yes"
+                           formControlName="etv"> Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="no"
+                           formControlName="etv"> No
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="requested"
+                           formControlName="etv"> Requested
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="no"
+                           formControlName="etv"> Not Applicable
+                </label>
+            </div>
+        </fieldset>
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12">
+        <label class="col-form-label">
+            Has the youth applied for any available public assistance? (SNAP, TANF,
+        </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="yes"
+                           formControlName="etv"> Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="no"
+                           formControlName="etv"> No
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="requested"
+                           formControlName="etv"> Requested
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="no"
+                           formControlName="etv"> Not Applicable
+                </label>
+            </div>
+        </fieldset>
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12">
+        <label class="col-form-label">
+            Housing voucher, daycare voucher, etc)
+        </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="yes"
+                           formControlName="etv"> Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="no"
+                           formControlName="etv"> No
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="requested"
+                           formControlName="etv"> Requested
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="etv" value="no"
+                           formControlName="etv"> Not Applicable
+                </label>
+            </div>
+        </fieldset>
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 ">
+        <label class="col-form-label" for="personal.notes">
+            Notes
+        </label>
+        <textarea type="text" class="form-control"
+                  id="education.gedProgress"
+                  placeholder="Reason" rows="4" formControlName="notes">
+                </textarea>
+    </div>
+</div> <!-- form-row -->
+<hr/>
+</mdcps-base-form>

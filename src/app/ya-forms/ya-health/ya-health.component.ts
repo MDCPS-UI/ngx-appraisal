@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'mdcps-ya-health',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YaHealthComponent implements OnInit {
 
-  constructor() { }
+ /**
+   * @public
+   */
+  public healthForm: FormGroup;
+
+  /**
+   * @constructor
+   * @param {fb<FormBuilder>}
+   */
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }
