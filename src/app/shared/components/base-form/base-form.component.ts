@@ -56,7 +56,7 @@ export class BaseFormComponent implements OnInit {
   /**
    * @public
    */
-  public onSubmit(form: FormGroup, value: any): void {
+  public onNext(form: FormGroup, value: any): void {
     this.next.emit({
       form: form,
       value: value
