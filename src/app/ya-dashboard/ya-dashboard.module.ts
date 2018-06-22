@@ -22,7 +22,9 @@ const ROUTES: Route[] = [
   }
 ];
 
-
+/**
+ * @author: Shoukath Mohammed
+ */
 @NgModule({
   imports: [
     CommonModule,

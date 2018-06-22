@@ -2,7 +2,7 @@
     height: 100%;
 
     .sidebar-nav {
-        width: 200px;
+        width: 226px;
         background-color: #3f4d50;
         box-shadow: 3px 0 6px rgba(0,0,0,.24);
         -webkit-box-shadow: 3px 0 6px rgba(0,0,0,.24);
@@ -17,6 +17,12 @@
             padding-top: 15px;
             padding-right: 15px;
         }
+    }
+
+    .mat-list .mat-list-item,
+    .mat-nav-list .mat-list-item,
+    .mat-selection-list .mat-list-item {
+        font-size: 14px !important;
     }
 }
 
