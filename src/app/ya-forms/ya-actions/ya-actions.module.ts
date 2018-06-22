@@ -6,10 +6,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 // Components
 import { YaActionsComponent } from './ya-actions.component';
-import { BaseFormComponent } from './../../shared/components/base-form/base-form.component';
 
 // YA Action Form Routes
-const ACTION_FORM_ROUTES: Route[] = [
+const ROUTES: Route[] = [
   {
     path: '',
     component: YaActionsComponent
@@ -24,10 +23,9 @@ const ACTION_FORM_ROUTES: Route[] = [
     FormsModule,
     CommonModule,
     ReactiveFormsModule,
-    RouterModule.forChild(ACTION_FORM_ROUTES)
+    RouterModule.forChild(ROUTES)
   ],
   declarations: [
-    BaseFormComponent,
     YaActionsComponent
   ],
   exports: [RouterModule]

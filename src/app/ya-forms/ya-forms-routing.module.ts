@@ -1,27 +1,11 @@
 // Modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule, Route } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 // Components
 import { YaFormsComponent } from './ya-forms.component';
-import { YaReviewComponent } from './ya-review/ya-review.component';
-import { YaHealthComponent } from './ya-health/ya-health.component';
-import { YaSkillsComponent } from './ya-skills/ya-skills.component';
-import { YaHousingComponent } from './ya-housing/ya-housing.component';
-import { YaStipendsComponent } from './ya-stipends/ya-stipends.component';
-import { YaServicesComponent } from './ya-services/ya-services.component';
-import { YaPersonalComponent } from './ya-personal/ya-personal.component';
-import { YaCriminalComponent } from './ya-criminal/ya-criminal.component';
-import { YaDocumentsComponent } from './ya-documents/ya-documents.component';
-import { YaEducationComponent } from './ya-education/ya-education.component';
-import { YaInterestsComponent } from './ya-interests/ya-interests.component';
-import { YaParentingComponent } from './ya-parenting/ya-parenting.component';
-import { YaEmploymentComponent } from './ya-employment/ya-employment.component';
-import { YaPlacementsComponent } from './ya-placements/ya-placements.component';
-import { YaRelationshipsComponent } from './ya-relationships/ya-relationships.component';
 
 // YA Routes
 const ROUTES: Route[] = [
@@ -42,91 +26,91 @@ const ROUTES: Route[] = [
       },
       {
         path: 'housing',
-        component: YaHousingComponent,
+        loadChildren: './ya-housing/ya-housing.module#YaHousingModule',
         data: {
           formName: 'Housing'
         }
       },
       {
         path: 'education',
-        component: YaEducationComponent,
+        loadChildren: './ya-education/ya-education.module#YaEducationModule',
         data: {
           formName: 'Education'
         }
       },
       {
         path: 'employment',
-        component: YaEmploymentComponent,
+        loadChildren: './ya-employment/ya-employment.module#YaEmploymentModule',
         data: {
           formName: 'Employment'
         }
       },
       {
         path: 'interests',
-        component: YaInterestsComponent,
+        loadChildren: './ya-interests/ya-interests.module#YaInterestsModule',
         data: {
           formName: 'Social Interests'
         }
       },
       {
         path: 'placements',
-        component: YaPlacementsComponent,
+        loadChildren: './ya-placements/ya-placements.module#YaPlacementsModule',
         data: {
           formName: 'Placement & Safety'
         }
       },
       {
         path: 'parenting',
-        component: YaParentingComponent,
+        loadChildren: './ya-parenting/ya-parenting.module#YaParentingModule',
         data: {
           formName: 'Pregnant/Parenting'
         }
       },
       {
         path: 'health',
-        component: YaHealthComponent,
+        loadChildren: './ya-health/ya-heath.module#YaHealthModule',
         data: {
           formName: 'Health'
         }
       },
       {
         path: 'relationships',
-        component: YaRelationshipsComponent,
+        loadChildren: './ya-relationships/ya-relationships.module#YaRelationshipsModule',
         data: {
           formName: 'Relationships'
         }
       },
       {
         path: 'criminal',
-        component: YaCriminalComponent,
+        loadChildren: './ya-criminal/ya-criminal.module#YaCriminalModule',
         data: {
           formName: 'Criminal Justice System'
         }
       },
       {
         path: 'skills',
-        component: YaSkillsComponent,
+        loadChildren: './ya-skills/ya-skills.module#YaSkillsModule',
         data: {
           formName: 'Life Skills'
         }
       },
       {
         path: 'stipends',
-        component: YaStipendsComponent,
+        loadChildren: './ya-stipends/ya-stipends.module#YaStipendsModule',
         data: {
           formName: 'Stipends'
         }
       },
       {
         path: 'services',
-        component: YaServicesComponent,
+        loadChildren: './ya-services/ya-services.module#YaServicesModule',
         data: {
           formName: 'Continuing Support/Services'
         }
       },
       {
         path: 'personal',
-        component: YaPersonalComponent,
+        loadChildren: './ya-personal/ya-personal.module#YaPersonalModule',
         data: {
           formName: 'Personal'
         }
@@ -140,14 +124,14 @@ const ROUTES: Route[] = [
       },
       {
         path: 'documents',
-        component: YaDocumentsComponent,
+        loadChildren: './ya-documents/ya-documents.module#YaDocumentsModule',
         data: {
           formName: 'Received Documents'
         }
       },
       {
         path: 'review',
-        component: YaReviewComponent,
+        loadChildren: './ya-review/ya-review.module#YaReviewModule',
         data: {
           formName: 'Review & Sign'
         }
@@ -160,30 +144,13 @@ const ROUTES: Route[] = [
  */
 @NgModule({
   imports: [
-    NgbModule,
     FormsModule,
     CommonModule,
     ReactiveFormsModule,
     RouterModule.forChild(ROUTES)
   ],
   declarations: [
-    YaFormsComponent,
-    YaReviewComponent,
-    YaHealthComponent,
-    YaSkillsComponent,
-    YaHousingComponent,
-    YaCriminalComponent,
-    YaStipendsComponent,
-    YaServicesComponent,
-    YaPersonalComponent,
-    YaDocumentsComponent,
-    YaParentingComponent,
-    YaEducationComponent,
-    YaInterestsComponent,
-    YaPlacementsComponent,
-    YaEmploymentComponent,
-
-    YaRelationshipsComponent
+    YaFormsComponent
   ],
   exports: [RouterModule]
 })

@@ -9,7 +9,7 @@ import { YaDemographicsComponent } from './ya-demographics.component';
 import { BaseFormComponent } from './../../shared/components/base-form/base-form.component';
 
 // YA Demographics Form Routes
-const DEMOGRAPHICS_FORM_ROUTES: Route[] = [
+const ROUTES: Route[] = [
   {
     path: '',
     component: YaDemographicsComponent
@@ -24,7 +24,7 @@ const DEMOGRAPHICS_FORM_ROUTES: Route[] = [
     FormsModule,
     CommonModule,
     ReactiveFormsModule,
-    RouterModule.forChild(DEMOGRAPHICS_FORM_ROUTES)
+    RouterModule.forChild(ROUTES)
   ],
   declarations: [
     BaseFormComponent,
