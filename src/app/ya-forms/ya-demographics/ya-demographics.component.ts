@@ -47,9 +47,9 @@ export class YaDemographicsComponent implements OnInit {
   /**
    * @public
    */
-  public onSubmit(form: FormGroup, value: any): void {
-    if (form.valid) {
-      console.log(form.value);
+  public onSubmit(event: any): void {
+    if (event.form && event.form.valid) {
+      console.log(event.form.value);
     }
   }
 }

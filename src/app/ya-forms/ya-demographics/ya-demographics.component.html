@@ -1,4 +1,5 @@
-<form [formGroup]="demographicsForm" (ngSubmit)="onSubmit(demographicsForm, demographicsForm.value)">
+<!-- <form [formGroup]="demographicsForm" (ngSubmit)="onSubmit(demographicsForm, demographicsForm.value)"> -->
+  <mdcps-base-form [baseFormGroup]="demographicsForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Housing'}" [formGroup]="demographicsForm">
   <!-- DOB & Age -->
   <div class="row">
     <div class="col-12 col-md-6">
@@ -234,7 +235,8 @@
     </div>
   </div>
   <!-- form-row -->
-  <hr/>
+  <hr >
+
   <!-- COR MDCPS Worker / Transition Worker -->
   <div class="form-row">
     <div class="col-12 col-md-6">
@@ -258,5 +260,6 @@
   </div>
   <hr>
 
-  <button class="btn btn-outline-primary pull-right" type="submit">Next: Housing</button>
-</form>
+  <!-- <button class="btn btn-outline-primary pull-right" type="submit">Next: Housing</button>
+</form> -->
+</mdcps-base-form>

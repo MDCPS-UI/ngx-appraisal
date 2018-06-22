@@ -1,7 +1,7 @@
 // Modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule, Route } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -24,6 +24,7 @@ import { YaEmploymentComponent } from './ya-employment/ya-employment.component';
 import { YaPlacementsComponent } from './ya-placements/ya-placements.component';
 import { YaDemographicsComponent } from './ya-demographics/ya-demographics.component';
 import { YaRelationshipsComponent } from './ya-relationships/ya-relationships.component';
+import { BaseFormComponent } from './../shared/components/base-form/base-form.component';
 
 // YA Routes
 const ROUTES: Route[] = [{
@@ -161,6 +162,7 @@ const ROUTES: Route[] = [{
 @NgModule({
   imports: [
     NgbModule,
+    FormsModule,
     CommonModule,
     ReactiveFormsModule,
     RouterModule.forChild(ROUTES)
@@ -168,6 +170,7 @@ const ROUTES: Route[] = [{
   declarations: [
     YaFormsComponent,
     YaReviewComponent,
+    BaseFormComponent,
     YaHealthComponent,
     YaSkillsComponent,
     YaHousingComponent,
