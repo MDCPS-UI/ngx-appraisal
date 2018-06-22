@@ -68,7 +68,7 @@ const ROUTES: Route[] = [
       },
       {
         path: 'health',
-        loadChildren: './ya-health/ya-heath.module#YaHealthModule',
+        loadChildren: './ya-health/ya-health.module#YaHealthModule',
         data: {
           formName: 'Health'
         }
