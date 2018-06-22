@@ -63,9 +63,19 @@ fieldset {
     background-color: rgba(#3f51b5, 0.26) !important;
 }
 
+.mat-list .mat-list-item,
+.mat-nav-list .mat-list-item,
+.mat-selection-list .mat-list-item {
+    color: #bdbdbd;
+}
+
 //
 .mdcps-input {
     border-radius: 0;
+}
+
+.mat-toolbar.mat-primary {
+    background: #28a745 !important;
 }
 
 .mdcps-youth-appr-container {
