@@ -1,0 +1,5 @@
+<form [formGroup]="baseFormGroup" (ngSubmit)="onNext(baseFormGroup, baseFormGroup.value)" *ngIf="baseFormGroup">
+  <ng-content></ng-content>
+  <button *ngIf="config?.previousBtn" class="btn btn-outline-primary pull-left" type="button" (click)="onPrevious($event)">Previous: {{config?.previousBtnLabel}}</button>
+  <button *ngIf="config?.nextBtn" class="btn btn-outline-primary pull-right" type="submit">Next: {{config?.nextBtnLabel}}</button>
+</form>

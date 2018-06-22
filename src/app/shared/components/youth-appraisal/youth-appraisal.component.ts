@@ -13,17 +13,21 @@ export class YouthAppraisalComponent implements OnInit {
    */
   public youthApprForm: FormGroup;
 
-  constructor() { }
+  /**
+   * @constructor
+   * @param {fb<FormBuilder>}
+   */
+  constructor(private fb: FormBuilder) { }
 
   /**
    * @public
    */
   public ngOnInit(): void {
-    this.youthApprForm = new FormGroup({
+    this.youthApprForm = this.fb.group({
       youthName: new FormControl('', []),
       youthId: new FormControl('', []),
       appraisalDate: new FormControl('', []),
-      status: new FormControl('', [])
+      status: new FormControl('', []),
     });
   }
 
