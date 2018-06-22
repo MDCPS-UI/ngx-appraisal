@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'mdcps-ya-review',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YaReviewComponent implements OnInit {
 
-  constructor() { }
+  /**
+   * @public
+   */
+  public reviewForm: FormGroup;
+
+  /**
+   * @constructor
+   * @param {fb<FormBuilder>}
+   */
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }

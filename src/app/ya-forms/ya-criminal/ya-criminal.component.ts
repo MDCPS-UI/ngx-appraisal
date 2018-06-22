@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'mdcps-ya-criminal',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YaCriminalComponent implements OnInit {
 
-  constructor() { }
+/**
+   * @public
+   */
+  public criminalForm: FormGroup;
+
+  /**
+   * @constructor
+   * @param {fb<FormBuilder>}
+   */
+  constructor(private fb: FormBuilder) { }
+
 
   ngOnInit() {
   }

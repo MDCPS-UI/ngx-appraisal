@@ -1,3 +1,362 @@
-<p>
-  ya-health works!
-</p>
+<mdcps-base-form [baseFormGroup]="healthForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Relationships'}"
+  [formGroup]="healthForm">
+  <div class="row">
+    <div class="col-12 col-md-6">
+         <label for="health.medicalIssues">Do you have any medical issues to address?</label>
+         <textarea type="tel" class="form-control" rows="4"
+                id="health.medicalIssues" formControlName="medicalIssues"
+                   placeholder="Medical Issues?"></textarea>
+    </div>
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">
+            Have you ever witnessed or experienced a traumatic event? </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="tramaticEvent" value="yes"
+                           formControlName="tramaticEvent"> &nbsp;&nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="tramaticEvent" value="no"
+                           formControlName="tramaticEvent"> &nbsp;&nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <label for="health.plannedattendance" class="pr-2">
+            Have you ever been the victim of any of the following types of abuse? </label>
+        <br/>
+        <fieldset class="form-group">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="abuseVictim" value="physical"
+                           formControlName="abuseVictim"> &nbsp;&nbsp;Physical
+                </label>
+            </div>
+            <div class="form-check ">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="abuseVictim" value="emotional"
+                           formControlName="abuseVictim">  &nbsp;&nbsp;Emotional
+                </label>
+            </div>
+            <div class="form-check ">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="abuseVictim" value="sexual"
+                           formControlName="abuseVictim">  &nbsp;Sexual
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="abuseVictim" value="neglect"
+                           formControlName="abuseVictim">  &nbsp;Neglect
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label col-4">
+                    <input type="checkbox" class="form-check-input form-check-input-inline"
+                           name="abuseVictim" value="other"
+                           formControlName="abuseVictim">  &nbsp;Other
+                </label>
+                <input type="text" class="form-check-input" formControlName="abuseVictimOther">
+            </div>
+        </fieldset>
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12">
+        <label >When was your last exam?</label>
+    </div> <!-- col-12 -->
+</div> <!-- form-row -->
+<div class="row">
+    <div class="col-12 col-md-3">
+        <label class="col-form-label"
+               for="health.dental">Dental </label>
+        <input type="text" class="form-control" id="health.dental"
+               placeholder="Grade" formControlName="dental">
+    </div>
+    <div class="col-12 col-md-3">
+        <label class="col-form-label"
+               for="health.medical">Medical </label>
+        <input type="text" class="form-control" id="health.medical"
+               placeholder="Grade" formControlName="medical">
+    </div>
+    <div class="col-12 col-md-3">
+        <label class="col-form-label"
+               for="health.vision">Vision </label>
+        <input type="text" class="form-control" id="health.vision"
+               placeholder="Grade" formControlName="grade">
+    </div>
+    <div class="col-12 col-md-3">
+        <label class="col-form-label"
+               for="health.psycological">Psycological </label>
+        <input type="text" class="form-control" id="health.psycological"
+               placeholder="Grade" formControlName="psycological">
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">
+            Are you sexually active?
+        </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="sexuallyActive" value="yes"
+                           formControlName="sexuallyActive"> &nbsp;&nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="sexuallyActive" value="no"
+                           formControlName="sexuallyActive"> &nbsp;&nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">
+            Do you have an adult to talk to about safe sex and reproductive health?
+        </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="adultToTalkTo" value="yes"
+                           formControlName="adultToTalkTo"> &nbsp;&nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="adultToTalkTo" value="no"
+                           formControlName="adultToTalkTo"> &nbsp;&nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-4">
+        <label class="col-form-label">
+            Have you been tested for HIV/AIDS?
+        </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="testedForHIV_AIDS" value="yes"
+                           formControlName="testedForHIV_AIDS"> &nbsp;&nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="testedForHIV_AIDS" value="no"
+                           formControlName="testedForHIV_AIDS"> &nbsp;&nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-4">
+        <label for="health.HIV_AIDSTestDate"
+               class="col-form-label">HIV/AIDS Date</label>
+        <input type="text" class="form-control form-control-sm datepicker w-50"
+               id="health.HIV_AIDSTestDate" placeholder="Date"
+               formControlName="HIV_AIDSTestDate">
+    </div>
+    <div class="col-12 col-md-4">
+        <label for="health.HIV_AIDSTestResults">
+            Test Results?</label>
+        <textarea type="text" class="form-control rows-4"
+                  id="health.HIV_AIDSTestResults"
+                  formControlName="HIV_AIDSTestResults"
+                  placeholder="Test Results"></textarea>
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-4">
+        <label class="col-form-label">
+            Have you been tested for STD/STI?
+        </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="testedForSTD_STI" value="yes"
+                           formControlName="testedForSTD_STI"> &nbsp;&nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="testedForSTD_STI" value="no"
+                           formControlName="testedForSTD_STI"> &nbsp;&nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-4">
+        <label for="health.STD_STITestDate"
+               class="col-form-label">STD/STI Date</label>
+        <input type="text" class="form-control form-control-sm datepicker w-50"
+               id="health.STD_STITestDate" placeholder="Date"
+               formControlName="STD_STITestDate">
+    </div>
+    <div class="col-12 col-md-4">
+        <label for="health.STD_STITestResults">
+            Test Results?</label>
+        <textarea type="text" class="form-control rows-4"
+                  id="health.STD_STITestResults"
+                  formControlName="HIV_AIDSTestResults"
+                  placeholder="Test Results"></textarea>
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-12">
+        <label for="health.receivingServices" class="pr-2">
+            Are you currently receiving services or treatment for any of the following:
+        </label>
+        <br/>
+        <fieldset class="form-group">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="receivingServices" value="mentalhealth"
+                           formControlName="receivingServices">
+                    &nbsp;Mental Health
+                </label>
+d                                        </div>
+            <div class="form-check ">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="receivingServices" value="substanceAbuse"
+                           formControlName="receivingServices">
+                    &nbsp;&nbsp;Substance Abuse
+                </label>
+            </div>
+            <div class="form-check ">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="receivingServices" value="learningdisability"
+                           formControlName="receivingServices">
+                    &nbsp;&nbsp;Learning Disability
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"
+                           name="receivingServices" value="developmentaldisability"
+                           formControlName="receivingServices">
+                    &nbsp;Developmental Disability
+
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label col-4">
+                    <input type="checkbox" class="form-check-input form-check-input-inline"
+                           name="receivingServices" value="physicaldisability"
+                           formControlName="receivingServices">
+                    &nbsp;Physical Disability
+                </label>
+            </div>
+        </fieldset>
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-4">
+        <label class="col-form-label">
+            Are you taking any medications?
+        </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="takingMedications" value="yes"
+                           formControlName="takingMedications"> &nbsp;&nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="takingMedications" value="no"
+                           formControlName="takingMedications"> &nbsp;&nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-4">
+        <label for="health.STD_STITestResults">
+            If yes, please list</label>
+        <textarea type="text" class="form-control rows-4"
+                  id="health.listMedications"
+                  formControlName="listMedications"
+                  placeholder="List Medications"></textarea>
+    </div>
+    <div class="col-12 col-md-4">
+        <label class="col-form-label">
+            Are your medications administered to you?
+        </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="medicationsAdministered" value="yes"
+                           formControlName="medicationsAdministered"> &nbsp;&nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="medicationsAdministered" value="no"
+                           formControlName="medicationsAdministered"> &nbsp;&nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-12">
+        <label class="col-form-label">
+            Do you keep track of your medical appointments?
+        </label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="trackMedicalAppts" value="yes"
+                           formControlName="trackMedicalAppts"> &nbsp;&nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="trackMedicalAppts" value="no"
+                           formControlName="trackMedicalAppts"> &nbsp;&nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+</div>
+<hr/>
+</mdcps-base-form>

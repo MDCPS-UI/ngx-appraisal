@@ -1,3 +1,243 @@
-<p>
-  ya-criminal works!
-</p>
+<mdcps-base-form [baseFormGroup]="criminalForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Life Skills'}"
+  [formGroup]="criminalForm">
+  <div class="row">
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">Have you ever been arrested?</label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label ">
+                    <input type="radio" class="form-check-input"
+                           name="everArrested" value="Yes"
+                           formControlName="everArrested"> &nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="everArrested" value="No"
+                           formControlName="everArrested"> &nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">Have you ever been convicted of a crime?</label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label ">
+                    <input type="radio" class="form-check-input"
+                           name="everConvicted" value="Yes"
+                           formControlName="everConvicted"> &nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="everConvicted" value="No"
+                           formControlName="everConvicted"> &nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">Do you currently have a warrant for your arrest?</label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label ">
+                    <input type="radio" class="form-check-input"
+                           name="warrantOut" value="Yes"
+                           formControlName="warrantOut"> &nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="warrantOut" value="No"
+                           formControlName="warrantOut"> &nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">Are you on probation?</label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label ">
+                    <input type="radio" class="form-check-input"
+                           name="onProbation" value="Yes"
+                           formControlName="onProbation"> &nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="onProbation" value="No"
+                           formControlName="onProbation"> &nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">If applicable, do you have legal representation?</label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label ">
+                    <input type="radio" class="form-check-input"
+                           name="legalRepresentation" value="Yes"
+                           formControlName="legalRepresentation"> &nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="legalRepresentation" value="No"
+                           formControlName="legalRepresentation"> &nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">Are you on parole?</label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label ">
+                    <input type="radio" class="form-check-input"
+                           name="onParole" value="Yes"
+                           formControlName="onParole"> &nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="onParole" value="No"
+                           formControlName="onParole"> &nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">Do you have an open court/criminal case?</label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label ">
+                    <input type="radio" class="form-check-input"
+                           name="openCase" value="Yes"
+                           formControlName="openCase"> &nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="openCase" value="No"
+                           formControlName="openCase"> &nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">Are you free on bond?</label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label ">
+                    <input type="radio" class="form-check-input"
+                           name="freeOnBond" value="Yes"
+                           formControlName="freeOnBond"> &nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="freeOnBond" value="No"
+                           formControlName="freeOnBond"> &nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">Are you involved in gang related activity?</label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label ">
+                    <input type="radio" class="form-check-input"
+                           name="gangRelated" value="Yes"
+                           formControlName="gangRelated"> &nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="gangRelated" value="No"
+                           formControlName="gangRelated"> &nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    </div>
+</div> <!-- form-row -->
+<hr/>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <label class="col-form-label">Do you possess a weapon?</label>
+        <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label ">
+                    <input type="radio" class="form-check-input"
+                           name="possessWeapon" value="Yes"
+                           formControlName="possessWeapon"> &nbsp;Yes
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input"
+                           name="possessWeapon" value="No"
+                           formControlName="possessWeapon"> &nbsp;No
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    </div>
+</div> <!-- form-row -->
+<hr/>
+</mdcps-base-form>

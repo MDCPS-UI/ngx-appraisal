@@ -1,3 +1,270 @@
-<p>
-  ya-review works!
-</p>
+<mdcps-base-form [baseFormGroup]="reviewForm" (next)="onSubmit($event)" [formGroup]="reviewForm">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <h4 class="card-title col-12 col-md-3">Sections: </h4>
+        <h5 class="card-text col-12 col-md-3 text-success">
+          Completed 6</h5>
+        <h5 class="card-text col-12 col-md-3 text-warning">
+          In-Process 1</h5>
+        <h5 class="card-text col-12 col-md-3 text-danger">
+          Not Started 9</h5>
+      </div>
+      <div class="row clearfix">
+        <div class="col-12 pt-sm-3">
+          <button class="btn btn-outline-primary float-left" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true"
+            aria-controls="collapseExample">
+            Show/Hide Sections
+          </button>
+          <button type="submit" class="btn btn-outline-primary float-right" disabled>
+            Submit Form
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr/>
+
+  <div class="collapse show" id="collapseExample">
+
+    <div class="card text-success">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Demographics</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Demographics description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-success d-block" href="./ya-demographics.html">
+            <i class="fa fa-check  float-left"></i>
+            Review</a>
+        </div>
+      </div>
+    </div>
+    <!-- Demographics -->
+    <hr/>
+    <div class="card text-success">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Housing</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Housing description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-success d-block" href="./ya-housing.html">
+            <i class="fa fa-check  float-left"></i>
+            Review</a>
+        </div>
+      </div>
+    </div>
+    <!-- Housing -->
+    <hr/>
+    <div class="card text-success">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Education</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Education description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-success d-block" href="./ya-education.html">
+            <i class="fa fa-check  float-left"></i>
+            Review</a>
+        </div>
+      </div>
+    </div>
+    <!-- Education -->
+    <hr/>
+    <div class="card text-success">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Employment</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Employment description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-success d-block" href="./ya-employment.html">
+            <i class="fa fa-check  float-left"></i>
+            Review</a>
+        </div>
+      </div>
+    </div>
+    <!-- Employment -->
+    <hr/>
+    <div class="card text-success">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Social Interests</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Social Interests description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-success d-block" href="./ya-socialinterests.html">
+            <i class="fa fa-check  float-left"></i>
+            Review</a>
+        </div>
+      </div>
+    </div>
+    <!-- Social Interests -->
+    <hr/>
+    <div class="card text-success">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Placement & Safety</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Placement & Safety description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-success d-block" href="./ya-placementandsafety.html">
+            <i class="fa fa-check  float-left"></i>
+            Review</a>
+        </div>
+      </div>
+    </div>
+    <!-- Placement & Safety -->
+    <hr/>
+    <div class="card text-warning">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Pregnant / Parenting</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Pregnant Parenting description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-warning d-block" href="./ya-pregnantparenting.html">
+            <i class="fa fa-hourglass-half  float-left"></i>
+            Continue</a>
+        </div>
+      </div>
+    </div>
+    <!-- Pregnant / Parenting -->
+    <hr/>
+    <div class="card text-danger">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Health</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Health description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-danger d-block" href="./ya-health.html">
+            <i class="fa fa-hourglass-start  float-left"></i>
+            Start</a>
+        </div>
+      </div>
+    </div>
+    <!-- Health -->
+    <hr/>
+    <div class="card text-danger">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Relationships</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Relationships description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-danger d-block" href="./ya-relationships.html">
+            <i class="fa fa-hourglass-start  float-left"></i>
+            Start</a>
+        </div>
+      </div>
+    </div>
+    <!-- Relationships -->
+    <hr/>
+    <div class="card text-danger">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Criminal Justice System</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Criminal Justice System description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-danger d-block" href="./ya-criminaljusticesystem.html">
+            <i class="fa fa-hourglass-start  float-left"></i>
+            Start</a>
+        </div>
+      </div>
+    </div>
+    <!-- Criminal Justice System -->
+    <hr/>
+    <div class="card text-danger">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Life Skills</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Life Skills description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-danger d-block" href="./ya-lifeskills.html">
+            <i class="fa fa-hourglass-start  float-left"></i>
+            Start</a>
+        </div>
+      </div>
+    </div>
+    <!-- Life Skills -->
+    <hr/>
+    <div class="card text-danger">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Stipends</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Stipends description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-danger d-block" href="./ya-stipends.html">
+            <i class="fa fa-hourglass-start  float-left"></i>
+            Start</a>
+        </div>
+      </div>
+    </div>
+    <!-- Stipends -->
+    <hr/>
+    <div class="card text-danger">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Continuing Support & Services</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Continuing Support & Services description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-danger d-block" href="./ya-continuingsupportservices.html">
+            <i class="fa fa-hourglass-start  float-left"></i>
+            Start</a>
+        </div>
+      </div>
+    </div>
+    <!-- Continuing Support & Services -->
+    <hr/>
+    <div class="card text-danger">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Personal</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Personal description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-danger d-block" href="./ya-personal.html">
+            <i class="fa fa-hourglass-start  float-left"></i>
+            Start</a>
+        </div>
+      </div>
+    </div>
+    <!-- Personal -->
+    <hr/>
+    <div class="card text-danger">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Goals & Actions</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Goals & Actions desription</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-danger d-block" href="./ya-goalsandactions.html">
+            <i class="fa fa-hourglass-start  float-left"></i>
+            Start</a>
+        </div>
+      </div>
+    </div>
+    <!-- Goals & Actions -->
+    <hr/>
+    <div class="card text-danger">
+      <div class="card-body row">
+
+        <h4 class="card-title col-12 col-md-3 pt-2">Received Documents</h4>
+        <p class="card-text col-12 col-md-7 pt-2">
+          Received Documents description</p>
+        <div class=" col-12 col-md-2">
+          <a class="btn btn-outline-danger d-block" href="./ya-receiveddocuments.html">
+            <i class="fa fa-hourglass-start  float-left"></i>
+            Start</a>
+        </div>
+      </div>
+    </div>
+    <!-- Received Documents -->
+    <hr/>
+</mdcps-base-form>
