@@ -1,4 +1,3 @@
-<!-- <form [formGroup]="demographicsForm" (ngSubmit)="onSubmit(demographicsForm, demographicsForm.value)"> -->
   <mdcps-base-form [baseFormGroup]="demographicsForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Housing'}" [formGroup]="demographicsForm">
   <!-- DOB & Age -->
   <div class="row">
@@ -259,7 +258,4 @@
     </div>
   </div>
   <hr>
-
-  <!-- <button class="btn btn-outline-primary pull-right" type="submit">Next: Housing</button>
-</form> -->
 </mdcps-base-form>
