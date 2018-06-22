@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidebar-container">
   <mat-sidenav #sidenav mode="side" opened="true" class="sidebar-nav"
-  [fixedInViewport]="false" [fixedTopGap]="true"[fixedBottomGap]="true" *ngIf="tabs">
+  [fixedInViewport]="false" [fixedTopGap]="true"[fixedBottomGap]="true">
     <mat-nav-list class="sidebar-nav-list">
       <a mat-list-item class="header-toggle-tabs" *ngFor="let tab of tabs" [routerLink]="('/dashboard' + tab.navigationUrl)">
         <span mat-line>{{tab.label}}</span>

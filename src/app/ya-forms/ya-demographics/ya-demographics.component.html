@@ -1,3 +1,262 @@
-<p>
-  ya-demographics works!
-</p>
+<form [formGroup]="demographicsForm" (ngSubmit)="onSubmit(demographicsForm, demographicsForm.value)">
+  <!-- DOB & Age -->
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label for="demographics.dateofbirth">Date of Birth</label>
+      <input type="text" class="form-control form-control-sm w-50 datepicker" id="demographics.dateofbirth" placeholder="Date of Birth" formControlName="dateOfBirth">
+      <div class="form-control-feedback" *ngIf="!demographicsForm.get('dateOfBirth').valid && (demographicsForm.get('dateOfBirth').dirty || demographicsForm.get('dateOfBirth')?.touched)">
+        <small *ngIf="!demographicsForm.get('dateOfBirth').valid" class="has-error small-text text-danger">
+          Please enter the valid date of birth
+        </small>
+      </div>
+
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+      <label for="demographics.age">Age</label>
+      <input type="text" class="form-control form-control-sm w-50" id="demographics.age" placeholder="Age" formControlName="age">
+      <div class="form-control-feedback" *ngIf="!demographicsForm.get('age').valid && (demographicsForm.get('age').dirty || demographicsForm.get('dateOfBirth')?.touched)">
+        <small *ngIf="!demographicsForm.get('age').valid" class="has-error small-text text-danger">
+          Please enter a valid age
+        </small>
+      </div>
+    </div>
+  </div>
+  <!-- form-row -->
+  <hr/>
+  <!-- Phone / Email -->
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label for="demographics.phone">Phone</label>
+      <input type="tel" class="form-control form-control-sm w-50" id="demographics.phone" placeholder="Phone" formControlName="phone">
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+      <label for="demographics.email">Email</label>
+      <input type="email" class="form-control form-control-sm" id="demographics.email" placeholder="Email" formControlName="email">
+    </div>
+    <!-- col-12 -->
+  </div>
+  <!-- form-row -->
+  <hr/>
+  <!-- Permenancy Goal -->
+  <div class="row">
+    <div class="col">
+      <label for="demographics.permenancygoal">Permenancy Goal</label>
+      <textarea type="text" class="form-control form-control-sm" id="demographics.permenancygoal" placeholder="Enter Permenancy Goal" rows="2" formControlName="permenancygoal">
+      </textarea>
+    </div>
+    <!-- col -->
+  </div>
+  <!-- form-row -->
+  <hr/>
+  <!-- Custody Status -->
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label class="col-form-label">Custody?</label>
+      <fieldset class="form-group">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="custodystatus" value="yes" formControlName="custodystatus"> Yes
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="custodystatus" value="no" formControlName="custodystatus"> No
+          </label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+      <label for="demographics.dischargedate" class="col-form-label">Discharge Date</label>
+      <input type="text" class="form-control form-control-sm datepicker w-50" id="demographics.dischargeDate" placeholder="Date of Discharge" formControlName="dischargeDate">
+    </div>
+  </div>
+  <!-- form-row -->
+  <hr/>
+  <!-- Address -->
+  <div class="row">
+    <div class="col-12">
+      <label for="demographics.address">Address</label>
+      <textarea class="form-control form-control-sm" id="demographics.address" placeholder="Address" rows="3" formControlName="address">
+      </textarea>
+    </div>
+  </div>
+  <!-- form-row -->
+  <hr/>
+  <!-- Race / Gender -->
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label for="demographics.race">Race</label>
+      <input type="text" class="form-control form-control-sm w-75" id="demographics.race" placeholder="Race" formControlName="race">
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+      <label for="demographics.gender">Gender</label>
+      <input type="text" class="form-control form-control-sm w-50" id="demographics.gender" placeholder="Gender" formControlName="gender">
+    </div>
+  </div>
+  <!-- form-row -->
+  <hr/>
+  <!-- LGBTQ? -->
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label class="col-form-label">Do You Identify as LGBTQ?</label>
+      <fieldset class="form-group">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="LGBTQ" value="yes" formControlName="LGBTQ"> Yes
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="LGBTQ" value="no" formControlName="LGBTQ"> No
+          </label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="col-12 col-6 pt-2 pt-md-0">
+      <label for="demographics.LGBTQType" class="pr-2">If Yes, Please Select</label>
+      <select class="custom-select form-control form-control-sm" id="demographics.LGBTQType">
+        <option selected>Choose Category</option>
+        <option value="lesbian">Lesbian</option>
+        <option value="gay">Gay</option>
+        <option value="bisexual">Bi-sexual</option>
+        <option value="transgender">Transgender</option>
+        <option value="questioning">Questioning</option>
+        <option value="declined">Declined</option>
+      </select>
+    </div>
+  </div>
+  <!-- form-row -->
+  <hr/>
+  <!-- COR / COS -->
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label for="demographics_COR">COR</label>
+      <input type="text" class="form-control w-75" id="demographics_COR" placeholder="COR" formControlName="COR">
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+      <label for="demographics.COS">COS</label>
+      <input type="text" class="form-control w-75" id="demographics.COS" placeholder="COS" formControlName="COS">
+    </div>
+  </div>
+  <!-- form-row -->
+  <hr/>
+  <!-- Health Insurance / Medicaid? -->
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label class="col-form-label">Do you have health insurance?</label>
+      <fieldset class="form-group">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="healthInsurance" value="yes" formControlName="healthInsurance"> Yes
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="healthInsurance" value="no" formControlName="healthInsurance"> No
+          </label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+      <label class="col-form-label">Do you have Medicaid?</label>
+      <fieldset class="form-group">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="medicaid" value="yes" formControlName="medicaid"> Yes
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="medicaid" value="no" formControlName="medicaid"> No
+          </label>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <!-- form-row -->
+  <hr/>
+  <!-- Language Barriers -->
+  <div class="row bg-transparent">
+    <div class="col-12 col-md-6">
+      <label class="col-form-label">Do you have language barriers or need an interperter?</label>
+      <fieldset class="form-group">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="languageBarriers" value="yes" formControlName="languageBarriers"> Yes
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="languageBarriers" value="no" formControlName="languageBarriers"> No
+          </label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+      <label for="inputAddress2">If yes explain?</label>
+      <textarea class="form-control form-control-sm" id="inputAddress2" placeholder="Explain Needs for an interpreter" rows="3" formControlName="explainLanguageBarriers">
+      </textarea>
+    </div>
+  </div>
+  <!-- form-row -->
+  <hr/>
+  <!-- Mentor Or Identified Supportive Connection -->
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label class="col-form-label">Do you have a mentor or identified supportive connection?</label>
+      <fieldset class="form-group">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="mentor" value="yes" formControlName="mentor"> Yes
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="mentor" value="no" formControlName="mentor"> No
+          </label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+      <label class="col-form-label">If yes, would you like this person to be involved in your transition planning?</label>
+      <fieldset class="form-group">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="transitionplanning" value="yes" formControlName="transitionplanning"> Yes
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="transitionplanning" value="no" formControlName="transitionplanning"> No
+          </label>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <!-- form-row -->
+  <hr/>
+  <!-- COR MDCPS Worker / Transition Worker -->
+  <div class="form-row">
+    <div class="col-12 col-md-6">
+      <label for="demographics.corWorker">COR MDCPS Worker</label>
+      <input type="phone" class="form-control form-control-sm" id="demographics.corWorker" placeholder="MDCPS Worker" formControlName="corWorker">
+    </div>
+    <div class="col-12 col-md-6 pt-2 pt-md-0">
+      <label for="transitionNavigator">Assigned Transition Navigator</label>
+      <select class="custom-select form-control form-control-sm">
+        <option selected>Choose Transition Navigator</option>
+        <option value="jazminhawthorne">Jazmin Hawthorne</option>
+        <option value="sharoncable">Sharon Cable</option>
+        <option value="kenikahudaon">Kenika Hudson</option>
+        <option value="natashaivory">Natasha Ivory</option>
+        <option value="gingerlambert">Ginger Lambert</option>
+        <option value="teresamoore">Teresa Moore</option>
+        <option value="jackiepotters">Jackie Potters</option>
+        <option value="temcularobinson">Temcula Robinson</option>
+      </select>
+    </div>
+  </div>
+  <hr>
+
+  <button class="btn btn-outline-primary pull-right" type="submit">Next: Housing</button>
+</form>
