@@ -18,14 +18,14 @@ export interface SpinnerConfig {
 const spinnerDefaults: SpinnerConfig = {
   backdrop: 'black',
   spinnerText: 'Loading...',
-  imageSource: '/assets/images/cvs-spinner.gif'
+  imageSource: '/assets/images/mdcps-spinner.gif'
 };
 
 /**
  * @author: Shoukath Mohammed
  */
 @Component({
-  selector: 'cvs-spinner',
+  selector: 'mdcps-spinner',
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.scss']
 })
@@ -46,10 +46,10 @@ export class SpinnerComponent implements OnInit {
   /**
    *  @public
    *  @type: method<life cycle hook>
-   *  @return: void 
+   *  @return: void
    *  @description: N/A
    */
-  public ngOnInit() { 
+  public ngOnInit() {
    this.config = _.extend({}, spinnerDefaults, (this.config || {}));
   }
 

@@ -32,14 +32,15 @@ export class SideBarComponent implements OnInit {
   /**
    * @public
    */
-  public onNavigate(e: MouseEvent, prefix: string, tab: MdcpsNavigationEvent): void {
+  public onNavigate(e: MouseEvent,
+    prefix: string, tab: MdcpsNavigationEvent): void {
     if (e && e.preventDefault) {
       e.preventDefault();
     }
 
     // send the navigation event.
     this.profileService.setNavigation({
-      ...tab,routePrefix: prefix
+      ...tab, routePrefix: prefix
     });
   }
 }

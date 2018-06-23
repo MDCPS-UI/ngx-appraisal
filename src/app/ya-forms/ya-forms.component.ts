@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
-import { ProfileService } from '../shared/services/profile/profile.service';
 
 /**
  * @author: Shoukath Mohammed
@@ -23,8 +22,7 @@ export class YaFormsComponent implements OnInit {
    */
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
-    private profileService: ProfileService) {
+    private route: ActivatedRoute) {
     this.subscribeToRouterEvents();
   }
 

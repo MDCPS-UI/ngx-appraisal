@@ -1,7 +1,9 @@
 import { Subject } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 
-
+/**
+ * @author: Shoukath Mohammed
+ */
 @Injectable()
 export class SpinnerService {
 
@@ -35,7 +37,6 @@ export class SpinnerService {
    * the spinner.
    */
   public hide(): void {
-    // setting the timeout for demo purpose
     this.display$.next(false);
   }
 
