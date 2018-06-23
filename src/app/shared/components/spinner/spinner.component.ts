@@ -25,7 +25,7 @@ const spinnerDefaults: SpinnerConfig = {
  * @author: Shoukath Mohammed
  */
 @Component({
-  selector: 'cvs-spinner',
+  selector: 'mdcps-spinner',
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.scss']
 })
