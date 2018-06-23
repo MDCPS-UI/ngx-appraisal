@@ -18,7 +18,7 @@ export interface SpinnerConfig {
 const spinnerDefaults: SpinnerConfig = {
   backdrop: 'black',
   spinnerText: 'Loading...',
-  imageSource: '/assets/images/cvs-spinner.gif'
+  imageSource: '/assets/images/mdcps-spinner.gif'
 };
 
 /**
@@ -46,10 +46,10 @@ export class SpinnerComponent implements OnInit {
   /**
    *  @public
    *  @type: method<life cycle hook>
-   *  @return: void 
+   *  @return: void
    *  @description: N/A
    */
-  public ngOnInit() { 
+  public ngOnInit() {
    this.config = _.extend({}, spinnerDefaults, (this.config || {}));
   }
 
