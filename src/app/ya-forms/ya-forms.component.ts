@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { ProfileService } from '../shared/services/profile/profile.service';
 
-
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-forms',
   templateUrl: './ya-forms.component.html',
@@ -20,7 +23,8 @@ export class YaFormsComponent implements OnInit {
    */
   constructor(
     private router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private profileService: ProfileService) {
     this.subscribeToRouterEvents();
   }
 

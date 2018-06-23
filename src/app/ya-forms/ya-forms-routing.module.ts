@@ -135,7 +135,8 @@ const ROUTES: Route[] = [
         data: {
           formName: 'Review & Sign'
         }
-      }]
+      }
+    ]
   }
 ];
 
