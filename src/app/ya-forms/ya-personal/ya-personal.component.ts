@@ -20,6 +20,21 @@ export class YaPersonalComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.personalForm = this.fb.group({
+      supportInNext6Months: new FormControl('', []),
+      goalInNext6Months: new FormControl('', []),
+      motivationForGoals: new FormControl('', []),
+      currentChallenges: new FormControl('', [])
+    })
+  }
+
+  /**
+   * @public
+   */
+  public onSubmit(event: any): void {
+    if (event.form && event.form.valid) {
+      console.log(event.form.value);
+    }
   }
 
 }

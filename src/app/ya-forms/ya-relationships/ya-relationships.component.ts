@@ -20,6 +20,25 @@ export class YaRelationshipsComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.relationshipForm = this.fb.group({
+      everArrested: new FormControl('',[]),
+      abusivePartner: new FormControl('',[]),
+      afraidOfPartner: new FormControl('',[]),
+      violentRelationship: new FormControl('',[]),
+      compensationForSexualServices: new FormControl('',[]),
+      forcedSexualContact: new FormControl('',[]),
+      forcedToHaveSex: new FormControl('',[]),
+      involvedInProstitution: new FormControl('',[])
+    })
+  }
+
+  /**
+   * @public
+   */
+  public onSubmit(event: any): void {
+    if (event.form && event.form.valid) {
+      console.log(event.form.value);
+    }
   }
 
 }

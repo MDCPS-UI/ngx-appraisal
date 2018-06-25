@@ -1,5 +1,5 @@
-<mdcps-base-form [baseFormGroup]="housingForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Review & Sign'}"
-  [formGroup]="housingForm">
+<mdcps-base-form [baseFormGroup]="documentsForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Review & Sign'}"
+  [formGroup]="documentsForm">
   <div class="row">
     <div class="col-12">
       <table class="table table-bordered table-striped">
@@ -19,18 +19,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="birthCertificate"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="birthCertificate"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noBirthCertificate">
             </td>
           </tr>
           <tr>
@@ -41,18 +41,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="socialSecurity"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="socialSecurity"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noSocialSecurity">
             </td>
           </tr>
           <tr>
@@ -63,18 +63,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="medicaidCard"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="medicaidCard"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noMedicaidCard">
             </td>
           </tr>
           <tr>
@@ -85,18 +85,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="driversLicense"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="driversLicense"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noDriversLicense">
             </td>
           </tr>
           <tr>
@@ -107,18 +107,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="courtOrders"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="courtOrders"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noCourtOrders">
             </td>
           </tr>
           <tr>
@@ -129,18 +129,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="educationDocuments"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="educationDocuments"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noEducationDocuments">
             </td>
           </tr>
           <tr>
@@ -150,18 +150,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="deathCertificates"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="deathCertificates"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noDeathCertificates">
             </td>
           </tr>
           <tr>
@@ -172,18 +172,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="citizenshipDocuments"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="citizenshipDocuments"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noCitizenshipDocuments">
             </td>
           </tr>
           <tr>
@@ -194,18 +194,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="medicalRecords"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="medicalRecords"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noMedicalRecords">
             </td>
           </tr>
           <tr>
@@ -216,18 +216,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="religiousDocuments"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="religiousDocuments"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noReligiousDocuments">
             </td>
           </tr>
           <tr>
@@ -238,18 +238,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="relativesInformation"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="relativesInformation"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noRelativesInformation">
             </td>
           </tr>
           <tr>
@@ -260,18 +260,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="previousPlacementInfo"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="previousPlacementInfo"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noPreviousPlacementInfo">
             </td>
           </tr>
           <tr>
@@ -282,18 +282,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="passport"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="passport"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noPassport">
             </td>
           </tr>
           <tr>
@@ -304,18 +304,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="photographs"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="photographs"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noPhotographs">
             </td>
           </tr>
           <tr>
@@ -326,18 +326,18 @@
               <fieldset class="form-group">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
+                    <input type="radio" class="form-check-input" value="yes" formControlName="resourceGuide"> &nbsp;&nbsp;Yes
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="regularlyCaredFor" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
+                    <input type="radio" class="form-check-input" value="no" formControlName="resourceGuide"> &nbsp;&nbsp;No
                   </label>
                 </div>
               </fieldset>
             </td>
             <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
+              <input class="form-control form-control-sm" formControlName="noResourceGuide">
             </td>
           </tr>
         </tbody>

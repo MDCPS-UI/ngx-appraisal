@@ -22,4 +22,13 @@ export class YaReviewComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * @public
+   */
+  public onSubmit(event: any): void {
+    if (event.form && event.form.valid) {
+      console.log(event.form.value);
+    }
+  }
+
 }

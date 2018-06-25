@@ -20,6 +20,42 @@ export class YaActionsComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.actionsForm = this.fb.group({
+      educationGoals: new FormControl('', []),
+      educationGoalTasks: new FormControl('', []),
+      educationGoalProgress: new FormControl('', []),
+      educationGoalsCompletionDate: new FormControl('', []),
+      housingGoals: new FormControl('', []),
+      housingGoalTasks: new FormControl('', []),
+      housingGoalProgress: new FormControl('', []),
+      housingGoalsCompletionDate: new FormControl('', []),
+      employmentGoals: new FormControl('', []),
+      employmentGoalsTasks: new FormControl('', []),
+      employmentGoalProgress: new FormControl('', []),
+      employmentGoalsCompletionDate: new FormControl('', []),
+      transportationGoals: new FormControl('', []),
+      transportationGoalsTasks: new FormControl('', []),
+      transportationGoalsProgress: new FormControl('', []),
+      transportationGoalsCompletionDate: new FormControl('', []),
+      supportiveGoals: new FormControl('', []),
+      supportiveGoalsTasks: new FormControl('', []),
+      supportiveGoalsProgress: new FormControl('', []),
+      supportiveGoalsCompletionDate: new FormControl('', []),
+      otherGoals: new FormControl('', []),
+      otherGoalsTasks: new FormControl('', []),
+      otherGoalsProgress: new FormControl('', []),
+      otherGoalsCompletionDate: new FormControl('', []),
+      notes: new FormControl('', [])
+    })
+  }
+
+  /**
+   * @public
+   */
+  public onSubmit(event: any): void {
+    if (event.form && event.form.valid) {
+      console.log(event.form.value);
+    }
   }
 
 }

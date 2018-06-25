@@ -34,4 +34,13 @@ export class YaEmploymentComponent implements OnInit {
     })
   }
 
+  /**
+   * @public
+   */
+  public onSubmit(event: any): void {
+    if (event.form && event.form.valid) {
+      console.log(event.form.value);
+    }
+  }
+
 }
