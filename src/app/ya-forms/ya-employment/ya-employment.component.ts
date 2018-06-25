@@ -20,6 +20,18 @@ export class YaEmploymentComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.employmentForm = this.fb.group({
+      workDisabled: new FormControl('', []),
+      explainWorkDisabled: new FormControl('', []),
+      heldJob: new FormControl('', []),
+      jobSkills: new FormControl('', []),
+      otherJobSkills: new FormControl('', []),
+      employed: new FormControl('', []),
+      evictedHowlong: new FormControl('', []),
+      inBenefitProgram: new FormControl('', []),
+      hourlyRate: new FormControl('', []),
+      otherHourlyRate: new FormControl('', [])
+    })
   }
 
 }

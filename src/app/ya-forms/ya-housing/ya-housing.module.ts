@@ -7,7 +7,6 @@ import { BaseFormModule } from './../../shared/components/base-form/base-form.mo
 
 // Components
 import { YaHousingComponent } from './ya-housing.component';
-import { BaseFormComponent } from './../../shared/components/base-form/base-form.component';
 
 // YA Housing Form Routes
 const ROUTES: Route[] = [
@@ -27,7 +26,6 @@ const ROUTES: Route[] = [
     RouterModule.forChild(ROUTES)
   ],
   declarations: [
-    BaseFormComponent,
     YaHousingComponent
   ],
   exports: [RouterModule]

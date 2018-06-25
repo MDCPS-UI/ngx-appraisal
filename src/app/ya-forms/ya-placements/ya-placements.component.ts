@@ -20,6 +20,22 @@ export class YaPlacementsComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.placementsForm = this.fb.group({
+      timeInPlacement: new FormControl('', []),
+      placementsInCare: new FormControl('', []),
+      whyChangedPlacements: new FormControl('', []),
+      feelSafeInPlacement: new FormControl('', []),
+      whynotsafeInPlacement: new FormControl('', []), 
+      positivePlacementExperiences: new FormControl('', []),
+      howConnectionsUsed: new FormControl('', []),
+      maintainContact: new FormControl('', []),
+      usedForPermancyPlan: new FormControl('', []),
+      additionalFosterCareInfo: new FormControl('', []),
+      contactName: new FormControl('', []),
+      contactRelationship: new FormControl('', []),
+      contactPhone: new FormControl('', []),
+      contactEmail: new FormControl('', [])
+    })
   }
 
 }

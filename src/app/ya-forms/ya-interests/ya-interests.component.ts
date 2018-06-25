@@ -20,6 +20,14 @@ export class YaInterestsComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.interestsForm = this.fb.group({
+      extraActivities: new FormControl('', []),
+      listActivities: new FormControl('', []),
+      religiousActivities: new FormControl('', []),
+      listReligiousActivities: new FormControl('', []),
+      hobbies: new FormControl('', []),
+      listhobbies: new FormControl('', [])
+    })
   }
 
 }

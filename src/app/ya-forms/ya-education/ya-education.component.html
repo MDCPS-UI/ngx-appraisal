@@ -14,12 +14,12 @@
       <fieldset class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="diplomaStatus" value="yes" formControlName="diplomaStatus"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="diplomaStatus"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="diplomaStatus" value="no" formControlName="diplomaStatus"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="diplomaStatus"> No
           </label>
         </div>
       </fieldset>
@@ -33,12 +33,12 @@
       <fieldset class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="correctGrade" value="yes" formControlName="correctGrade"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="correctGrade"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="correctGrade" value="no" formControlName="correctGrade"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="correctGrade"> No
           </label>
         </div>
       </fieldset>
@@ -58,12 +58,12 @@
       <fieldset class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="duelEnrollment" value="yes" formControlName="duelEnrollment"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="duelEnrollment"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="duelEnrollment" value="no" formControlName="duelEnrollment"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="duelEnrollment"> No
           </label>
         </div>
       </fieldset>
@@ -84,12 +84,12 @@
       <fieldset class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="ged" value="yes" formControlName="ged"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="ged"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="ged" value="no" formControlName="ged"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="ged"> No
           </label>
         </div>
       </fieldset>
@@ -116,12 +116,12 @@
       <fieldset class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="vocoational" value="yes" formControlName="vocoational"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="vocoational"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="vocoational" value="no" formControlName="vocoational"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="vocoational"> No
           </label>
         </div>
       </fieldset>
@@ -138,12 +138,12 @@
       <fieldset class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="occupationalcert" value="yes" formControlName="occupationalcert"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="occupationalCert"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="occupationalcert" value="no" formControlName="occupationalcert"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="occupationalCert"> No
           </label>
         </div>
       </fieldset>
@@ -160,12 +160,12 @@
       <fieldset class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="postSecondary" value="yes" formControlName="postSecondary"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="postSecondary"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="postSecondary" value="no" formControlName="postSecondary"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="postSecondary"> No
           </label>
         </div>
       </fieldset>
@@ -174,19 +174,19 @@
     </div>
     <div class="col-12 col-md-3">
       <label class="col-form-label" for="education.grade">Year </label>
-      <input type="text" class="form-control" id="education.postSecYear" placeholder="Year" postSecYear="postSecYear">
+      <input type="text" class="form-control" id="education.postSecYear" placeholder="Year" formControlName="postSecYear">
     </div>
     <div class="col-12 col-md-3">
       <label class="col-form-label">Type?</label>
       <fieldset class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="postSecType" value="parttime" formControlName="postSecType"> Part-Time
+            <input type="radio" class="form-check-input" value="parttime" formControlName="postSecType"> Part-Time
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="postSecType" value="fulltime" formControlName="postSecType"> Full-Time
+            <input type="radio" class="form-check-input" value="fulltime" formControlName="postSecType"> Full-Time
           </label>
         </div>
       </fieldset>
@@ -201,19 +201,19 @@
       <fieldset class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="etv" value="yes" formControlName="etv"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="etv"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="etv" value="no" formControlName="etv"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="etv"> No
           </label>
         </div>
       </fieldset>
     </div>
     <div class="col-12 col-md-6">
       <label for="education.receiveEtvFunds" class="col-form-label">When did you last receive ETV funds?</label>
-      <input type="text" class="form-control datepicker w-50" id="education.receiveEtvFunds" placeholder="Date of Discharge">
+      <input type="text" class="form-control datepicker w-50" id="education.receiveEtvFunds" placeholder="Date of Discharge" formControlname="fundsDate">
     </div>
   </div>
   <!-- form-row -->
@@ -224,7 +224,7 @@
       <label for="education.receiveEtvFunds" class="col-form-label">Where are you enrolled in an educational program?</label>
     </div>
     <div class="col-12 col-md-6">
-      <input type="text" class="form-control" id="education.educationalprogramenrolled" placeholder="Where enrolled">
+      <input type="text" class="form-control" id="education.educationalprogramenrolled" placeholder="Where enrolled" formControlname="eductionEnrolled">
     </div>
   </div>
   <hr/>
@@ -235,37 +235,37 @@
       <fieldset class="form-group">
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="highesteducationlevel" value="somehighschool" formControlName="highesteducationlevel"> &nbsp;Some High School
+            <input type="radio" class="form-check-input" value="somehighschool" formControlName="highestEducation"> &nbsp;Some High School
           </label>
         </div>
         <div class="form-check ">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="highesteducationlevel" value="somemiddleschool" formControlName="highesteducationlevel"> &nbsp;Some Middle School
+            <input type="radio" class="form-check-input" value="somemiddleschool" formControlName="highestEducation"> &nbsp;Some Middle School
           </label>
         </div>
         <div class="form-check ">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="highesteducationlevel" value="diploma" formControlName="highesteducationlevel"> &nbsp;Diploma
+            <input type="radio" class="form-check-input" value="diploma" formControlName="highestEducation"> &nbsp;Diploma
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="highesteducationlevel" value="GED" formControlName="highesteducationlevel"> &nbsp;GED
+            <input type="radio" class="form-check-input" value="GED" formControlName="highestEducation"> &nbsp;GED
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="highesteducationlevel" value="certificate" formControlName="highesteducationlevel"> &nbsp;Certificate
+            <input type="radio" class="form-check-input" value="certificate" formControlName="highestEducation"> &nbsp;Certificate
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="highesteducationlevel" value="vocationtraining" formControlName="highesteducationlevel"> &nbsp;Vocational Training
+            <input type="radio" class="form-check-input" value="vocationtraining" formControlName="highestEducation"> &nbsp;Vocational Training
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label col-3">
-            <input type="radio" class="form-check-input form-check-input-inline" name="highesteducationlevel" value="other" formControlName="highesteducationlevel"> &nbsp;Other
+            <input type="radio" class="form-check-input form-check-input-inline" value="other" formControlName="highestEducation"> &nbsp;Other
           </label>
           <input type="text" class="form-check-input">
         </div>
@@ -298,35 +298,35 @@
       <fieldset class="form-group">
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="plannedattendance" value="fouryear" formControlName="plannedattendance"> &nbsp;Four Year Program
+            <input type="radio" class="form-check-input" value="fouryear" formControlName="plannedAttendance"> &nbsp;Four Year Program
           </label>
         </div>
         <div class="form-check ">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="plannedattendance" value="twoyear" formControlName="plannedattendance"> &nbsp;Two Year Program
+            <input type="radio" class="form-check-input" value="twoyear" formControlName="plannedAttendance"> &nbsp;Two Year Program
           </label>
         </div>
         <div class="form-check ">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="plannedattendance" value="vocational" formControlName="plannedattendance"> &nbsp;Vocational Program
+            <input type="radio" class="form-check-input" value="vocational" formControlName="plannedAttendance"> &nbsp;Vocational Program
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="plannedattendance" value="military" formControlName="plannedattendance"> &nbsp;Military
+            <input type="radio" class="form-check-input" value="military" formControlName="plannedAttendance"> &nbsp;Military
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label col-4">
-            <input type="radio" class="form-check-input form-check-input-inline" name="plannedattendance" value="notapplicable" formControlName="plannedattendance"> &nbsp;Not Applicable
+            <input type="radio" class="form-check-input form-check-input-inline" value="notapplicable" formControlName="plannedAttendance"> &nbsp;Not Applicable
           </label>
-          <input type="text" class="form-check-input" formControlName="plannedattendance">
+          <input type="text" class="form-check-input" formControlName="plannedAttendanceNotApplicable">
         </div>
         <div class="form-check">
           <label class="form-check-label col-4">
-            <input type="radio" class="form-check-input form-check-input-inline" name="plannedattendance" value="other" formControlName="plannedattendance"> &nbsp;Other
+            <input type="radio" class="form-check-input form-check-input-inline" value="other" formControlName="plannedAttendance"> &nbsp;Other
           </label>
-          <input type="text" class="form-check-input" formControlName="plannedattendanceother">
+          <input type="text" class="form-check-input" formControlName="plannedAttendanceOther">
         </div>
       </fieldset>
     </div>
