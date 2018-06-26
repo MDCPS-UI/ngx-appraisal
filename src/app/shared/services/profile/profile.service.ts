@@ -1,14 +1,14 @@
-import { Subject } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
+import { Subject, BehaviorSubject } from 'rxjs/Rx';
 
 /**
  * @interface
  */
 export interface MdcpsNavigationEvent {
-  navigationUrl: string;
   label?: string;
   routePrefix?: string;
   routeSuffix?: string;
+  navigationUrl: string;
 };
 
 /**
@@ -16,6 +16,10 @@ export interface MdcpsNavigationEvent {
  */
 @Injectable()
 export class ProfileService {
+  /**
+   * @private
+   */
+  private activePage$: BehaviorSubject<string> = new BehaviorSubject<string>(null);
   /**
    * @private
    */
@@ -41,5 +45,22 @@ export class ProfileService {
    */
   public getNavigation(): Subject<MdcpsNavigationEvent> {
     return this.navigate$;
+  }
+
+  /**
+   * @public
+   * @param {pageName<string>}
+   * @return void
+   */
+  public setActivePage(pageName: string): void {
+    this.activePage$.next(pageName);
+  }
+
+  /**
+   * @public
+   * @return {Subject<string>}
+   */
+  public getActivePage(): Subject<string> {
+    return this.activePage$;
   }
 }

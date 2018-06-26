@@ -1,19 +1,24 @@
-.sidebar-container {
+.mdcps-sidebar-container {
     height: 100%;
 
-    .sidebar-nav {
+    .mdcps-sidebar-nav {
         width: 226px;
         background-color: #3f4d50;
         box-shadow: 3px 0 6px rgba(0,0,0,.24);
         -webkit-box-shadow: 3px 0 6px rgba(0,0,0,.24);
-        .sidebar-nav-list {
+        .mdcps-sidebar-nav-list {
             color: #bdbdbd;
+
+            .mdcps-toggle-tabs.active {
+                color: #fff;
+                background: #9ca51cb0;
+            }
         }
     }
-    .sidebar-content {
+    .mdcps-sidebar-content {
         padding-left: 20px;
 
-        .sidebar-control {
+        .mdcps-sidebar-control {
             padding-top: 15px;
             padding-right: 15px;
         }
