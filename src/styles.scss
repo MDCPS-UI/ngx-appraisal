@@ -94,6 +94,7 @@ fieldset {
     }
     .mdcps-youth-appr-wrapper {
         padding: 30px;
+        overflow: hidden;
 
         .mdcps-input {
             line-height: 2.2;
@@ -139,5 +140,27 @@ fieldset {
         .btn-link {
             color: rgba(0, 0, 0, 0.54);
         }
+    }
+}
+
+.mdcps-fixed-col {
+    .mdcps-docs-reason {
+        padding-top: 20px;
+    }
+
+    .mat-slide-toggle-bar {
+        width: 65px;
+        height: 20px;
+        border-radius: 0px;
+    }
+
+    .mat-slide-toggle-thumb {
+        height: 26px;
+        width: 12px;
+        border-radius: 0px;
+    }
+
+    .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb-container {
+        transform: translate3d(53px,0,0);
     }
 }

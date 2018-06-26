@@ -7,6 +7,7 @@ import { BaseFormModule } from './../../shared/components/base-form/base-form.mo
 
 // Components
 import { YaDocumentsComponent } from './ya-documents.component';
+import { MaterialModule } from '../../shared/modules/material/material.module';
 
 // YA Criminal Form Routes
 const ROUTES: Route[] = [
@@ -24,6 +25,7 @@ const ROUTES: Route[] = [
     FormsModule,
     CommonModule,
     BaseFormModule,
+    MaterialModule,
     ReactiveFormsModule,
     RouterModule.forChild(ROUTES)
   ],
