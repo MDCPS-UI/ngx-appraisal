@@ -18,7 +18,7 @@
                     {{ (documentsForm?.get(doc.optionName)?.value) ? 'Yes' : 'No' }}
                   </span>
               </mat-slide-toggle>
-              <div class="mdcps-docs-reason" *ngIf="documentsForm?.get(doc.optionName)?.value">
+              <div class="mdcps-docs-reason" *ngIf="!(documentsForm?.get(doc.optionName)?.value)">
                   Please explain:
                   <input class="form-control form-control-sm" [formControlName]="doc.inputName">
               </div>

@@ -55,7 +55,7 @@ export class YaDocumentsComponent implements OnInit {
     // dynamically construct the form fields
     _.each(fields, (field) => {
       group[field.inputName] = new FormControl('', []);
-      group[field.optionName] = new FormControl('', []);
+      group[field.optionName] = new FormControl(true, []);
     });
 
     // initialize the form
