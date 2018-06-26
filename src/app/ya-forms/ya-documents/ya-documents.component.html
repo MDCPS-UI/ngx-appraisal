@@ -1,5 +1,5 @@
 <mdcps-base-form [baseFormGroup]="documentsForm" (next)="onSubmit($event)" [config]="config"
-  [formGroup]="documentsForm">
+  [formGroup]="documentsForm" (previous)="onPrevious($event)">
   <div class="row">
     <div class="col-12">
       <table class="table table-bordered table-striped">

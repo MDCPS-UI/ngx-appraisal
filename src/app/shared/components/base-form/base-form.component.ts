@@ -3,7 +3,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, AbstractControl } from '@angular/forms';
 import { ProfileService, MdcpsNavigationEvent } from '../../services/profile/profile.service';
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import { SpinnerService } from '../../services/spinner/spinner.service';
 
 /**
  * @interface
