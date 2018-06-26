@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-12 col-md-6">
       <label class="col-form-label">What is your current housing situation?</label>
-      <fieldset class="form-group">
+      <div class="form-group">
         <div class="form-check">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" value="payingRentOrMortgage" formControlName="housingStatus"> Paying Rent or Mortgage
@@ -39,7 +39,7 @@
             <input type="radio" class="form-check-input" value="motelHotel" formControlName="housingStatus"> Motel/Hotel
           </label>
         </div>
-      </fieldset>
+      </div>
     </div>
     <div class="col-12 col-md-6 pt-2 pt-md-0">
       <label for="demographics_phone">Length of Time in Current Housing:</label>
@@ -47,12 +47,11 @@
     </div>
   </div>
   <!-- form-row -->
-  <hr/>
   <!-- Homelessness -->
   <div class="row">
     <div class="col-12 col-md-6">
       <label class="col-form-label">Have you ever been homeless?</label>
-      <fieldset class="form-group">
+      <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" value="yes" formControlName="homelessStatus"> Yes
@@ -63,11 +62,11 @@
             <input type="radio" class="form-check-input" value="no" formControlName="homelessStatus"> No
           </label>
         </div>
-      </fieldset>
+      </div>
     </div>
     <div class="col-12 col-md-6 pt-2 pt-md-0">
       <label class="col-form-label">If yes, how long?</label>
-      <fieldset class="form-group">
+      <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" value="zerotosix" formControlName="homelessHowlong"> 0 - 6 months
@@ -89,15 +88,14 @@
             <input type="radio" class="form-check-input" value="eighteentotwentyfour" formControlName="homelessHowlong"> 18 - 24 months
           </label>
         </div>
-      </fieldset>
+      </div>
     </div>
   </div>
   <!-- form-row -->
-  <hr/>
   <div class="row">
     <div class="col-12 col-md-6">
       <label class="col-form-label">Have you ever been evicted?</label>
-      <fieldset class="form-group">
+      <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" value="yes" formControlName="evictedStatus"> Yes
@@ -108,11 +106,11 @@
             <input type="radio" class="form-check-input" value="no" formControlName="evictedStatus"> No
           </label>
         </div>
-      </fieldset>
+      </div>
     </div>
     <div class="col-12 col-md-6 pt-2 pt-md-0">
       <label class="col-form-label">If yes, how long?</label>
-      <fieldset class="form-group">
+      <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" value="zerotosix" formControlName="evictedhowlong"> 0 - 6 months
@@ -134,16 +132,15 @@
             <input type="radio" class="form-check-input" value="eighteentotwentyfour" formControlName="evictedhowlong"> 18 - 24 months
           </label>
         </div>
-      </fieldset>
+      </div>
     </div>
   </div>
   <!-- form-row -->
-  <hr/>
   <!-- Homelessness -->
   <div class="row">
     <div class="col-12 col-md-6">
       <label class="col-form-label">Are you able to meet all of your monthly obligations?</label>
-      <fieldset class="form-group">
+      <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" value="yes" formControlName="meetMonthlyReq"> Yes
@@ -154,7 +151,7 @@
             <input type="radio" class="form-check-input" value="no" formControlName="meetMonthlyReq"> No
           </label>
         </div>
-      </fieldset>
+      </div>
     </div>
     <div class="col-12 col-md-6">
       <label for="demographics_phone">If no, explain:</label>
@@ -162,6 +159,4 @@
     </div>
   </div>
   <!-- form-row -->
-
-  <hr/>
 </mdcps-base-form>
