@@ -2,6 +2,8 @@ import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
 import { YA_DOCS_LIST } from './ya-documents.constants';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { SpinnerService } from '../../shared/services/spinner/spinner.service';
+import { UtilService } from '../../shared/services/util/util.service';
 
 @Component({
   selector: 'mdcps-ya-documents',
@@ -27,7 +29,10 @@ export class YaDocumentsComponent implements OnInit {
    * @constructor
    * @param {fb<FormBuilder>}
    */
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private util: UtilService,
+    private spinner: SpinnerService) {
     this.documentsList = YA_DOCS_LIST;
   }
 
@@ -50,7 +55,7 @@ export class YaDocumentsComponent implements OnInit {
     // dynamically construct the form fields
     _.each(fields, (field) => {
       group[field.inputName] = new FormControl('', []);
-      group[field.optionName] = new FormControl('', []);
+      group[field.optionName] = new FormControl(true, []);
     });
 
     // initialize the form
@@ -59,11 +64,27 @@ export class YaDocumentsComponent implements OnInit {
 
   /**
    * @public
+   * @param {event<any>}
    */
-  public onSubmit(event: any): void {
+  public onNext(event: any): void {
     if (event.form && event.form.valid) {
       console.log(event.form.value);
     }
+  }
+
+  /**
+   * @public
+   * @param {event<any>}
+   */
+  public onPrevious(event: any): void {
+      console.log(event);
+      this.spinner.show();
+
+      // setting this timeout for the demo purpose
+      setTimeout(() => {
+        this.spinner.hide();
+        this.util.navigate('/actions');
+      }, 2000);
   }
 
   /**

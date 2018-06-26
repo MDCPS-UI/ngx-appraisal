@@ -1,5 +1,5 @@
 <mdcps-base-form [baseFormGroup]="documentsForm" (next)="onSubmit($event)" [config]="config"
-  [formGroup]="documentsForm">
+  [formGroup]="documentsForm" (previous)="onPrevious($event)">
   <div class="row">
     <div class="col-12">
       <table class="table table-bordered table-striped">
@@ -18,7 +18,7 @@
                     {{ (documentsForm?.get(doc.optionName)?.value) ? 'Yes' : 'No' }}
                   </span>
               </mat-slide-toggle>
-              <div class="mdcps-docs-reason" *ngIf="documentsForm?.get(doc.optionName)?.value">
+              <div class="mdcps-docs-reason" *ngIf="!(documentsForm?.get(doc.optionName)?.value)">
                   Please explain:
                   <input class="form-control form-control-sm" [formControlName]="doc.inputName">
               </div>

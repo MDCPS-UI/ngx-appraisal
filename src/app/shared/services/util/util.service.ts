@@ -1,4 +1,5 @@
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 
 // access the native window object.
@@ -10,7 +11,7 @@ export class UtilService {
   /**
    * @constructor
    */
-  constructor() { }
+  constructor(private router: Router) { }
 
   /**
    * @public
@@ -64,5 +65,19 @@ export class UtilService {
         arr[i].unsubscribe();
       }
     }
+  }
+
+  /**
+   * @public
+   * @param: {path<string>}
+   * @return: void
+   * @description: navigates to the requested path.
+   */
+  public navigate(path: string): void {
+    if (!path) { return; }
+
+    const isPath: boolean = (path.indexOf('/') > -1);
+    let _path: string = (!isPath) ? `/${path}` : path;
+    this.router.navigate([`/dashboard${_path}`]);
   }
 }
