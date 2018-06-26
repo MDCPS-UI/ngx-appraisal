@@ -140,11 +140,14 @@ export class BaseFormComponent implements OnInit {
    * @public
    */
   public onAction(dismiss: Function, action: string): void {
+    console.log(this.baseFormGroup.value);
+
     if (action == 'save') {
       dismiss('save');
       this.onNext();
     } else if (action == 'discard') {
       dismiss('discard');
+      this.baseFormGroup.reset();
       this.proceedWithNavigation();
     }
   }
