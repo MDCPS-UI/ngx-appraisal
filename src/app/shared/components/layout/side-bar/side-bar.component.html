@@ -1,14 +1,14 @@
-<mat-sidenav-container class="sidebar-container">
-  <mat-sidenav #sidenav mode="side" opened="true" class="sidebar-nav"
+<mat-sidenav-container class="mdcps-sidebar-container">
+  <mat-sidenav #sidenav mode="side" opened="true" class="mdcps-sidebar-nav"
   [fixedInViewport]="false" [fixedTopGap]="true"[fixedBottomGap]="true">
-    <mat-nav-list class="sidebar-nav-list">
-      <a href="#" mat-list-item class="header-toggle-tabs" *ngFor="let tab of tabs" (click)="onNavigate($event, '/dashboard', tab)">
+    <mat-nav-list class="mdcps-sidebar-nav-list">
+      <a href="#" mat-list-item class="mdcps-toggle-tabs" [class.active]="tab.navigationUrl == activePage" *ngFor="let tab of tabs" (click)="onNavigate($event, '/dashboard', tab)">
         <span mat-line>{{tab.label}}</span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content class="sidebar-content">
-    <div class="sidebar-control">
+  <mat-sidenav-content class="mdcps-sidebar-content">
+    <div class="mdcps-sidebar-control">
       <button mat-button class="btn btn-light"(click)="sidenav.toggle()">
        <mat-icon mat-list-icon aria-hidden="true">
          swap_horiz

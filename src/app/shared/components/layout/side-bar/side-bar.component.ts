@@ -17,6 +17,11 @@ export class SideBarComponent implements OnInit {
   public tabs: any[] = [];
 
   /**
+   * @public
+   */
+  public activePage: string;
+
+  /**
    * @constructor
    */
   constructor(private profileService: ProfileService) { }
@@ -27,7 +32,10 @@ export class SideBarComponent implements OnInit {
    *  @return: void
    *  @description: N/A
    */
-  public ngOnInit(): void { }
+  public ngOnInit(): void {
+    this.profileService.getActivePage()
+    .subscribe(value => this.activePage = `/${value}`);
+  }
 
   /**
    * @public

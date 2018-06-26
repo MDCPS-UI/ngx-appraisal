@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { ProfileService } from './../shared/services/profile/profile.service';
 
 /**
  * @author: Shoukath Mohammed
@@ -22,7 +23,8 @@ export class YaFormsComponent implements OnInit {
    */
   constructor(
     private router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private profileService: ProfileService) {
     this.subscribeToRouterEvents();
   }
 
@@ -41,7 +43,13 @@ export class YaFormsComponent implements OnInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         try {
-          this.formName = this.route.snapshot.firstChild.data['formName'];
+          const firstChild: any = this.route.snapshot.firstChild;
+
+          this.formName = firstChild.data['formName'];
+
+          // setting the activated route so it can be
+          // consumed by other pages.
+          this.profileService.setActivePage(firstChild.url[0].path);
         } catch(e) {
           console.log('Unable to set the form name...');
         }
