@@ -1,5 +1,7 @@
+import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { YA_DOCS_LIST } from './ya-documents.constants';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'mdcps-ya-documents',
@@ -7,6 +9,14 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./ya-documents.component.scss']
 })
 export class YaDocumentsComponent implements OnInit {
+  /**
+   * @public
+   */
+  public config: any;
+  /**
+   * @public
+   */
+  public documentsList: any[];
 
   /**
    * @public
@@ -17,41 +27,34 @@ export class YaDocumentsComponent implements OnInit {
    * @constructor
    * @param {fb<FormBuilder>}
    */
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+    this.documentsList = YA_DOCS_LIST;
+  }
 
-  ngOnInit() {
-    this.documentsForm = this.fb.group({
-      birthCertificate: new FormControl('', []),
-      noBirthCertificate: new FormControl('', []),
-      socialSecurity: new FormControl('', []),
-      noSocialSecurity: new FormControl('', []),
-      medicaidCard: new FormControl('', []),
-      noMedicaidCard: new FormControl('', []),
-      driversLicense: new FormControl('', []),
-      noDriversLicense: new FormControl('', []),
-      courtOrders: new FormControl('', []),
-      noCourtOrders: new FormControl('', []),
-      educationDocuments: new FormControl('', []),
-      noEducationDocuments: new FormControl('', []),
-      deathCertificates: new FormControl('', []),
-      noDeathCertificates: new FormControl('', []),
-      citizenshipDocuments: new FormControl('', []),
-      noCitizenshipDocuments: new FormControl('', []),
-      medicalRecords: new FormControl('', []),
-      noMedicalRecords: new FormControl('', []),
-      religiousDocuments: new FormControl('', []),
-      noReligiousDocuments: new FormControl('', []),
-      relativesInformation: new FormControl('', []),
-      noRelativesInformation: new FormControl('', []),
-      previousPlacementInfo: new FormControl('', []),
-      noPreviousPlacementInfo: new FormControl('', []),
-      passport: new FormControl('', []),
-      noPassport: new FormControl('', []),
-      photographs: new FormControl('', []),
-      noPhotographs: new FormControl('', []),
-      resourceGuide: new FormControl('', []),
-      noResourceGuide: new FormControl('', [])
-    })
+  /**
+   * @public
+   */
+  public ngOnInit(): void {
+    // construct & initialize the form
+    this.initFormConfig();
+    this.initDocumentsForm();
+  }
+
+  /**
+   * @public
+   */
+  public initDocumentsForm(): void {
+    const group: any = {};
+    const fields: any[] = [...this.documentsList];
+
+    // dynamically construct the form fields
+    _.each(fields, (field) => {
+      group[field.inputName] = new FormControl('', []);
+      group[field.optionName] = new FormControl('', []);
+    });
+
+    // initialize the form
+    this.documentsForm = this.fb.group(group);
   }
 
   /**
@@ -63,4 +66,31 @@ export class YaDocumentsComponent implements OnInit {
     }
   }
 
+  /**
+   * @public
+   */
+  public initFormConfig(): void {
+    this.config = {
+      nextBtn: true,
+      prevBtn: true,
+      nextBtnLabel: 'Review & Sign',
+      previousBtnLabel: 'Goals and Actions'
+    };
+  }
+
+  /**
+   * @public
+   */
+  public onToggle(e: any, fieldName: string): void {
+    if (e && fieldName) {
+      const field: FormControl = <FormControl>this.documentsForm.get(fieldName);
+
+      if (e.checked) {
+        field.setValidators([Validators.required]);
+      } else {
+        field.clearValidators();
+      }
+      field.updateValueAndValidity();
+    }
+  }
 }
