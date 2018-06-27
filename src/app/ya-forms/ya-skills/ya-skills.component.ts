@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { YA_SKILLS_LIST } from './ya-skills.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -7,6 +8,10 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./ya-skills.component.scss']
 })
 export class YaSkillsComponent implements OnInit {
+  /**
+   * @public
+   */
+  public sections: any[];
 
   /**
    * @public
@@ -45,7 +50,9 @@ export class YaSkillsComponent implements OnInit {
       housingServices: new FormControl('', []),
       afterCare: new FormControl('', []),
       etvServices: new FormControl('', [])
-    })
+    });
+
+    this.sections = YA_SKILLS_LIST;
   }
 
   /**

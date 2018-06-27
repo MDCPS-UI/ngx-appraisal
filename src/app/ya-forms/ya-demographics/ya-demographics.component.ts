@@ -25,6 +25,9 @@ export class YaDemographicsComponent implements OnInit {
     private fb: FormBuilder,
     private profileService: ProfileService) { }
 
+  /**
+   * @public
+   */
   public ngOnInit(): void {
     this.demographicsForm = this.fb.group({
       dateOfBirth: new FormControl('', []),
