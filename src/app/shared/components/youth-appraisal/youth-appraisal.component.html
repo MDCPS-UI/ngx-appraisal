@@ -5,23 +5,33 @@
       <div class="row">
         <div class="col-xs-12 col-md-4">
           <label for="youthName" class="mdcps-label">Youth Name:</label>
-          <input class="form-control form-control-sm mdcps-input" id="youthName" placeholder="Enter Youth Name" formControlName="youthName">
+          <input class="form-control form-control-sm mdcps-input" id="youthName" placeholder="Enter Youth Name" formControlName="youthName" />
         </div>
         <div class="col-xs-12 col-md-2 pt-2 pt-md-0">
           <label for="youthId" class="mdcps-label">Id:</label>
-          <input type="text" class="form-control form-control-sm mdcps-input" id="youthId" placeholder="Id" formControlName="youthId">
+          <input type="text" class="form-control form-control-sm mdcps-input" id="youthId" placeholder="Id" formControlName="youthId" [ngbTypeahead]="search" [resultTemplate]="yaTemplate" [inputFormatter]="formatter" (selectItem)="onSelect($event)" />
         </div>
         <div class="col-xs-12 col-md-3 pt-2 pt-md-0">
           <label for="appraisalDate" class="mdcps-label">Appraisal Date:</label>
-          <p class="mdcps-text">{{ youthApprForm?.get('appraisalDate')?.value || '5/17/2018'}}</p>
-          <input type="text" class="form-control form-control-sm" id="appraisalDate" formControlName="appraisalDate" [hidden]="true">
+          <p class="mdcps-text">{{ youthApprForm?.get('appraisalDate')?.value || 'N/A'}}</p>
+          <input type="text" class="form-control form-control-sm" id="appraisalDate" formControlName="appraisalDate" [hidden]="true" />
         </div>
         <div class="col-xs-12 col-md-3 pt-2 pt-md-0">
           <label for="status" class="mdcps-label">Status:</label>
-          <p class="mdcps-text">{{ youthApprForm?.get('status')?.value || 'In Progress'}}</p>
-          <input type="text" class="form-control form-control-sm" id="status" formControlName="status" [hidden]="true">
+          <p class="mdcps-text">{{ youthApprForm?.get('status')?.value || 'N/A'}}</p>
+          <input type="text" class="form-control form-control-sm" id="status" formControlName="status" [hidden]="true" />
         </div>
       </div>
     </form>
   </div>
 </div>
+
+<!-- Autocomplete Template -->
+<ng-template #yaTemplate let-r="result" let-t="term">
+  <div class="mdcps-ac-id">
+    <span>{{r.MacwisId}}</span>
+  </div>
+  <div class="mdcps-ac-name">
+    <small>{{r.FirstName }} {{r.LastName}}</small>
+  </div>
+</ng-template>

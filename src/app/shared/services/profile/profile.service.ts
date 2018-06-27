@@ -19,6 +19,10 @@ export class ProfileService {
   /**
    * @private
    */
+  private selection$: Subject<any> = new Subject<any>();
+  /**
+   * @private
+   */
   private activePage$: BehaviorSubject<string> = new BehaviorSubject<string>(null);
   /**
    * @private
@@ -62,5 +66,22 @@ export class ProfileService {
    */
   public getActivePage(): Subject<string> {
     return this.activePage$;
+  }
+
+  /**
+   * @public
+   * @param {selection<any>}
+   * @return void
+   */
+  public setYaSelection(selection: any): void {
+    this.selection$.next(selection);
+  }
+
+  /**
+   * @public
+   * @return {Subject<any>}
+   */
+  public getYaSelection(): Subject<any> {
+    return this.selection$;
   }
 }
