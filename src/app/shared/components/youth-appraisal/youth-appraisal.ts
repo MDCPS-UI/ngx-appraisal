@@ -7,7 +7,7 @@ export const YA_CHILDREN_DATA: any[] = [{
     "FirstName": "Victoria",
     "LastName": "Bradshaw",
     "DOBString": "09/10/1998",
-    "Email": "",
+    "Email": "test@test.com",
     "IsActive": true
   },
   {
@@ -16,7 +16,7 @@ export const YA_CHILDREN_DATA: any[] = [{
     "FirstName": "Chester",
     "LastName": "Bradshaw",
     "DOBString": "05/23/2000",
-    "Email": "",
+    "Email": "abc.def@gmail.com",
     "IsActive": true
   },
   {

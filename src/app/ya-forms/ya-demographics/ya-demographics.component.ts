@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { ProfileService } from '../../shared/services/profile/profile.service';
 
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-demographics',
   templateUrl: './ya-demographics.component.html',
@@ -17,9 +21,11 @@ export class YaDemographicsComponent implements OnInit {
    * @constructor
    * @param {fb<FormBuilder>}
    */
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private profileService: ProfileService) { }
 
-  ngOnInit() {
+  public ngOnInit(): void {
     this.demographicsForm = this.fb.group({
       dateOfBirth: new FormControl('', []),
       age: new FormControl('', []),
@@ -41,6 +47,26 @@ export class YaDemographicsComponent implements OnInit {
       mentor: new FormControl('', []),
       transitionplanning: new FormControl('', []),
       corWorker: new FormControl('', [])
+    });
+
+    // listen to youth appraisal selection
+    this.subscribeToYaSelection();
+  }
+
+  /**
+   * @public
+   */
+  public subscribeToYaSelection(): void {
+    this.profileService.getYaSelection()
+    .subscribe(selection => {
+      if (selection) {
+        const form: FormGroup = this.demographicsForm;
+        form.get('email').setValue(selection.Email);
+        form.get('dateOfBirth').setValue(selection.DOBString);
+
+        // update the demographics form
+        this.demographicsForm.updateValueAndValidity();
+      }
     });
   }
 

@@ -74,7 +74,7 @@ export class ProfileService {
    * @return void
    */
   public setYaSelection(selection: any): void {
-    this.activePage$.next(selection);
+    this.selection$.next(selection);
   }
 
   /**
