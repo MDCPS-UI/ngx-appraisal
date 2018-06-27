@@ -94,7 +94,6 @@ fieldset {
     }
     .mdcps-youth-appr-wrapper {
         padding: 30px;
-        overflow: hidden;
 
         .mdcps-input {
             line-height: 2.2;
@@ -162,5 +161,27 @@ fieldset {
 
     .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb-container {
         transform: translate3d(53px,0,0);
+    }
+}
+
+// ng-bootstrap typeahead
+ngb-typeahead-window {
+    border-radius: 0 !important;
+
+    .dropdown-item {
+        border-bottom: 1px solid #80808029;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        &:hover {
+            color: white;
+            background: #9ca51cb0;
+        }
+    }
+
+    .dropdown-item.active {
+        background: #79801a;
     }
 }
