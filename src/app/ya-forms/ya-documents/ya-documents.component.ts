@@ -1,10 +1,12 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
 import { YA_DOCS_LIST } from './ya-documents.constants';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { SpinnerService } from '../../shared/services/spinner/spinner.service';
 import { UtilService } from '../../shared/services/util/util.service';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-documents',
   templateUrl: './ya-documents.component.html',
@@ -31,8 +33,7 @@ export class YaDocumentsComponent implements OnInit {
    */
   constructor(
     private fb: FormBuilder,
-    private util: UtilService,
-    private spinner: SpinnerService) {
+    private util: UtilService) {
     this.documentsList = YA_DOCS_LIST;
   }
 
@@ -77,14 +78,7 @@ export class YaDocumentsComponent implements OnInit {
    * @param {event<any>}
    */
   public onPrevious(event: any): void {
-      console.log(event);
-      this.spinner.show();
-
-      // setting this timeout for the demo purpose
-      setTimeout(() => {
-        this.spinner.hide();
-        this.util.navigate('/actions');
-      }, 2000);
+    this.util.navigate('/actions');
   }
 
   /**

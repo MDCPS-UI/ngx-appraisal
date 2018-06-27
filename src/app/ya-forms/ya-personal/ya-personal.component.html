@@ -1,5 +1,5 @@
-<mdcps-base-form [baseFormGroup]="personalForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Goals and Actions'}"
-  [formGroup]="personalForm">
+<mdcps-base-form [baseFormGroup]="personalForm" (next)="onNext($event)" [config]="config"
+  [formGroup]="personalForm" (previous)="onPrevious($event)">
   <div class="row">
     <div class="col-12">
       <label class="col-form-label" for="personal.supportInNext6Months">

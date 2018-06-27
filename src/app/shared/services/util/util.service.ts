@@ -1,6 +1,7 @@
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
+import { SpinnerService } from './../spinner/spinner.service';
 
 // access the native window object.
 declare const window: any;
@@ -11,7 +12,9 @@ export class UtilService {
   /**
    * @constructor
    */
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private spinner: SpinnerService) { }
 
   /**
    * @public
@@ -78,6 +81,12 @@ export class UtilService {
 
     const isPath: boolean = (path.indexOf('/') > -1);
     let _path: string = (!isPath) ? `/${path}` : path;
-    this.router.navigate([`/dashboard${_path}`]);
+    this.spinner.show();
+
+    // for demo purpose
+    setTimeout(() => {
+      this.spinner.hide();
+      this.router.navigate([`/dashboard${_path}`]);
+    }, 1000);
   }
 }
