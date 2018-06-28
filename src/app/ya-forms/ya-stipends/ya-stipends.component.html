@@ -1,4 +1,4 @@
-<mdcps-base-form [baseFormGroup]="stipendsForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Continuing Support/Services'}"
+<mdcps-base-form [baseFormGroup]="stipendsForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="stipendsForm">
   <div class="row">
     <div class="col-12 col-md-4">

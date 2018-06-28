@@ -1,4 +1,4 @@
-<mdcps-base-form [baseFormGroup]="educationForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Employment'}"
+<mdcps-base-form [baseFormGroup]="educationForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="educationForm">
   <div class="row">
     <div class="col-12">

@@ -60,6 +60,7 @@ export class YaPersonalComponent implements OnInit {
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
+      this.util.navigate('/actions');
       console.log(event.form.value);
     }
   }
