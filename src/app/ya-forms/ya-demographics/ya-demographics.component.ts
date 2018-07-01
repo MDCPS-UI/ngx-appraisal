@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { UtilService } from '../../shared/services/util/util.service';
 import { ProfileService } from '../../shared/services/profile/profile.service';
 
 /**
@@ -23,7 +24,8 @@ export class YaDemographicsComponent implements OnInit {
    */
   constructor(
     private fb: FormBuilder,
-    private profileService: ProfileService) { }
+    private profileService: ProfileService,
+    private util: UtilService) { }
 
   /**
    * @public
@@ -76,8 +78,9 @@ export class YaDemographicsComponent implements OnInit {
   /**
    * @public
    */
-  public onSubmit(event: any): void {
+  public onNext(event: any): void {
     if (event.form && event.form.valid) {
+      this.util.navigate('/housing');
       console.log(event.form.value);
     }
   }

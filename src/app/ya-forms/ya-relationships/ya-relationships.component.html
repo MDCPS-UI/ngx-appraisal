@@ -1,4 +1,4 @@
-<mdcps-base-form [baseFormGroup]="relationshipForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Criminal Justice System'}"
+<mdcps-base-form [baseFormGroup]="relationshipForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="relationshipForm">
   <div class="row">
     <div class="col-12 col-md-6">

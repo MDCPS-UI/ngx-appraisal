@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -11,13 +12,21 @@ export class YaCriminalComponent implements OnInit {
 /**
    * @public
    */
+  public config: any;
+
+/**
+   * @public
+   */
   public criminalForm: FormGroup;
 
   /**
    * @constructor
    * @param {fb<FormBuilder>}
    */
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private util: UtilService) {
+               this.initFormConfig(); 
+              }
 
 
   ngOnInit() {
@@ -35,13 +44,34 @@ export class YaCriminalComponent implements OnInit {
     })
   }
 
+  
   /**
    * @public
    */
-  public onSubmit(event: any): void {
+  public initFormConfig(): void {
+    this.config = {
+      nextBtn: true,
+      prevBtn: true,
+      nextBtnLabel: 'Life Skills',
+      previousBtnLabel: 'Relationships'
+    }
+  }
+
+  /**
+   * @public
+   */
+  public onNext(event: any): void {
     if (event.form && event.form.valid) {
+      this.util.navigate('/skills');
       console.log(event.form.value);
     }
+  }
+
+  /**
+   * @public
+   */
+  public onPrevious(event: any): void {
+    this.util.navigate('/relationships');
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -7,6 +8,11 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./ya-parenting.component.scss']
 })
 export class YaParentingComponent implements OnInit {
+
+  /**
+   * @public
+   */
+  public config: any;
 
    /**
    * @public
@@ -17,7 +23,10 @@ export class YaParentingComponent implements OnInit {
    * @constructor
    * @param {fb<FormBuilder>}
    */
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private util: UtilService) {
+              this.initFormConfig();
+     }
 
   ngOnInit() {
     this.parentingForm = this.fb.group({
@@ -43,13 +52,33 @@ export class YaParentingComponent implements OnInit {
     })
   }
 
+   /**
+   * @public
+   */
+  public initFormConfig(): void {
+    this.config = {
+      nextBtn: true,
+      prevBtn: true,
+      nextBtnLabel: 'Health',
+      previousBtnLabel: 'Placement & Safety'
+    }
+  }
+
   /**
    * @public
    */
-  public onSubmit(event: any): void {
+  public onNext(event: any): void {
     if (event.form && event.form.valid) {
+      this.util.navigate('/health');
       console.log(event.form.value);
     }
+  }
+
+  /**
+   * @public
+   */
+  public onPrevious(event: any): void {
+    this.util.navigate('/placements');
   }
 
 }
