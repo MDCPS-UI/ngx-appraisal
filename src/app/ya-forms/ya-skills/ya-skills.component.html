@@ -7,7 +7,7 @@
       <label class="col-form-label">{{section.title}}</label>
       <div class="form-group" *ngFor="let skill of section.skills">
         <div class="form-check">
-          <label class="form-check-label ">
+          <label class="form-check-label">
             <input type="checkbox" class="form-check-input" [value]="skill.value" [formControlName]="skill.optionName">{{skill.label}}
           </label>
         </div>
