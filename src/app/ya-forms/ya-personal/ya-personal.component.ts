@@ -1,5 +1,5 @@
-import { YA_PERSONAL_LIST } from './ya-personal.constants';
 import { Component, OnInit } from '@angular/core';
+import { YA_PERSONAL_LIST } from './ya-personal.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 

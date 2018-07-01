@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-12 col-md-6">
       <label for="demographics.dateofbirth">Date of Birth</label>
-      <input type="text" class="form-control form-control-sm w-50 datepicker" id="demographics.dateofbirth" placeholder="Date of Birth" formControlName="dateOfBirth">
+      <input type="text" class="form-control" id="demographics.dateofbirth" placeholder="Date of Birth" formControlName="dateOfBirth">
       <div class="form-control-feedback" *ngIf="!demographicsForm.get('dateOfBirth').valid && (demographicsForm.get('dateOfBirth').dirty || demographicsForm.get('dateOfBirth')?.touched)">
         <small *ngIf="!demographicsForm.get('dateOfBirth').valid" class="has-error small-text text-danger">
           Please enter the valid date of birth
@@ -13,7 +13,7 @@
     </div>
     <div class="col-12 col-md-6 pt-2 pt-md-0">
       <label for="demographics.age">Age</label>
-      <input type="text" class="form-control form-control-sm w-50" id="demographics.age" placeholder="Age" formControlName="age">
+      <input type="text" class="form-control" id="demographics.age" placeholder="Age" formControlName="age">
       <div class="form-control-feedback" *ngIf="!demographicsForm.get('age').valid && (demographicsForm.get('age').dirty || demographicsForm.get('dateOfBirth')?.touched)">
         <small *ngIf="!demographicsForm.get('age').valid" class="has-error small-text text-danger">
           Please enter a valid age
@@ -25,18 +25,18 @@
   <div class="row">
     <div class="col-12 col-md-6">
       <label for="demographics.phone">Phone</label>
-      <input type="tel" class="form-control form-control-sm w-50" id="demographics.phone" placeholder="Phone" formControlName="phone">
+      <input type="tel" class="form-control" id="demographics.phone" placeholder="Phone" formControlName="phone">
     </div>
     <div class="col-12 col-md-6 pt-2 pt-md-0">
       <label for="demographics.email">Email</label>
-      <input type="email" class="form-control form-control-sm" id="demographics.email" placeholder="Email" formControlName="email">
+      <input type="email" class="form-control" id="demographics.email" placeholder="Email" formControlName="email">
     </div>
   </div>
 
   <div class="row">
     <div class="col">
       <label for="demographics.permenancygoal">Permenancy Goal</label>
-      <textarea type="text" class="form-control form-control-sm" id="demographics.permenancygoal" placeholder="Enter Permenancy Goal" rows="2" formControlName="permenancygoal">
+      <textarea type="text" class="form-control" id="demographics.permenancygoal" placeholder="Enter Permenancy Goal" rows="2" formControlName="permenancygoal">
       </textarea>
     </div>
   </div>
@@ -59,14 +59,14 @@
     </div>
     <div class="col-12 col-md-6 pt-2 pt-md-0">
       <label for="demographics.dischargedate" class="col-form-label">Discharge Date</label>
-      <input type="text" class="form-control form-control-sm datepicker w-50" id="demographics.dischargeDate" placeholder="Date of Discharge" formControlName="dischargeDate">
+      <input type="text" class="form-control" id="demographics.dischargeDate" placeholder="Date of Discharge" formControlName="dischargeDate">
     </div>
   </div>
 
   <div class="row">
     <div class="col-12">
       <label for="demographics.address">Address</label>
-      <textarea class="form-control form-control-sm" id="demographics.address" placeholder="Address" rows="3" formControlName="address">
+      <textarea class="form-control" id="demographics.address" placeholder="Address" rows="3" formControlName="address">
       </textarea>
     </div>
   </div>
@@ -74,11 +74,11 @@
   <div class="row">
     <div class="col-12 col-md-6">
       <label for="demographics.race">Race</label>
-      <input type="text" class="form-control form-control-sm w-75" id="demographics.race" placeholder="Race" formControlName="race">
+      <input type="text" class="form-control" id="demographics.race" placeholder="Race" formControlName="race">
     </div>
     <div class="col-12 col-md-6 pt-2 pt-md-0">
       <label for="demographics.gender">Gender</label>
-      <input type="text" class="form-control form-control-sm w-50" id="demographics.gender" placeholder="Gender" formControlName="gender">
+      <input type="text" class="form-control" id="demographics.gender" placeholder="Gender" formControlName="gender">
     </div>
   </div>
 
@@ -100,7 +100,7 @@
     </div>
     <div class="col-12 col-6 pt-2 pt-md-0">
       <label for="demographics.LGBTQType" class="pr-2">If Yes, Please Select</label>
-      <select class="custom-select form-control form-control-sm" id="demographics.LGBTQType">
+      <select class="custom-select form-control" id="demographics.LGBTQType">
         <option selected>Choose Category</option>
         <option value="lesbian">Lesbian</option>
         <option value="gay">Gay</option>
@@ -115,11 +115,11 @@
   <div class="row">
     <div class="col-12 col-md-6">
       <label for="demographics_COR">COR</label>
-      <input type="text" class="form-control w-75" id="demographics_COR" placeholder="COR" formControlName="COR">
+      <input type="text" class="form-control" id="demographics_COR" placeholder="COR" formControlName="COR">
     </div>
     <div class="col-12 col-md-6 pt-2 pt-md-0">
       <label for="demographics.COS">COS</label>
-      <input type="text" class="form-control w-75" id="demographics.COS" placeholder="COS" formControlName="COS">
+      <input type="text" class="form-control" id="demographics.COS" placeholder="COS" formControlName="COS">
     </div>
   </div>
 
@@ -174,7 +174,7 @@
     </div>
     <div class="col-12 col-md-6 pt-2 pt-md-0">
       <label for="inputAddress2">If yes explain?</label>
-      <textarea class="form-control form-control-sm" id="inputAddress2" placeholder="Explain Needs for an interpreter" rows="3" formControlName="explainLanguageBarriers">
+      <textarea class="form-control" id="inputAddress2" placeholder="Explain Needs for an interpreter" rows="3" formControlName="explainLanguageBarriers">
       </textarea>
     </div>
   </div>
@@ -215,11 +215,11 @@
   <div class="form-row">
     <div class="col-12 col-md-6">
       <label for="demographics.corWorker">COR MDCPS Worker</label>
-      <input type="phone" class="form-control form-control-sm" id="demographics.corWorker" placeholder="MDCPS Worker" formControlName="corWorker">
+      <input type="phone" class="form-control" id="demographics.corWorker" placeholder="MDCPS Worker" formControlName="corWorker">
     </div>
     <div class="col-12 col-md-6 pt-2 pt-md-0">
       <label for="transitionNavigator">Assigned Transition Navigator</label>
-      <select class="custom-select form-control form-control-sm">
+      <select class="custom-select form-control">
         <option selected>Choose Transition Navigator</option>
         <option value="jazminhawthorne">Jazmin Hawthorne</option>
         <option value="sharoncable">Sharon Cable</option>
