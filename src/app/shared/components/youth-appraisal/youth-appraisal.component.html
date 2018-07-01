@@ -10,6 +10,7 @@
         <div class="col-xs-12 col-md-2 pt-2 pt-md-0">
           <label for="youthId" class="mdcps-label">Id:</label>
           <input type="text" class="form-control form-control-sm mdcps-input" id="youthId" placeholder="Id" formControlName="youthId" [ngbTypeahead]="search" [resultTemplate]="yaTemplate" [inputFormatter]="formatter" (selectItem)="onSelect($event)" />
+          <span><i class="icon mdcps-loader"></i></span>
         </div>
         <div class="col-xs-12 col-md-3 pt-2 pt-md-0">
           <label for="appraisalDate" class="mdcps-label">Appraisal Date:</label>
