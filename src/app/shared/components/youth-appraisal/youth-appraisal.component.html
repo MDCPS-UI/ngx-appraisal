@@ -7,10 +7,16 @@
           <label for="youthName" class="mdcps-label">Youth Name:</label>
           <input class="form-control form-control-sm mdcps-input" id="youthName" placeholder="Enter Youth Name" formControlName="youthName" />
         </div>
-        <div class="col-xs-12 col-md-2 pt-2 pt-md-0">
+        <div class="col-xs-12 col-md-2 pt-2 pt-md-0 mdcps-youth-id-block">
           <label for="youthId" class="mdcps-label">Id:</label>
-          <input type="text" class="form-control form-control-sm mdcps-input" id="youthId" placeholder="Id" formControlName="youthId" [ngbTypeahead]="search" [resultTemplate]="yaTemplate" [inputFormatter]="formatter" (selectItem)="onSelect($event)" />
-          <span><i class="icon mdcps-loader"></i></span>
+          <input type="text" class="form-control form-control-sm mdcps-input" id="youthId" placeholder="Id"
+          (input)="onSearch($event)"
+          formControlName="youthId"
+          [ngbTypeahead]="search.bind(this)"
+          [resultTemplate]="yaTemplate"
+          [inputFormatter]="formatter"
+          (selectItem)="onSelect($event)" />
+          <img *ngIf="isProcessing" class="mdcps-loader-img" src="/assets/images/loader.gif" />
         </div>
         <div class="col-xs-12 col-md-3 pt-2 pt-md-0">
           <label for="appraisalDate" class="mdcps-label">Appraisal Date:</label>
