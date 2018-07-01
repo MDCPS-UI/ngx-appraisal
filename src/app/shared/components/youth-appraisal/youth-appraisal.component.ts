@@ -22,7 +22,12 @@ export class YouthAppraisalComponent implements OnInit {
   /**
    * @public
    */
-  public typeaheadLength: number = 9;
+  public typeaheadLength: number = 3;
+
+  /**
+   * @public
+   */
+  public isProcessing: boolean = false;
 
   /**
    * @constructor
@@ -49,15 +54,31 @@ export class YouthAppraisalComponent implements OnInit {
    */
   public search(text$: Observable<string>): any {
     return text$.pipe(
-      debounceTime(200),
+      debounceTime(1000),
       distinctUntilChanged(),
-      map(term => (term.length < 3)
-        ? []
-        : YA_CHILDREN_DATA.filter(child => {
-          return child.MacwisId.indexOf(term) > -1;
-        })
-      )
+      map(term => {
+        const results: any[] = !(term.length < this.typeaheadLength)
+          ? YA_CHILDREN_DATA.filter(child => {
+            return child.MacwisId.indexOf(term) > -1;
+          })
+          : [];
+
+          this.isProcessing = false;
+          return results;
+      })
     );
+  }
+
+  /**
+   * @public
+   */
+  public onSearch(e: MouseEvent): void {
+    if (e && (<any>e.target).value
+      && (<any>e.target).value.length == this.typeaheadLength) {
+      this.isProcessing = true;
+    } else {
+      this.isProcessing = false;
+    }
   }
 
   /**

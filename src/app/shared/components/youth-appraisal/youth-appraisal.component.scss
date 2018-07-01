@@ -6,6 +6,26 @@
     font-style: italic;
 }
 
-.mdcps-loader {
-    background-image: url("/assets/images/loader.gif");
+.mdcps-youth-id-block {
+    position: relative;
+
+    .mdcps-input {
+        background:#fff;
+        display:block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mdcps-loader-img {
+        position: absolute;
+        top: 34px;
+        right: 12px;
+        width: 35px;
+    }
+}
+
+@media (max-width: 767px) {
+    .mdcps-loader-img {
+        top: 43px !important;
+    }
 }
