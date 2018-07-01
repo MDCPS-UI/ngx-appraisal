@@ -1,3 +1,4 @@
+import { YA_PERSONAL_LIST } from './ya-personal.constants';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
@@ -18,6 +19,10 @@ export class YaPersonalComponent implements OnInit {
   /**
    * @public
    */
+  public questions: any[] = [];
+  /**
+   * @public
+   */
   public personalForm: FormGroup;
 
   /**
@@ -28,6 +33,8 @@ export class YaPersonalComponent implements OnInit {
     private fb: FormBuilder,
     private util: UtilService) {
       this.initFormConfig();
+
+      this.questions = YA_PERSONAL_LIST;
     }
 
   /**

@@ -1,42 +1,12 @@
 <mdcps-base-form [baseFormGroup]="personalForm" (next)="onNext($event)" [config]="config"
   [formGroup]="personalForm" (previous)="onPrevious($event)">
-  <div class="row">
+  <div class="row" *ngFor="let que of questions">
     <div class="col-12">
-      <label class="col-form-label" for="personal.supportInNext6Months">
-        What types of support do you hope to receive in the next six months?
+      <label class="col-form-label" [attr.for]="que.optionName">
+       {{ que.label }}
       </label>
-      <textarea type="text" class="form-control" id="personal.supportInNext6Months" placeholder="Reason" rows="2" formControlName="supportInNext6Months">
+      <textarea type="text" class="form-control" [id]="que.optionName" placeholder="Reason" rows="2" [formControlName]="que.optionName">
       </textarea>
     </div>
   </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label" for="personal.supportInNext6Months">
-        If you could achieve one goal over the next six months, what would it be? </label>
-      <textarea type="text" class="form-control" id="personal.goalInNext6Months" placeholder="Reason" rows="2" formControlName="goalInNext6Months">
-      </textarea>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label" for="personal.supportInNext6Months">
-        What motivates you to succeed or reach your goals?
-      </label>
-      <textarea type="text" class="form-control" id="personal.motivationForGoals" placeholder="Reason" rows="2" formControlName="motivationForGoals">
-      </textarea>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label" for="personal.supportInNext6Months">
-        What challenges are you currently facing?
-      </label>
-      <textarea type="text" class="form-control" id="personal.currentChallenges" placeholder="Reason" rows="2" formControlName="currentChallenges">
-      </textarea>
-    </div>
-  </div>
-  <!-- form-row -->
 </mdcps-base-form>

@@ -35,12 +35,14 @@ fieldset {
     border-bottom: none;
 }
 
-input {
-    border-radius: 0px !important;
-}
+.mdcps-container {
+    input, textarea {
+        border-radius: 0px !important;
+    }
 
-.row {
-    margin-bottom: 5px;
+    .row {
+        margin-bottom: 5px;
+    }
 }
 
 /* Vendor Styling */
