@@ -120,13 +120,8 @@
       <div class="col-12 col-6 pt-2 pt-md-0"  *ngIf="demographicsForm?.get('LGBTQ')?.value == 'yes'">
         <label for="demographics.LGBTQType" class="pr-2">Please Select</label>
         <select class="custom-select form-control" id="demographics.LGBTQType">
-          <option selected>Choose Category</option>
-          <option value="lesbian">Lesbian</option>
-          <option value="gay">Gay</option>
-          <option value="bisexual">Bi-sexual</option>
-          <option value="transgender">Transgender</option>
-          <option value="questioning">Questioning</option>
-          <option value="declined">Declined</option>
+          <option [selected]="true" [ngValue]="">Choose Category</option>
+          <option *ngFor="let gender of config.gendersList" [ngValue]="gender">{{gender}}</option>
         </select>
       </div>
     </div>
@@ -243,7 +238,7 @@
         <label for="transitionNavigator">Assigned Transition Navigator</label>
         <select class="custom-select form-control" formControlName="transitionNavigator">
           <option [selected]="true" [ngValue]="">Choose Transition Navigator</option>
-          <option *ngFor="let name of navgList" [ngValue]="name">{{name}}</option>
+          <option *ngFor="let name of config.navgList" [ngValue]="name">{{name}}</option>
         </select>
       </div>
     </div>
