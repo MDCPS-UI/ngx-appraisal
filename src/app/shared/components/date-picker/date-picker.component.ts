@@ -70,21 +70,6 @@ export class DatePickerComponent implements OnInit {
 
   /**
    * @public
-   */
-  public isWeekend(date: NgbDateStruct): boolean {
-    const d = new Date(date.year, date.month - 1, date.day);
-    return d.getDay() === 0 || d.getDay() === 6;
-  }
-
-  /**
-   * @public
-   */
-  public isDisabled(date: NgbDateStruct, current: { month: number }): boolean {
-    return date.month !== current.month;
-  }
-
-  /**
-   * @public
    * @returns: void
    * @description: sets the datepicker range and
    * global configuration.
@@ -92,6 +77,10 @@ export class DatePickerComponent implements OnInit {
   public setDatePickerConfig(): void {
     this.config.minDate = { year: 1970, month: 1, day: 1 };
     this.config.maxDate = { year: new Date().getFullYear(), month: 12, day: 31 };
+
+    // hide the days that don't belong to
+    // current month are not visible
+    this.config.outsideDays = 'hidden';
 
     // disable weekend options
     this.config.markDisabled = this.shouldDisableWeekends.bind(this);
