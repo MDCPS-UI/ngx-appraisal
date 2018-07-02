@@ -48,6 +48,9 @@ export class DatePickerComponent implements OnInit {
   @Input()
   public placeholder: string = 'YYYY-MM-DD';
 
+  /**
+   * @public
+   */
   @Input()
   public disableWeekends: boolean = false;
 
