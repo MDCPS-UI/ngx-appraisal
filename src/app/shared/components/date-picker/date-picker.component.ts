@@ -46,7 +46,7 @@ export class DatePickerComponent implements OnInit {
    * @public
    */
   @Input()
-  public placeholder: string = 'YYYY-MM-DD';
+  public placeholder: string = 'MM/DD/YYYY';
 
   /**
    * @public

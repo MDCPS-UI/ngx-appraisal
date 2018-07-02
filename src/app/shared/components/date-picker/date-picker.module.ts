@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DatePickerComponent } from './date-picker.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
-import { DatePickerAdapterService } from './../../services/date-picker-adapter/date-picker-adapter.service';
+import { NgbModule, NgbDateAdapter, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { DatePickerAdapterService, DatePickerFormatterService } from './../../services/date-picker/';
 
 /**
  * @author: Shoukath Mohammed
@@ -25,6 +25,10 @@ import { DatePickerAdapterService } from './../../services/date-picker-adapter/d
     {
       provide: NgbDateAdapter,
       useClass: DatePickerAdapterService
+    },
+    {
+      provide: NgbDateParserFormatter,
+      useClass: DatePickerFormatterService
     }
   ]
 })
