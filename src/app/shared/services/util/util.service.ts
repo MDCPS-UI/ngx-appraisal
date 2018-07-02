@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { SpinnerService } from './../spinner/spinner.service';
 
-// access the native window object.
-declare const window: any;
-
+/**
+ * @author: Shoukath Mohammed
+ */
 @Injectable()
 export class UtilService {
 
@@ -88,5 +88,39 @@ export class UtilService {
       this.spinner.hide();
       this.router.navigate([`/dashboard${_path}`]);
     }, 1000);
+  }
+
+  /**
+   * @public
+   * @default: string
+   * @param {value<string | number>}
+   * @param {format<'str' | 'num'>}
+   *
+   * @returns: string | number
+   * @description: helper method that formats the
+   * prepends `0` to the date if the length is `1`.
+   */
+  public toTwoDigitFormat(value: string | number,
+    format?: 'str' | 'num'): string | number {
+    let strToFormat: any = value;
+
+    // convert the numbered format to
+    // string so we can check the length
+    if (typeof value == 'number') {
+      strToFormat = value.toString();
+    }
+
+    // in case if the length is `1`, prepend
+    // zero before the value
+    if (strToFormat.length == 1) {
+      strToFormat = ('0' + strToFormat);
+    }
+
+    // if the value is requested in numbered
+    // format
+    if (format && format == 'num') {
+      strToFormat = +strToFormat;
+    }
+    return strToFormat;
   }
 }
