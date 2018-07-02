@@ -70,21 +70,6 @@ export class DatePickerComponent implements OnInit {
 
   /**
    * @public
-   */
-  public isWeekend(date: NgbDateStruct): boolean {
-    const d = new Date(date.year, date.month - 1, date.day);
-    return d.getDay() === 0 || d.getDay() === 6;
-  }
-
-  /**
-   * @public
-   */
-  public isDisabled(date: NgbDateStruct, current: { month: number }): boolean {
-    return date.month !== current.month;
-  }
-
-  /**
-   * @public
    * @returns: void
    * @description: sets the datepicker range and
    * global configuration.
