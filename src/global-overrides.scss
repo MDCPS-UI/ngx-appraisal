@@ -1,0 +1,21 @@
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+legend {
+    width: auto !important;
+    border: none;
+    font-size: 14px;
+    padding: 0 5px;
+}
+
+fieldset {
+    border: solid 1px #DDD !important;
+    padding: 15px;
+    border-bottom: none;
+}

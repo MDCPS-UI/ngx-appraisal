@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { YA_DG_NAVG_LIST } from './ya-demographics.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from '../../shared/services/util/util.service';
 import { ProfileService } from '../../shared/services/profile/profile.service';
@@ -16,6 +17,11 @@ export class YaDemographicsComponent implements OnInit {
   /**
    * @public
    */
+  public navgList: any[] = [];
+
+  /**
+   * @public
+   */
   public demographicsForm: FormGroup;
 
   /**
@@ -25,7 +31,11 @@ export class YaDemographicsComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private profileService: ProfileService,
-    private util: UtilService) { }
+    private util: UtilService) {
+
+      // navigator list
+      this.navgList = YA_DG_NAVG_LIST;
+    }
 
   /**
    * @public
@@ -51,7 +61,8 @@ export class YaDemographicsComponent implements OnInit {
       explainLanguageBarriers: new FormControl('', []),
       mentor: new FormControl('', []),
       transitionplanning: new FormControl('', []),
-      corWorker: new FormControl('', [])
+      corWorker: new FormControl('', []),
+      transitionNavigator: new FormControl('', [])
     });
 
     // listen to youth appraisal selection
