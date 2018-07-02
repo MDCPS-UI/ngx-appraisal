@@ -57,3 +57,12 @@ ngb-typeahead-window {
         background: #79801a;
     }
 }
+
+/**
+ * Angular Bootstrap Date Picker Style Overrides
+ */
+ngb-datepicker {
+    &:focus {
+        outline: none;
+    }
+}

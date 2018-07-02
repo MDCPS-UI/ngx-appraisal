@@ -1,11 +1,19 @@
 <mdcps-base-form [baseFormGroup]="demographicsForm" (next)="onNext($event)" [config]="{nextBtn: true, nextBtnLabel: 'Housing'}"
   [formGroup]="demographicsForm">
 
-  <div class="mdcps-demographics-container">
+  <div class="mdcps-demographics-container" *ngIf="demographicsForm">
     <div class="row">
       <div class="col-12 col-md-6">
         <label for="demographics.dateofbirth">Date of Birth</label>
-        <input type="text" class="form-control" id="demographics.dateofbirth" placeholder="Date of Birth" formControlName="dateOfBirth">
+
+        <!-- Date of Birth Block -->
+        <mdcps-date-picker
+          [class]="'form-control'"
+          [controlName]="'dateOfBirth'"
+          [id]="'demographics.dateofbirth'"
+          [group]="demographicsForm">
+        </mdcps-date-picker>
+
         <div class="form-control-feedback" *ngIf="!demographicsForm.get('dateOfBirth').valid && (demographicsForm.get('dateOfBirth').dirty || demographicsForm.get('dateOfBirth')?.touched)">
           <small *ngIf="!demographicsForm.get('dateOfBirth').valid" class="has-error small-text text-danger">
             Please enter the valid date of birth
@@ -62,7 +70,15 @@
       </div>
       <div class="col-12 col-md-6 pt-2 pt-md-0">
         <label for="demographics.dischargedate" class="col-form-label">Discharge Date</label>
-        <input type="text" class="form-control" id="demographics.dischargeDate" placeholder="Date of Discharge" formControlName="dischargeDate">
+
+        <!-- Discharge Date Block -->
+        <mdcps-date-picker
+          [class]="'form-control'"
+          [controlName]="'dischargeDate'"
+          [id]="'demographics.dischargedate'"
+          [group]="demographicsForm"
+          [disableWeekends]="true">
+        </mdcps-date-picker>
       </div>
     </div>
 

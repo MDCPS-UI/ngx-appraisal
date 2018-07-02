@@ -1,0 +1,27 @@
+.mdcps-dp-day {
+    text-align: center;
+    padding: 0.185rem 0.25rem;
+    border-radius: 19px;
+    display: inline-block;
+    width: 2rem;
+}
+
+.mdcps-dp-day:hover,
+.mdcps-dp-day.focused {
+  background-color: #e6e6e6;
+}
+
+.mdcps-primary {
+  color: #fff;
+  background: #79801a !important;
+}
+
+.mdcps-text-muted {
+  border-radius: 19px;
+  pointer-events: none;
+  background-color: #dddddda6;
+
+  &:hover {
+    background-color: #dddddda6;
+  }
+}
