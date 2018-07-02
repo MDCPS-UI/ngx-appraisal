@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { YA_DG_NAVG_LIST } from './ya-demographics.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from '../../shared/services/util/util.service';
 import { ProfileService } from '../../shared/services/profile/profile.service';
+import { YA_DG_NAVG_LIST, YA_DG_GENDER_LIST } from './ya-demographics.constants';
 
 /**
  * @author: Shoukath Mohammed
@@ -17,7 +17,7 @@ export class YaDemographicsComponent implements OnInit {
   /**
    * @public
    */
-  public navgList: any[] = [];
+  public config: any = {};
 
   /**
    * @public
@@ -33,9 +33,10 @@ export class YaDemographicsComponent implements OnInit {
     private profileService: ProfileService,
     private util: UtilService) {
 
-      // navigator list
-      this.navgList = YA_DG_NAVG_LIST;
-    }
+    // navigator list
+    this.config.navgList = YA_DG_NAVG_LIST;
+    this.config.gendersList = YA_DG_GENDER_LIST;
+  }
 
   /**
    * @public
@@ -74,16 +75,16 @@ export class YaDemographicsComponent implements OnInit {
    */
   public subscribeToYaSelection(): void {
     this.profileService.getYaSelection()
-    .subscribe(selection => {
-      if (selection) {
-        const form: FormGroup = this.demographicsForm;
-        form.get('email').setValue(selection.Email);
-        form.get('dateOfBirth').setValue(selection.DOBString);
+      .subscribe(selection => {
+        if (selection) {
+          const form: FormGroup = this.demographicsForm;
+          form.get('email').setValue(selection.Email);
+          form.get('dateOfBirth').setValue(selection.DOBString);
 
-        // update the demographics form
-        this.demographicsForm.updateValueAndValidity();
-      }
-    });
+          // update the demographics form
+          this.demographicsForm.updateValueAndValidity();
+        }
+      });
   }
 
   /**
