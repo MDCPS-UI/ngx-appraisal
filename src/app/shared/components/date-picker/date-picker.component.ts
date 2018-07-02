@@ -78,6 +78,10 @@ export class DatePickerComponent implements OnInit {
     this.config.minDate = { year: 1970, month: 1, day: 1 };
     this.config.maxDate = { year: new Date().getFullYear(), month: 12, day: 31 };
 
+    // hide the days that don't belong to
+    // current month are not visible
+    this.config.outsideDays = 'hidden';
+
     // disable weekend options
     this.config.markDisabled = this.shouldDisableWeekends.bind(this);
   }
