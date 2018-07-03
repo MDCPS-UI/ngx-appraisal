@@ -1,0 +1,21 @@
+.mdcps-stipend-container {
+    border: 2px dotted #ccccccbf;
+    margin: 20px 0px;
+
+    .mdcps-stipend-title {
+        padding: 15px 0;
+        display: block;
+        font-weight: 600;
+        font-size: larger;
+
+        .divider {
+            padding-top: 10px;
+            border-bottom: 1px solid #efefef;
+            display: block;
+        }
+    }
+
+    .form-check-input-inline {
+        display: inline;
+    }
+}
