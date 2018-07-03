@@ -1,10 +1,12 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
 import { YA_DOCS_LIST } from './ya-documents.constants';
-import { UtilService } from '../../shared/services/util/util.service';
+import { UtilService } from './../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-documents',
   templateUrl: './ya-documents.component.html',
@@ -28,6 +30,7 @@ export class YaDocumentsComponent implements OnInit {
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
    */
   constructor(
     private fb: FormBuilder,
@@ -67,7 +70,7 @@ export class YaDocumentsComponent implements OnInit {
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
-      
+
       console.log(event.form.value);
     }
     this.util.navigate('/review');

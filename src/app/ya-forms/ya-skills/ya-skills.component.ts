@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { YA_SKILLS_LIST } from './ya-skills.constants';
-import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { UtilService } from './../../shared/services/util/util.service';
 
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-skills',
   templateUrl: './ya-skills.component.html',
@@ -27,13 +30,18 @@ export class YaSkillsComponent implements OnInit {
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
    */
-  constructor(private fb: FormBuilder,
-              private util: UtilService) { 
-                this.initFormConfig();
-              }
+  constructor(
+    private fb: FormBuilder,
+    private util: UtilService) {
+    this.initFormConfig();
+  }
 
-  ngOnInit() {
+  /**
+   * @public
+   */
+  public ngOnInit(): void {
     this.skillsForm = this.fb.group({
       emailSkills: new FormControl('', []),
       cookingSkills: new FormControl('', []),
@@ -73,7 +81,7 @@ export class YaSkillsComponent implements OnInit {
       prevBtn: true,
       nextBtnLabel: 'Criminal Justice System',
       previousBtnLabel: 'Stipends'
-    }
+    };
   }
 
   /**

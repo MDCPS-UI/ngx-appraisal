@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { UtilService } from './../../shared/services/util/util.service';
 
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-criminal',
   templateUrl: './ya-criminal.component.html',
   styleUrls: ['./ya-criminal.component.scss']
 })
 export class YaCriminalComponent implements OnInit {
-
-/**
+  /**
    * @public
    */
   public config: any;
 
-/**
+  /**
    * @public
    */
   public criminalForm: FormGroup;
@@ -22,14 +24,18 @@ export class YaCriminalComponent implements OnInit {
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
    */
-  constructor(private fb: FormBuilder,
-              private util: UtilService) {
-               this.initFormConfig(); 
-              }
+  constructor(
+    private fb: FormBuilder,
+    private util: UtilService) {
+    this.initFormConfig();
+  }
 
-
-  ngOnInit() {
+  /**
+   * @public
+   */
+  public ngOnInit(): void {
     this.criminalForm = this.fb.group({
       everArrested: new FormControl('', []),
       everConvicted: new FormControl('', []),
@@ -41,10 +47,9 @@ export class YaCriminalComponent implements OnInit {
       freeOnBond: new FormControl('', []),
       gangRelated: new FormControl('', []),
       possessWeapon: new FormControl('', []),
-    })
+    });
   }
 
-  
   /**
    * @public
    */
@@ -54,7 +59,7 @@ export class YaCriminalComponent implements OnInit {
       prevBtn: true,
       nextBtnLabel: 'Life Skills',
       previousBtnLabel: 'Relationships'
-    }
+    };
   }
 
   /**
@@ -73,5 +78,4 @@ export class YaCriminalComponent implements OnInit {
   public onPrevious(event: any): void {
     this.util.navigate('/relationships');
   }
-
 }

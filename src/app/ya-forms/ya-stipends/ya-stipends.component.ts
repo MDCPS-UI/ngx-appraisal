@@ -1,9 +1,11 @@
-import { YA_STPNDS_LIST } from './ya-stipends.constants';
 import { Component, OnInit } from '@angular/core';
-import { UtilService } from '../../shared/services/util/util.service';
+import { YA_STPNDS_LIST } from './ya-stipends.constants';
+import { UtilService } from './../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 
-
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-stipends',
   templateUrl: './ya-stipends.component.html',
@@ -28,6 +30,7 @@ export class YaStipendsComponent implements OnInit {
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
    */
   constructor(
     private fb: FormBuilder,
@@ -67,7 +70,7 @@ export class YaStipendsComponent implements OnInit {
       prevBtn: true,
       nextBtnLabel: 'Continuing Support/Services',
       previousBtnLabel: 'Life SKills'
-    }
+    };
   }
 
   /**

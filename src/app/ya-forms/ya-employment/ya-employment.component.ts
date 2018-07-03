@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { UtilService } from './../../shared/services/util/util.service';
 
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-employment',
   templateUrl: './ya-employment.component.html',
   styleUrls: ['./ya-employment.component.scss']
 })
 export class YaEmploymentComponent implements OnInit {
-
   /**
    * @public
    */
@@ -23,12 +25,16 @@ export class YaEmploymentComponent implements OnInit {
    * @constructor
    * @param {fb<FormBuilder>}
    */
-  constructor(private fb: FormBuilder,
-              private util: UtilService) {
-              this.initFormConfig();
-     }
+  constructor(
+    private fb: FormBuilder,
+    private util: UtilService) {
+    this.initFormConfig();
+  }
 
-  ngOnInit() {
+  /**
+   * @public
+   */
+  public ngOnInit(): void {
     this.employmentForm = this.fb.group({
       workDisabled: new FormControl('', []),
       explainWorkDisabled: new FormControl('', []),
@@ -40,7 +46,7 @@ export class YaEmploymentComponent implements OnInit {
       inBenefitProgram: new FormControl('', []),
       hourlyRate: new FormControl('', []),
       otherHourlyRate: new FormControl('', [])
-    })
+    });
   }
 
   /**
@@ -52,7 +58,7 @@ export class YaEmploymentComponent implements OnInit {
       prevBtn: true,
       nextBtnLabel: 'Social Interests',
       previousBtnLabel: 'Education'
-    }
+    };
   }
 
   /**
@@ -71,5 +77,4 @@ export class YaEmploymentComponent implements OnInit {
   public onPrevious(event: any): void {
     this.util.navigate('/education');
   }
-
 }

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { UtilService } from './../../shared/services/util/util.service';
 
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-placements',
   templateUrl: './ya-placements.component.html',
@@ -13,7 +16,7 @@ export class YaPlacementsComponent implements OnInit {
    */
   public config: any;
 
-   /**
+  /**
    * @public
    */
   public placementsForm: FormGroup;
@@ -21,19 +24,24 @@ export class YaPlacementsComponent implements OnInit {
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
    */
-  constructor(private fb: FormBuilder,
-              private util: UtilService) {
-              this.initFormConfig();
-     }
+  constructor(
+    private fb: FormBuilder,
+    private util: UtilService) {
+    this.initFormConfig();
+  }
 
-  ngOnInit() {
+  /**
+   * @public
+   */
+  public ngOnInit(): void {
     this.placementsForm = this.fb.group({
       timeInPlacement: new FormControl('', []),
       placementsInCare: new FormControl('', []),
       whyChangedPlacements: new FormControl('', []),
       feelSafeInPlacement: new FormControl('', []),
-      whynotsafeInPlacement: new FormControl('', []), 
+      whynotsafeInPlacement: new FormControl('', []),
       positivePlacementExperiences: new FormControl('', []),
       howConnectionsUsed: new FormControl('', []),
       maintainContact: new FormControl('', []),
@@ -43,19 +51,19 @@ export class YaPlacementsComponent implements OnInit {
       contactRelationship: new FormControl('', []),
       contactPhone: new FormControl('', []),
       contactEmail: new FormControl('', [])
-    })
+    });
   }
 
-   /**
-   * @public
-   */
+  /**
+  * @public
+  */
   public initFormConfig(): void {
     this.config = {
       nextBtn: true,
       prevBtn: true,
       nextBtnLabel: 'Pregnant/Parenting',
       previousBtnLabel: 'Social Interests'
-    }
+    };
   }
 
   /**
@@ -74,5 +82,4 @@ export class YaPlacementsComponent implements OnInit {
   public onPrevious(event: any): void {
     this.util.navigate('/interests');
   }
-
 }

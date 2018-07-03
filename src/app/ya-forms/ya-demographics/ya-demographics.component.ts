@@ -13,7 +13,6 @@ import { YA_DG_NAVG_LIST, YA_DG_GENDER_LIST } from './ya-demographics.constants'
   styleUrls: ['./ya-demographics.component.scss']
 })
 export class YaDemographicsComponent implements OnInit {
-
   /**
    * @public
    */
@@ -27,11 +26,13 @@ export class YaDemographicsComponent implements OnInit {
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
+   * @param {profileService<ProfileService>}
    */
   constructor(
     private fb: FormBuilder,
-    private profileService: ProfileService,
-    private util: UtilService) {
+    private util: UtilService,
+    private profileService: ProfileService) {
 
     // navigator list
     this.config.navgList = YA_DG_NAVG_LIST;

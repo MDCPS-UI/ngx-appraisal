@@ -1,34 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { UtilService } from './../../shared/services/util/util.service';
 
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-parenting',
   templateUrl: './ya-parenting.component.html',
   styleUrls: ['./ya-parenting.component.scss']
 })
 export class YaParentingComponent implements OnInit {
-
   /**
    * @public
    */
   public config: any;
 
-   /**
-   * @public
-   */
+  /**
+  * @public
+  */
   public parentingForm: FormGroup;
 
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
    */
-  constructor(private fb: FormBuilder,
-              private util: UtilService) {
-              this.initFormConfig();
-     }
+  constructor(
+    private fb: FormBuilder,
+    private util: UtilService) {
+    this.initFormConfig();
+  }
 
-  ngOnInit() {
+  /**
+   * @public
+   */
+  public ngOnInit(): void {
     this.parentingForm = this.fb.group({
       pregnancyResponsible: new FormControl('', []),
       preNatalCare: new FormControl('', []),
@@ -49,19 +56,19 @@ export class YaParentingComponent implements OnInit {
       currentyEnrolledInSchool: new FormControl('', []),
       regularlyCaredFor: new FormControl('', []),
       childcareServicesPayMethod: new FormControl('', [])
-    })
+    });
   }
 
-   /**
-   * @public
-   */
+  /**
+  * @public
+  */
   public initFormConfig(): void {
     this.config = {
       nextBtn: true,
       prevBtn: true,
       nextBtnLabel: 'Health',
       previousBtnLabel: 'Placement & Safety'
-    }
+    };
   }
 
   /**
@@ -80,5 +87,4 @@ export class YaParentingComponent implements OnInit {
   public onPrevious(event: any): void {
     this.util.navigate('/placements');
   }
-
 }
