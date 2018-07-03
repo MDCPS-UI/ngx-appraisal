@@ -1,12 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { UtilService } from './../../shared/services/util/util.service';
 
+
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-actions',
   templateUrl: './ya-actions.component.html',
   styleUrls: ['./ya-actions.component.scss']
 })
 export class YaActionsComponent implements OnInit {
+  /**
+   * @public
+   */
+  public config: any;
 
   /**
    * @public
@@ -16,10 +25,18 @@ export class YaActionsComponent implements OnInit {
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
    */
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private util: UtilService) {
+    this.initFormConfig();
+  }
 
-  ngOnInit() {
+  /**
+   * @public
+   */
+  public ngOnInit(): void {
     this.actionsForm = this.fb.group({
       educationGoals: new FormControl('', []),
       educationGoalTasks: new FormControl('', []),
@@ -46,7 +63,7 @@ export class YaActionsComponent implements OnInit {
       otherGoalsProgress: new FormControl('', []),
       otherGoalsCompletionDate: new FormControl('', []),
       notes: new FormControl('', [])
-    })
+    });
   }
 
   /**
@@ -58,4 +75,32 @@ export class YaActionsComponent implements OnInit {
     }
   }
 
+  /**
+   * @public
+   */
+  public initFormConfig(): void {
+    this.config = {
+      nextBtn: true,
+      prevBtn: true,
+      nextBtnLabel: 'Received Documents',
+      previousBtnLabel: 'Personal'
+    };
+  }
+
+  /**
+   * @public
+   */
+  public onNext(event: any): void {
+    if (event.form && event.form.valid) {
+      this.util.navigate('/skills');
+      console.log(event.form.value);
+    }
+  }
+
+  /**
+   * @public
+   */
+  public onPrevious(event: any): void {
+    this.util.navigate('/relationships');
+  }
 }

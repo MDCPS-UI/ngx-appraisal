@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { UtilService } from './../../shared/services/util/util.service';
 
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-education',
   templateUrl: './ya-education.component.html',
   styleUrls: ['./ya-education.component.scss']
 })
 export class YaEducationComponent implements OnInit {
-
-/**
+  /**
    * @public
    */
-  public config: any;  
+  public config: any;
 
- /**
+  /**
    * @public
    */
   public educationForm: FormGroup;
@@ -22,13 +24,18 @@ export class YaEducationComponent implements OnInit {
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
    */
-  constructor(private fb: FormBuilder,
+  constructor(
+    private fb: FormBuilder,
     private util: UtilService) {
-      this.initFormConfig();
-     }
+    this.initFormConfig();
+  }
 
-  ngOnInit() {
+  /**
+   * @public
+   */
+  public ngOnInit(): void {
     this.educationForm = this.fb.group({
       diplomaStatus: new FormControl('', []),
       grade: new FormControl('', []),
@@ -65,7 +72,7 @@ export class YaEducationComponent implements OnInit {
       prevBtn: true,
       nextBtnLabel: 'Employment',
       previousBtnLabel: 'Housing'
-    }
+    };
   }
 
   /**

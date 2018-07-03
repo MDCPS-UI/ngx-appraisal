@@ -1,4 +1,4 @@
-<mdcps-base-form [baseFormGroup]="actionsForm" (next)="onSubmit($event)" [config]="{nextBtn: true, nextBtnLabel: 'Received Documents'}"
+<mdcps-base-form [baseFormGroup]="actionsForm" (next)="onSubmit($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="actionsForm">
   <div class="row">
     <div class="col-12 col-md-3">
@@ -104,7 +104,7 @@
       <label for="goalsandactions.transportationGoalsTasks" class="col-form-label">
         Task to Reach Goals
       </label>
-      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.transportationGoalsTasks" placeholder="Tasks" 
+      <textarea type="text" class="form-control w-75" rows="3" id="goalsandactions.transportationGoalsTasks" placeholder="Tasks"
         placeholder="Tasks" formControlName="transportationGoalsTasks"></textarea>
     </div>
     <div class="col-12 col-md-3">

@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { UtilService } from './../../shared/services/util/util.service';
 
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-housing',
   templateUrl: './ya-housing.component.html',
   styleUrls: ['./ya-housing.component.scss']
 })
 export class YaHousingComponent implements OnInit {
-  
   /**
    * @public
    */
@@ -22,13 +24,18 @@ export class YaHousingComponent implements OnInit {
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
    */
-  constructor(private fb: FormBuilder,
-              private util: UtilService) {
-              this.initFormConfig();
-     }
+  constructor(
+    private fb: FormBuilder,
+    private util: UtilService) {
+    this.initFormConfig();
+  }
 
-  ngOnInit() {
+  /**
+   * @public
+   */
+  public ngOnInit(): void {
     this.housingForm = this.fb.group({
       housingStatus: new FormControl('', []),
       timeInCurrentHousing: new FormControl('', []),
@@ -50,7 +57,7 @@ export class YaHousingComponent implements OnInit {
       prevBtn: true,
       nextBtnLabel: 'Education',
       previousBtnLabel: 'Demographics'
-    }
+    };
   }
 
   /**
@@ -69,5 +76,4 @@ export class YaHousingComponent implements OnInit {
   public onPrevious(event: any): void {
     this.util.navigate('/demographics');
   }
-
 }

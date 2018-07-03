@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { UtilService } from './../../shared/services/util/util.service';
 
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-health',
   templateUrl: './ya-health.component.html',
@@ -14,21 +17,26 @@ export class YaHealthComponent implements OnInit {
    */
   public config: any;
 
- /**
-   * @public
-   */
+  /**
+    * @public
+    */
   public healthForm: FormGroup;
 
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
    */
-  constructor(private fb: FormBuilder,
-              private util: UtilService) {
-              this.initFormConfig();
-     }
+  constructor(
+    private fb: FormBuilder,
+    private util: UtilService) {
+    this.initFormConfig();
+  }
 
-  ngOnInit() {
+  /**
+   * @public
+   */
+  public ngOnInit(): void {
     this.healthForm = this.fb.group({
       medicalIssues: new FormControl('', []),
       tramaticEvent: new FormControl('', []),
@@ -51,7 +59,7 @@ export class YaHealthComponent implements OnInit {
       listMedications: new FormControl('', []),
       medicationsAdministered: new FormControl('', []),
       trackMedicalAppts: new FormControl('', [])
-    })
+    });
   }
 
   /**

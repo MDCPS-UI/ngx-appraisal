@@ -19,8 +19,10 @@ export class YaReviewComponent implements OnInit {
    */
   constructor(private fb: FormBuilder) { }
 
-  ngOnInit() {
-  }
+  /**
+   * @public
+   */
+  public ngOnInit(): void { }
 
   /**
    * @public
@@ -30,5 +32,4 @@ export class YaReviewComponent implements OnInit {
       console.log(event.form.value);
     }
   }
-
 }
