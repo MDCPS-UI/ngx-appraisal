@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { UtilService } from './../../shared/services/util/util.service';
 
 /**
  * @author: Shoukath Mohammed
@@ -11,7 +11,6 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./ya-interests.component.scss']
 })
 export class YaInterestsComponent implements OnInit {
-
   /**
    * @public
    */

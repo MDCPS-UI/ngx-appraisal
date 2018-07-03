@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-services',
   templateUrl: './ya-services.component.html',
@@ -22,13 +25,18 @@ export class YaServicesComponent implements OnInit {
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
    */
-  constructor(private fb: FormBuilder,
-              private util: UtilService) { 
-                this.initFormConfig();
-              }
+  constructor(
+    private fb: FormBuilder,
+    private util: UtilService) {
+    this.initFormConfig();
+  }
 
-  ngOnInit() {
+  /**
+   * @public
+   */
+  public ngOnInit(): void {
     this.servicesForm = this.fb.group({
       etv: new FormControl('',[]),
       appliedMedicaid: new FormControl('',[]),
@@ -37,7 +45,7 @@ export class YaServicesComponent implements OnInit {
       transportationNeeds: new FormControl('',[]),
       publicAssistance: new FormControl('',[]),
       notes: new FormControl('', [])
-    })
+    });
   }
 
   /**
@@ -49,6 +57,7 @@ export class YaServicesComponent implements OnInit {
       console.log(event.form.value);
     }
   }
+
   /**
    * @public
    * @param {event<any>}
@@ -68,5 +77,4 @@ export class YaServicesComponent implements OnInit {
       previousBtnLabel: 'Stipends'
     };
   }
-
 }

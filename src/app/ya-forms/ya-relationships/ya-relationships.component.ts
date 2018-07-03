@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { UtilService } from './../../shared/services/util/util.service';
 
+/**
+ * @author: Shoukath Mohammed
+ */
 @Component({
   selector: 'mdcps-ya-relationships',
   templateUrl: './ya-relationships.component.html',
   styleUrls: ['./ya-relationships.component.scss']
 })
 export class YaRelationshipsComponent implements OnInit {
-
-/**
+  /**
    * @public
    */
   public config: any;
 
-/**
+  /**
    * @public
    */
   public relationshipForm: FormGroup;
@@ -22,22 +24,27 @@ export class YaRelationshipsComponent implements OnInit {
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
    */
-  constructor(private fb: FormBuilder,
-              private util: UtilService) {
-              this.initFormConfig();            
-          }
+  constructor(
+    private fb: FormBuilder,
+    private util: UtilService) {
+    this.initFormConfig();
+  }
 
-  ngOnInit() {
+  /**
+   * @public
+   */
+  public ngOnInit(): void {
     this.relationshipForm = this.fb.group({
-      everArrested: new FormControl('',[]),
-      abusivePartner: new FormControl('',[]),
-      afraidOfPartner: new FormControl('',[]),
-      violentRelationship: new FormControl('',[]),
-      compensationForSexualServices: new FormControl('',[]),
-      forcedSexualContact: new FormControl('',[]),
-      forcedToHaveSex: new FormControl('',[]),
-      involvedInProstitution: new FormControl('',[])
+      everArrested: new FormControl('', []),
+      abusivePartner: new FormControl('', []),
+      afraidOfPartner: new FormControl('', []),
+      violentRelationship: new FormControl('', []),
+      compensationForSexualServices: new FormControl('', []),
+      forcedSexualContact: new FormControl('', []),
+      forcedToHaveSex: new FormControl('', []),
+      involvedInProstitution: new FormControl('', [])
     })
   }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { UtilService } from '../../shared/services/util/util.service';
+import { UtilService } from './../../shared/services/util/util.service';
 
 /**
  * @author: Shoukath Mohammed
@@ -24,6 +24,7 @@ export class YaPlacementsComponent implements OnInit {
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
    */
   constructor(
     private fb: FormBuilder,
@@ -50,7 +51,7 @@ export class YaPlacementsComponent implements OnInit {
       contactRelationship: new FormControl('', []),
       contactPhone: new FormControl('', []),
       contactEmail: new FormControl('', [])
-    })
+    });
   }
 
   /**
@@ -62,7 +63,7 @@ export class YaPlacementsComponent implements OnInit {
       prevBtn: true,
       nextBtnLabel: 'Pregnant/Parenting',
       previousBtnLabel: 'Social Interests'
-    }
+    };
   }
 
   /**

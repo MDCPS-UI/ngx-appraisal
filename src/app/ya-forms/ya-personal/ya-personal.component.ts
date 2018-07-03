@@ -28,14 +28,15 @@ export class YaPersonalComponent implements OnInit {
   /**
    * @constructor
    * @param {fb<FormBuilder>}
+   * @param {util<UtilService>}
    */
   constructor(
     private fb: FormBuilder,
     private util: UtilService) {
-      this.initFormConfig();
+    this.initFormConfig();
 
-      this.questions = YA_PERSONAL_LIST;
-    }
+    this.questions = YA_PERSONAL_LIST;
+  }
 
   /**
    * @public
@@ -46,7 +47,7 @@ export class YaPersonalComponent implements OnInit {
       currentChallenges: new FormControl('', []),
       motivationForGoals: new FormControl('', []),
       supportInNext6Months: new FormControl('', [])
-    })
+    });
   }
 
   /**
