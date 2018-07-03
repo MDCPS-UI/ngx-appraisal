@@ -142,7 +142,13 @@
     </div>
     <div class="col-12 col-md-4">
       <label for="health.HIV_AIDSTestDate" class="col-form-label">HIV/AIDS Date</label>
-      <input type="text" class="form-control form-control-sm datepicker w-50" id="health.HIV_AIDSTestDate" placeholder="Date" formControlName="HIV_AIDSTestDate">
+      <!-- HIV/AIDS Date Block -->
+      <mdcps-date-picker
+        [class]="'form-control form-control-sm datepicker w-50'"
+        [controlName]="'HIV_AIDSTestDate'"
+        [id]="'health.HIV_AIDSTestDate'"
+        [group]="healthForm">
+      </mdcps-date-picker>
     </div>
     <div class="col-12 col-md-4">
       <label for="health.HIV_AIDSTestResults">
@@ -170,7 +176,14 @@
     </div>
     <div class="col-12 col-md-4">
       <label for="health.STD_STITestDate" class="col-form-label">STD/STI Date</label>
-      <input type="text" class="form-control form-control-sm datepicker w-50" id="health.STD_STITestDate" placeholder="Date" formControlName="STD_STITestDate">
+
+      <!-- STD/STI Date Block -->
+      <mdcps-date-picker
+        [class]="'form-control form-control-sm datepicker w-50'"
+        [controlName]="'STD_STITestDate'"
+        [id]="'health.STD_STITestDate'"
+        [group]="healthForm">
+      </mdcps-date-picker>
     </div>
     <div class="col-12 col-md-4">
       <label for="health.STD_STITestResults">

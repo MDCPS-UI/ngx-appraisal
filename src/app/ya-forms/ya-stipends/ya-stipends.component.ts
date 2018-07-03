@@ -1,6 +1,7 @@
+import { YA_STPNDS_LIST } from './ya-stipends.constants';
 import { Component, OnInit } from '@angular/core';
 import { UtilService } from '../../shared/services/util/util.service';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 
 
 @Component({
@@ -9,7 +10,6 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./ya-stipends.component.scss']
 })
 export class YaStipendsComponent implements OnInit {
-
   /**
    * @public
    */
@@ -21,29 +21,41 @@ export class YaStipendsComponent implements OnInit {
   public stipendsForm: FormGroup;
 
   /**
+   * @public
+   */
+  public stipendList: any[] = [];
+
+  /**
    * @constructor
    * @param {fb<FormBuilder>}
    */
-  constructor(private fb: FormBuilder,
-              private util: UtilService) {
-                this.initFormConfig();
-               }
+  constructor(
+    private fb: FormBuilder,
+    private util: UtilService) {
+    this.initFormConfig();
 
-  ngOnInit() {
+    // dynamic stipends data list
+    this.stipendList = YA_STPNDS_LIST;
+  }
+
+  /**
+   * @public
+   */
+  public ngOnInit(): void {
     this.stipendsForm = this.fb.group({
-      seniorYearStipendRequested: new FormControl('', []),
-      seniorYearStipendRequestedOther: new FormControl('', []),
+      startUpStipendRequested: new FormControl('', []),
       seniorStipendRequestDate: new FormControl('', []),
-      graduationYearStipendRequested: new FormControl('', []),
-      graduationYearStipendRequestedOther: new FormControl('', []),
+      startUpStipendRequestDate: new FormControl('', []),
+      seniorYearStipendRequested: new FormControl('', []),
+      startUpStipendRequestedOther: new FormControl('', []),
       graduationStipendRequestDate: new FormControl('', []),
       collegeBoundStipendRequested: new FormControl('', []),
-      collegeBoundStipendRequestedOther: new FormControl('', []),
       collegeBoundStipendRequestDate: new FormControl('', []),
-      startUpStipendRequested: new FormControl('', []),
-      startUpStipendRequestedOther: new FormControl('', []),
-      startUpStipendRequestDate: new FormControl('', [])
-    })
+      graduationYearStipendRequested: new FormControl('', []),
+      seniorYearStipendRequestedOther: new FormControl('', []),
+      collegeBoundStipendRequestedOther: new FormControl('', []),
+      graduationYearStipendRequestedOther: new FormControl('', [])
+    });
   }
 
   /**
@@ -75,4 +87,16 @@ export class YaStipendsComponent implements OnInit {
     this.util.navigate('/skills');
   }
 
+  /**
+   * @public
+   */
+  public hasStipendRequested(stipend: any): boolean {
+    const field: AbstractControl = this.stipendsForm.get(stipend.optionName);
+    const fieldVal: string = (field) ? field.value : '';
+
+    if (fieldVal == 'yes' || fieldVal == 'other') {
+      return true;
+    }
+    return false;
+  }
 }

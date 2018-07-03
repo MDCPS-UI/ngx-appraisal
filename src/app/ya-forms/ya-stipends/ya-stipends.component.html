@@ -1,147 +1,42 @@
 <mdcps-base-form [baseFormGroup]="stipendsForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="stipendsForm">
-  <div class="row">
-    <div class="col-12 col-md-4">
-      <h4 class="col-form-label pt-3">
-        Senior Year
-      </h4>
-    </div>
-    <div class="col-12 col-md-4 pt-2">
-      <label class="col-form-label">
-        Stipend Requested?
-      </label>
-      <div class="form-group">
-      <div class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" value="yes" formControlName="seniorYearStipendRequested"> &nbsp;&nbsp;Yes
-        </label>
+
+  <div class="row" *ngFor="let stipend of stipendList.items">
+    <div class="mdcps-stipend-container col-12">
+      <div class="row">
+        <div class="col-12">
+          <span class="mdcps-stipend-title">
+            {{stipend.level}}
+            <span class="divider"></span>
+          </span>
+        </div>
+        <div class="col-12 col-md-6 pt-2 pt-md-0">
+          <label class="col-form-label">
+            Stipend Requested?
+          </label>
+          <div class="form-group">
+            <div class="form-check" *ngFor="let option of stipendList.options">
+              <label class="form-check-label" [ngClass]="(option?.className || '')">
+                <input type="radio" class="form-check-input" [value]="option.value" [formControlName]="stipend.optionName" />{{option.label}}
+                <input type="text" *ngIf="(option.value == 'other') && (stipendsForm?.get(stipend.optionName)?.value == 'other')" class="form-check-input-inline form-control form-control-sm w-50 ml-3 mt-0"
+                  [formControlName]="stipend.optionReason">
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 pt-2 pt-md-0" *ngIf="hasStipendRequested(stipend)">
+          <div class="mdcps-more-details">
+            <label [for]="('stipends' + stipend.optionReqDate)" class="col-form-label">Request Date:</label>
+            <!-- Requested Date Block -->
+            <mdcps-date-picker
+              [class]="'form-control'"
+              [controlName]="stipend.optionReqDate"
+              [id]="('stipends' + stipend.optionReqDate)"
+              [group]="stipendsForm">
+            </mdcps-date-picker>
+          </div>
+        </div>
       </div>
-      <div class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" value="no" formControlName="seniorYearStipendRequested"> &nbsp;&nbsp;No
-        </label>
-      </div>
-      <br/>
-      <div class="form-check">
-        <label class="form-check-label d-block">
-          <input type="radio" class="form-check-input" value="other" formControlName="seniorYearStipendRequested"> &nbsp;&nbsp;Other
-          <input type="text" class="form-check-input ml-3 mt-0" formControlName="seniorYearStipendRequestedOther">
-        </label>
-      </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-4 pt-2">
-      <label for="stipends.seniorStipendRequestDate" class="col-form-label">Request Date</label>
-      <input type="text" class="form-control form-control-sm datepicker w-50" id="stipends.seniorStipendRequestDate" placeholder="Date"
-        formControlName="seniorStipendRequestDate">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 col-md-4">
-      <h4 class="col-form-label pt-3">
-        Graduation
-      </h4>
-    </div>
-    <div class="col-12 col-md-4 pt-2">
-      <label class="col-form-label">
-        Stipend Requested?
-      </label>
-      <div class="form-group">
-      <div class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" value="yes" formControlName="graduationYearStipendRequested"> &nbsp;&nbsp;Yes
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" value="no" formControlName="graduationYearStipendRequested"> &nbsp;&nbsp;No
-        </label>
-      </div>
-      <br/>
-      <div class="form-check">
-        <label class="form-check-label d-block">
-          <input type="radio" class="form-check-input" value="other" formControlName="graduationYearStipendRequested"> &nbsp;&nbsp;Other
-          <input type="text" class="form-check-input ml-3 mt-0" formControlName="graduationYearStipendRequestedOther">
-        </label>
-      </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-4 pt-2">
-      <label for="stipends.graduationStipendRequestDate" class="col-form-label">Request Date</label>
-      <input type="text" class="form-control form-control-sm datepicker w-50" id="stipends.graduationStipendRequestDate" placeholder="Date"
-        formControlName="graduationStipendRequestDate">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 col-md-4">
-      <h4 class="col-form-label pt-3">
-        College Bound
-      </h4>
-    </div>
-    <div class="col-12 col-md-4 pt-2">
-      <label class="col-form-label">
-        Stipend Requested?
-      </label>
-      <div class="form-group">
-      <div class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" value="yes" formControlName="collegeBoundStipendRequested"> &nbsp;&nbsp;Yes
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" value="no" formControlName="collegeBoundStipendRequested"> &nbsp;&nbsp;No
-        </label>
-      </div>
-      <br/>
-      <div class="form-check">
-        <label class="form-check-label d-block">
-          <input type="radio" class="form-check-input" value="other" formControlName="collegeBoundStipendRequested"> &nbsp;&nbsp;Other
-          <input type="text" class="form-check-input ml-3 mt-0" formControlName="collegeBoundStipendRequestedOther">
-        </label>
-      </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-4 pt-2">
-      <label for="stipends.seniorStipendRequestDate" class="col-form-label">Request Date</label>
-      <input type="text" class="form-control form-control-sm datepicker w-50" id="stipends.collegeBoundStipendRequestDate" placeholder="Date"
-        formControlName="collegeBoundStipendRequestDate">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 col-md-4">
-      <h4 class="col-form-label pt-3">
-        Start Up
-      </h4>
-    </div>
-    <div class="col-12 col-md-4 pt-2">
-      <label class="col-form-label">
-        Stipend Requested?
-      </label>
-      <div class="form-group">
-      <div class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" value="yes" formControlName="startUpStipendRequested"> &nbsp;&nbsp;Yes
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" value="no" formControlName="startUpStipendRequested"> &nbsp;&nbsp;No
-        </label>
-      </div>
-      <br/>
-      <div class="form-check">
-        <label class="form-check-label d-block">
-          <input type="radio" class="form-check-input" value="other" formControlName="startUpStipendRequested"> &nbsp;&nbsp;Other
-          <input type="text" class="form-check-input ml-3 mt-0" formControlName="startUpStipendRequestedOther">
-        </label>
-      </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-4 pt-2">
-      <label for="stipends.seniorStipendRequestDate" class="col-form-label">Request Date</label>
-      <input type="text" class="form-control form-control-sm datepicker w-50" id="stipends.startUpStipendRequestDate" placeholder="Date"
-        formControlName="startUpStipendRequestDate">
     </div>
   </div>
 </mdcps-base-form>
