@@ -5,9 +5,6 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { ProfileService } from '../../services/profile/profile.service';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 
-/**
- * @author: Shoukath Mohammed
- */
 @Component({
   selector: 'mdcps-youth-appraisal',
   templateUrl: './youth-appraisal.component.html',

@@ -2,9 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControlName } from '@angular/forms';
 import { NgbDateStruct, NgbDatepickerConfig } from '@ng-bootstrap/ng-bootstrap';
 
-/**
- * @author: Shoukath Mohammed
- */
+
 @Component({
   selector: 'mdcps-date-picker',
   templateUrl: './date-picker.component.html',

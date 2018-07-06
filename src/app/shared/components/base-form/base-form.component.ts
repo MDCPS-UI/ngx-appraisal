@@ -13,9 +13,6 @@ interface BaseFormEvent {
   value: AbstractControl;
 };
 
-/**
- * @author: Shoukath Mohammed
- */
 @Component({
   selector: 'mdcps-base-form',
   templateUrl: './base-form.component.html',
