@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { YA_CRMNL_LIST } from './ya-criminal.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 
@@ -19,6 +20,11 @@ export class YaCriminalComponent implements OnInit {
   /**
    * @public
    */
+  public criminalQuesList: any[] = [];
+
+  /**
+   * @public
+   */
   public criminalForm: FormGroup;
 
   /**
@@ -30,6 +36,7 @@ export class YaCriminalComponent implements OnInit {
     private fb: FormBuilder,
     private util: UtilService) {
     this.initFormConfig();
+    this.criminalQuesList = YA_CRMNL_LIST;
   }
 
   /**

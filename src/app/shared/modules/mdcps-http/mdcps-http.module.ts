@@ -3,7 +3,9 @@ import { MdcpsHttpInterceptor } from './mdcps-http-interceptor.service';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
 
-
+/**
+ * @author: Shoukath Mohammed
+ */
 @NgModule({
   imports: [
     CommonModule,
