@@ -1,17 +1,17 @@
 <mdcps-base-form [baseFormGroup]="criminalForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="criminalForm">
-  <div class="row">
+  <div class="row" *ngFor="let que of criminalQuesList">
     <div class="col-12 col-md-6">
-      <label class="col-form-label">Have you ever been arrested?</label>
+      <label class="col-form-label">{{ que.desc }}</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="everArrested"> &nbsp;Yes
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="Yes" [formControlName]="que.optionName"> &nbsp;Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="everArrested"> &nbsp;No
+            <input type="radio" class="form-check-input" value="No" [formControlName]="que.optionName"> &nbsp;No
           </label>
         </div>
       </div>
@@ -19,185 +19,4 @@
     <div class="col-12 col-md-6 pt-2 pt-md-0">
     </div>
   </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Have you ever been convicted of a crime?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="everConvicted"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="everConvicted"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Do you currently have a warrant for your arrest?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="warrantOut"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="warrantOut"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Are you on probation?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="onProbation"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="onProbation"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">If applicable, do you have legal representation?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="legalRepresentation"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="legalRepresentation"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Are you on parole?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="onParole"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="onParole"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Do you have an open court/criminal case?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="openCase"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="openCase"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Are you free on bond?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="freeOnBond"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="freeOnBond"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Are you involved in gang related activity?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="gangRelated"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="gangRelated"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Do you possess a weapon?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="possessWeapon"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="possessWeapon"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
 </mdcps-base-form>
