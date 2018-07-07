@@ -1,167 +1,27 @@
 <mdcps-base-form [baseFormGroup]="relationshipForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="relationshipForm">
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Are you currently in a relationship with someone?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="everArrested"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
+
+  <div class="row" *ngFor="let que of relQuesList">
+    <div class="col-12 col-md-12">
+      <label class="col-form-label">{{ que.desc }}</label>
+
+      <!-- Radios Block -->
+      <div class="form-group" *ngIf="!que.isCheckbox">
+        <div class="form-check form-check-inline" *ngFor="let opt of ['Yes', 'No']">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="everArrested"> &nbsp;No
+            <input type="radio" class="form-check-input" [value]="opt" [formControlName]="que.optionName"> &nbsp; {{ opt }}
           </label>
         </div>
       </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Are you currently in a relationship with a partner who is</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="checkbox" class="form-check-input" value="physically" formControlName="abusivePartner"> &nbsp;&nbsp;physically
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="emotionally" formControlName="abusivePartner"> &nbsp;&nbsp;emotionally
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="verballyabusive" formControlName="abusivePartner"> &nbsp;&nbsp;verbally abusive
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Do you ever feel afraid of a current or former partner?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="afraidOfPartner"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="afraidOfPartner"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Are you currently leaving a violent or threatening relationship? </label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="violentRelationship"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="violentRelationship"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">Have you ever received housing, food or money for sexual services? </label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="compensationForSexualServices"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="compensationForSexualServices"> &nbsp;No
+
+      <!-- Checkboxes Block -->
+      <div class="form-group" *ngIf="que.isCheckbox">
+        <div class="form-check" *ngFor="let opt of que.options">
+          <label class="form-check-label" [formGroupName]="que.optionName">
+            <input type="checkbox" class="form-check-input"  [formControlName]="opt.optionName"> &nbsp;&nbsp; {{ opt.label }}
           </label>
         </div>
       </div>
     </div>
   </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Have you ever hurt or threatened someone to have sex with you or tried to have sexual contact with someone against their
-        will?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="forcedSexualContact"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="forcedSexualContact"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">
-        Has anyone ever tried to have sex with you against your will?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="forcedToHaveSex"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="forcedToHaveSex"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Are you currently involved in prostitution or pimping? </label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label ">
-            <input type="radio" class="form-check-input" value="Yes" formControlName="involvedInProstitution"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" formControlName="involvedInProstitution"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
 </mdcps-base-form>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { YA_RELSHP_LIST } from './ya-relationships.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 
@@ -19,6 +20,11 @@ export class YaRelationshipsComponent implements OnInit {
   /**
    * @public
    */
+  public relQuesList: any[] = [];
+
+  /**
+   * @public
+   */
   public relationshipForm: FormGroup;
 
   /**
@@ -30,6 +36,8 @@ export class YaRelationshipsComponent implements OnInit {
     private fb: FormBuilder,
     private util: UtilService) {
     this.initFormConfig();
+
+    this.relQuesList = YA_RELSHP_LIST;
   }
 
   /**
@@ -37,14 +45,18 @@ export class YaRelationshipsComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.relationshipForm = this.fb.group({
-      everArrested: new FormControl('', []),
-      abusivePartner: new FormControl('', []),
+      abusivePartner: new FormGroup({
+        verbally: new FormControl(false, []),
+        mentally: new FormControl(false, []),
+        physically: new FormControl(false, [])
+      }),
+      inRelationship: new FormControl('', []),
       afraidOfPartner: new FormControl('', []),
-      violentRelationship: new FormControl('', []),
-      compensationForSexualServices: new FormControl('', []),
-      forcedSexualContact: new FormControl('', []),
       forcedToHaveSex: new FormControl('', []),
-      involvedInProstitution: new FormControl('', [])
+      forcedSexualContact: new FormControl('', []),
+      violentRelationship: new FormControl('', []),
+      involvedInProstitution: new FormControl('', []),
+      compensationForSexualServices: new FormControl('', [])
     })
   }
 
@@ -76,6 +88,4 @@ export class YaRelationshipsComponent implements OnInit {
   public onPrevious(event: any): void {
     this.util.navigate('/health');
   }
-
-
 }
