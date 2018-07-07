@@ -1,7 +1,7 @@
 <mdcps-base-form [baseFormGroup]="interestsForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="interestsForm">
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label class="col-form-label">Are you involved in extracurricular activities?</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
@@ -16,7 +16,10 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
+  </div>
+  <!-- form-row -->
+  <div class="row">
+    <div class="col-12 col-md-6">
       <label for="socialinterests.listActivities">If Yes, list:</label>
       <textarea type="tel" class="form-control" id="socialinterests.listActivities" placeholder="List your activities" formControlName="listActivities"
         rows="3"></textarea>
@@ -27,79 +30,77 @@
   <div class="row">
     <div class="col-12">
       <label class="col-form-label">
-        If yes, select all that apply:
+        Please, select all that apply:
       </label>
       <div class="form-group">
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="dance" formControlName="schoolaAtivities"> &nbsp;Dance
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input"  value="cheerleading" formControlName="schoolaAtivities"> &nbsp;Cheerleeding
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="science" formControlName="schoolaAtivities"> &nbsp;Choir/Chorus
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="band" formControlName="schoolaAtivities"> &nbsp;Band
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="drama_theater" formControlName="schoolaAtivities"> &nbsp;Drama Theater
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="baseball" formControlName="schoolaAtivities"> &nbsp;Baseball
           </label>
         </div>
-        <br/>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="softball" formControlName="schoolaAtivities"> &nbsp;Softball
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input"  value="football" formControlName="schoolaAtivities"> &nbsp;Football
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="soccer" formControlName="schoolaAtivities"> &nbsp;Soccer
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input"  value="track" formControlName="schoolaAtivities"> &nbsp;Track
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="golf" formControlName="schoolaAtivities"> &nbsp;Golf
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="basketball" formControlName="schoolaAtivities"> &nbsp;Basketball
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="swimming" formControlName="schoolaAtivities"> &nbsp;Swimming
           </label>
         </div>
-        <br/>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <div class="row">
-            <div class="col-6 pt-2">
+            <div class="col-2">
               <label class="form-check-label">
                 <input type="checkbox" class="form-check-input" value="other" formControlName="schoolaAtivities"> &nbsp; Other
               </label>
@@ -116,7 +117,7 @@
   <!-- form-row -->
 
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label class="col-form-label">Are you involved in religious activities or spiritual practices?</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
@@ -131,15 +132,15 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-      <label for="socialinterests.listActivities">If Yes, list:</label>
+    <div class="col-12 col-md-6">
+      <label for="socialinterests.listActivities">Please, list:</label>
       <textarea type="tel" class="form-control" id="socialinterests.listReligiousActivities" placeholder="List your activities"
         formControlName="listReligiousActivities" rows="3"></textarea>
     </div>
   </div>
   <!-- form-row -->
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label class="col-form-label">Do you have hobbies or other interests?</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
@@ -154,8 +155,8 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-      <label for="socialinterests.listActivities">If Yes, list:</label>
+    <div class="col-12 col-md-6">
+      <label for="socialinterests.listActivities">Please, list:</label>
       <textarea type="tel" class="form-control" id="socialinterests.listhobbies" placeholder="List your hobbies or other interests"
         formControlName="listhobbies" rows="3"></textarea>
     </div>
