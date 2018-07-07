@@ -1,7 +1,7 @@
 <mdcps-base-form [baseFormGroup]="employmentForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="employmentForm">
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label class="col-form-label">Are you disabled preventing you from working?</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    <div class="col-12 col-md-6">
       <label for="employment.explainWorkDisabled">Explain:</label>
       <input type="tel" class="form-control" id="employment.explainWorkDisabled" placeholder="Explain Work Disabled" formControlName="explainWorkDisabled">
     </div>
@@ -56,55 +56,54 @@
     <div class="col-12">
       <label class="col-form-label">Job Skills?</label>
       <div class="form-group">
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="childcare" formControlName="jobSkills"> &nbsp;Child Care
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="foodservices" formControlName="jobSkills"> &nbsp;Food Services
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="healthcare" formControlName="jobSkills"> &nbsp;Health Care
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="clerical" formControlName="jobSkills"> &nbsp;Clerical
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="mechanical" formControlName="jobSkills"> &nbsp;Mechanical
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="electrical" formControlName="jobSkills"> &nbsp;Electrical
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="sales" formControlName="jobSkills"> &nbsp;Sales
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="clerical" formControlName="jobSkills"> &nbsp;Customer Service
           </label>
         </div>
-        <br/>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <div class="row">
-            <div class="col-6">
+            <div class="col-2">
               <label class="form-check-label">
                 <input type="checkbox" class="form-check-input" value="other" formControlName="jobSkills"> &nbsp;Other
               </label>
             </div>
-            <div class="col-6">
+            <div class="col-3">
               <input type="text" class="form-check-input" formControlName="otherJobSkills">
             </div>
           </div>
@@ -115,7 +114,7 @@
   </div>
   <!-- form-row -->
   <div class="row">
-    <div class="col-12 col-md-4">
+    <div class="col-12">
       <label class="col-form-label">Are you employed?</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
@@ -135,26 +134,25 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-4 pt-2 pt-md-0">
+    <div class="col-12">
       <label class="col-form-label">If yes, how long?</label>
       <div class="form-group">
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" value="zerotosix" formControlName="evictedHowlong"> 0 - 6 months
           </label>
         </div>
-        <div class="form-check form-check-inline pl-2">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" value="sixtotwelve" formControlName="evictedHowlong"> 7 - 12 months
           </label>
         </div>
-        <br/>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" value="twelvetoeighteen" formControlName="evictedHowlong"> 13 - 18 months
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" value="eighteentotwentyfour" formControlName="evictedHowlong"> 19 - 24 months
           </label>
@@ -179,28 +177,27 @@
   </div>
   <!-- form-row -->
   <div class="row">
-    <div class="col-12 pt-2 pt-md-0">
+    <div class="col-12">
       <label class="col-form-label">Hourly Rate:</label>
       <div class="form-group">
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" value="725to10" formControlName="hourlyRate"> $7.25-$10.00
           </label>
         </div>
-        <div class="form-check form-check-inline pl-3">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" value="10to15" formControlName="hourlyRate"> $10.00-$15.00
           </label>
         </div>
-        <br/>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" value="15to20" formControlName="hourlyRate"> $15.00-$20.00
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <div class="row">
-            <div class="col-6">
+            <div class="col-2">
               <label class="form-check-label">
                 <input type="radio" class="form-check-input" value="other" formControlName="hourlyRate"> &nbsp;Other
               </label>
