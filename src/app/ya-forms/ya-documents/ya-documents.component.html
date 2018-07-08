@@ -18,6 +18,10 @@
                     {{ (documentsForm?.get(doc.optionName)?.value) ? 'Yes' : 'No' }}
                   </span>
               </mat-slide-toggle>
+              <!-- <mat-button-toggle-group [formControlName]="doc.optionName" (change)="onToggle($event, doc.inputName)">
+                <mat-button-toggle value="true">Yes</mat-button-toggle>
+                <mat-button-toggle value="false">No</mat-button-toggle>
+              </mat-button-toggle-group> -->
               <div class="mdcps-docs-reason" *ngIf="!(documentsForm?.get(doc.optionName)?.value)">
                   Please explain:
                   <input class="form-control form-control-sm" [formControlName]="doc.inputName">
