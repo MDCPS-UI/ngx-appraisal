@@ -41,7 +41,7 @@
   <!-- form-row -->
   <!-- Are you currently enrolled Education -->
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label class="col-form-label">Are you currently enrolled in an education program?</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
@@ -57,21 +57,32 @@
       </div>
     </div>
     <div class="col-12 col-md-6">
-      <label for="education.currentlyenrolledat" class="pr-2">
+      <label for="education.currentlyenrolledat" class="">
         If yes, choose one</label>
-      <br/>
       <div class="form-group">
         <div class="form-check">
-          <label class="form-check-label col-4 pt-2">
-            <input type="radio" class="form-check-input form-check-input-inline" value="middleschool" formControlName="currentlyEnrolledAt"> &nbsp; Middle School
-          </label>
-          <input type="text" class="form-check-input " placeholder="Grade" formControlName="currentMiddleSchoolGrade">
+          <div class="row">
+            <div class="col-4">
+              <label class="form-check-label pt-2">
+                <input type="radio" class="form-check-input form-check-input-inline" value="middleschool" formControlName="currentlyEnrolledAt"> &nbsp; Middle School
+              </label>
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-check-input " placeholder="Grade" formControlName="currentMiddleSchoolGrade">
+            </div>
+          </div>
         </div>
         <div class="form-check">
-          <label class="form-check-label col-4 pt-2">
-            <input type="radio" class="form-check-input form-check-input-inline" value="highschool" formControlName="currentlyEnrolledAt"> &nbsp; High School
-          </label>
-          <input type="text" class="form-check-input" placeholder="Grade" formControlName="currentHighSchoolGrade">
+          <div class="row">
+            <div class="col-4">
+              <label class="form-check-label pt-2">
+                <input type="radio" class="form-check-input form-check-input-inline" value="highschool" formControlName="currentlyEnrolledAt"> &nbsp; High School
+              </label>
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-check-input" placeholder="Grade" formControlName="currentHighSchoolGrade">
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -126,7 +137,7 @@
   <!-- form-row -->
   <!-- Correct Grade for Age -->
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label class="col-form-label">Correct Grade for Age?</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
@@ -160,32 +171,32 @@
             <input type="checkbox" class="form-check-input" value="a_and_b" formControlName="gradesLastSix"> &nbsp;A's and B's
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="b_and_c" formControlName="gradesLastSix"> &nbsp;B's and C's
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="c_and_d" formControlName="gradesLastSix"> &nbsp;C's and D's
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="d_and_f" formControlName="gradesLastSix"> &nbsp;D's and F's
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="mostly_f" formControlName="gradesLastSix"> &nbsp;Mostly F's
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="notsure" formControlName="gradesLastSix"> &nbsp;Not Sure
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="noneoftheabove" formControlName="gradesLastSix"> &nbsp;None of the Above
           </label>
@@ -202,40 +213,39 @@
         Do you need help in any of the following subject areas? (check all that apply)
       </label>
       <div class="form-group">
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="math" formControlName="subjectNeedsHelp"> &nbsp;Math
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="english" formControlName="subjectNeedsHelp"> &nbsp;English
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="science" formControlName="subjectNeedsHelp"> &nbsp;Science
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="history_socialstudies" formControlName="subjectNeedsHelp"> &nbsp;History / Social Studies
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="languagearts" formControlName="subjectNeedsHelp"> &nbsp;Language Arts
           </label>
         </div>
-        <br/>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <div class="row">
-            <div class="col-6">
+            <div class="col-2">
               <label class="form-check-label">
                 <input type="checkbox" class="form-check-input" value="other" formControlName="subjectNeedsHelp"> &nbsp; Other
               </label>
             </div>
-            <div class="col-6">
+            <div class="col-4">
               <input type="text" class="form-check-input" formControlName="otherHelpNeeded">
             </div>
           </div>
@@ -247,7 +257,7 @@
   <!-- form-row -->
   <!-- State Level tests -->
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label class="col-form-label">
         How have you performed on State Level tests?
       </label>
@@ -296,7 +306,7 @@
 
   <!-- Dual Enrollment -->
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label class="col-form-label">Dual Enrollment?</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
@@ -318,17 +328,17 @@
       <div class="form-group">
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input"  value="highschoolandcollege" formControlName="dualEnrollmentTypes"> &nbsp;High School and College
+            <input type="checkbox" class="form-check-input" value="highschoolandcollege" formControlName="dualEnrollmentTypes"> &nbsp;High School and College
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input"  value="gedandcollege" formControlName="dualEnrollmentTypes"> &nbsp;GED and College(MI BEST) I
+            <input type="checkbox" class="form-check-input" value="gedandcollege" formControlName="dualEnrollmentTypes"> &nbsp;GED and College(MI BEST) I
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input"  value="highschoolandvocational" formControlName="dualEnrollmentTypes"> &nbsp;High School and Vocational
+            <input type="checkbox" class="form-check-input" value="highschoolandvocational" formControlName="dualEnrollmentTypes"> &nbsp;High School and Vocational
           </label>
         </div>
       </div>
@@ -337,7 +347,7 @@
   <!-- form-row -->
   <!-- GED -->
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label class="col-form-label">GED?</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
@@ -352,16 +362,16 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-3">
+    <div class="col-12 col-md-4">
       <label class="col-form-label" for="education.duelEnrollmentExplain">
         GED Progress </label>
-      <textarea type="text" class="form-control" id="education.gedProgress" placeholder="Reason" rows="2" formControlName="gedProgress">
+      <textarea type="text" class="form-control" id="education.gedProgress" placeholder="" rows="2" formControlName="gedProgress">
       </textarea>
     </div>
-    <div class="col-12 col-md-3">
+    <div class="col-12 col-md-4">
       <label class="col-form-label" for="education.gedExpectedTestDate">
         Expected Test Date </label>
-      <input type="text" class="form-control datepicker" id="education.gedExpectedTestDate" placeholder="Reason" rows="2" formControlName="gedExpectedTestDate">
+      <input type="text" class="form-control datepicker" id="education.gedExpectedTestDate" placeholder="" rows="2" formControlName="gedExpectedTestDate">
     </div>
   </div>
   <!-- form-row -->
@@ -393,12 +403,12 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input"  value="yes" formControlName="occupationalCert"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="occupationalCert"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input"  value="no" formControlName="occupationalCert"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="occupationalCert"> No
           </label>
         </div>
       </div>
@@ -409,7 +419,7 @@
   <!-- form-row -->
   <!-- Post Secondary Education -->
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label class="col-form-label">Post Secondary Education?</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
@@ -434,7 +444,7 @@
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input"  value="sophmore" formControlName="postSecType"> Sophmore
+            <input type="radio" class="form-check-input" value="sophmore" formControlName="postSecType"> Sophmore
           </label>
         </div>
         <div class="form-check form-check-inline">
@@ -453,7 +463,7 @@
   <!-- form-row -->
   <!-- ETV -->
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label class="col-form-label">
         Are you enrolled in ETV?</label>
       <div class="form-group">
@@ -471,7 +481,7 @@
     </div>
     <div class="col-12 col-md-6">
       <label for="education.receiveEtvFunds" class="col-form-label">When did you last receive ETV funds?</label>
-      <input type="text" class="form-control datepicker w-50" id="education.receiveEtvFunds" formControlName ="etvFundsDate" placeholder="Date of Discharge">
+      <input type="text" class="form-control datepicker w-50" id="education.receiveEtvFunds" formControlName="etvFundsDate" placeholder="">
     </div>
   </div>
   <!-- form-row -->
@@ -482,37 +492,37 @@
         During past 6 months what grades have you earned? (check all that apply)
       </label>
       <div class="form-group">
-        <div class="form-check form-check-inline">
+        <div class="form-check ">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="a_and_b" formControlName="etvGrades"> &nbsp;A's and B's
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="b_and_c" formControlName="etvGrades"> &nbsp;B's and C's
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="c_and_d" formControlName="etvGrades"> &nbsp;C's and D's
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="d_and_f" formControlName="etvGrades"> &nbsp;D's and F's
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="mostly_f" formControlName="etvGrades"> &nbsp;Mostly F's
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="notsure" formControlName="etvGrades"> &nbsp;Not Sure
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="noneoftheabove" formControlName="etvGrades"> &nbsp;None of the Above
           </label>
@@ -529,40 +539,39 @@
         Do you need help in any of the following subject areas? (check all that apply)
       </label>
       <div class="form-group">
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="math" formControlName="etvSubjectHelp"> &nbsp;Math
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="english" formControlName="etvSubjectHelp"> &nbsp;English
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="science" formControlName="etvSubjectHelp"> &nbsp;Science
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="history_socialstudies" formControlName="etvSubjectHelp"> &nbsp;History / Social Studies
           </label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="languagearts" formControlName="etvSubjectHelp"> &nbsp;Language Arts
           </label>
         </div>
-        <br/>
-        <div class="form-check form-check-inline">
+        <div class="form-check">
           <div class="row">
-            <div class="col-6">
+            <div class="col-2">
               <label class="form-check-label">
                 <input type="checkbox" class="form-check-input" value="other" formControlName="etvSubjectHelp"> &nbsp; Other
               </label>
             </div>
-            <div class="col-6">
+            <div class="col-4">
               <input type="text" class="form-check-input" formControlName="etvOtherHelp">
             </div>
           </div>
@@ -575,7 +584,7 @@
 
   <!-- Where enrolled -->
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label for="education.receiveEtvFunds" class="col-form-label">Where are you enrolled in an educational program?</label>
       <input type="text" class="form-control" id="education.educationalprogramenrolled" formControlName="etvWhereEnrolled" placeholder="Where enrolled">
     </div>
@@ -751,7 +760,7 @@
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input"  value="disagree" formControlName="opinionFinishWork"> Disagree
+            <input type="radio" class="form-check-input" value="disagree" formControlName="opinionFinishWork"> Disagree
           </label>
         </div>
         <div class="form-check form-check-inline">
@@ -881,7 +890,7 @@
         </div>
         <div class="form-check ">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input"  value="twoyear" formControlName="plannedAttendance"> &nbsp;Two Year Program
+            <input type="radio" class="form-check-input" value="twoyear" formControlName="plannedAttendance"> &nbsp;Two Year Program
           </label>
         </div>
         <div class="form-check ">
@@ -895,16 +904,28 @@
           </label>
         </div>
         <div class="form-check">
-          <label class="form-check-label col-4">
-            <input type="radio" class="form-check-input form-check-input-inline" value="notapplicable" formControlName="plannedAttendance"> &nbsp;Not Applicable
-          </label>
-          <input type="text" class="form-check-input" formControlName="attendanceNotApplicable">
+          <div class="row">
+            <div class="col-4">
+              <label class="form-check-label pt-2">
+                <input type="radio" class="form-check-input" value="notapplicable" formControlName="plannedAttendance"> &nbsp;Not Applicable
+              </label>
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-check-input" formControlName="attendanceNotApplicable">
+            </div>
+          </div>
         </div>
         <div class="form-check">
-          <label class="form-check-label col-4">
-            <input type="radio" class="form-check-input form-check-input-inline" value="other" formControlName="plannedAttendance"> &nbsp;Other
-          </label>
-          <input type="text" class="form-check-input" formControlName="plannedAttendanceOther">
+          <div class="row">
+            <div class="col-4">
+              <label class="form-check-label pt-2">
+                <input type="radio" class="form-check-input" value="other" formControlName="plannedAttendance"> &nbsp;Other
+              </label>
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-check-input" formControlName="plannedAttendanceOther">
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,11 +1,12 @@
-<mdcps-base-form [baseFormGroup]="healthForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
-  [formGroup]="healthForm">
+<mdcps-base-form [baseFormGroup]="healthForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)" [formGroup]="healthForm">
   <div class="row">
     <div class="col-12 col-md-6">
       <label for="health.medicalIssues">Do you have any medical issues to address?</label>
       <textarea type="tel" class="form-control" rows="4" id="health.medicalIssues" formControlName="medicalIssues" placeholder="Medical Issues?"></textarea>
     </div>
-    <div class="col-12 col-md-6">
+  </div>
+  <div class="row">
+    <div class="col-12">
       <label class="col-form-label">
         Have you ever witnessed or experienced a traumatic event? </label>
       <div class="form-group">
@@ -50,10 +51,16 @@
           </label>
         </div>
         <div class="form-check">
-          <label class="form-check-label col-4">
-            <input type="checkbox" class="form-check-input form-check-input-inline" value="other" formControlName="abuseVictim"> &nbsp;Other
-          </label>
-          <input type="text" class="form-check-input" formControlName="abuseVictimOther">
+          <div class="row">
+            <div class="col-2">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input form-check-input-inline" value="other" formControlName="abuseVictim"> &nbsp;Other
+              </label>
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-check-input" formControlName="abuseVictimOther">
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -69,24 +76,24 @@
   <div class="row">
     <div class="col-12 col-md-3">
       <label class="col-form-label" for="health.dental">Dental </label>
-      <input type="text" class="form-control" id="health.dental" placeholder="Grade" formControlName="dental">
+      <input type="text" class="form-control" id="health.dental" placeholder="" formControlName="dental">
     </div>
     <div class="col-12 col-md-3">
       <label class="col-form-label" for="health.medical">Medical </label>
-      <input type="text" class="form-control" id="health.medical" placeholder="Grade" formControlName="medical">
+      <input type="text" class="form-control" id="health.medical" placeholder="" formControlName="medical">
     </div>
     <div class="col-12 col-md-3">
       <label class="col-form-label" for="health.vision">Vision </label>
-      <input type="text" class="form-control" id="health.vision" placeholder="Grade" formControlName="vision">
+      <input type="text" class="form-control" id="health.vision" placeholder="" formControlName="vision">
     </div>
     <div class="col-12 col-md-3">
       <label class="col-form-label" for="health.psycological">Psycological </label>
-      <input type="text" class="form-control" id="health.psycological" placeholder="Grade" formControlName="psycological">
+      <input type="text" class="form-control" id="health.psycological" placeholder="" formControlName="psycological">
     </div>
   </div>
   <!-- form-row -->
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label class="col-form-label">
         Are you sexually active?
       </label>
@@ -103,7 +110,10 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
+  </div>
+  <!-- form-row -->
+  <div class="row">
+    <div class="col-12">
       <label class="col-form-label">
         Do you have an adult to talk to about safe sex and reproductive health?
       </label>
@@ -123,7 +133,7 @@
   </div>
   <!-- form-row -->
   <div class="row">
-    <div class="col-12 col-md-4">
+    <div class="col-12">
       <label class="col-form-label">
         Have you been tested for HIV/AIDS?
       </label>
@@ -140,24 +150,32 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-4">
-      <label for="health.HIV_AIDSTestDate" class="col-form-label">HIV/AIDS Date</label>
-      <!-- HIV/AIDS Date Block -->
-      <mdcps-date-picker
-        [class]="'form-control form-control-sm datepicker w-50'"
-        [controlName]="'HIV_AIDSTestDate'"
-        [id]="'health.HIV_AIDSTestDate'"
-        [group]="healthForm">
-      </mdcps-date-picker>
-    </div>
-    <div class="col-12 col-md-4">
-      <label for="health.HIV_AIDSTestResults">
-        Test Results?</label>
-      <textarea type="text" class="form-control rows-4" id="health.HIV_AIDSTestResults" formControlName="HIV_AIDSTestResults" placeholder="Test Results"></textarea>
+  </div>
+  <!-- form-row -->
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="form-group">
+        <label for="health.HIV_AIDSTestDate" class="col-form-label">HIV/AIDS Date</label>
+        <!-- HIV/AIDS Date Block -->
+        <mdcps-date-picker [class]="'form-control form-control-sm datepicker w-50'" [controlName]="'HIV_AIDSTestDate'" [id]="'health.HIV_AIDSTestDate'"
+          [group]="healthForm">
+        </mdcps-date-picker>
+      </div>
     </div>
   </div>
+  <!-- form-row -->
   <div class="row">
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-6">
+      <div class="form-group">
+        <label for="health.HIV_AIDSTestResults">
+          Test Results?</label>
+        <textarea type="text" class="form-control rows-4" id="health.HIV_AIDSTestResults" formControlName="HIV_AIDSTestResults" placeholder="Test Results"></textarea>
+      </div>
+    </div>
+  </div>
+  <!-- form-row -->
+  <div class="row">
+    <div class="col-12">
       <label class="col-form-label">
         Have you been tested for STD/STI?
       </label>
@@ -174,23 +192,31 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-4">
+  </div>
+  <!-- form-row -->
+  <div class="row">
+    <div class="col-12 col-md-6">
       <label for="health.STD_STITestDate" class="col-form-label">STD/STI Date</label>
 
       <!-- STD/STI Date Block -->
-      <mdcps-date-picker
-        [class]="'form-control form-control-sm datepicker w-50'"
-        [controlName]="'STD_STITestDate'"
-        [id]="'health.STD_STITestDate'"
-        [group]="healthForm">
-      </mdcps-date-picker>
-    </div>
-    <div class="col-12 col-md-4">
-      <label for="health.STD_STITestResults">
-        Test Results?</label>
-      <textarea type="text" class="form-control rows-4" id="health.STD_STITestResults" formControlName="STD_STITestResults" placeholder="Test Results"></textarea>
+      <div class="form-group">
+        <mdcps-date-picker [class]="'form-control form-control-sm datepicker w-50'" [controlName]="'STD_STITestDate'" [id]="'health.STD_STITestDate'"
+          [group]="healthForm">
+        </mdcps-date-picker>
+      </div>
     </div>
   </div>
+  <!-- form-row -->
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="form-group">
+        <label for="health.STD_STITestResults">
+          Test Results?</label>
+        <textarea type="text" class="form-control rows-4" id="health.STD_STITestResults" formControlName="STD_STITestResults" placeholder="Test Results"></textarea>
+      </div>
+    </div>
+  </div>
+  <!-- form-row -->
   <div class="row">
     <div class="col-12">
       <label for="health.receivingServices" class="pr-2">
@@ -216,12 +242,11 @@
         <div class="form-check">
           <label class="form-check-label">
             <input type="checkbox" class="form-check-input" value="developmentaldisability" formControlName="receivingServices"> &nbsp;Developmental Disability
-
           </label>
         </div>
         <div class="form-check">
-          <label class="form-check-label col-4">
-            <input type="checkbox" class="form-check-input form-check-input-inline" value="physicaldisability" formControlName="receivingServices"> &nbsp;Physical Disability
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="physicaldisability" formControlName="receivingServices"> &nbsp;Physical Disability
           </label>
         </div>
       </div>
@@ -229,7 +254,7 @@
   </div>
   <!-- form-row -->
   <div class="row">
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-12">
       <label class="col-form-label">
         Are you taking any medications?
       </label>
@@ -246,11 +271,17 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-4">
+  </div>
+  <!-- form-row -->
+  <div class="row">
+    <div class="col-12 col-md-6">
       <label for="health.STD_STITestResults">
         If yes, please list</label>
       <textarea type="text" class="form-control rows-4" id="health.listMedications" formControlName="listMedications" placeholder="List Medications"></textarea>
     </div>
+  </div>
+  <!-- form-row -->
+  <div class="row">
     <div class="col-12 col-md-4">
       <label class="col-form-label">
         Are your medications administered to you?
@@ -269,6 +300,7 @@
       </div>
     </div>
   </div>
+  <!-- form-row -->
   <div class="row">
     <div class="col-12">
       <label class="col-form-label">
