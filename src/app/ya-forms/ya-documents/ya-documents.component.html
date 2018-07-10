@@ -13,15 +13,15 @@
           <tr *ngFor="let doc of documentsList">
             <td class="mdcps-fixed-col">{{doc.desc}}</td>
             <td class="mdcps-fixed-col">
-              <mat-slide-toggle [color]="color" (change)="onToggle($event, doc.inputName)" [formControlName]="doc.optionName" [labelPosition]="'before'">
+              <!-- <mat-slide-toggle [color]="color" (change)="onToggle($event, doc.inputName)" [formControlName]="doc.optionName" [labelPosition]="'before'">
                   <span class="badge mdcps-badge" [ngClass]="(documentsForm?.get(doc.optionName)?.value) ? 'badge-success': 'badge-danger'">
                     {{ (documentsForm?.get(doc.optionName)?.value) ? 'Yes' : 'No' }}
                   </span>
-              </mat-slide-toggle>
-              <!-- <mat-button-toggle-group [formControlName]="doc.optionName" (change)="onToggle($event, doc.inputName)">
-                <mat-button-toggle value="true">Yes</mat-button-toggle>
-                <mat-button-toggle value="false">No</mat-button-toggle>
-              </mat-button-toggle-group> -->
+              </mat-slide-toggle> -->
+              <mat-button-toggle-group [formControlName]="doc.optionName" (change)="onToggle($event, doc.inputName)" class="mdcps-toggle-group">
+                <mat-button-toggle [value]='true'>Yes</mat-button-toggle>
+                <mat-button-toggle [value]='false'>No</mat-button-toggle>
+              </mat-button-toggle-group>
               <div class="mdcps-docs-reason" *ngIf="!(documentsForm?.get(doc.optionName)?.value)">
                   Please explain:
                   <input class="form-control form-control-sm" [formControlName]="doc.inputName">
