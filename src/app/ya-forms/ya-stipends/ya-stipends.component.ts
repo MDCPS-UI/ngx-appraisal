@@ -25,7 +25,7 @@ export class YaStipendsComponent implements OnInit {
   /**
    * @public
    */
-  public stipendList: any[] = [];
+  public stipendList: any = {};
 
   /**
    * @constructor
