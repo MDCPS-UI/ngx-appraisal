@@ -1,6 +1,5 @@
 /**
  * @type: constant
- * @author: Shoukath Mohammed
  */
 export const YA_RELSHP_LIST: any[] = [
     {

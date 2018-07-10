@@ -126,7 +126,7 @@ const ROUTES: Route[] = [
         path: 'documents',
         loadChildren: './ya-documents/ya-documents.module#YaDocumentsModule',
         data: {
-          formName: 'Received Documents'
+          formName: 'Received Documents Upon Release from Custody'
         }
       },
       {

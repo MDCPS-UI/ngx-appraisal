@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 
-/**
- * @author: Shoukath Mohammed
- */
 @Component({
   selector: 'mdcps-ya-actions',
   templateUrl: './ya-actions.component.html',
@@ -37,27 +34,33 @@ export class YaActionsComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.actionsForm = this.fb.group({
-      educationGoals: new FormControl('', []),
+      educationShortGoals: new FormControl('', []),
       educationGoalTasks: new FormControl('', []),
+      educationLongGoals: new FormControl('', []),
       educationGoalProgress: new FormControl('', []),
       educationGoalsCompletionDate: new FormControl('', []),
-      housingGoals: new FormControl('', []),
+      housingShortGoals: new FormControl('', []),
+      housingLongGoals: new FormControl('', []),
       housingGoalTasks: new FormControl('', []),
       housingGoalProgress: new FormControl('', []),
       housingGoalsCompletionDate: new FormControl('', []),
-      employmentGoals: new FormControl('', []),
+      employmentShortGoals: new FormControl('', []),
+      employmentLongGoals: new FormControl('', []),
       employmentGoalsTasks: new FormControl('', []),
       employmentGoalProgress: new FormControl('', []),
       employmentGoalsCompletionDate: new FormControl('', []),
-      transportationGoals: new FormControl('', []),
+      transportationShortGoals: new FormControl('', []),
+      transportationLongGoals: new FormControl('', []),
       transportationGoalsTasks: new FormControl('', []),
       transportationGoalsProgress: new FormControl('', []),
       transportationGoalsCompletionDate: new FormControl('', []),
-      supportiveGoals: new FormControl('', []),
+      supportiveShortGoals: new FormControl('', []),
+      supportiveLongGoals: new FormControl('', []),
       supportiveGoalsTasks: new FormControl('', []),
       supportiveGoalsProgress: new FormControl('', []),
       supportiveGoalsCompletionDate: new FormControl('', []),
-      otherGoals: new FormControl('', []),
+      otherShortGoals: new FormControl('', []),
+      otherLongGoals: new FormControl('', []),
       otherGoalsTasks: new FormControl('', []),
       otherGoalsProgress: new FormControl('', []),
       otherGoalsCompletionDate: new FormControl('', []),

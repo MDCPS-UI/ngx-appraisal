@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 
-/**
- * @author: Shoukath Mohammed
- */
+
 @Component({
   selector: 'mdcps-ya-housing',
   templateUrl: './ya-housing.component.html',
@@ -37,6 +35,7 @@ export class YaHousingComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.housingForm = this.fb.group({
+      housingPlan: new FormControl('', []),
       housingStatus: new FormControl('', []),
       timeInCurrentHousing: new FormControl('', []),
       homelessStatus: new FormControl('', []),

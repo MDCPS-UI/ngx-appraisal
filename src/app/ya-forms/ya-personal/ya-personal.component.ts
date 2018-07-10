@@ -43,10 +43,24 @@ export class YaPersonalComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.personalForm = this.fb.group({
+      supportInNext6Months: new FormGroup({
+        education: new FormControl('', []),
+        employment: new FormControl('', []),
+        parenting: new FormControl('', []),
+        mentalHealth: new FormControl('', []),
+        transportation: new FormControl('', []),
+        medical: new FormControl('', []),
+        other: new FormControl('', []),
+        supportInNext6MonthsOther: new FormControl('', [])
+      }),
       goalInNext6Months: new FormControl('', []),
       currentChallenges: new FormControl('', []),
       motivationForGoals: new FormControl('', []),
-      supportInNext6Months: new FormControl('', [])
+      supportlookslike: new FormControl('', []),
+      haveTransportation: new FormControl('', []),
+      transportationType: new FormControl('', []),
+      transportationBarriers: new FormControl('', []),
+      transportationPlan: new FormControl('', [])
     });
   }
 

@@ -43,14 +43,15 @@ export class YaPlacementsComponent implements OnInit {
       feelSafeInPlacement: new FormControl('', []),
       whynotsafeInPlacement: new FormControl('', []),
       positivePlacementExperiences: new FormControl('', []),
-      howConnectionsUsed: new FormControl('', []),
       maintainContact: new FormControl('', []),
       usedForPermancyPlan: new FormControl('', []),
       additionalFosterCareInfo: new FormControl('', []),
       contactName: new FormControl('', []),
       contactRelationship: new FormControl('', []),
       contactPhone: new FormControl('', []),
-      contactEmail: new FormControl('', [])
+      contactEmail: new FormControl('', []),
+      idmentor: new FormControl('', []),
+      mentorname: new FormControl('', [])
     });
   }
 

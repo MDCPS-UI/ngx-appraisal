@@ -3,9 +3,6 @@ import { YA_RELSHP_LIST } from './ya-relationships.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 
-/**
- * @author: Shoukath Mohammed
- */
 @Component({
   selector: 'mdcps-ya-relationships',
   templateUrl: './ya-relationships.component.html',

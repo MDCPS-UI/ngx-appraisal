@@ -3,9 +3,6 @@ import { YA_CRMNL_LIST } from './ya-criminal.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 
-/**
- * @author: Shoukath Mohammed
- */
 @Component({
   selector: 'mdcps-ya-criminal',
   templateUrl: './ya-criminal.component.html',
@@ -53,6 +50,7 @@ export class YaCriminalComponent implements OnInit {
       openCase: new FormControl('', []),
       freeOnBond: new FormControl('', []),
       gangRelated: new FormControl('', []),
+      gangRelatedYes: new FormControl('', []),
       possessWeapon: new FormControl('', []),
     });
   }

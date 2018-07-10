@@ -1,181 +1,14 @@
-<mdcps-base-form [baseFormGroup]="servicesForm" (next)="onNext($event)" [config]="config"
-  [formGroup]="servicesForm" (previous)="onPrevious($event)">
-  <div class="row">
+<mdcps-base-form [baseFormGroup]="servicesForm" (next)="onNext($event)" [config]="config" [formGroup]="servicesForm" (previous)="onPrevious($event)">
+  
+  <div class="row" *ngFor="let service of serviceList.items">
     <div class="col-12">
-      <label class="col-form-label">
-        If the youth is enrolled in a Post-secondary institution, is he/she enrolled in the Educational Training Voucher program
-        (ETV)?
-      </label>
+      <label class="col-form-label">{{ service.desc }}</label>
       <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="etv"> Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="etv"> No
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="requested" formControlName="etv"> Requested
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="etv"> Not Applicable
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Has the youth been assisted with applying for Medicaid?
-      </label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="appliedMedicaid"> Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="appliedMedicaid"> No
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="requested" formControlName="appliedMedicaid"> Requested
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="appliedMedicaid"> Not Applicable
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Have other health care options been explored?
-      </label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="healthCareExplored"> Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="healthCareExplored"> No
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="requested" formControlName="healthCareExplored"> Requested
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="healthCareExplored"> Not Applicable
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Have extended permanent connections been made for needed support services (i.e mental health services, Substance Abuse counseling,
-        parenting classes, counseling, financial support).
-      </label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="permanetntConnections"> Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="permanetntConnections"> No
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="requested" formControlName="permanetntConnections"> Requested
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="permanetntConnections"> Not Applicable
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Have transportation needs been identified and addressed?
-      </label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="transportationNeeds"> Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="transportationNeeds"> No
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="requested" formControlName="transportationNeeds"> Requested
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="transportationNeeds"> Not Applicable
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Has the youth applied for any available public assistance? (SNAP, TANF, Housing voucher, daycare voucher, etc)
-      </label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="publicAssistance"> Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="etv"> No
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="requested" formControlName="etv"> Requested
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="etv"> Not Applicable
+        <div class="form-check" *ngFor="let option of serviceList.options">
+          <label class="form-check-label" [ngClass]="(option?.className || '')">
+            <input type="radio" class="form-check-input" [value]="option.value" [formControlName]="service.optionName"/> {{ option.label }}
+            <input type="text" *ngIf="(option.value == 'other') && (servicesForm?.get(service.optionName)?.value == 'other')" class="form-check-input-inline form-control form-control-sm w-50 ml-3 mt-0"
+                  [formControlName]="service.optionReason">
           </label>
         </div>
       </div>
@@ -192,4 +25,5 @@
     </div>
   </div>
   <!-- form-row -->
+
 </mdcps-base-form>

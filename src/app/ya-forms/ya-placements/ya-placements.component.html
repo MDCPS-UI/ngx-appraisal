@@ -11,18 +11,23 @@
         </div>
         <div class="form-check form-check-inline pl-2">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="sixtotwelve" formControlName="timeInPlacement"> 6 - 12 months
+            <input type="radio" class="form-check-input" value="sixtotwelve" formControlName="timeInPlacement"> 7 - 12 months
           </label>
         </div>
         <br/>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="twelvetoeighteen" formControlName="timeInPlacement"> 12 - 18 months
+            <input type="radio" class="form-check-input" value="twelvetoeighteen" formControlName="timeInPlacement"> 13 - 18 months
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="eighteentotwentyfour" formControlName="timeInPlacement"> 18 - 24 months
+            <input type="radio" class="form-check-input" value="eighteentotwentyfour" formControlName="timeInPlacement"> 19 - 24 months
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="morethantwentyfour" formControlName="timeInPlacement"> More than 24 months
           </label>
         </div>
       </div>
@@ -37,12 +42,17 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="1to4" formControlName="placementsInCare"> &nbsp;1 - 4
+            <input type="radio" class="form-check-input" value="1to3" formControlName="placementsInCare"> &nbsp;1 - 3
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="5plus" formControlName="placementsInCare"> &nbsp;5 or more
+            <input type="radio" class="form-check-input" value="4to6" formControlName="placementsInCare"> &nbsp;4 - 6
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="6plus" formControlName="placementsInCare"> &nbsp;More than 6
           </label>
         </div>
       </div>
@@ -87,15 +97,6 @@
   </div>
   <!-- form-row -->
   <div class="row">
-    <div class="col-12">
-      <label for="placementandsafety.howConnectionsUsed">
-        How will these connections be used for your permanency plan?</label>
-      <textarea type="text" class="form-control" rows="3" id="placementandsafety.howConnectionsUsed" formControlName="howConnectionsUsed"
-        placeholder="How connections used?"></textarea>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
     <div class="col-12 col-md-6">
       <label class="col-form-label">
         Do you maintain contact with his/her biological family?</label>
@@ -132,26 +133,8 @@
   <!-- form-row -->
   <div class="row">
     <div class="col-12">
-      <label for="placementandsafety.positivePlacementExperiences">
-        Any additional information about your foster care experience:</label>
-      <textarea type="text" class="form-control" rows="3" id="placementandsafety.additionalFosterCareInfo" formControlName="additionalFosterCareInfo"
-        placeholder="Additional Foster Care Info"></textarea>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label for="placementandsafety.positivePlacementExperiences">
-        Any additional information about your foster care experience:</label>
-      <textarea type="text" class="form-control" rows="3" id="placementandsafety.additionalFosterCareInfo" formControlName="additionalFosterCareInfo"
-        placeholder="Additional Foster Care Info"></textarea>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
+      <label>List the names and contact information of the individuals the you plan to maintain contact with. </label>
       <table class="table table-bordered">
-        <label>List the names and contact information of the individuals the you plan to maintain contact with. </label>
         <thead>
           <tr>
             <th>
@@ -211,6 +194,39 @@
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+  <!-- form-row -->
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label class="col-form-label">
+        Do you identify with any of the above people as a mentor? </label>
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="yes" formControlName="idmentor"> &nbsp;Yes
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="no" formControlName="idmentor"> &nbsp;No
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <label for="placementandsafety.mentorname">
+        If yes, who?</label>
+      <input type="tel" class="form-control" id="placementandsafety.mentorname" formControlName="mentorname" placeholder="Name">
+    </div>
+  </div>
+  <!-- form-row -->
+  <div class="row">
+    <div class="col-12">
+      <label for="placementandsafety.positivePlacementExperiences">
+        Any additional information about your foster care experience:</label>
+      <textarea type="text" class="form-control" rows="3" id="placementandsafety.additionalFosterCareInfo" formControlName="additionalFosterCareInfo"
+        placeholder="Additional Foster Care Info"></textarea>
     </div>
   </div>
   <!-- form-row -->

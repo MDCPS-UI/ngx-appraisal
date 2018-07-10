@@ -38,7 +38,6 @@ export class YaInterestsComponent implements OnInit {
   public ngOnInit(): void {
     this.interestsForm = this.fb.group({
       extraActivities: new FormControl('', []),
-      listActivities: new FormControl('', []),
       schoolaAtivities: new FormControl('', []),
       schoolaAtivitiesOther: new FormControl('', []),
       religiousActivities: new FormControl('', []),

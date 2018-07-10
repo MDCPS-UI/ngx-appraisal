@@ -1,6 +1,5 @@
 /**
  * @type: constant
- * @author: Shoukath Mohammed
  */
 export const YA_STPNDS_LIST: any = {
     items: [
@@ -27,6 +26,18 @@ export const YA_STPNDS_LIST: any = {
             optionName: 'startUpStipendRequested',
             optionReason: 'startUpStipendRequestedOther',
             optionReqDate: 'startUpStipendRequestDate'
+        },
+        {
+            level: 'Life Skill Participation',
+            optionName: 'lifeSkillStipendRequested',
+            optionReason: 'lifeSkillStipendRequestedOther',
+            optionReqDate: 'lifeSkillStipendRequestDate'
+        },
+        {
+            level: 'Personal Enhancement',
+            optionName: 'personalStipendRequested',
+            optionReason: 'personalStipendRequestedOther',
+            optionReqDate: 'personalStipendRequestDate'
         }
     ],
     options: [

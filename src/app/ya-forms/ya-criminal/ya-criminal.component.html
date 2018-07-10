@@ -1,7 +1,7 @@
 <mdcps-base-form [baseFormGroup]="criminalForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="criminalForm">
   <div class="row" *ngFor="let que of criminalQuesList">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label class="col-form-label">{{ que.desc }}</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
@@ -16,7 +16,10 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    <div class="col-12 col-md-6" *ngIf="(que.optionName == 'gangRelated') && (criminalForm?.get(que.optionName)?.value == 'Yes')">
+      <label for="criminal.gangYes"> Please, Explain:
+      </label>
+      <textarea type="text" class="form-control" id="criminal.gangYes" formControlname="gangRelatedYes" rows="2"></textarea>
     </div>
   </div>
 </mdcps-base-form>

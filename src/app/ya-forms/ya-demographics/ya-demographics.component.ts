@@ -4,9 +4,6 @@ import { UtilService } from '../../shared/services/util/util.service';
 import { ProfileService } from '../../shared/services/profile/profile.service';
 import { YA_DG_NAVG_LIST, YA_DG_GENDER_LIST } from './ya-demographics.constants';
 
-/**
- * @author: Shoukath Mohammed
- */
 @Component({
   selector: 'mdcps-ya-demographics',
   templateUrl: './ya-demographics.component.html',
@@ -48,7 +45,7 @@ export class YaDemographicsComponent implements OnInit {
       age: new FormControl('', []),
       phone: new FormControl('', []),
       email: new FormControl('', []),
-      permenancygoal: new FormControl('', []),
+      permanencygoal: new FormControl('', []),
       custodystatus: new FormControl('', []),
       dischargeDate: new FormControl('', []),
       address: new FormControl('', []),
@@ -61,8 +58,6 @@ export class YaDemographicsComponent implements OnInit {
       medicaid: new FormControl('', []),
       languageBarriers: new FormControl('', []),
       explainLanguageBarriers: new FormControl('', []),
-      mentor: new FormControl('', []),
-      transitionplanning: new FormControl('', []),
       corWorker: new FormControl('', []),
       transitionNavigator: new FormControl('', [])
     });

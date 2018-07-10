@@ -3,9 +3,6 @@ import { YA_STPNDS_LIST } from './ya-stipends.constants';
 import { UtilService } from './../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 
-/**
- * @author: Shoukath Mohammed
- */
 @Component({
   selector: 'mdcps-ya-stipends',
   templateUrl: './ya-stipends.component.html',
@@ -25,7 +22,7 @@ export class YaStipendsComponent implements OnInit {
   /**
    * @public
    */
-  public stipendList: any[] = [];
+  public stipendList: any = {};
 
   /**
    * @constructor
@@ -47,12 +44,18 @@ export class YaStipendsComponent implements OnInit {
   public ngOnInit(): void {
     this.stipendsForm = this.fb.group({
       startUpStipendRequested: new FormControl('', []),
+      personalStipendRequested: new FormControl('', []),
       seniorStipendRequestDate: new FormControl('', []),
       startUpStipendRequestDate: new FormControl('', []),
+      lifeSkillStipendRequested: new FormControl('', []),
       seniorYearStipendRequested: new FormControl('', []),
+      personalStipendRequestDate: new FormControl('', []),
+      lifeSkillStipendRequestDate: new FormControl('', []),
       startUpStipendRequestedOther: new FormControl('', []),
       graduationStipendRequestDate: new FormControl('', []),
       collegeBoundStipendRequested: new FormControl('', []),
+      personalStipendRequestedOther: new FormControl('', []),
+      lifeSkillStipendRequestedOther: new FormControl('', []),
       collegeBoundStipendRequestDate: new FormControl('', []),
       graduationYearStipendRequested: new FormControl('', []),
       seniorYearStipendRequestedOther: new FormControl('', []),

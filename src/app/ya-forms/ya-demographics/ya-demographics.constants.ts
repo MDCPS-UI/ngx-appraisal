@@ -1,6 +1,5 @@
 /**
  * @type: constant
- * @author: Shoukath Mohammed
  */
 export const YA_DG_NAVG_LIST: string[] = [
     'Jazmin Hawthorne',

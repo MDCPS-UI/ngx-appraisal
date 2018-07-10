@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
-/**
- * @author: Shoukath Mohammed
- */
+//constant
+import { YA_SRVC_LIST } from './ya-services.constants';
+
 @Component({
   selector: 'mdcps-ya-services',
   templateUrl: './ya-services.component.html',
@@ -23,6 +23,11 @@ export class YaServicesComponent implements OnInit {
   public servicesForm: FormGroup;
 
   /**
+   * @public
+   */
+  public serviceList: any = {};
+
+  /**
    * @constructor
    * @param {fb<FormBuilder>}
    * @param {util<UtilService>}
@@ -31,6 +36,9 @@ export class YaServicesComponent implements OnInit {
     private fb: FormBuilder,
     private util: UtilService) {
     this.initFormConfig();
+
+    //dynamic service data list
+    this.serviceList = YA_SRVC_LIST;
   }
 
   /**
@@ -38,13 +46,27 @@ export class YaServicesComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.servicesForm = this.fb.group({
-      etv: new FormControl('',[]),
-      appliedMedicaid: new FormControl('',[]),
-      healthCareExplored: new FormControl('',[]),
-      permanetntConnections: new FormControl('',[]),
-      transportationNeeds: new FormControl('',[]),
-      publicAssistance: new FormControl('',[]),
-      notes: new FormControl('', [])
+      applyMedicaid: new FormControl('',[]),
+      applyMedicaidOther: new FormControl('',[]),
+      locateMentalHealth: new FormControl('',[]),
+      locateMentalhealthOther: new FormControl('',[]),
+      parentingClasses: new FormControl('',[]),
+      parentingClassesOther: new FormControl('',[]),
+      secureTransport: new FormControl('',[]),
+      secureTransportOther: new FormControl('',[]),
+      snapBenefits: new FormControl('',[]),
+      snapBenefitsOther: new FormControl('',[]),
+      tanfBenefits: new FormControl('',[]),
+      tanfBenefitsOther: new FormControl('',[]),
+      childcareVoucher: new FormControl('',[]),
+      childcareVoucherOther: new FormControl('', []),
+      locateHousing: new FormControl('',[]),
+      locateHousingOther: new FormControl('',[]),
+      scheduleCounseling: new FormControl('',[]),
+      scheduleCounselingOther: new FormControl('',[]),
+      other: new FormControl('',[]),
+      otherExplain: new FormControl('',[]),
+      notes: new FormControl('',[])
     });
   }
 

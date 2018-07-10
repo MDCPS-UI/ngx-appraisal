@@ -1,12 +1,124 @@
-<mdcps-base-form [baseFormGroup]="personalForm" (next)="onNext($event)" [config]="config"
-  [formGroup]="personalForm" (previous)="onPrevious($event)">
+<mdcps-base-form [baseFormGroup]="personalForm" (next)="onNext($event)" [config]="config" [formGroup]="personalForm" (previous)="onPrevious($event)">
+  <!-- <div class="row">
+    <div class="col-12">
+      <div class="col-form-label" for="personal.supportInNext6Months">
+        <label class="col-form-label">
+          What types of support do you hope to receive in the next six months? (Check all that apply)
+        </label>
+        <div class="form-group">
+          <div class="form-check">
+            <label class="form-check-label ">
+              <input type="checkbox" class="form-check-input" value="education" formControlName="educationInNext6Months"> &nbsp; &nbsp;Education
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="employment" formControlName="employmentInNext6Months"> &nbsp; &nbsp;Employment
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label ">
+              <input type="checkbox" class="form-check-input" value="parenting" formControlName="parentingInNext6Months"> &nbsp; &nbsp;Parenting
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="mentalhealth" formControlName="mentalHealthInNext6Months"> &nbsp; &nbsp;Mental Health
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label ">
+              <input type="checkbox" class="form-check-input" value="transportation" formControlName="transportationInNext6Months"> &nbsp; &nbsp;Transportation
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label ">
+              <input type="checkbox" class="form-check-input" value="medical" formControlName="medicalInNext6Months"> &nbsp; &nbsp;Medical
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label ">
+              <input type="checkbox" class="form-check-input" value="other" formControlName="otherInNext6Months"> &nbsp; &nbsp;Other
+            </label>
+            <div class="col-6">
+              <input type="text" class="form-check-input" formControlName="goalInNext6Monthsother">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- form-row -->
+
   <div class="row" *ngFor="let que of questions">
     <div class="col-12">
       <label class="col-form-label" [attr.for]="que.optionName">
-       {{ que.label }}
+        {{ que.label }}
       </label>
-      <textarea type="text" class="form-control" [id]="que.optionName" placeholder="Reason" rows="2" [formControlName]="que.optionName">
+
+      <!-- Checkboxes Block -->
+      <div class="form-group" *ngIf="que.isCheckbox">
+        <div class="form-check" *ngFor="let opt of que.options">
+          <label class="form-check-label" [formGroupName]="que.optionName">
+            <input type="checkbox" class="form-check-input" [formControlName]="opt.optionName"> &nbsp;&nbsp; {{ opt.label }}
+            <input type="text" *ngIf="(opt.value == 'other') && (personalForm?.get(opt.optionName)?.value == 'other')" class="form-check-input-inline form-control form-control-sm w-50 ml-3 mt-0"
+              [formControlName]="opt.optionReason">
+          </label>
+        </div>
+      </div>
+
+      <!-- Textarea block-->
+      <div class="form-group" *ngIf="!que.isCheckbox">
+        <textarea type="text" class="form-control" [id]="que.optionName" placeholder="" rows="2" [formControlName]="que.optionName">
+        </textarea>
+      </div>
+    </div>
+  </div>
+  <!-- form-row -->
+  <div class="row">
+    <div class="col-12">
+      <label class="col-form-label">
+        Do you have transportation?
+      </label>
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="yes" formControlName="haveTransportation"> &nbsp;Yes
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="no" formControlName="haveTransportation"> &nbsp;No
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <label for="personal.havetransportation">
+        If Yes, what kind:</label>
+      <textarea type="tel" class="form-control" id="personal.havetransportation" placeholder="Kind of transportation" formControlName="transportationType"
+        rows="3"></textarea>
+    </div>
+  </div>
+  <!-- form-row -->
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label for="personal.havetransportation">
+        If no, what barriers prevent having transportation?</label>
+      <textarea type="tel" class="form-control" id="personal.transportationbarriers" placeholder="Transportation barriers" formControlName="transportationBarriers"
+        rows="3"></textarea>
+    </div>
+  </div>
+  <!-- form-row -->
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label class="col-form-label" for="personal.transportationplan">
+        If no transportation, what is your transportation plan?
+      </label>
+      <textarea type="text" class="form-control" id="personal.transportationplan" placeholder="Transportation Plan" rows="2" formControlName="transportationPlan">
       </textarea>
     </div>
   </div>
+  <!-- form-row -->
+
 </mdcps-base-form>
