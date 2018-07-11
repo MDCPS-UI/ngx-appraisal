@@ -76,12 +76,14 @@ export class YaHealthComponent implements OnInit {
 
   /**
    * @public
+   * @param {event<any>}
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
-      this.util.navigate('/relationships');
+      //this.util.navigate('/relationships');
       console.log(event.form.value);
     }
+    this.util.navigate('/relationships');
   }
 
   /**

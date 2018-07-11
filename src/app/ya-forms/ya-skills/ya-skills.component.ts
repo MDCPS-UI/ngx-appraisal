@@ -79,8 +79,8 @@ export class YaSkillsComponent implements OnInit {
     this.config = {
       nextBtn: true,
       prevBtn: true,
-      nextBtnLabel: 'Criminal Justice System',
-      previousBtnLabel: 'Stipends'
+      nextBtnLabel: 'Stipends',
+      previousBtnLabel: 'Criminal Justice System'
     };
   }
 

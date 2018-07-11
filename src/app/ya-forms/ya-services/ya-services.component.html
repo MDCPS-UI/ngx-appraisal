@@ -6,7 +6,7 @@
       <div class="form-group">
         <div class="form-check" *ngFor="let option of serviceList.options">
           <label class="form-check-label" [ngClass]="(option?.className || '')">
-            <input type="radio" class="form-check-input" [value]="option.value" [formControlName]="service.optionName"> {{ option.label }}
+            <input type="radio" class="form-check-input" [value]="option.value" > {{ option.label }}
             <input type="text" *ngIf="(option.value == 'other') && (servicesForm?.get(service.optionName)?.value == 'other')" class="form-check-input-inline form-control form-control-sm w-50 ml-3 mt-0"
                   [formControlName]="service.optionReason">
           </label>
