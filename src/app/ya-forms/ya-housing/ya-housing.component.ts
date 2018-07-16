@@ -54,8 +54,8 @@ export class YaHousingComponent implements OnInit {
     this.config = {
       nextBtn: true,
       prevBtn: true,
-      nextBtnLabel: 'Education',
-      previousBtnLabel: 'Demographics'
+      nextBtnLabel: 'Placement & Safety',
+      previousBtnLabel: 'Social Interests'
     };
   }
 
@@ -64,7 +64,7 @@ export class YaHousingComponent implements OnInit {
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
-      this.util.navigate('/education');
+      this.util.navigate('/placements');
       console.log(event.form.value);
     }
   }
@@ -73,6 +73,6 @@ export class YaHousingComponent implements OnInit {
    * @public
    */
   public onPrevious(event: any): void {
-    this.util.navigate('/demographics');
+    this.util.navigate('/interests');
   }
 }

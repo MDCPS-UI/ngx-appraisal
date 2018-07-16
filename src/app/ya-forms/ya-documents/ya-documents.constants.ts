@@ -1,6 +1,5 @@
 /**
  * @type: constant
- * @author: Shoukath Mohammed
  */
 export const YA_DOCS_LIST: any[] = [
     {

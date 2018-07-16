@@ -3,9 +3,7 @@ import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { SpinnerService } from './../spinner/spinner.service';
 
-/**
- * @author: Shoukath Mohammed
- */
+
 @Injectable()
 export class UtilService {
 

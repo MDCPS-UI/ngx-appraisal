@@ -94,7 +94,7 @@ export class YaActionsComponent implements OnInit {
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
-      this.util.navigate('/documents');
+      this.util.navigate('/skills');
       console.log(event.form.value);
     }
   }
@@ -103,6 +103,6 @@ export class YaActionsComponent implements OnInit {
    * @public
    */
   public onPrevious(event: any): void {
-    this.util.navigate('/personal');
+    this.util.navigate('/relationships');
   }
 }

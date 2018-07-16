@@ -16,9 +16,6 @@ const ROUTES: Route[] = [
   }
 ];
 
-/**
- * @author: Shoukath Mohammed
- */
 @NgModule({
   imports: [
     FormsModule,

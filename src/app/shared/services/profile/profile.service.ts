@@ -11,9 +11,7 @@ export interface MdcpsNavigationEvent {
   navigationUrl: string;
 };
 
-/**
- * @author: Shoukath Mohammed
- */
+
 @Injectable()
 export class ProfileService {
   /**

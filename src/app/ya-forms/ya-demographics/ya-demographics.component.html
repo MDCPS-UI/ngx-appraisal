@@ -1,4 +1,4 @@
-<mdcps-base-form [baseFormGroup]="demographicsForm" (next)="onNext($event)" [config]="{nextBtn: true, nextBtnLabel: 'Housing'}"
+<mdcps-base-form [baseFormGroup]="demographicsForm" (next)="onNext($event)" [config]="{nextBtn: true, nextBtnLabel: 'Education'}"
   [formGroup]="demographicsForm">
 
   <div class="mdcps-demographics-container" *ngIf="demographicsForm">
@@ -45,7 +45,7 @@
 
     <div class="row">
       <div class="col">
-        <label for="demographics.permenancygoal">permanency Goal</label>
+        <label for="demographics.permenancygoal">Permanency Goal</label>
         <textarea type="text" class="form-control" id="demographics.permenancygoal" placeholder="Enter permanency Goal" rows="2"
           formControlName="permanencygoal">
         </textarea>

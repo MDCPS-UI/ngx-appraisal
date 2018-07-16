@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 
-/**
- * @author: Shoukath Mohammed
- */
 @Component({
   selector: 'mdcps-ya-placements',
   templateUrl: './ya-placements.component.html',
@@ -63,7 +60,7 @@ export class YaPlacementsComponent implements OnInit {
       nextBtn: true,
       prevBtn: true,
       nextBtnLabel: 'Pregnant/Parenting',
-      previousBtnLabel: 'Social Interests'
+      previousBtnLabel: 'Housing'
     };
   }
 
@@ -81,6 +78,6 @@ export class YaPlacementsComponent implements OnInit {
    * @public
    */
   public onPrevious(event: any): void {
-    this.util.navigate('/interests');
+    this.util.navigate('/housing');
   }
 }

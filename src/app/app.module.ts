@@ -13,9 +13,6 @@ import { SpinnerService } from './shared/services/spinner/spinner.service';
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 
-/**
- * @author: Shoukath Mohammed
- */
 @NgModule({
   declarations: [
     AppComponent,

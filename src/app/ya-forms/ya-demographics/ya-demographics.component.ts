@@ -88,8 +88,9 @@ export class YaDemographicsComponent implements OnInit {
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
-      this.util.navigate('/housing');
+      //this.util.navigate('/education');
       console.log(event.form.value);
     }
+    this.util.navigate('/education');
   }
 }

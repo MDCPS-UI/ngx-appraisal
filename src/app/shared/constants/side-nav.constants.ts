@@ -1,15 +1,10 @@
 /**
  * @type: constant
- * @author: Shoukath Mohammed
  */
 export const SIDE_NAV_TABS: any[] = [
     {
         'navigationUrl': '/demographics',
         'label': 'Demographics'
-    },
-    {
-        'navigationUrl': '/housing',
-        'label': 'Housing'
     },
     {
         'navigationUrl': '/education',
@@ -22,6 +17,10 @@ export const SIDE_NAV_TABS: any[] = [
     {
         'navigationUrl': '/interests',
         'label': 'Social Interests'
+    },
+    {
+        'navigationUrl': '/housing',
+        'label': 'Housing'
     },
     {
         'navigationUrl': '/placements',

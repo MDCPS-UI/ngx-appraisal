@@ -4,9 +4,6 @@ import { YA_DOCS_LIST } from './ya-documents.constants';
 import { UtilService } from './../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-/**
- * @author: Shoukath Mohammed
- */
 @Component({
   selector: 'mdcps-ya-documents',
   templateUrl: './ya-documents.component.html',

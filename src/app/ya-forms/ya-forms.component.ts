@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { ProfileService } from './../shared/services/profile/profile.service';
 
-/**
- * @author: Shoukath Mohammed
- */
 @Component({
   selector: 'mdcps-ya-forms',
   templateUrl: './ya-forms.component.html',

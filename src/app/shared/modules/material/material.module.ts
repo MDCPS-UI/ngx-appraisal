@@ -17,7 +17,6 @@ import {
   MatExpansionModule,
   MatFormFieldModule,
   MatSlideToggleModule,
-  MatButtonToggleModule,
   MatProgressSpinnerModule
 } from '@angular/material';
 import { NgModule } from '@angular/core';
@@ -44,13 +43,9 @@ const Modules: any[] = [
   , MatPaginatorModule
   , MatExpansionModule
   , MatSlideToggleModule
-  , MatButtonToggleModule
   , MatProgressSpinnerModule
 ];
 
-/**
- * @author: Shoukath Mohammed
- */
 @NgModule({
   imports: [
       ...Modules

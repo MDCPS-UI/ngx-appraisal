@@ -21,9 +21,7 @@ const spinnerDefaults: SpinnerConfig = {
   imageSource: '/assets/images/mdcps-spinner.gif'
 };
 
-/**
- * @author: Shoukath Mohammed
- */
+
 @Component({
   selector: 'mdcps-spinner',
   templateUrl: './spinner.component.html',

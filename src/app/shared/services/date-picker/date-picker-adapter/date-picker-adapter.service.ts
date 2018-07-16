@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { UtilService } from './../../util/util.service';
 import { NgbDateAdapter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
-/**
- * @author: Shoukath Mohammed
- */
+
 @Injectable()
 export class DatePickerAdapterService extends NgbDateAdapter<string> {
 

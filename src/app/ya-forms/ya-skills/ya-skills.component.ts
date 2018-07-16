@@ -3,9 +3,6 @@ import { YA_SKILLS_LIST } from './ya-skills.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 
-/**
- * @author: Shoukath Mohammed
- */
 @Component({
   selector: 'mdcps-ya-skills',
   templateUrl: './ya-skills.component.html',

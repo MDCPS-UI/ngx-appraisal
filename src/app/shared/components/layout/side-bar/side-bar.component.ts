@@ -1,9 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ProfileService, MdcpsNavigationEvent } from '../../../services/profile/profile.service';
 
-/**
- * @author: Shoukath Mohammed
- */
+
 @Component({
   selector: 'mdcps-side-bar',
   templateUrl: './side-bar.component.html',

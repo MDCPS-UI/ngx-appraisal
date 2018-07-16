@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SIDE_NAV_TABS } from './../shared/constants/side-nav.constants';
 
-/**
- * @author: Shoukath Mohammed
- */
+
 @Component({
   selector: 'mdcps-dashboard',
   templateUrl: './ya-dashboard.component.html',

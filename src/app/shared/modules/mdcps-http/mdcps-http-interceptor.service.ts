@@ -4,9 +4,7 @@ import { Injectable } from '@angular/core';
 import { SpinnerService } from './../../services/spinner/spinner.service';
 import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent, HttpResponse } from '@angular/common/http';
 
-/**
- * @author: Shoukath Mohammed
- */
+
 @Injectable()
 export class MdcpsHttpInterceptor implements HttpInterceptor {
 

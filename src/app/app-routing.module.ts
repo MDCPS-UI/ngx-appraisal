@@ -26,9 +26,6 @@ const ROUTES: Route[] = [
   }
 ];
 
-/**
- * @author: Shoukath Mohammed
- */
 @NgModule({
   declarations: [],
   imports: [

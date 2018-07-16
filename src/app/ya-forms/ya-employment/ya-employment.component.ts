@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 
-/**
- * @author: Shoukath Mohammed
- */
+ 
 @Component({
   selector: 'mdcps-ya-employment',
   templateUrl: './ya-employment.component.html',
