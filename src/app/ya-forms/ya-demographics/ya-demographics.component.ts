@@ -41,23 +41,23 @@ export class YaDemographicsComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.demographicsForm = this.fb.group({
-      dateOfBirth: new FormControl('', []),
+      dobString: new FormControl('', []),
       age: new FormControl('', []),
       phone: new FormControl('', []),
       email: new FormControl('', []),
-      permanencygoal: new FormControl('', []),
-      custodystatus: new FormControl('', []),
-      dischargeDate: new FormControl('', []),
+      permPlan: new FormControl('', []),
+      custodyStatus: new FormControl('', []),
+      dischargeDateString: new FormControl('', []),
       address: new FormControl('', []),
       race: new FormControl('', []),
       gender: new FormControl('', []),
-      LGBTQ: new FormControl('', []),
+      isLGBTQ: new FormControl('', []),
       COR: new FormControl('', []),
       COS: new FormControl('', []),
-      healthInsurance: new FormControl('', []),
-      medicaid: new FormControl('', []),
-      languageBarriers: new FormControl('', []),
-      explainLanguageBarriers: new FormControl('', []),
+      hasHealthInsurance: new FormControl('', []),
+      hasMedicaid: new FormControl('', []),
+      hasLanguageBarriers: new FormControl('', []),
+      languageBarriersText: new FormControl('', []),
       corWorker: new FormControl('', []),
       transitionNavigator: new FormControl('', [])
     });
@@ -75,7 +75,7 @@ export class YaDemographicsComponent implements OnInit {
         if (selection) {
           const form: FormGroup = this.demographicsForm;
           form.get('email').setValue(selection.Email);
-          form.get('dateOfBirth').setValue(selection.DOBString);
+          form.get('dobString').setValue(selection.DOBString);
 
           // update the demographics form
           this.demographicsForm.updateValueAndValidity();

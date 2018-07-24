@@ -9,13 +9,13 @@
         <!-- Date of Birth Block -->
         <mdcps-date-picker
           [class]="'form-control'"
-          [controlName]="'dateOfBirth'"
+          [controlName]="'dobString'"
           [id]="'demographics.dateofbirth'"
           [group]="demographicsForm">
         </mdcps-date-picker>
 
-        <div class="form-control-feedback" *ngIf="!demographicsForm.get('dateOfBirth').valid && (demographicsForm.get('dateOfBirth').dirty || demographicsForm.get('dateOfBirth')?.touched)">
-          <small *ngIf="!demographicsForm.get('dateOfBirth').valid" class="has-error small-text text-danger">
+        <div class="form-control-feedback" *ngIf="!demographicsForm.get('dobString').valid && (demographicsForm.get('dobString').dirty || demographicsForm.get('dobString')?.touched)">
+          <small *ngIf="!demographicsForm.get('dobString').valid" class="has-error small-text text-danger">
             Please enter the valid date of birth
           </small>
         </div>
@@ -47,7 +47,7 @@
       <div class="col">
         <label for="demographics.permenancygoal">Permanency Goal</label>
         <textarea type="text" class="form-control" id="demographics.permenancygoal" placeholder="Enter permanency Goal" rows="2"
-          formControlName="permanencygoal">
+          formControlName="permPlan">
         </textarea>
       </div>
     </div>
@@ -58,12 +58,12 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="custodystatus" value="yes" formControlName="custodystatus"> Yes
+              <input type="radio" class="form-check-input"  value="yes" formControlName="custodyStatus"> Yes
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="custodystatus" value="no" formControlName="custodystatus"> No
+              <input type="radio" class="form-check-input"  value="no" formControlName="custodyStatus"> No
             </label>
           </div>
         </div>
@@ -74,7 +74,7 @@
         <!-- Discharge Date Block -->
         <mdcps-date-picker
           [class]="'form-control'"
-          [controlName]="'dischargeDate'"
+          [controlName]="'dischargeDateString'"
           [id]="'demographics.dischargedate'"
           [group]="demographicsForm"
           [disableWeekends]="true">
@@ -107,12 +107,17 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="LGBTQ" value="yes" formControlName="LGBTQ"> Yes
+              <input type="radio" class="form-check-input"  value="yes" formControlName="isLGBTQ"> Yes
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="LGBTQ" value="no" formControlName="LGBTQ"> No
+              <input type="radio" class="form-check-input"  value="no" formControlName="isLGBTQ"> No
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="decline" formControlName="isLGBTQ"> Declined
             </label>
           </div>
         </div>
@@ -143,12 +148,12 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="healthInsurance" value="yes" formControlName="healthInsurance"> Yes
+              <input type="radio" class="form-check-input"  value="yes" formControlName="hasHealthInsurance"> Yes
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="healthInsurance" value="no" formControlName="healthInsurance"> No
+              <input type="radio" class="form-check-input"  value="no" formControlName="hasHealthInsurance"> No
             </label>
           </div>
         </div>
@@ -161,12 +166,12 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="medicaid" value="yes" formControlName="medicaid"> Yes
+              <input type="radio" class="form-check-input"  value="yes" formControlName="hasMedicaid"> Yes
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="medicaid" value="no" formControlName="medicaid"> No
+              <input type="radio" class="form-check-input"  value="no" formControlName="hasMedicaid"> No
             </label>
           </div>
         </div>
@@ -179,19 +184,19 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="languageBarriers" value="yes" formControlName="languageBarriers"> Yes
+              <input type="radio" class="form-check-input" value="yes" formControlName="hasLanguageBarriers"> Yes
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="languageBarriers" value="no" formControlName="languageBarriers"> No
+              <input type="radio" class="form-check-input" value="no" formControlName="hasLanguageBarriers"> No
             </label>
           </div>
         </div>
       </div>
       <div class="col-12"  *ngIf="demographicsForm?.get('languageBarriers')?.value == 'yes'">
         <label for="inputAddress2">Please explain:</label>
-        <textarea class="form-control" id="inputAddress2" placeholder="Explain Needs for an interpreter" rows="3" formControlName="explainLanguageBarriers">
+        <textarea class="form-control" id="inputAddress2" placeholder="Explain Needs for an interpreter" rows="3" formControlName="languageBarriersText">
         </textarea>
       </div>
     </div>

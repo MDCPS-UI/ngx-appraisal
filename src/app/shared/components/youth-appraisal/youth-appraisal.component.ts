@@ -41,7 +41,7 @@ export class YouthAppraisalComponent implements OnInit {
   public ngOnInit(): void {
     this.youthApprForm = this.fb.group({
       status: new FormControl('', []),
-      youthId: new FormControl('', []),
+      macwisId: new FormControl('', []),
       youthName: new FormControl('', []),
       appraisalDate: new FormControl('', [])
     });
@@ -91,7 +91,7 @@ export class YouthAppraisalComponent implements OnInit {
    */
   public populateForm(data: any): void {
     this.youthApprForm.setValue({
-      youthId: data.MacwisId,
+      macwisId: data.MacwisId,
       appraisalDate: data.DOBString,
       youthName: `${data.FirstName} ${data.LastName}`,
       status: (data.IsActive) ? 'Active' : 'Inactive'

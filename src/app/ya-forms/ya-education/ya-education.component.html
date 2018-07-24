@@ -7,32 +7,32 @@
       <div class="form-group">
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="somehighschool" formControlName="highestEducationLevel"> &nbsp;Some High School
+            <input type="radio" class="form-check-input" value="somehighschool" formControlName="ce_HighestLevel"> &nbsp;Some High School
           </label>
         </div>
         <div class="form-check ">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="somemiddleschool" formControlName="highestEducationLevel"> &nbsp;Some Middle School
+            <input type="radio" class="form-check-input" value="somemiddleschool" formControlName="ce_HighestLevel"> &nbsp;Some Middle School
           </label>
         </div>
         <div class="form-check ">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="diploma" formControlName="highestEducationLevel"> &nbsp;Diploma
+            <input type="radio" class="form-check-input" value="diploma" formControlName="ce_HighestLevel"> &nbsp;Diploma
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="GED" formControlName="highestEducationLevel"> &nbsp;GED
+            <input type="radio" class="form-check-input" value="GED" formControlName="ce_HighestLevel"> &nbsp;GED
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="certificate" formControlName="highestEducationLevel"> &nbsp;Certificate
+            <input type="radio" class="form-check-input" value="certificate" formControlName="ce_HighestLevel"> &nbsp;Certificate
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="vocationtraining" formControlName="highestEducationLevel"> &nbsp;Vocational Training
+            <input type="radio" class="form-check-input" value="vocationtraining" formControlName="ce_HighestLevel"> &nbsp;Vocational Training
           </label>
         </div>
       </div>
@@ -46,12 +46,12 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="currentlyEnrolled"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="ce_CurrentlyEnrolled"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="currentlyEnrolled"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="ce_CurrentlyEnrolled"> No
           </label>
         </div>
       </div>
@@ -64,11 +64,11 @@
           <div class="row">
             <div class="col-4">
               <label class="form-check-label pt-2">
-                <input type="radio" class="form-check-input form-check-input-inline" value="middleschool" formControlName="currentlyEnrolledAt"> &nbsp; Middle School
+                <input type="radio" class="form-check-input form-check-input-inline" value="middleschool" formControlName="ce_WhereEnrolled"> &nbsp; Middle School
               </label>
             </div>
             <div class="col-4">
-              <input type="text" class="form-check-input " placeholder="Grade" formControlName="currentMiddleSchoolGrade">
+              <input type="text" class="form-check-input " placeholder="Grade" formControlName="CE_GradeMiddle">
             </div>
           </div>
         </div>
@@ -76,11 +76,11 @@
           <div class="row">
             <div class="col-4">
               <label class="form-check-label pt-2">
-                <input type="radio" class="form-check-input form-check-input-inline" value="highschool" formControlName="currentlyEnrolledAt"> &nbsp; High School
+                <input type="radio" class="form-check-input form-check-input-inline" value="highschool" formControlName="ce_WhereEnrolled"> &nbsp; High School
               </label>
             </div>
             <div class="col-4">
-              <input type="text" class="form-check-input" placeholder="Grade" formControlName="currentHighSchoolGrade">
+              <input type="text" class="form-check-input" placeholder="Grade" formControlName="CE_GradeHigh">
             </div>
           </div>
         </div>
@@ -105,12 +105,12 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="IEPruling"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="ce_HasIEPRuling"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="IEPruling"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="ce_HasIEPRuling"> No
           </label>
         </div>
       </div>
@@ -125,13 +125,13 @@
       <label class="col-form-label" for="education.creditstograduate">
         How many credits do you need to graduate?
       </label>
-      <input type="text" class="form-control w-75" id="education.creditstograduate" placeholder="Credits needed" formControlName="creditsToGraduate">
+      <input type="text" class="form-control w-75" id="education.creditstograduate" placeholder="Credits needed" formControlName="ce_CreditsNeeded">
     </div>
     <div class="col-12 col-md-6">
       <label class="col-form-label" for="education.currentcredits">
         How many credits do you have?
       </label>
-      <input type="text" class="form-control w-75" id="education.currentcredits" placeholder="Credits current" formControlName="currentCredits">
+      <input type="text" class="form-control w-75" id="education.currentcredits" placeholder="Credits current" formControlName="ce_CurrentCredits">
     </div>
   </div>
   <!-- form-row -->
@@ -142,12 +142,12 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="correctGrade"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="ce_CorrectGrade"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="correctGrade"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="ce_CorrectGrade"> No
           </label>
         </div>
       </div>
@@ -155,7 +155,7 @@
     <div class="col-12 col-md-6">
       <label class="col-form-label" for="education.notCorrectGrade">
         If no, reason </label>
-      <textarea type="text" class="form-control" id="education.grade" placeholder="Reason" rows="2" formControlName="notCorrectGrade">
+      <textarea type="text" class="form-control" id="education.grade" placeholder="Reason" rows="2" formControlName="ce_CorrectGradeReason">
       </textarea>
     </div>
   </div>
@@ -264,12 +264,12 @@
       <div class="form-group">
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="passed" formControlName="stateLevelTests"> I have passed all test I have taken
+            <input type="radio" class="form-check-input" value="passed" formControlName="ce_PassedStateTests"> I have passed all test I have taken
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="notpassed" formControlName="stateLevelTests"> I have not passed all test I have taken
+            <input type="radio" class="form-check-input" value="notpassed" formControlName="ce_PassedStateTests"> I have not passed all test I have taken
           </label>
         </div>
       </div>
@@ -328,17 +328,17 @@
       <div class="form-group">
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="highschoolandcollege" formControlName="dualEnrollmentTypes"> &nbsp;High School and College
+            <input type="checkbox" class="form-check-input" value="highschoolandcollege" formControlName="ce_DualEnrollmentType"> &nbsp;High School and College
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="gedandcollege" formControlName="dualEnrollmentTypes"> &nbsp;GED and College(MI BEST)
+            <input type="checkbox" class="form-check-input" value="gedandcollege" formControlName="ce_DualEnrollmentType"> &nbsp;GED and College(MI BEST)
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="highschoolandvocational" formControlName="dualEnrollmentTypes"> &nbsp;High School and Vocational
+            <input type="checkbox" class="form-check-input" value="highschoolandvocational" formControlName="ce_DualEnrollmentType"> &nbsp;High School and Vocational
           </label>
         </div>
       </div>
@@ -365,13 +365,13 @@
     <div class="col-12 col-md-4">
       <label class="col-form-label" for="education.duelEnrollmentExplain">
         GED Progress </label>
-      <textarea type="text" class="form-control" id="education.gedProgress" placeholder="" rows="2" formControlName="gedProgress">
+      <textarea type="text" class="form-control" id="education.gedProgress" placeholder="" rows="2" formControlName="ce_GEDProgress">
       </textarea>
     </div>
     <div class="col-12 col-md-4">
       <label class="col-form-label" for="education.gedExpectedTestDate">
         Expected Test Date </label>
-      <input type="text" class="form-control datepicker" id="education.gedExpectedTestDate" placeholder="" rows="2" formControlName="gedExpectedTestDate">
+      <input type="text" class="form-control datepicker" id="education.gedExpectedTestDate" placeholder="" rows="2" formControlName="ce_ExpectedTestDate">
     </div>
   </div>
   <!-- form-row -->
@@ -469,19 +469,19 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="etv"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="etv_IsEnrolled"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="etv"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="etv_IsEnrolled"> No
           </label>
         </div>
       </div>
     </div>
     <div class="col-12 col-md-6">
       <label for="education.receiveEtvFunds" class="col-form-label">When did you last receive ETV funds?</label>
-      <input type="text" class="form-control datepicker w-50" id="education.receiveEtvFunds" formControlName="etvFundsDate" placeholder="">
+      <input type="text" class="form-control datepicker w-50" id="education.receiveEtvFunds" formControlName="etv_LastReceiveFunds" placeholder="">
     </div>
   </div>
   <!-- form-row -->
