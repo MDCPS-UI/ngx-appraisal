@@ -20,6 +20,5 @@ export const YA_DG_GENDER_LIST: string[] = [
     'Gay',
     'Bi-Sexual',
     'Transgender',
-    'Questioning',
-    'Declined'
+    'Questioning'
 ].sort();

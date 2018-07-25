@@ -58,17 +58,17 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input"  value="yes" formControlName="custodyStatus"> Yes
+              <input type="radio" class="form-check-input"  value="yes" formControlName="custodyStatus"> Active
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input"  value="no" formControlName="custodyStatus"> No
+              <input type="radio" class="form-check-input"  value="no" formControlName="custodyStatus"> Non-Active
             </label>
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6 pt-2 pt-md-0">
+      <div class="col-12 col-md-6 pt-2 pt-md-0" *ngIf="demographicsForm?.get('custodyStatus')?.value == 'no'">
         <label for="demographics.dischargedate" class="col-form-label">Discharge Date</label>
 
         <!-- Discharge Date Block -->
@@ -84,7 +84,7 @@
 
     <div class="row">
       <div class="col-12">
-        <label for="demographics.address">Address</label>
+        <label for="demographics.address">Current Address</label>
         <textarea class="form-control" id="demographics.address" placeholder="Address" rows="3" formControlName="address">
         </textarea>
       </div>
@@ -122,8 +122,8 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-6 pt-2 pt-md-0"  *ngIf="demographicsForm?.get('LGBTQ')?.value == 'yes'">
-        <label for="demographics.LGBTQType" class="pr-2">Please Select</label>
+      <div class="col-12 col-6 pt-2 pt-md-0"  *ngIf="demographicsForm?.get('isLGBTQ')?.value == 'yes'">
+        <label for="demographics.LGBTQType" class="pr-2">If yes, Select</label>
         <select class="custom-select form-control" id="demographics.LGBTQType">
           <option [selected]="true" [ngValue]="">Choose Category</option>
           <option *ngFor="let gender of config.gendersList" [ngValue]="gender">{{gender}}</option>
@@ -194,8 +194,8 @@
           </div>
         </div>
       </div>
-      <div class="col-12"  *ngIf="demographicsForm?.get('languageBarriers')?.value == 'yes'">
-        <label for="inputAddress2">Please explain:</label>
+      <div class="col-12"  *ngIf="demographicsForm?.get('hasLanguageBarriers')?.value == 'yes'">
+        <label for="inputAddress2">If yes, explain:</label>
         <textarea class="form-control" id="inputAddress2" placeholder="Explain Needs for an interpreter" rows="3" formControlName="languageBarriersText">
         </textarea>
       </div>

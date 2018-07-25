@@ -56,9 +56,9 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-6" *ngIf="educationForm?.get('ce_CurrentlyEnrolled')?.value == 'yes'">
       <label for="education.currentlyenrolledat" class="">
-        If yes, choose one</label>
+        If yes, choose select one of the following:</label>
       <div class="form-group">
         <div class="form-check">
           <div class="row">
@@ -138,7 +138,7 @@
   <!-- Correct Grade for Age -->
   <div class="row">
     <div class="col-12">
-      <label class="col-form-label">Correct Grade for Age?</label>
+      <label class="col-form-label">Are you in the Correct Grade for Age?</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
@@ -152,7 +152,7 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-6" *ngIf="educationForm?.get('ce_CorrectGrade')?.value == 'no'">
       <label class="col-form-label" for="education.notCorrectGrade">
         If no, reason </label>
       <textarea type="text" class="form-control" id="education.grade" placeholder="Reason" rows="2" formControlName="ce_CorrectGradeReason">
@@ -242,7 +242,7 @@
           <div class="row">
             <div class="col-2">
               <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" value="other" formControlName="subjectNeedsHelp"> &nbsp; Other
+                <input type="checkbox" class="form-check-input" value="other" formControlName="subjectNeedsHelp"> &nbsp;Other
               </label>
             </div>
             <div class="col-4">
@@ -311,17 +311,17 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="dualEnrollment"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="ce_IsDualEnrollment"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="dualEnrollment"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="ce_IsDualEnrollment"> No
           </label>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-6" *ngIf="educationForm?.get('ce_IsDualEnrollment')?.value == 'yes'">
       <label class="col-form-label" for="education.duelEnrollmentExplain">
         Which types of Dual Enrollment are you enrolled in?
       </label>
@@ -352,23 +352,23 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="ged"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="ce_IsGED"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="ged"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="ce_IsGED"> No
           </label>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-4" *ngIf="educationForm?.get('ce_IsGED')?.value == 'yes'">
       <label class="col-form-label" for="education.duelEnrollmentExplain">
         GED Progress </label>
       <textarea type="text" class="form-control" id="education.gedProgress" placeholder="" rows="2" formControlName="ce_GEDProgress">
       </textarea>
     </div>
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-4" *ngIf="educationForm?.get('ce_IsGED')?.value == 'yes'">
       <label class="col-form-label" for="education.gedExpectedTestDate">
         Expected Test Date </label>
       <input type="text" class="form-control datepicker" id="education.gedExpectedTestDate" placeholder="" rows="2" formControlName="ce_ExpectedTestDate">
@@ -382,12 +382,12 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" alue="yes" formControlName="vocational"> Yes
+            <input type="radio" class="form-check-input" alue="yes" formControlName="ce_IsHighSchoolVocational"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="vocational"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="ce_IsHighSchoolVocational"> No
           </label>
         </div>
       </div>
@@ -434,8 +434,8 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Type?</label>
+    <div class="col-12 col-md-6" *ngIf="educationForm?.get('postSecondary')?.value == 'yes'">
+      <label class="col-form-label">Post Secondary Education Type?</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
