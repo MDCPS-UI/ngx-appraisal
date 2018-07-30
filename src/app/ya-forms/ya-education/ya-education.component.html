@@ -35,6 +35,17 @@
             <input type="radio" class="form-check-input" value="vocationtraining" formControlName="ce_HighestLevel"> &nbsp;Vocational Training
           </label>
         </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="associatesdegree" formControlName="ce_HighestLevel"> &nbsp;Associate's Degree
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="bachelorsdegree" formControlName="ce_HighestLevel"> &nbsp;Bachelor's Degree
+          </label>
+        </div>
+
       </div>
     </div>
   </div>
@@ -58,7 +69,7 @@
     </div>
     <div class="col-12 col-md-6" *ngIf="educationForm?.get('ce_CurrentlyEnrolled')?.value == 'yes'">
       <label for="education.currentlyenrolledat" class="">
-        If yes, choose select one of the following:</label>
+        If yes, select one of the following:</label>
       <div class="form-group">
         <div class="form-check">
           <div class="row">
@@ -163,7 +174,7 @@
   <div class="row">
     <div class="col-12">
       <label class="col-form-label">
-        During past 6 months what grades have you earned? (check all that apply)
+        During past six (6) months what type of grades have you earned? (check all that apply)
       </label>
       <div class="form-group">
         <div class="form-check form-check-inline">
@@ -257,7 +268,30 @@
   <!-- form-row -->
   <!-- State Level tests -->
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 col-md-6">
+      <label class="col-form-label">
+        Have you taken any State Level tests?
+      </label>
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="yes" formControlName="ce_isStateTests"> Yes
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="notpassed" formControlName="ce_isStateTests"> No
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+    </div>
+  </div>
+  <!-- form-row -->
+
+  <div class="row">
+    <div class="col-12" *ngIf="educationForm?.get('ce_isStateTests')?.value == 'yes'">
       <label class="col-form-label">
         How have you performed on State Level tests?
       </label>
@@ -274,7 +308,7 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-6" *ngIf="educationForm?.get('ce_PassedStateTests')?.value == 'notpassed'">
       <label class="col-form-label" for="education.duelEnrollmentExplain">
         If no, which subjects were not passed?
       </label>
@@ -481,7 +515,8 @@
     </div>
     <div class="col-12 col-md-6">
       <label for="education.receiveEtvFunds" class="col-form-label">When did you last receive ETV funds?</label>
-      <input type="text" class="form-control datepicker w-50" id="education.receiveEtvFunds" formControlName="etv_LastReceiveFunds" placeholder="">
+      <input type="text" class="form-control datepicker w-50" id="education.receiveEtvFunds" formControlName="etv_LastReceiveFunds"
+        placeholder="">
     </div>
   </div>
   <!-- form-row -->

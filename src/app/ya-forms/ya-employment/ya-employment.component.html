@@ -2,7 +2,7 @@
   [formGroup]="employmentForm">
   <div class="row">
     <div class="col-12">
-      <label class="col-form-label">Are you disabled preventing you from working?</label>
+      <label class="col-form-label">Do you have a disabiliy preventing you from working?</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
@@ -14,22 +14,37 @@
             <input type="radio" class="form-check-input" value="no" formControlName="workDisabled"> &nbsp;No
           </label>
         </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="ssi" formControlName="workDisabled"> &nbsp;SSI
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="SSA" formControlName="workDisabled"> &nbsp;SSA
-          </label>
-        </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
-      <label for="employment.explainWorkDisabled">Explain:</label>
-      <input type="tel" class="form-control" id="employment.explainWorkDisabled" placeholder="Explain Work Disabled" formControlName="explainWorkDisabled">
+  </div>
+  <div class="row" *ngIf="employmentForm?.get('workDisabled')?.value == 'yes'">
+    <div class="col-12">
+      <label class="col-form-label">
+        If yes, which types of benefits are you receiving?
+      </label>
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="ssi" formControlName="dIsDisabledType"> &nbsp;SSI
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" value="SSA" formControlName="dIsDisabledType"> &nbsp;SSA
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" value="none" formControlName="dIsDisabledType"> &nbsp;None
+        </label>
+      </div>
     </div>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <label for="employment.explainWorkDisabled">If yes to disability, please explain:</label>
+    <input type="tel" class="form-control" id="employment.explainWorkDisabled" placeholder="Explain Work Disabled" formControlName="dExplainSSA">
+  </div>
   </div>
   <!-- form-row -->
   <!-- Held a Job -->
@@ -39,12 +54,12 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="heldJob"> Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="whHasHadJob"> Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="heldJob"> No
+            <input type="radio" class="form-check-input" value="no" formControlName="whHasHadJob"> No
           </label>
         </div>
       </div>
@@ -58,53 +73,53 @@
       <div class="form-group">
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="childcare" formControlName="jobSkills"> &nbsp;Child Care
+            <input type="checkbox" class="form-check-input" value="childcare" formControlName="whHasChildCare"> &nbsp;Child Care
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="foodservices" formControlName="jobSkills"> &nbsp;Food Services
+            <input type="checkbox" class="form-check-input" value="foodservices" formControlName="whHasFoodServices"> &nbsp;Food Services
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="healthcare" formControlName="jobSkills"> &nbsp;Health Care
+            <input type="checkbox" class="form-check-input" value="healthcare" formControlName="whHasHealthCare"> &nbsp;Health Care
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="clerical" formControlName="jobSkills"> &nbsp;Clerical
+            <input type="checkbox" class="form-check-input" value="clerical" formControlName="whHasClerical"> &nbsp;Clerical
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="mechanical" formControlName="jobSkills"> &nbsp;Mechanical
+            <input type="checkbox" class="form-check-input" value="mechanical" formControlName="whHasMechanical"> &nbsp;Mechanical
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="electrical" formControlName="jobSkills"> &nbsp;Electrical
+            <input type="checkbox" class="form-check-input" value="electrical" formControlName="whHasElectrical"> &nbsp;Electrical
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="sales" formControlName="jobSkills"> &nbsp;Sales
+            <input type="checkbox" class="form-check-input" value="sales" formControlName="whHasSales"> &nbsp;Sales
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="clerical" formControlName="jobSkills"> &nbsp;Customer Service
+            <input type="checkbox" class="form-check-input" value="clerical" formControlName="whHasCustService"> &nbsp;Customer Service
           </label>
         </div>
         <div class="form-check">
           <div class="row">
             <div class="col-2">
               <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" value="other" formControlName="jobSkills"> &nbsp;Other
+                <input type="checkbox" class="form-check-input" value="other" formControlName="whHasOther"> &nbsp;Other
               </label>
             </div>
             <div class="col-3">
-              <input type="text" class="form-check-input" formControlName="otherJobSkills">
+              <input type="text" class="form-check-input" formControlName="whOtherText">
             </div>
           </div>
         </div>
@@ -119,42 +134,42 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="parttime" formControlName="employed"> &nbsp;Part-time
+            <input type="radio" class="form-check-input" value="Part-Time" formControlName="ceIsCurrentlyEmployed"> &nbsp;Part-time
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="employed"> &nbsp;Full-time
+            <input type="radio" class="form-check-input" value="Full-Time" formControlName="ceIsCurrentlyEmployed"> &nbsp;Full-time
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="employed"> &nbsp;No
+            <input type="radio" class="form-check-input" value="No" formControlName="ceIsCurrentlyEmployed"> &nbsp;No
           </label>
         </div>
       </div>
     </div>
-    <div class="col-12">
+    <div class="col-12" >
       <label class="col-form-label">If yes, how long?</label>
       <div class="form-group">
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="zerotosix" formControlName="evictedHowlong"> 0 - 6 months
+            <input type="radio" class="form-check-input" value="zerotosix" formControlName="ceEmployLength"> 0 - 6 months
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="sixtotwelve" formControlName="evictedHowlong"> 7 - 12 months
+            <input type="radio" class="form-check-input" value="sixtotwelve" formControlName="ceEmployLength"> 7 - 12 months
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="twelvetoeighteen" formControlName="evictedHowlong"> 13 - 18 months
+            <input type="radio" class="form-check-input" value="twelvetoeighteen" formControlName="ceEmployLength"> 13 - 18 months
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="eighteentotwentyfour" formControlName="evictedHowlong"> 19 - 24 months
+            <input type="radio" class="form-check-input" value="eighteentotwentyfour" formControlName="ceEmployLength"> 19 - 24 months
           </label>
         </div>
       </div>
@@ -164,12 +179,12 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="inBenefitProgram"> &nbsp;Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="ceEmployHealthBenefit"> &nbsp;Yes
           </label>
         </div>
         <div class="form-check form-check-inline pl-2">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="inBenefitProgram"> &nbsp;No
+            <input type="radio" class="form-check-input" value="no" formControlName="ceEmployHealthBenefit"> &nbsp;No
           </label>
         </div>
       </div>
@@ -182,28 +197,28 @@
       <div class="form-group">
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="725to10" formControlName="hourlyRate"> $7.25-$10.00
+            <input type="radio" class="form-check-input" value="725to10" formControlName="ceHourlyPayRate"> $7.25-$10.00
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="10to15" formControlName="hourlyRate"> $10.01-$15.00
+            <input type="radio" class="form-check-input" value="10to15" formControlName="ceHourlyPayRate"> $10.01-$15.00
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="15to20" formControlName="hourlyRate"> $15.01-$20.00
+            <input type="radio" class="form-check-input" value="15to20" formControlName="ceHourlyPayRate"> $15.01-$20.00
           </label>
         </div>
         <div class="form-check">
           <div class="row">
             <div class="col-2">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" value="other" formControlName="hourlyRate"> &nbsp;Other
+                <input type="radio" class="form-check-input" value="other" formControlName="ceHourlyPayRate"> &nbsp;Other
               </label>
             </div>
             <div class="col-6">
-              <input type="text" class="form-check-input" formControlName="otherHourlyRate">
+              <input type="text" class="form-check-input" formControlName="ceOtherHourlyRate">
             </div>
           </div>
         </div>

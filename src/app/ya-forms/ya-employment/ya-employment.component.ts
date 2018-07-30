@@ -35,15 +35,24 @@ export class YaEmploymentComponent implements OnInit {
   public ngOnInit(): void {
     this.employmentForm = this.fb.group({
       workDisabled: new FormControl('', []),
-      explainWorkDisabled: new FormControl('', []),
-      heldJob: new FormControl('', []),
-      jobSkills: new FormControl('', []),
-      otherJobSkills: new FormControl('', []),
-      employed: new FormControl('', []),
-      evictedHowlong: new FormControl('', []),
-      inBenefitProgram: new FormControl('', []),
-      hourlyRate: new FormControl('', []),
-      otherHourlyRate: new FormControl('', [])
+      dIsDisabledType: new FormControl('', []),
+      dExplainSSA: new FormControl('', []),
+      whHasHadJob: new FormControl('', []),
+      whHasChildCare: new FormControl('', []),
+      whHasFoodServices: new FormControl('', []),
+      whHasHealthCare: new FormControl('', []),
+      whHasClerical: new FormControl('', []),
+      whHasMechanical: new FormControl('', []),
+      whHasElectrical: new FormControl('', []),
+      whHasSales: new FormControl('', []),
+      whHasCustService: new FormControl('', []),
+      whHasOther: new FormControl('', []),
+      whOtherText: new FormControl('', []),
+      ceIsCurrentlyEmployed: new FormControl('', []),
+      ceEmployLength: new FormControl('', []),
+      ceEmployHealthBenefit: new FormControl('', []),
+      ceHourlyPayRate: new FormControl('', []),
+      ceOtherHourlyRate: new FormControl('', [])
     });
   }
 

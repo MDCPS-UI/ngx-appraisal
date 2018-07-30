@@ -47,6 +47,7 @@ export class YaEducationComponent implements OnInit {
       gradesLastSix: new FormControl('', []),
       subjectNeedsHelp: new FormControl('', []),
       otherHelpNeeded: new FormControl('', []),
+      ce_isStateTests: new FormControl('', []),
       ce_PassedStateTests: new FormControl('', []),
       testsNotPassed: new FormControl('', []),
       ce_IsDualEnrollment : new FormControl('', []),
