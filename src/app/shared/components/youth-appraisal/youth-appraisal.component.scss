@@ -1,3 +1,7 @@
+input:disabled {
+    background-color: #e9ecef !important;
+}
+
 .mdcps-ac-id {
     font-weight: bold;
 }
@@ -21,6 +25,14 @@
         top: 34px;
         right: 12px;
         width: 35px;
+    }
+}
+
+.mdcps-row-last {
+    margin-top: 15px;
+
+    .btn {
+        border-radius: 0;
     }
 }
 

@@ -2,7 +2,9 @@
 <mdcps-header>
     <mdcps-side-bar [tabs]="tabs">
         <div class="container-fluid">
-            <mdcps-youth-appraisal></mdcps-youth-appraisal>
+            <fieldset [disabled]="isDisabled">
+                <mdcps-youth-appraisal></mdcps-youth-appraisal>
+            </fieldset>
             <router-outlet></router-outlet>
         </div>
     </mdcps-side-bar>

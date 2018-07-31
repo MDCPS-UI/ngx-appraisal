@@ -1,10 +1,9 @@
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { YA_CHILDREN_DATA } from './youth-appraisal';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { ProfileService } from '../../services/profile/profile.service';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
-
 
 @Component({
   selector: 'mdcps-youth-appraisal',
@@ -26,6 +25,11 @@ export class YouthAppraisalComponent implements OnInit {
    * @public
    */
   public isProcessing: boolean = false;
+  /**
+   * @public
+   */
+  @Input()
+  public enableButton: boolean = false;
 
   /**
    * @constructor
@@ -114,7 +118,7 @@ export class YouthAppraisalComponent implements OnInit {
    */
   public onSubmit(form: FormGroup, value: any): void {
     if (form.valid) {
-      console.log(form.value);
+      this.profileService.setItem('appraisal', value);
     }
   }
 }
