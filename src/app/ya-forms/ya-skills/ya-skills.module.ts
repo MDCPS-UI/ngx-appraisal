@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { BaseFormModule } from './../../shared/components/base-form/base-form.module';
+import { BaseFormModule } from '../../shared/components/base-form/base-form.module';
 
 // Components
 import { YaSkillsComponent } from './ya-skills.component';

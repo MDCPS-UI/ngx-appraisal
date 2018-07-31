@@ -5,11 +5,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from './../shared/modules/material/material.module';
+import { HeaderModule } from './../shared/components/layout/header/header.module';
+import { YaModule } from './../shared/components/youth-appraisal/youth-appraisal.module';
 
 // component
 import { YaLandingComponent } from './ya-landing.component';
-import { HeaderComponent } from './../shared/components/layout/header/header.component';
-import { YouthAppraisalComponent } from './../shared/components/youth-appraisal/youth-appraisal.component';
 
 // MDCPS Routes
 const ROUTES: Route[] = [
@@ -21,16 +21,16 @@ const ROUTES: Route[] = [
 
 @NgModule({
   imports: [
-    NgbModule,
-    CommonModule,
-    MaterialModule,
-    ReactiveFormsModule,
-    RouterModule.forChild(ROUTES)
+    YaModule
+    , NgbModule
+    , CommonModule
+    , HeaderModule
+    , MaterialModule
+    , ReactiveFormsModule
+    , RouterModule.forChild(ROUTES)
   ],
   declarations: [
-    HeaderComponent,
-    YaLandingComponent,
-    YouthAppraisalComponent
+    YaLandingComponent
   ]
 })
 export class YaLandingModule { }

@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { BaseFormModule } from './../../shared/components/base-form/base-form.module';
-import { DatePickerModule } from './../../shared/components/date-picker/date-picker.module';
+import { BaseFormModule } from '../../shared/components/base-form/base-form.module';
+import { DatePickerModule } from '../../shared/components/date-picker/date-picker.module';
 
 // Components
 import { YaStipendsComponent } from './ya-stipends.component';

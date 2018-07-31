@@ -1,9 +1,11 @@
 import { Observable } from 'rxjs';
-import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { YA_CHILDREN_DATA } from './youth-appraisal';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { ProfileService } from '../../services/profile/profile.service';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { ProfileService } from './../../services/profile/profile.service';
+import { ActiveModelService } from './../../services/active-model/active-model.service';
 
 @Component({
   selector: 'mdcps-youth-appraisal',
@@ -42,8 +44,10 @@ export class YouthAppraisalComponent implements OnInit {
    * @param {fb<FormBuilder>}
    */
   constructor(
+    private router: Router,
     private fb: FormBuilder,
-    private profileService: ProfileService) { }
+    private profileService: ProfileService,
+    private activeModel: ActiveModelService) { }
 
   /**
    * @public
@@ -142,6 +146,8 @@ export class YouthAppraisalComponent implements OnInit {
   public onSubmit(form: FormGroup, value: any): void {
     if (form.valid) {
       this.profileService.setItem('appraisal', value);
+      this.activeModel.appraisalData = value;
+      this.router.navigate(['/dashboard']);
     }
   }
 }

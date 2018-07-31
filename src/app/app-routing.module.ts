@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // Services
 import { UtilService } from './shared/services/util/util.service';
 import { ProfileService } from './shared/services/profile/profile.service';
+import { ActiveModelService } from './shared/services/active-model/active-model.service';
 
 // MDCPS Routes
 const ROUTES: Route[] = [
@@ -39,6 +40,10 @@ const ROUTES: Route[] = [
     RouterModule.forRoot(ROUTES)
   ],
   exports: [RouterModule],
-  providers: [UtilService, ProfileService]
+  providers: [
+    UtilService
+    , ProfileService
+    , ActiveModelService
+  ]
 })
 export class AppRoutingModule { }
