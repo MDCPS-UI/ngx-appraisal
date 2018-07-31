@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SIDE_NAV_TABS } from './../shared/constants/side-nav.constants';
+import { ProfileService } from './../shared/services/profile/profile.service';
 
 
 @Component({
@@ -14,14 +15,20 @@ export class YaDashboardComponent implements OnInit {
   public tabs: any[] = [];
 
   /**
+   * @public
+   */
+  public isDisabled: boolean = false;
+
+  /**
    * @constructor
    */
-  constructor() { }
+  constructor(private profileService: ProfileService) { }
 
   /**
    * @public
    */
   public ngOnInit(): void {
     this.tabs = SIDE_NAV_TABS;
+    this.isDisabled = this.profileService.hasAppraisal();
   }
 }

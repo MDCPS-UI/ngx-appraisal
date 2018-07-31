@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Subject, BehaviorSubject } from 'rxjs/Rx';
 
+// access to the native window object.
+declare const window: any;
+
 /**
  * @interface
  */
@@ -10,7 +13,6 @@ export interface MdcpsNavigationEvent {
   routeSuffix?: string;
   navigationUrl: string;
 };
-
 
 @Injectable()
 export class ProfileService {
@@ -81,5 +83,46 @@ export class ProfileService {
    */
   public getYaSelection(): Subject<any> {
     return this.selection$;
+  }
+
+  /**
+   * @public
+   * @param: {key<string>}
+   * @param: {value<any>}
+   * @return void
+   */
+  public setItem(key: string, value: any): void {
+    window.sessionStorage.setItem(key, JSON.stringify(value));
+  }
+
+  /**
+   * @public
+   * @param: {key<string>}
+   * @return {any}
+   */
+  public getItem(key: string): any {
+    let parsedVal: any;
+    const value: string = window.sessionStorage.getItem(key);
+
+    try {
+      parsedVal = JSON.parse(value);
+    } catch(e) {
+      parsedVal = value;
+    }
+
+    return parsedVal;
+  }
+
+  /**
+   * @public
+   * @return boolean
+   */
+  public hasAppraisal(): boolean {
+    const selection: any = this.getItem('appraisal') || {};
+
+    if (selection && selection['macwisId']) {
+      return true;
+    }
+    return false;
   }
 }
