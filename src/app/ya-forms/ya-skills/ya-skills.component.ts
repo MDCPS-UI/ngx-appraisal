@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { YA_SKILLS_LIST } from './ya-skills.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { UtilService } from './../../shared/services/util/util.service';
+import { UtilService } from '../../shared/services/util/util.service';
 
 @Component({
   selector: 'mdcps-ya-skills',

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject, BehaviorSubject } from 'rxjs/Rx';
+import { ActiveModelService } from './../active-model/active-model.service';
 
 // access to the native window object.
 declare const window: any;
@@ -32,7 +33,7 @@ export class ProfileService {
   /**
    * @constructor
    */
-  constructor() { }
+  constructor(private activeModel: ActiveModelService) { }
 
   /**
    * @public
@@ -121,6 +122,7 @@ export class ProfileService {
     const selection: any = this.getItem('appraisal') || {};
 
     if (selection && selection['macwisId']) {
+      this.activeModel.appraisalData = selection['macwisId'];
       return true;
     }
     return false;

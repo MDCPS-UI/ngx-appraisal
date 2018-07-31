@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { YA_STPNDS_LIST } from './ya-stipends.constants';
-import { UtilService } from './../../shared/services/util/util.service';
+import { UtilService } from '../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 
 @Component({

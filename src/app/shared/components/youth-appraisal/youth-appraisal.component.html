@@ -32,7 +32,7 @@
       <div class="row mdcps-row-last" *ngIf="enableButton">
         <div class="col-10"></div>
         <div class="col-2">
-          <button class="btn btn-block btn-danger" type="submit">Submit</button>
+          <button class="btn btn-block btn-dark" type="submit" [disabled]="!(youthApprForm?.get('macwisId')?.value)">Submit</button>
         </div>
       </div>
     </form>
