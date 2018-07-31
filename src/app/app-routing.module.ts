@@ -4,8 +4,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-// Components
-
 // Services
 import { UtilService } from './shared/services/util/util.service';
 import { ProfileService } from './shared/services/profile/profile.service';
@@ -15,7 +13,7 @@ const ROUTES: Route[] = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'dashboard'
+    redirectTo: 'landing'
   },
   {
     path: 'dashboard',
@@ -23,6 +21,13 @@ const ROUTES: Route[] = [
       bgClass: 'bg-white'
     },
     loadChildren: './ya-dashboard/ya-dashboard.module#YaDashboardModule'
+  },
+  {
+    path: 'landing',
+    data: {
+      bgClass: 'bg-white'
+    },
+    loadChildren: './ya-landing/ya-landing.module#YaLandingModule'
   }
 ];
 
