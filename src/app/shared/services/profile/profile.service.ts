@@ -19,7 +19,7 @@ export class ProfileService {
   /**
    * @private
    */
-  private selection$: Subject<any> = new Subject<any>();
+  private selection$: BehaviorSubject<any> = new BehaviorSubject<any>({});
   /**
    * @private
    */
@@ -79,9 +79,9 @@ export class ProfileService {
 
   /**
    * @public
-   * @return {Subject<any>}
+   * @return {BehaviorSubject<any>}
    */
-  public getYaSelection(): Subject<any> {
+  public getYaSelection(): BehaviorSubject<any> {
     return this.selection$;
   }
 

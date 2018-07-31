@@ -113,7 +113,6 @@ export class YouthAppraisalComponent implements OnInit {
 
     // update form values
     this.youthApprForm.updateValueAndValidity();
-    // this.youthApprForm.get('macwisId').setValue(data.MacwisId);
   }
 
   /**
