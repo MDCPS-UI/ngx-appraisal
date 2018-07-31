@@ -19,6 +19,12 @@ export class YouthAppraisalComponent implements OnInit {
   /**
    * @public
    */
+  @Input()
+  public preset: boolean = false;
+
+  /**
+   * @public
+   */
   public typeaheadLength: number = 3;
 
   /**
@@ -49,6 +55,10 @@ export class YouthAppraisalComponent implements OnInit {
       youthName: new FormControl('', []),
       appraisalDate: new FormControl('', [])
     });
+
+    if (this.preset) {
+      this.prePopulate();
+    }
   }
 
   /**
@@ -95,7 +105,7 @@ export class YouthAppraisalComponent implements OnInit {
    */
   public populateForm(data: any): void {
     this.youthApprForm.setValue({
-      macwisId: data.MacwisId,
+      macwisId: data,
       appraisalDate: data.DOBString,
       youthName: `${data.FirstName} ${data.LastName}`,
       status: (data.IsActive) ? 'Active' : 'Inactive'
@@ -103,6 +113,20 @@ export class YouthAppraisalComponent implements OnInit {
 
     // update form values
     this.youthApprForm.updateValueAndValidity();
+    // this.youthApprForm.get('macwisId').setValue(data.MacwisId);
+  }
+
+  /**
+   * @public
+   */
+  public prePopulate(): void {
+    const selection: any = this.profileService.getItem('appraisal') || {};
+    const macId: any = selection['macwisId'];
+
+    if (selection && macId) {
+      this.populateForm(macId);
+      this.profileService.setYaSelection(macId);
+    }
   }
 
   /**
