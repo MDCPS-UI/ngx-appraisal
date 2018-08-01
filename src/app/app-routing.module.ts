@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // Services
 import { AuthGuard } from './shared/guards/auth.guard';
 import { UtilService } from './shared/services/util/util.service';
+import { AjaxService } from './shared/services/ajax/ajax.service';
 import { ProfileService } from './shared/services/profile/profile.service';
 import { ActiveModelService } from './shared/services/active-model/active-model.service';
 
@@ -44,6 +45,7 @@ const ROUTES: Route[] = [
   exports: [RouterModule],
   providers: [
     AuthGuard
+    , AjaxService
     , UtilService
     , ProfileService
     , ActiveModelService

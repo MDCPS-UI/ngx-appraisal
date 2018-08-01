@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProfileService, MdcpsNavigationEvent } from '../../../services/profile/profile.service';
+import { ProfileService, MdcpsNavigationEvent } from './../../../services/profile/profile.service';
 
 
 @Component({
