@@ -5,7 +5,9 @@ import { RouterModule, Route } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Services
+import { AuthGuard } from './shared/guards/auth.guard';
 import { UtilService } from './shared/services/util/util.service';
+import { AjaxService } from './shared/services/ajax/ajax.service';
 import { ProfileService } from './shared/services/profile/profile.service';
 import { ActiveModelService } from './shared/services/active-model/active-model.service';
 
@@ -21,6 +23,7 @@ const ROUTES: Route[] = [
     data: {
       bgClass: 'bg-white'
     },
+    canActivate: [AuthGuard],
     loadChildren: './ya-dashboard/ya-dashboard.module#YaDashboardModule'
   },
   {
@@ -41,7 +44,9 @@ const ROUTES: Route[] = [
   ],
   exports: [RouterModule],
   providers: [
-    UtilService
+    AuthGuard
+    , AjaxService
+    , UtilService
     , ProfileService
     , ActiveModelService
   ]

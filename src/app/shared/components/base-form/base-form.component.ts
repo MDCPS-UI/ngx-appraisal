@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, AbstractControl } from '@angular/forms';
-import { ProfileService, MdcpsNavigationEvent } from '../../services/profile/profile.service';
+import { ProfileService, MdcpsNavigationEvent } from './../../services/profile/profile.service';
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 /**
