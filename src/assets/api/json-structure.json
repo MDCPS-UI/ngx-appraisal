@@ -138,7 +138,17 @@
         "phone": "(601) 443-8146",
         "workerName": "Kadeshia Hunt"
       },
-      "addressList": []
+      "addressList": [
+        {
+            "id":38309,
+            "line1":"7 Eleven St",
+            "line2":"",
+            "city":"Mesquite",
+            "state":"MS",
+            "zip":"39911",
+            "county":null 
+        }
+      ]
     },
     "documentInfo": {
       "appraisalId": 1,
