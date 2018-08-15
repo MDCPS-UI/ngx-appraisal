@@ -79,8 +79,8 @@ export class YouthAppraisalComponent implements OnInit {
           })
           : [];
 
-          this.isProcessing = false;
-          return results;
+        this.isProcessing = false;
+        return results;
       })
     );
   }
@@ -147,7 +147,7 @@ export class YouthAppraisalComponent implements OnInit {
     if (form.valid) {
       this.profileService.setItem('appraisal', value);
       this.activeModel.appraisalData = value;
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard'], { queryParams: { 'appraisalId': '1234' } });
     }
   }
 }
