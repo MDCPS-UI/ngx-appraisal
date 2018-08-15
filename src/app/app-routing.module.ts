@@ -9,6 +9,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
 import { UtilService } from './shared/services/util/util.service';
 import { AjaxService } from './shared/services/ajax/ajax.service';
 import { ProfileService } from './shared/services/profile/profile.service';
+import { AppraisalService } from './shared/services/appraisal/appraisal.service';
 import { ActiveModelService } from './shared/services/active-model/active-model.service';
 
 // MDCPS Routes
@@ -48,6 +49,7 @@ const ROUTES: Route[] = [
     , AjaxService
     , UtilService
     , ProfileService
+    , AppraisalService
     , ActiveModelService
   ]
 })
