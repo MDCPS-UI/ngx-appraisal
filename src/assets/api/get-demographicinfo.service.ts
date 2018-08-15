@@ -68,5 +68,20 @@ export const GET_DEMOGRAPHIC_INFO: any = {
        "phone": "(601) 443-1046",
        "workerName": "Eunice Marsaw"
     },
-    "addressList": []
+    "addressList": [
+        {
+            "id":	"integer($int32)",
+            "line1": "string",
+            "line2": "string",
+            "city":	"string",
+            "state": "string",
+            "zip":	"string",
+            "county":	{
+                "id": "integer($int32)",
+                "countyCode": "string",
+                "name":	"string"
+                
+            }
+        }
+    ]
  }
