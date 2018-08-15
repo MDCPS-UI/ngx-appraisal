@@ -27,6 +27,6 @@ export class AuthGuard implements CanActivate {
     if (this.profileService.hasAppraisal()) {
       return true;
     }
-    this.router.navigate(['/landing']);
+    this.router.navigate(['/landing'], {queryParamsHandling: 'merge', preserveQueryParams: true});
   }
 }
