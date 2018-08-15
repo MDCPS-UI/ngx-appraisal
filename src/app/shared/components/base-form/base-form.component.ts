@@ -120,7 +120,7 @@ export class BaseFormComponent implements OnInit {
       + config.navigationUrl + (config.routeSuffix || ''));
 
     // navigate to the requested route
-    this.router.navigate([url]);
+    this.router.navigate([url], {queryParamsHandling: 'merge', preserveQueryParams: true});
   }
 
   /**
