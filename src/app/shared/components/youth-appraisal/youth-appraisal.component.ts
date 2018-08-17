@@ -151,12 +151,6 @@ export class YouthAppraisalComponent implements OnInit {
    * @public
    */
   public onSubmit(form: FormGroup, value: any): void {
-    // if (form.valid) {
-    //   this.profileService.setItem('appraisal', value);
-    //   this.activeModel.appraisalData = value;
-    //   this.router.navigate(['/dashboard'], { queryParams: { 'appraisalId': '1234' } });
-    // }
-
     this.formSubmit.emit({
       form: form,
       formValue: value,
