@@ -4,6 +4,11 @@ import { Injectable } from '@angular/core';
 export class ActiveModelService {
   /**
    * @private
+   * @type: any[]
+   */
+  private _children: any[];
+  /**
+   * @private
    * @type: string
    */
   private _appraisal: any;
@@ -80,5 +85,24 @@ export class ActiveModelService {
    */
   public getChildData(): any {
     return this._childData;
+  }
+
+  /**
+   * @public
+   * @param: {data<any>}
+   * @returns: void
+   * @description: N/A
+   */
+  public setChildren(data: any[]): void {
+    this._children = data;
+  }
+
+  /**
+   * @public
+   * @returns: any
+   * @description: N/A
+   */
+  public getChildren(): any {
+    return this._children;
   }
 }
