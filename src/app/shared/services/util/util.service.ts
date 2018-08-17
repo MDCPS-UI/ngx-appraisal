@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { SpinnerService } from './../spinner/spinner.service';
 
+// access to the native window object
+declare const window: any;
 
 @Injectable()
 export class UtilService {
@@ -31,10 +33,10 @@ export class UtilService {
    *
    * @return: {string} formatted string
    */
-  public static format(key: string,
-    args: any[] | null, strConst: any): string {
+  public format(strToFormat: string,
+    args: any[] | null): string {
 
-    let str: string = strConst ? strConst[key] : key;
+    let str: string = strToFormat;
 
     // in case if URL doesn't exist return empty
     if (!str) { return ''; }
@@ -120,5 +122,30 @@ export class UtilService {
       strToFormat = +strToFormat;
     }
     return strToFormat;
+  }
+
+  /**
+   * @public
+   * @param: {key<string>} -> key for lookup
+   * @return: string - query string value
+   * @description: picks up the query string from the
+   * URL & returns the value for the given key.
+   *
+   * @example:
+   * URL -> `https://www.google.com?name=Mohammed`
+   *
+   * this.getQueryStringValue('name') -> 'Mohammed'
+   */
+  public getQueryStringValue(key: string, parse?: boolean): string {
+    let value: any = window.unescape(
+      window.location.search.replace(new RegExp('^(?:.*[&\\?]' +
+        window.escape(key).replace(/[\.\+\*]/g, '\\$&') + '(?:\\=([^&]*))?)?.*$', 'i'), '$1')
+    );
+
+    // return parsed value, skip errors
+    if (parse) {
+      try { value = JSON.parse(value); } catch (e) { }
+    }
+    return value;
   }
 }

@@ -1,10 +1,10 @@
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { YA_CHILDREN_DATA } from './youth-appraisal';
-import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { ProfileService } from './../../services/profile/profile.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActiveModelService } from './../../services/active-model/active-model.service';
 
 @Component({
@@ -33,11 +33,18 @@ export class YouthAppraisalComponent implements OnInit {
    * @public
    */
   public isProcessing: boolean = false;
+
   /**
    * @public
    */
   @Input()
   public enableButton: boolean = false;
+
+  /**
+   * @public
+   */
+  @Output()
+  public formSubmit: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * @constructor
@@ -144,10 +151,16 @@ export class YouthAppraisalComponent implements OnInit {
    * @public
    */
   public onSubmit(form: FormGroup, value: any): void {
-    if (form.valid) {
-      this.profileService.setItem('appraisal', value);
-      this.activeModel.appraisalData = value;
-      this.router.navigate(['/dashboard'], { queryParams: { 'appraisalId': '1234' } });
-    }
+    // if (form.valid) {
+    //   this.profileService.setItem('appraisal', value);
+    //   this.activeModel.appraisalData = value;
+    //   this.router.navigate(['/dashboard'], { queryParams: { 'appraisalId': '1234' } });
+    // }
+
+    this.formSubmit.emit({
+      form: form,
+      formValue: value,
+      isFormValid: form.valid
+    });
   }
 }

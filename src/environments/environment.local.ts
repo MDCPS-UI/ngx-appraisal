@@ -5,6 +5,7 @@ import { EnvBaseConfig } from './environment.config';
 class EnvConfig extends EnvBaseConfig {
   constructor() {
     super();
+    this.local = true;
     this.production = true;
   }
 }
