@@ -122,7 +122,7 @@ export class ProfileService {
     const selection: any = this.getItem('appraisal') || {};
 
     if (selection && selection['macwisId']) {
-      this.activeModel.appraisalData = selection['macwisId'];
+      this.activeModel.setChildData(selection['macwisId']);
       return true;
     }
     return false;
