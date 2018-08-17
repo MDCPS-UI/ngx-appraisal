@@ -4,6 +4,7 @@ import { YA_CHILDREN_DATA } from './youth-appraisal';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { ProfileService } from './../../services/profile/profile.service';
+import { AppraisalService } from '../../services/appraisal/appraisal.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActiveModelService } from './../../services/active-model/active-model.service';
 
@@ -13,6 +14,10 @@ import { ActiveModelService } from './../../services/active-model/active-model.s
   styleUrls: ['./youth-appraisal.component.scss']
 })
 export class YouthAppraisalComponent implements OnInit {
+  /**
+   * @public
+   */
+  public children: any;
   /**
    * @public
    */
@@ -53,8 +58,11 @@ export class YouthAppraisalComponent implements OnInit {
   constructor(
     private router: Router,
     private fb: FormBuilder,
+    private appraisal: AppraisalService,
     private profileService: ProfileService,
-    private activeModel: ActiveModelService) { }
+    private activeModel: ActiveModelService) {
+      this.getChildren();
+    }
 
   /**
    * @public
@@ -81,7 +89,7 @@ export class YouthAppraisalComponent implements OnInit {
       distinctUntilChanged(),
       map(term => {
         const results: any[] = !(term.length < this.typeaheadLength)
-          ? YA_CHILDREN_DATA.filter(child => {
+          ? this.children.filter(child => {
             return child.MacwisId.indexOf(term) > -1;
           })
           : [];
@@ -156,5 +164,24 @@ export class YouthAppraisalComponent implements OnInit {
       formValue: value,
       isFormValid: form.valid
     });
+  }
+
+  /**
+   * @public
+   */
+  public getChildren(): void {
+    const children: any = this.activeModel.getChildren();
+
+    if (!!children) {
+      this.children = children;
+      return;
+    }
+
+    this.appraisal.request('getAllChildren').subscribe(
+      (data) => {
+        this.children = data;
+        this.activeModel.setChildren(data);
+      }
+    )
   }
 }
