@@ -1,6 +1,5 @@
 /**
  * @interface
- * @author: Shoukath Mohammed
  */
 export interface AjaxRequest {
     body?: any;

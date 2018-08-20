@@ -90,7 +90,7 @@ export class YouthAppraisalComponent implements OnInit {
       map(term => {
         const results: any[] = !(term.length < this.typeaheadLength)
           ? this.children.filter(child => {
-            return child.MacwisId.indexOf(term) > -1;
+            return child.macwisId.indexOf(term) > -1;
           })
           : [];
 
@@ -116,7 +116,7 @@ export class YouthAppraisalComponent implements OnInit {
    * @public
    */
   public formatter(selection: any): string {
-    return selection.MacwisId;
+    return selection.macwisId;
   };
 
   /**
@@ -125,9 +125,9 @@ export class YouthAppraisalComponent implements OnInit {
   public populateForm(data: any): void {
     this.youthApprForm.setValue({
       macwisId: data,
-      appraisalDate: data.DOBString,
-      youthName: `${data.FirstName} ${data.LastName}`,
-      status: (data.IsActive) ? 'Active' : 'Inactive'
+      appraisalDate: data.dobString,
+      youthName: `${data.firstName} ${data.lastName}`,
+      status: (data.isActive) ? 'Active' : 'Inactive'
     });
 
     // update form values
