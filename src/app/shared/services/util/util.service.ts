@@ -132,9 +132,9 @@ export class UtilService {
    * URL & returns the value for the given key.
    *
    * @example:
-   * URL -> `https://www.google.com?name=Mohammed`
+   * URL -> `https://www.google.com?name=Nagulapally`
    *
-   * this.getQueryStringValue('name') -> 'Mohammed'
+   * this.getQueryStringValue('name') -> 'Nagulapally'
    */
   public getQueryStringValue(key: string, parse?: boolean): string {
     let value: any = window.unescape(
