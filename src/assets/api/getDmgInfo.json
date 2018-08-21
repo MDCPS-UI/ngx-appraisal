@@ -32,7 +32,7 @@
         "id": 11,
         "name": "Adams"
     },
-    "hasHealthInsurance": false,
+    "hasHealthInsurance": true,
     "hasMedicaid": true,
     "medicaidNumber": "",
     "hasLanguageBarriers": false,

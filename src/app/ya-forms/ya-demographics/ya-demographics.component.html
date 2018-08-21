@@ -1,5 +1,5 @@
 <mdcps-base-form [baseFormGroup]="demographicsForm" (next)="onNext($event)" [config]="{nextBtn: true, nextBtnLabel: 'Education'}"
-  [formGroup]="demographicsForm">
+  [formGroup]="demographicsForm" *ngIf="demographicsForm">
 
   <div class="mdcps-demographics-container" *ngIf="demographicsForm">
     <div class="row">
@@ -67,12 +67,12 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="yes" formControlName="custodyStatus"> Active
+              <input type="radio" class="form-check-input" [value]="yes" formControlName="custodyStatus"> Active
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="no" formControlName="custodyStatus"> Non-Active
+              <input type="radio" class="form-check-input" [value]="no" formControlName="custodyStatus"> Non-Active
             </label>
           </div>
         </div>
@@ -112,54 +112,54 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="yes" formControlName="isLGBTQ"> Yes
+              <input type="radio" class="form-check-input" [value]="'yes'" formControlName="isLGBTQ"> Yes
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="no" formControlName="isLGBTQ"> No
+              <input type="radio" class="form-check-input" [value]="'no'" formControlName="isLGBTQ"> No
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="decline" formControlName="isLGBTQ"> Declined
+              <input type="radio" class="form-check-input" [value]="'decline'" formControlName="isLGBTQ"> Declined
             </label>
           </div>
         </div>
       </div>
       <div class="col-12 col-6 pt-2 pt-md-0" *ngIf="demographicsForm?.get('isLGBTQ')?.value == 'yes'">
-        <label for="demographics.LGBTQType" class="pr-2">If Yes, Please Select</label>
+        <label for="demographics.LGBTQType" class="pr-2">Please Select:</label>
       <div class="form-group">
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="lesbian" formControlName="isLesbian"> &nbsp;Lesbian
+            <input type="checkbox" class="form-check-input" [value]="'lesbian'" formControlName="isLesbian"> &nbsp;Lesbian
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="gay" formControlName="isGay"> &nbsp;Gay
+            <input type="checkbox" class="form-check-input" [value]="'gay'" formControlName="isGay"> &nbsp;Gay
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="bisexual" formControlName="isBisexual"> &nbsp;Bisexual
+            <input type="checkbox" class="form-check-input" [value]="'bisexual'" formControlName="isBisexual"> &nbsp;Bisexual
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="transgender" formControlName="isTransgender"> &nbsp;Transgender
+            <input type="checkbox" class="form-check-input" [value]="'transgender'" formControlName="isTransgender"> &nbsp;Transgender
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="questioning" formControlName="isQuestioning"> &nbsp;Questioning
+            <input type="checkbox" class="form-check-input" [value]="'questioning'" formControlName="isQuestioning"> &nbsp;Questioning
           </label>
         </div>
         <div class="form-check">
           <div class="row">
             <div class="col-2">
               <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" value="other" formControlName="isOther"> &nbsp; Other
+                <input type="checkbox" class="form-check-input" [value]="'other'" formControlName="isOther"> &nbsp; Other
               </label>
             </div>
             <div class="col-6">
@@ -190,12 +190,12 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="yes" formControlName="hasHealthInsurance"> Yes
+              <input type="radio" class="form-check-input" [value]="true" formControlName="hasHealthInsurance"> Yes
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="no" formControlName="hasHealthInsurance"> No
+              <input type="radio" class="form-check-input" [value]="false" formControlName="hasHealthInsurance"> No
             </label>
           </div>
         </div>
@@ -208,12 +208,12 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="yes" formControlName="hasMedicaid"> Yes
+              <input type="radio" class="form-check-input" [value]="true" formControlName="hasMedicaid"> Yes
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="no" formControlName="hasMedicaid"> No
+              <input type="radio" class="form-check-input" [value]="false" formControlName="hasMedicaid"> No
             </label>
           </div>
         </div>
@@ -226,18 +226,18 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="yes" formControlName="hasLanguageBarriers"> Yes
+              <input type="radio" class="form-check-input" [value]="true" formControlName="hasLanguageBarriers"> Yes
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="no" formControlName="hasLanguageBarriers"> No
+              <input type="radio" class="form-check-input" [value]="false" formControlName="hasLanguageBarriers"> No
             </label>
           </div>
         </div>
       </div>
       <div class="col-12" *ngIf="demographicsForm?.get('hasLanguageBarriers')?.value == 'yes'">
-        <label for="inputAddress2">If yes, explain:</label>
+        <label for="inputAddress2">Please explain:</label>
         <textarea class="form-control" id="inputAddress2" placeholder="Explain Needs for an interpreter" rows="3" formControlName="languageBarriersText">
         </textarea>
       </div>

@@ -112,7 +112,7 @@ export class UtilService {
 
     // in case if the length is `1`, prepend
     // zero before the value
-    if (strToFormat.length == 1) {
+    if (strToFormat && strToFormat.length == 1) {
       strToFormat = ('0' + strToFormat);
     }
 

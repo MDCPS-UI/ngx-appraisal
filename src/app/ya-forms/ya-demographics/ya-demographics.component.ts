@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 import { ProfileService } from './../../shared/services/profile/profile.service';
@@ -11,7 +11,7 @@ import { YA_DG_NAVG_LIST, YA_DG_GENDER_LIST, DMG_FIELDS } from './ya-demographic
   templateUrl: './ya-demographics.component.html',
   styleUrls: ['./ya-demographics.component.scss']
 })
-export class YaDemographicsComponent implements OnInit {
+export class YaDemographicsComponent implements OnInit, AfterViewInit {
   /**
    * @public
    */
@@ -46,6 +46,14 @@ export class YaDemographicsComponent implements OnInit {
    */
   public ngOnInit(): void {
     // listen to youth appraisal selection
+    // this.subscribeToYaSelection();
+  }
+
+  /**
+   * @public
+   */
+  public ngAfterViewInit(): void {
+    // listen to youth appraisal selection
     this.subscribeToYaSelection();
   }
 
@@ -55,10 +63,11 @@ export class YaDemographicsComponent implements OnInit {
   public subscribeToYaSelection(): void {
     this.profileService.getYaSelection()
       .subscribe(selection => {
-        if (selection) {
-          const form: FormGroup = this.demographicsForm;
+        const form: FormGroup = this.demographicsForm;
+
+        if (selection && form) {
           form.get('email').setValue(selection.Email);
-          form.get('dob').setValue(selection.DOBString);
+          form.get('dob').setValue(selection.dobString);
 
           // update the demographics form
           this.demographicsForm.updateValueAndValidity();
