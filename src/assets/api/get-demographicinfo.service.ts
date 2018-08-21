@@ -45,8 +45,6 @@ export const GET_DEMOGRAPHIC_INFO: any = {
     "medicaidNumber": "",
     "hasLanguageBarriers": false,
     "languageBarriersText": "",
-    "hasMentor": false,
-    "wantsMentorInvolved": false,
     "permPlan": "Reunif W/aPrim Caretkr Parents",
     "corWorkerInfo":    {
        "email": "Eunice.Marsaw@mdcps.ms.gov",
@@ -76,12 +74,7 @@ export const GET_DEMOGRAPHIC_INFO: any = {
             "city":	"string",
             "state": "string",
             "zip":	"string",
-            "county":	{
-                "id": "integer($int32)",
-                "countyCode": "string",
-                "name":	"string"
-                
-            }
+            "county": "string"
         }
     ]
  }
