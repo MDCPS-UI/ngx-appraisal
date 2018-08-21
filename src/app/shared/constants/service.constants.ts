@@ -51,4 +51,10 @@ export const serviceConstants: any = {
         localUrl: '/assets/api/createAppraisal.json',
         isLocal:  shouldUseLocal('createAppraisal')
     },
+    getCounties: {
+        method: 'GET',
+        url: `${__base__}/GetCounties`,
+        localUrl: '/assets/api/getCounties.json',
+        isLocal:  shouldUseLocal('getCounties')
+    }
 };
