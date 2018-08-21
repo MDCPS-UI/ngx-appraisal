@@ -30,7 +30,7 @@ export const YA_DG_GENDER_LIST: string[] = [
  //call this service for COS and COR fields in demographics page which are typeaheads.
 
  // http://10.15.66.88:5100/YTL/JSON/GetCounties
- 
+
 export const YA_DG_COUNTIES: any[] =  [
   {
     "countyCode": "999",
@@ -462,4 +462,22 @@ export const YA_DG_COUNTIES: any[] =  [
     "id": 93,
     "name": "West Chickasaw"
   }
-]
+];
+
+export const DMG_MAPPING: any = {
+  "dateOfBirth": "dobString",
+  "Age": "age",
+  "Phone": "phone",
+  "Email": "email",
+  "custodyStatus": "custodyStatus",
+  "permanencyPlan": "permPlan",
+  "dateOfDischarge": "dischargeDateString",
+  "address": "address",
+  "race": "race",
+  "gender": "gender",
+  "cor": "cor",
+  "cos": "cos",
+  "doYouHaveMedicaid": "hasMedicaid",
+  "corMdcpsWorker": "corWorker",
+  "transitionNavigator": "transitionNavigator"
+};
