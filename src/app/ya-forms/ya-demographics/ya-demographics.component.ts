@@ -41,13 +41,13 @@ export class YaDemographicsComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.demographicsForm = this.fb.group({
-      dobString: new FormControl('', []),
+      dob: new FormControl('', []),
       age: new FormControl('', []),
       phone: new FormControl('', []),
       email: new FormControl('', []),
       permPlan: new FormControl('', []),
       custodyStatus: new FormControl('', []),
-      dischargeDateString: new FormControl('', []),
+      dischargeDate: new FormControl('', []),
       address: new FormControl('', []),
       race: new FormControl('', []),
       gender: new FormControl('', []),
@@ -82,7 +82,7 @@ export class YaDemographicsComponent implements OnInit {
         if (selection) {
           const form: FormGroup = this.demographicsForm;
           form.get('email').setValue(selection.Email);
-          form.get('dobString').setValue(selection.DOBString);
+          form.get('dob').setValue(selection.DOBString);
 
           // update the demographics form
           this.demographicsForm.updateValueAndValidity();
