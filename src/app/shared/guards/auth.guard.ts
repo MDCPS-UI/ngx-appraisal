@@ -2,18 +2,17 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { UtilService } from './../services/util/util.service';
 import { ProfileService } from './../services/profile/profile.service';
-import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanActivateChild {
 
   /**
    * @constructor
-   * @param {router<Router>}
+   * @param {util<UtilService>}
    * @param {profileService<ProfileService>}
    */
   constructor(
-    private router: Router,
     private util: UtilService,
     private profileService: ProfileService) { }
 
@@ -34,10 +33,10 @@ export class AuthGuard implements CanActivate, CanActivateChild {
         || state.url.includes('/landing') || childId) {
         return true;
       } else {
-        this.navigateIt('landing');
+        this.util.navigateIt('landing');
       }
     } else {
-      this.navigateIt('error');
+      this.util.navigateIt('error');
     }
   }
 
@@ -49,17 +48,5 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   public canActivateChild(route: ActivatedRouteSnapshot
     , state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     return this.canActivate(route, state);
-  }
-
-  /**
-   * @private
-   * @param: {route<string>}
-   * @returns void
-   */
-  private navigateIt(route: string): void {
-    this.router.navigate([`/${route}`], {
-      queryParamsHandling: 'merge',
-      preserveQueryParams: true
-    });
   }
 }

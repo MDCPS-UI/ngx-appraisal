@@ -86,7 +86,7 @@ export class UtilService {
     // for demo purpose
     setTimeout(() => {
       this.spinner.hide();
-      this.router.navigate([`/dashboard${_path}`]);
+      this.navigateIt(`dashboard${_path}`);
     }, 1000);
   }
 
@@ -147,5 +147,17 @@ export class UtilService {
       try { value = JSON.parse(value); } catch (e) { }
     }
     return value;
+  }
+
+  /**
+   * @public
+   * @param: {route<string>}
+   * @returns void
+   */
+  public navigateIt(route: string): void {
+    this.router.navigate([`/${route}`], {
+      queryParamsHandling: 'merge',
+      preserveQueryParams: true
+    });
   }
 }
