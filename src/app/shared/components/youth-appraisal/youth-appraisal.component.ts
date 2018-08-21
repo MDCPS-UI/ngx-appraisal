@@ -70,7 +70,7 @@ export class YouthAppraisalComponent implements OnInit {
   public ngOnInit(): void {
     this.youthApprForm = this.fb.group({
       status: new FormControl('', []),
-      macwisId: new FormControl('', []),
+      macwisID: new FormControl('', []),
       youthName: new FormControl('', []),
       appraisalDate: new FormControl('', [])
     });
@@ -116,7 +116,7 @@ export class YouthAppraisalComponent implements OnInit {
    * @public
    */
   public formatter(selection: any): string {
-    return selection.macwisId;
+    return selection.macwisID;
   };
 
   /**
@@ -124,7 +124,7 @@ export class YouthAppraisalComponent implements OnInit {
    */
   public populateForm(data: any): void {
     this.youthApprForm.setValue({
-      macwisId: data,
+      macwisID: data,
       appraisalDate: data.dobString,
       youthName: `${data.firstName} ${data.lastName}`,
       status: (data.isActive) ? 'Active' : 'Inactive'
@@ -139,7 +139,7 @@ export class YouthAppraisalComponent implements OnInit {
    */
   public prePopulate(): void {
     const selection: any = this.profileService.getItem('appraisal') || {};
-    const macId: any = selection['macwisId'];
+    const macId: any = selection['macwisID'];
 
     if (selection && macId) {
       this.populateForm(macId);

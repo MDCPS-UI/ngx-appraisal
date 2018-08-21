@@ -42,8 +42,8 @@ export class YaLandingComponent implements OnInit {
    */
   public onFormSubmit(e: any): void {
     if (e && e.isFormValid) {
-      const childId: string = e.formValue.macwisId['macwisId'];
-      const req = this.appraisal.request('createAppraisal', [childId, this.workerEmail]
+      const childId: string = e.formValue.macwisID['macwisID'];
+      this.appraisal.request('createAppraisal', [childId, this.workerEmail]
       ).subscribe(data => {
         this.processIt.apply(this, [e, data, childId]);
       });

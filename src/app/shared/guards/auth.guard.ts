@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { UtilService } from './../services/util/util.service';
 import { ProfileService } from './../services/profile/profile.service';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
@@ -13,7 +14,8 @@ export class AuthGuard implements CanActivate {
    */
   constructor(
     private router: Router,
-    private profileService: ProfileService) {}
+    private util: UtilService,
+    private profileService: ProfileService) { }
 
   /**
    * @public
@@ -24,9 +26,30 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-    if (this.profileService.hasAppraisal()) {
-      return true;
+    const email: string = this.util.getQueryStringValue('uname');
+    const childId: string = this.util.getQueryStringValue('childId');
+
+    if (!!email) {
+      if (this.profileService.hasAppraisal()
+        || state.url.includes('/landing') || childId) {
+        return true;
+      } else {
+        this.navigateIt('landing');
+      }
+    } else {
+      this.navigateIt('error');
     }
-    this.router.navigate(['/landing'], {queryParamsHandling: 'merge', preserveQueryParams: true});
+  }
+
+  /**
+   * @private
+   * @param: {route<string>}
+   * @returns void
+   */
+  private navigateIt(route: string): void {
+    this.router.navigate([`/${route}`], {
+      queryParamsHandling: 'merge',
+      preserveQueryParams: true
+    });
   }
 }

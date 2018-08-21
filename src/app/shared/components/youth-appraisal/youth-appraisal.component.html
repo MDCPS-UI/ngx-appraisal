@@ -11,7 +11,7 @@
           <label for="youthId" class="mdcps-label">Id:</label>
           <input type="text" class="form-control form-control-sm mdcps-input" id="youthId" placeholder="Id"
           (input)="onSearch($event)"
-          formControlName="macwisId"
+          formControlName="macwisID"
           [ngbTypeahead]="search.bind(this)"
           [resultTemplate]="yaTemplate"
           [inputFormatter]="formatter"
@@ -32,7 +32,7 @@
       <div class="row mdcps-row-last" *ngIf="enableButton">
         <div class="col-10"></div>
         <div class="col-2">
-          <button class="btn btn-block btn-dark" type="submit" [disabled]="!(youthApprForm?.get('macwisId')?.value)">Submit</button>
+          <button class="btn btn-block btn-dark" type="submit" [disabled]="!(youthApprForm?.get('macwisID')?.value)">Submit</button>
         </div>
       </div>
     </form>

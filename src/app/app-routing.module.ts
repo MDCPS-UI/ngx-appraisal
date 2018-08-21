@@ -36,6 +36,7 @@ const ROUTES: Route[] = [
     data: {
       bgClass: 'bg-white'
     },
+    canActivate: [AuthGuard],
     loadChildren: './ya-landing/ya-landing.module#YaLandingModule'
   },
   {
