@@ -21,7 +21,7 @@ const ROUTES: Route[] = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'error'
+    redirectTo: 'landing'
   },
   {
     path: 'dashboard',
