@@ -90,7 +90,7 @@ export class YouthAppraisalComponent implements OnInit {
       map(term => {
         const results: any[] = !(term.length < this.typeaheadLength)
           ? this.children.filter(child => {
-            return child.macwisId.indexOf(term) > -1;
+            return child.macwisID.indexOf(term) > -1;
           })
           : [];
 
