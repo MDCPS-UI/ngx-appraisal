@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 import { ProfileService } from './../../shared/services/profile/profile.service';
 import { YA_DG_NAVG_LIST, YA_DG_GENDER_LIST } from './ya-demographics.constants';
+import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
 
 @Component({
   selector: 'mdcps-ya-demographics',
@@ -29,11 +30,14 @@ export class YaDemographicsComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private util: UtilService,
+    private appraisal: AppraisalService,
     private profileService: ProfileService) {
 
     // navigator list
     this.config.navgList = YA_DG_NAVG_LIST;
     this.config.gendersList = YA_DG_GENDER_LIST;
+
+    this._init();
   }
 
   /**
@@ -95,9 +99,20 @@ export class YaDemographicsComponent implements OnInit {
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
-      //this.util.navigate('/education');
       console.log(event.form.value);
     }
     this.util.navigate('education');
+  }
+
+  /**
+   * @private
+   */
+  private _init(): void {
+    const appraisalId: string = this.util.getQueryStringValue('appraisalId');
+
+    this.appraisal.init(appraisalId, 'getDmgInfo')
+    .subscribe(data => {
+      console.log(data);
+    });
   }
 }

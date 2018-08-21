@@ -30,7 +30,7 @@ export class AppraisalService {
    */
   public request(serviceName, paramsArr?: any[], req?: AjaxRequest): Observable<any> {
     const config: any = serviceConstants[serviceName];
-    if (!config) { return; }
+    if (!config) { return Observable.empty(); }
 
     req = req || {};
     const url: string = (!config.isLocal)
@@ -48,5 +48,19 @@ export class AppraisalService {
       headers: headers,
       method: method
     });
+  }
+
+  /**
+   * @public
+   */
+  public init(appraisalId: string, serviceName,
+    paramsArr?: any[], req?: AjaxRequest): Observable<any> {
+    if (!!appraisalId) {
+      return this.request.call(
+        this, serviceName, [appraisalId], req
+      );
+    }
+    this.util.navigateIt('landing');
+    return Observable.empty();
   }
 }
