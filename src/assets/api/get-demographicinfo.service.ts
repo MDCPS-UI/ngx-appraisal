@@ -34,11 +34,10 @@ export const GET_DEMOGRAPHIC_INFO: any = {
     "cosName": "Yalobusha",
     "hasHealthInsurance": false,
     "hasMedicaid": true,
-    "medicaidNumber": "",
     "hasLanguageBarriers": false,
     "languageBarriersText": "",
     "permPlan": "Reunif W/aPrim Caretkr Parents",
-    "corWorkerInfo":    {
+    "corWorker":    {
        "email": "Eunice.Marsaw@mdcps.ms.gov",
        "firstName": "Eunice",
        "id": 1,
@@ -48,7 +47,7 @@ export const GET_DEMOGRAPHIC_INFO: any = {
        "phone": "(601) 443-1046",
        "workerName": "Eunice Marsaw"
     },
-    "navigatorInfo":    {
+    "navigator":    {
        "email": "Eunice.Marsaw@mdcps.ms.gov",
        "firstName": "Eunice",
        "id": 1,
@@ -70,5 +69,5 @@ export const GET_DEMOGRAPHIC_INFO: any = {
         }
     ],
     "concerns": [],   
-    "goals": [],
+    "goals": []
  }
