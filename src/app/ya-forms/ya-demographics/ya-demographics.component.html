@@ -162,8 +162,8 @@
                 <input type="checkbox" class="form-check-input" [value]="'other'" formControlName="isOther"> &nbsp; Other
               </label>
             </div>
-            <div class="col-6">
-              <input type="text" class="form-check-input" formControlName="lgbtqOtherType">
+            <div class="col-6" *ngIf="demographicsForm?.get('isOther')?.value">
+              <input type="text" class="form-check-input" placeholder="Please explain" formControlName="lgbtqOtherType">
             </div>
           </div>
         </div>
@@ -236,7 +236,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12" *ngIf="demographicsForm?.get('hasLanguageBarriers')?.value == 'yes'">
+      <div class="col-12" *ngIf="demographicsForm?.get('hasLanguageBarriers')?.value">
         <label for="inputAddress2">Please explain:</label>
         <textarea class="form-control" id="inputAddress2" placeholder="Explain Needs for an interpreter" rows="3" formControlName="languageBarriersText">
         </textarea>
