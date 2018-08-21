@@ -33,7 +33,7 @@
         "name": "Adams"
     },
     "hasHealthInsurance": true,
-    "hasMedicaid": true,
+    "hasMedicaid": false,
     "medicaidNumber": "",
     "hasLanguageBarriers": false,
     "languageBarriersText": "",

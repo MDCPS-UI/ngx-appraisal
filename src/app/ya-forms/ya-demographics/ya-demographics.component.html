@@ -67,17 +67,17 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="yes" formControlName="custodyStatus"> Active
+              <input type="radio" class="form-check-input" [value]="true" formControlName="custodyStatus"> Active
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="no" formControlName="custodyStatus"> Non-Active
+              <input type="radio" class="form-check-input" [value]="false" formControlName="custodyStatus" [checked]="demographicsForm.get('custodyStatus').value == false"> Non-Active
             </label>
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6 pt-2 pt-md-0" *ngIf="demographicsForm?.get('custodyStatus')?.value == 'no'">
+      <div class="col-12 col-md-6 pt-2 pt-md-0" *ngIf="!(demographicsForm?.get('custodyStatus')?.value)">
         <label for="demographics.dischargedate" class="col-form-label">Discharge Date</label>
 
         <!-- Discharge Date Block -->
@@ -117,7 +117,7 @@
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="'no'" formControlName="isLGBTQ"> No
+              <input type="radio" class="form-check-input" [value]="'no'" formControlName="isLGBTQ" [checked]="demographicsForm.get('isLGBTQ').value == false"> No
             </label>
           </div>
           <div class="form-check form-check-inline">
@@ -195,7 +195,7 @@
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="false" formControlName="hasHealthInsurance"> No
+              <input type="radio" class="form-check-input" [value]="false" formControlName="hasHealthInsurance" [checked]="demographicsForm.get('hasHealthInsurance').value == false"> No
             </label>
           </div>
         </div>
@@ -213,7 +213,7 @@
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="false" formControlName="hasMedicaid"> No
+              <input type="radio" class="form-check-input" [value]="false" formControlName="hasMedicaid" [checked]="demographicsForm.get('hasMedicaid').value == false"> No
             </label>
           </div>
         </div>
@@ -231,7 +231,7 @@
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="false" formControlName="hasLanguageBarriers"> No
+              <input type="radio" class="form-check-input" [value]="false" formControlName="hasLanguageBarriers" [checked]="demographicsForm.get('hasLanguageBarriers').value == false"> No
             </label>
           </div>
         </div>
