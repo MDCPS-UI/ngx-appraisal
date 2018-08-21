@@ -68,11 +68,7 @@
             "city": "string",
             "state": "string",
             "zip": "string",
-            "county": {
-                "id": "integer($int32)",
-                "countyCode": "string",
-                "name": "string"
-            }
+            "county": "string"
         }
     ]
 }

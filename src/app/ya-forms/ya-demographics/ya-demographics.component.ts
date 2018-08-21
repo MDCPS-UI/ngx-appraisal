@@ -1,9 +1,10 @@
+import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 import { ProfileService } from './../../shared/services/profile/profile.service';
-import { YA_DG_NAVG_LIST, YA_DG_GENDER_LIST } from './ya-demographics.constants';
 import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
+import { YA_DG_NAVG_LIST, YA_DG_GENDER_LIST, DMG_FIELDS } from './ya-demographics.constants';
 
 @Component({
   selector: 'mdcps-ya-demographics',
@@ -44,35 +45,6 @@ export class YaDemographicsComponent implements OnInit {
    * @public
    */
   public ngOnInit(): void {
-    this.demographicsForm = this.fb.group({
-      dob: new FormControl('', []),
-      age: new FormControl('', []),
-      phone: new FormControl('', []),
-      email: new FormControl('', []),
-      permPlan: new FormControl('', []),
-      custodyStatus: new FormControl('', []),
-      dischargeDate: new FormControl('', []),
-      address: new FormControl('', []),
-      race: new FormControl('', []),
-      gender: new FormControl('', []),
-      isLGBTQ: new FormControl('', []),
-      isLesbian: new FormControl('', []),
-      isGay: new FormControl('', []),
-      isBisexual: new FormControl('', []),
-      isTransgender: new FormControl('', []),
-      isQuestioning: new FormControl('', []),
-      isOther: new FormControl('', []),
-      lgbtqOtherType: new FormControl('', []),
-      COR: new FormControl('', []),
-      COS: new FormControl('', []),
-      hasHealthInsurance: new FormControl('', []),
-      hasMedicaid: new FormControl('', []),
-      hasLanguageBarriers: new FormControl('', []),
-      languageBarriersText: new FormControl('', []),
-      corWorker: new FormControl('', []),
-      transitionNavigator: new FormControl('', [])
-    });
-
     // listen to youth appraisal selection
     this.subscribeToYaSelection();
   }
@@ -105,6 +77,13 @@ export class YaDemographicsComponent implements OnInit {
   }
 
   /**
+   * @public
+   */
+  public getControl(name: string): any {
+    return _.find(DMG_FIELDS, {controlName: name});
+  }
+
+  /**
    * @private
    */
   private _init(): void {
@@ -112,7 +91,42 @@ export class YaDemographicsComponent implements OnInit {
 
     this.appraisal.init(appraisalId, 'getDmgInfo')
     .subscribe(data => {
-      console.log(data);
+      if (!!data) {
+        this._process(data);
+      }
     });
+  }
+
+  /**
+   * @private
+   */
+  // private _build(): void {
+  //   this.demographicsForm = this.fb.group({});
+  // }
+
+  /**
+   * @private
+   */
+  private _process(data: any): void {
+    const controls: any[] = DMG_FIELDS;
+
+    const form: any = {};
+    for (const control of controls) {
+      form[control.controlName] = new FormControl(
+        {
+          disabled: control.isDisabled,
+          value: this._get(data, control.controlName)
+        }, control.validators
+      )
+    }
+
+    this.demographicsForm = this.fb.group(form);
+  }
+
+  /**
+   * @private
+   */
+  private _get(data: any, key: string): any {
+    return data[key] || '';
   }
 }

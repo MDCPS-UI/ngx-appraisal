@@ -2,36 +2,36 @@
  * @type: constant
  */
 export const YA_DG_NAVG_LIST: string[] = [
-    'Jazmin Hawthorne',
-    'Sharon Cable',
-    'Kenika Hudson',
-    'Natasha Ivory',
-    'Ginger Lambert',
-    'Teresa Moore',
-    'Jackie Potters',
-    'Temcula Robinson'
+  'Jazmin Hawthorne',
+  'Sharon Cable',
+  'Kenika Hudson',
+  'Natasha Ivory',
+  'Ginger Lambert',
+  'Teresa Moore',
+  'Jackie Potters',
+  'Temcula Robinson'
 ].sort();
 
 /**
  * @type: constant
  */
 export const YA_DG_GENDER_LIST: string[] = [
-    'Lesbian',
-    'Gay',
-    'Bi-Sexual',
-    'Transgender',
-    'Questioning'
+  'Lesbian',
+  'Gay',
+  'Bi-Sexual',
+  'Transgender',
+  'Questioning'
 ].sort();
 
 /**
  * @type: constant
  */
 
- //call this service for COS and COR fields in demographics page which are typeaheads.
+//call this service for COS and COR fields in demographics page which are typeaheads.
 
- // http://10.15.66.88:5100/YTL/JSON/GetCounties
+// http://10.15.66.88:5100/YTL/JSON/GetCounties
 
-export const YA_DG_COUNTIES: any[] =  [
+export const YA_DG_COUNTIES: any[] = [
   {
     "countyCode": "999",
     "id": 0,
@@ -464,20 +464,161 @@ export const YA_DG_COUNTIES: any[] =  [
   }
 ];
 
-export const DMG_MAPPING: any = {
-  "dateOfBirth": "dobString",
-  "Age": "age",
-  "Phone": "phone",
-  "Email": "email",
-  "custodyStatus": "custodyStatus",
-  "permanencyPlan": "permPlan",
-  "dateOfDischarge": "dischargeDateString",
-  "address": "address",
-  "race": "race",
-  "gender": "gender",
-  "cor": "cor",
-  "cos": "cos",
-  "doYouHaveMedicaid": "hasMedicaid",
-  "corMdcpsWorker": "corWorker",
-  "transitionNavigator": "transitionNavigator"
-};
+export const DMG_FIELDS: any[] = [
+  {
+    "controlName": "dob",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  },
+  {
+    "controlName": "age",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  },
+  {
+    "controlName": "phone",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  },
+  {
+    "controlName": "email",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  },
+  {
+    "controlName": "permPlan",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  },
+  {
+    "controlName": "custodyStatus",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  },
+  {
+    "controlName": "dischargeDate",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  },
+  {
+    "controlName": "address",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  },
+  {
+    "controlName": "race",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  },
+  {
+    "controlName": "gender",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  },
+  {
+    "controlName": "isLGBTQ",
+    "validators": [],
+    "isDisabled": false,
+    "isPrefilled": false
+  },
+  {
+    "controlName": "isLesbian",
+    "validators": [],
+    "isDisabled": false,
+    "isPrefilled": false
+  },
+  {
+    "controlName": "isGay",
+    "validators": [],
+    "isDisabled": false,
+    "isPrefilled": false
+  },
+  {
+    "controlName": "isBisexual",
+    "validators": [],
+    "isDisabled": false,
+    "isPrefilled": false
+  },
+  {
+    "controlName": "isTransgender",
+    "validators": [],
+    "isDisabled": false,
+    "isPrefilled": false
+  },
+  {
+    "controlName": "isQuestioning",
+    "validators": [],
+    "isDisabled": false,
+    "isPrefilled": false
+  },
+  {
+    "controlName": "isOther",
+    "validators": [],
+    "isDisabled": false,
+    "isPrefilled": false
+  },
+  {
+    "controlName": "lgbtqOtherType",
+    "validators": [],
+    "isDisabled": false,
+    "isPrefilled": false
+  },
+  {
+    "controlName": "cor",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  },
+  {
+    "controlName": "cos",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  },
+  {
+    "controlName": "hasHealthInsurance",
+    "validators": [],
+    "isDisabled": false,
+    "isPrefilled": false
+  },
+  {
+    "controlName": "hasMedicaid",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  },
+  {
+    "controlName": "hasLanguageBarriers",
+    "validators": [],
+    "isDisabled": false,
+    "isPrefilled": false
+  },
+  {
+    "controlName": "languageBarriersText",
+    "validators": [],
+    "isDisabled": false,
+    "isPrefilled": false
+  },
+  {
+    "controlName": "corWorkerInfo",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  },
+  {
+    "controlName": "transitionNavigator",
+    "validators": [],
+    "isDisabled": true,
+    "isPrefilled": true
+  }
+];

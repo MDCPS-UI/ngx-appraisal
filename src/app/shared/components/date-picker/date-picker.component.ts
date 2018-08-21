@@ -38,6 +38,12 @@ export class DatePickerComponent implements OnInit {
    * @public
    */
   @Input()
+  public disabled: boolean = false;
+
+  /**
+   * @public
+   */
+  @Input()
   public controlName: FormControlName;
 
   /**

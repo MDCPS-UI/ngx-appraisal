@@ -7,7 +7,13 @@
         <label for="demographics.dateofbirth">Date of Birth</label>
 
         <!-- Date of Birth Block -->
-        <mdcps-date-picker [class]="'form-control'" [controlName]="'dob'" [id]="'demographics.dateofbirth'" [group]="demographicsForm">
+        <mdcps-date-picker
+          [class]="'form-control'"
+          [controlName]="'dob'"
+          [id]="'demographics.dateofbirth'"
+          [group]="demographicsForm"
+          [disabled]="getControl('dob')?.isDisabled"
+        >
         </mdcps-date-picker>
 
         <div class="form-control-feedback" *ngIf="!demographicsForm.get('dob').valid && (demographicsForm.get('dob').dirty || demographicsForm.get('dob')?.touched)">
@@ -31,7 +37,6 @@
     <div class="row">
       <div class="col-12 col-md-6">
         <label for="demographics.phone">Phone</label>
-        <!-- <input type="tel" [imask]="'(999)-999-9999'" class="form-control" id="demographics.phone" placeholder="Phone" formControlName="phone"> -->
         <mdcps-input-mask
           [autoClear]="false"
           [inputId]="'demographics.phone'"
@@ -170,11 +175,11 @@
     <div class="row">
       <div class="col-12 col-md-6">
         <label for="demographics_COR">COR</label>
-        <input type="text" class="form-control" id="demographics_COR" placeholder="COR" formControlName="COR">
+        <input type="text" class="form-control" id="demographics_COR" placeholder="COR" formControlName="cor">
       </div>
       <div class="col-12 col-md-6 pt-2 pt-md-0">
         <label for="demographics.COS">COS</label>
-        <input type="text" class="form-control" id="demographics.COS" placeholder="COS" formControlName="COS">
+        <input type="text" class="form-control" id="demographics.COS" placeholder="COS" formControlName="cos">
       </div>
     </div>
 
@@ -240,7 +245,7 @@
     <div class="form-row">
       <div class="col-12 col-md-6">
         <label for="demographics.corWorker">COR MDCPS Worker</label>
-        <input type="phone" class="form-control" id="demographics.corWorker" placeholder="MDCPS Worker" formControlName="corWorker">
+        <input type="phone" class="form-control" id="demographics.corWorker" placeholder="MDCPS Worker" formControlName="corWorkerInfo">
       </div>
       <div class="col-12 col-md-6 pt-2 pt-md-0">
         <label for="transitionNavigator">Assigned Transition Navigator</label>
