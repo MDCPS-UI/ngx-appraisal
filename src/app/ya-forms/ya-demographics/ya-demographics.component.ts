@@ -109,13 +109,6 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
   /**
    * @private
    */
-  // private _build(): void {
-  //   this.demographicsForm = this.fb.group({});
-  // }
-
-  /**
-   * @private
-   */
   private _process(data: any): void {
     const controls: any[] = DMG_FIELDS;
 

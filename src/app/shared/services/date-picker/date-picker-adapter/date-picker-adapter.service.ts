@@ -24,7 +24,9 @@ export class DatePickerAdapterService extends NgbDateAdapter<string> {
   public fromModel(date: string): NgbDateStruct {
     if (!date) { return null; }
 
-    const d: string[] = date.split('/');
+    const n: Date = new Date(date);
+    let d: string[] = ['' + n.getMonth(), '' + n.getDate(), '' + n.getFullYear()];;
+
     return {
       year: +(d[2]),
       day: <number>(this.util.toTwoDigitFormat(d[1], 'num')),
