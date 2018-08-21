@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { UtilService } from './../services/util/util.service';
 import { ProfileService } from './../services/profile/profile.service';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate, CanActivateChild {
 
   /**
    * @constructor
@@ -39,6 +39,16 @@ export class AuthGuard implements CanActivate {
     } else {
       this.navigateIt('error');
     }
+  }
+
+  /**
+   * @public
+   * @param {next<ActivatedRouteSnapshot>}
+   * @param {state<RouterStateSnapshot>}
+   */
+  public canActivateChild(route: ActivatedRouteSnapshot
+    , state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    return this.canActivate(route, state);
   }
 
   /**
