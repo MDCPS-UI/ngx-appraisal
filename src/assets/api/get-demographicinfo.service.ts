@@ -7,12 +7,12 @@
 
 
 export const GET_DEMOGRAPHIC_INFO: any = {
-    "completeDateString": "",
-    "completedBy": null,
+    "completeDt": "/Date(1530566560000-0500)/",
+    "commitDt": null,
     "progress": 0,
     "id": 12,
     "appraisalId": 11,
-    "completedById": 1,
+    "completedBy": "Trisha.Kelly@mdcps.ms.gov",
     "youthName": "Joe Jonas",
     "age": 15,
     "dob": "1995-09-30",
@@ -30,16 +30,8 @@ export const GET_DEMOGRAPHIC_INFO: any = {
     "isQuestioning": true,
     "isOther": false,
     "lgbtqOtherType": "",
-    "cor":    {
-       "countyCode": "370",
-       "id": 45,
-       "name": "Lamar"
-    },
-    "cos":    {
-       "countyCode": "010",
-       "id": 11,
-       "name": "Adams"
-    },
+    "corName": "Quitman",   
+    "cosName": "Yalobusha",
     "hasHealthInsurance": false,
     "hasMedicaid": true,
     "medicaidNumber": "",
@@ -76,5 +68,7 @@ export const GET_DEMOGRAPHIC_INFO: any = {
             "zip":	"string",
             "county": "string"
         }
-    ]
+    ],
+    "concerns": [],   
+    "goals": [],
  }
