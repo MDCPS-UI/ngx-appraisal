@@ -508,7 +508,7 @@ export const DMG_FIELDS: any[] = [
     "isPrefilled": true
   },
   {
-    "controlName": "address",
+    "controlName": "addressList",
     "validators": [],
     "isDisabled": true,
     "isPrefilled": true

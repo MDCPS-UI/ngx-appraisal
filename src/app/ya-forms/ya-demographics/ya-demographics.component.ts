@@ -89,7 +89,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
    * @public
    */
   public getControl(name: string): any {
-    return _.find(DMG_FIELDS, {controlName: name});
+    return _.find(DMG_FIELDS, { controlName: name });
   }
 
   /**
@@ -99,11 +99,11 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
     const appraisalId: string = this.util.getQueryStringValue('appraisalId');
 
     this.appraisal.init(appraisalId, 'getDmgInfo')
-    .subscribe(data => {
-      if (!!data) {
-        this._process(data);
-      }
-    });
+      .subscribe(data => {
+        if (!!data) {
+          this._process(data);
+        }
+      });
   }
 
   /**
@@ -114,10 +114,15 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
 
     const form: any = {};
     for (const control of controls) {
+
+      let val: any = (control.controlName == 'addressList')
+        ? this._getAddress(this._get(data, control.controlName))
+        : this._get(data, control.controlName);
+
       form[control.controlName] = new FormControl(
         {
           disabled: control.isDisabled,
-          value: this._get(data, control.controlName)
+          value: val
         }, control.validators
       )
     }
@@ -130,5 +135,22 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
    */
   private _get(data: any, key: string): any {
     return data[key] || '';
+  }
+
+  /**
+   * @private
+   */
+  private _getAddress(list: any): string {
+    if (!list) { return ''; }
+
+    let addressStr: string = '';
+    for (const address of list) {
+      addressStr +=
+      address.line1 + ',\n' +
+      address.line2 + ',\n' +
+      address.city + ',' + address.state + ' ' + address.zip + '\n' +
+      '\n';
+    }
+    return addressStr;
   }
 }

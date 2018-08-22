@@ -62,13 +62,22 @@
     },
     "addressList": [
         {
-            "id": "integer($int32)",
-            "line1": "string",
-            "line2": "string",
-            "city": "string",
-            "state": "string",
-            "zip": "string",
-            "county": "string"
+            "id": "1234",
+            "line1": "1234 Mill Lake Dr.",
+            "line2": "248",
+            "city": "Burlington",
+            "state": "MA",
+            "zip": "01803",
+            "county": "Lake"
+        },
+        {
+            "id": "1123",
+            "line1": "4567 Mill Lake Dr.",
+            "line2": "249",
+            "city": "Burlington",
+            "state": "MA",
+            "zip": "01803",
+            "county": "Lake"
         }
     ]
 }
