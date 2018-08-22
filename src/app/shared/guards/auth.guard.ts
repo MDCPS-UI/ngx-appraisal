@@ -25,12 +25,10 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-    const email: string = this.util.getQueryStringValue('uname');
-    const childId: string = this.util.getQueryStringValue('childId');
-
-    if (!!email) {
+    const params: any = next.queryParams;
+    if (!!params && !!params['uname']) {
       if (this.profileService.hasAppraisal()
-        || state.url.includes('/landing') || childId) {
+        || state.url.includes('/landing') || params['appraisalId']) {
         return true;
       } else {
         this.util.navigateIt('landing');
