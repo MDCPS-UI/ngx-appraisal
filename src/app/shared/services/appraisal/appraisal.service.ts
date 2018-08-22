@@ -5,11 +5,20 @@ import { UtilService } from './../util/util.service';
 import { AjaxService } from './../ajax/ajax.service';
 import { AjaxRequest } from './../ajax/ajax.interface';
 import { serviceConstants } from './../../constants/service.constants';
+import { ActiveModelService } from '../active-model/active-model.service';
 
 // putting common headers outside the request
 const commonHeaders: any = {
   'Content-Type': 'application/json'
 };
+
+// mapping for cached services
+const cachedKeys: any = {
+  getDmgInfo: 'dmg',
+  getCounties: 'counties',
+  getNavWorkers: 'navWorkers'
+};
+
 
 @Injectable()
 export class AppraisalService {
@@ -19,7 +28,8 @@ export class AppraisalService {
    */
   constructor(
     private ajax: AjaxService,
-    private util: UtilService) {
+    private util: UtilService,
+    private activeModel: ActiveModelService) {
   }
 
   /**
@@ -29,8 +39,20 @@ export class AppraisalService {
    * @param req
    */
   public request(serviceName, paramsArr?: any[], req?: AjaxRequest): Observable<any> {
+
+    // in case if the response is available in the cache
+    // retrieve it without making an http call.
+    const cachedResponses: any = this.activeModel.getResponse();
+    if (cachedKeys[serviceName] && cachedResponses[cachedKeys[serviceName]]) {
+      return Observable.of(new Object()).mapTo(
+        cachedResponses[cachedKeys[serviceName]]
+      );
+    }
+
+    // if the data wasn't found in the cache,
+    // make a fresh call and cache it if opted in.
     const config: any = serviceConstants[serviceName];
-    if (!config) { return; }
+    if (!config) { return Observable.empty(); }
 
     req = req || {};
     const url: string = (!config.isLocal)
@@ -48,5 +70,19 @@ export class AppraisalService {
       headers: headers,
       method: method
     });
+  }
+
+  /**
+   * @public
+   */
+  public init(appraisalId: string, serviceName,
+    paramsArr?: any[], req?: AjaxRequest): Observable<any> {
+    if (!!appraisalId) {
+      return this.request.call(
+        this, serviceName, [appraisalId], req
+      );
+    }
+    this.util.navigateIt('landing');
+    return Observable.empty();
   }
 }

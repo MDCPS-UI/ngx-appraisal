@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControlName } from '@angular/forms';
 import { NgbDateStruct, NgbDatepickerConfig } from '@ng-bootstrap/ng-bootstrap';
 
-
 @Component({
   selector: 'mdcps-date-picker',
   templateUrl: './date-picker.component.html',
@@ -33,6 +32,12 @@ export class DatePickerComponent implements OnInit {
    */
   @Input()
   public type: string = 'text';
+
+  /**
+   * @public
+   */
+  @Input()
+  public disabled: boolean = false;
 
   /**
    * @public

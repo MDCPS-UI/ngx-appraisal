@@ -59,7 +59,6 @@ export class SpinnerComponent implements OnInit {
   private initSubstription(): void {
     this.subsription = this.spinner.load()
     .subscribe(value => {
-      console.log(value);
       this.display = value;
     });
   }

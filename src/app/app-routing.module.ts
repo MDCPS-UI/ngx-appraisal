@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeaderModule } from './shared/components/layout/header/header.module';
+
+// Components
+import { YaErrorComponent } from './ya-error/ya-error.component';
 
 // Services
 import { AuthGuard } from './shared/guards/auth.guard';
@@ -24,7 +28,7 @@ const ROUTES: Route[] = [
     data: {
       bgClass: 'bg-white'
     },
-    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     loadChildren: './ya-dashboard/ya-dashboard.module#YaDashboardModule'
   },
   {
@@ -32,15 +36,27 @@ const ROUTES: Route[] = [
     data: {
       bgClass: 'bg-white'
     },
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     loadChildren: './ya-landing/ya-landing.module#YaLandingModule'
+  },
+  {
+    path: 'error',
+    data: {
+      bgClass: 'bg-white'
+    },
+    component: YaErrorComponent
   }
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    YaErrorComponent
+  ],
   imports: [
     NgbModule,
     CommonModule,
+    HeaderModule,
     RouterModule.forRoot(ROUTES)
   ],
   exports: [RouterModule],

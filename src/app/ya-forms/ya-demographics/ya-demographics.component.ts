@@ -1,19 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import * as _ from 'lodash';
+import { forkJoin } from "rxjs/observable/forkJoin";
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { UtilService } from '../../shared/services/util/util.service';
-import { ProfileService } from '../../shared/services/profile/profile.service';
-import { YA_DG_NAVG_LIST, YA_DG_GENDER_LIST } from './ya-demographics.constants';
+import { UtilService } from './../../shared/services/util/util.service';
+import { ProfileService } from './../../shared/services/profile/profile.service';
+import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
+import { YA_DG_NAVG_LIST, YA_DG_GENDER_LIST, DMG_FIELDS } from './ya-demographics.constants';
+import { ActiveModelService } from '../../shared/services/active-model/active-model.service';
 
 @Component({
   selector: 'mdcps-ya-demographics',
   templateUrl: './ya-demographics.component.html',
   styleUrls: ['./ya-demographics.component.scss']
 })
-export class YaDemographicsComponent implements OnInit {
+export class YaDemographicsComponent implements OnInit, AfterViewInit {
   /**
    * @public
    */
   public config: any = {};
+
+  /**
+   * @public
+   */
+  public responses: any = {};
 
   /**
    * @public
@@ -29,46 +38,26 @@ export class YaDemographicsComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private util: UtilService,
-    private profileService: ProfileService) {
+    private appraisal: AppraisalService,
+    private profileService: ProfileService,
+    private activeModel: ActiveModelService) {
 
     // navigator list
     this.config.navgList = YA_DG_NAVG_LIST;
     this.config.gendersList = YA_DG_GENDER_LIST;
+
+    this._init();
   }
 
   /**
    * @public
    */
-  public ngOnInit(): void {
-    this.demographicsForm = this.fb.group({
-      dob: new FormControl('', []),
-      age: new FormControl('', []),
-      phone: new FormControl('', []),
-      email: new FormControl('', []),
-      permPlan: new FormControl('', []),
-      custodyStatus: new FormControl('', []),
-      dischargeDate: new FormControl('', []),
-      address: new FormControl('', []),
-      race: new FormControl('', []),
-      gender: new FormControl('', []),
-      isLGBTQ: new FormControl('', []),
-      isLesbian: new FormControl('', []),
-      isGay: new FormControl('', []),
-      isBisexual: new FormControl('', []),
-      isTransgender: new FormControl('', []),
-      isQuestioning: new FormControl('', []),
-      isOther: new FormControl('', []),
-      lgbtqOtherType: new FormControl('', []),
-      corName: new FormControl('', []),
-      cosName: new FormControl('', []),
-      hasHealthInsurance: new FormControl('', []),
-      hasMedicaid: new FormControl('', []),
-      hasLanguageBarriers: new FormControl('', []),
-      languageBarriersText: new FormControl('', []),
-      corWorker: new FormControl('', []),
-      transitionNavigator: new FormControl('', [])
-    });
+  public ngOnInit(): void {}
 
+  /**
+   * @public
+   */
+  public ngAfterViewInit(): void {
     // listen to youth appraisal selection
     this.subscribeToYaSelection();
   }
@@ -79,10 +68,11 @@ export class YaDemographicsComponent implements OnInit {
   public subscribeToYaSelection(): void {
     this.profileService.getYaSelection()
       .subscribe(selection => {
-        if (selection) {
-          const form: FormGroup = this.demographicsForm;
+        const form: FormGroup = this.demographicsForm;
+
+        if (selection && form) {
           form.get('email').setValue(selection.Email);
-          form.get('dob').setValue(selection.DOBString);
+          form.get('dob').setValue(selection.dobString);
 
           // update the demographics form
           this.demographicsForm.updateValueAndValidity();
@@ -95,9 +85,96 @@ export class YaDemographicsComponent implements OnInit {
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
-      //this.util.navigate('/education');
       console.log(event.form.value);
     }
-    this.util.navigate('/education');
+    this.util.navigate('education');
+  }
+
+  /**
+   * @public
+   */
+  public getControl(name: string): any {
+    return _.find(DMG_FIELDS, { controlName: name });
+  }
+
+  /**
+   * @private
+   */
+  private _init(): void {
+    const appraisalId: string = this.util.getQueryStringValue('appraisalId')
+
+      // services to call concurrently
+      , getCounties: any = this.appraisal.request('getCounties')
+      , getNavWorkers: any = this.appraisal.request('getNavWorkers')
+      , getDmgInfo: any = this.appraisal.init(appraisalId, 'getDmgInfo');
+
+    forkJoin([getCounties, getNavWorkers, getDmgInfo])
+      .subscribe(data => {
+        this.responses['counties'] = data[0];
+        this.responses['navWorkers'] = data[1];
+
+        if (!!data[2]) {
+          this._process(data[2]);
+          this.responses['dmg'] = data[2];
+        }
+
+        // setting the responses so it can be retrieved
+        this.activeModel.setResponse(this.responses, null, true);
+      });
+  }
+
+  /**
+   * @private
+   */
+  private _process(data: any): void {
+    const controls: any[] = DMG_FIELDS;
+
+    const form: any = {};
+    for (const control of controls) {
+
+      let val: any = (control.controlName == 'addressList')
+        ? this._getAddress(this._get(data, control.controlName))
+        : this._get(data, control.controlName);
+
+      form[control.controlName] = new FormControl(
+        {
+          disabled: control.isDisabled,
+          value: val
+        }, control.validators
+      )
+    }
+
+    this.demographicsForm = this.fb.group(form);
+  }
+
+  /**
+   * @private
+   */
+  private _get(data: any, key: string): any {
+    return data[key] || '';
+  }
+
+  /**
+   * @private
+   */
+  private _getAddress(list: any): string {
+    if (!list) { return ''; }
+
+    let addressStr: string = '';
+    for (const address of list) {
+      addressStr +=
+        address.line1 + ',\n' +
+        address.line2 + ',\n' +
+        address.city + ',' + address.state + ' ' + address.zip + '\n' +
+        '\n';
+    }
+    return addressStr;
+  }
+
+  /**
+   * @private
+   */
+  public compare(val1: any, val2: any): boolean {
+    return (val1 == val2) || (_.get(val1, 'id') == _.get(val2, 'id'));
   }
 }

@@ -29,6 +29,7 @@ export class YaDashboardComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.tabs = SIDE_NAV_TABS;
-    this.isDisabled = this.profileService.hasAppraisal();
+    this.isDisabled = this.profileService.hasAppraisal()
+    || this.profileService.getItem('appraisal');
   }
 }

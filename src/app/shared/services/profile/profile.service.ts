@@ -119,12 +119,7 @@ export class ProfileService {
    * @return boolean
    */
   public hasAppraisal(): boolean {
-    const selection: any = this.getItem('appraisal') || {};
-
-    if (selection && selection['macwisId']) {
-      this.activeModel.setChildData(selection['macwisId']);
-      return true;
-    }
-    return false;
+    const selection: any = this.activeModel.getChildData() || {};
+    return selection && selection['macwisID'];
   }
 }

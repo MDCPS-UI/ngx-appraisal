@@ -14,7 +14,7 @@
     "email": "none@noemail.com",
     "custodyStatus": false,
     "dischargeDate": "2016-09-30",
-    "isLGBTQ": "No",
+    "isLGBTQ": "yes",
     "isLesbian": false,
     "isGay": true,
     "isBisexual": false,
@@ -23,56 +23,61 @@
     "isOther": false,
     "lgbtqOtherType": "",
     "cor": {
-        "countyCode": "370",
-        "id": 45,
-        "name": "Lamar"
+        "countyCode": "840",
+        "id": 93,
+        "name": "West Chickasaw"
     },
     "cos": {
-        "countyCode": "010",
-        "id": 11,
-        "name": "Adams"
+        "countyCode": "380",
+        "id": 46,
+        "name": "Lauderdale"
     },
-    "hasHealthInsurance": false,
-    "hasMedicaid": true,
+    "hasHealthInsurance": true,
+    "hasMedicaid": false,
     "medicaidNumber": "",
     "hasLanguageBarriers": false,
     "languageBarriersText": "",
     "hasMentor": false,
     "wantsMentorInvolved": false,
     "permPlan": "Reunif W/aPrim Caretkr Parents",
-    "corWorkerInfo": {
-        "email": "Eunice.Marsaw@mdcps.ms.gov",
-        "firstName": "Eunice",
-        "id": 1,
-        "isTransitionNav": false,
-        "lastName": "Marsaw",
-        "macwisId": "000000019",
-        "phone": "(601) 443-1046",
-        "workerName": "Eunice Marsaw"
+    "corWorkerInfo":     {
+        "email": "Jaszmen.Hawthorne@mdcps.ms.gov",
+        "firstName": "Jaszmen",
+        "id": 1354,
+        "isTransitionNav": true,
+        "lastName": "Hawthorne",
+        "macwisId": "009771638",
+        "phone": "(228) 297-4259",
+        "workerName": "Jaszmen Hawthorne"
     },
     "navigatorInfo": {
-        "email": "Eunice.Marsaw@mdcps.ms.gov",
-        "firstName": "Eunice",
-        "id": 1,
-        "isTransitionNav": false,
-        "lastName": "Marsaw",
-        "macwisId": "000000019",
-        "phone": "(601) 443-1046",
-        "workerName": "Eunice Marsaw"
+        "email": "Sharon.Cable@mdcps.ms.gov",
+        "firstName": "Sharon",
+        "id": 123,
+        "isTransitionNav": true,
+        "lastName": "Cable",
+        "macwisId": "007018800",
+        "phone": "(601) 757-7395",
+        "workerName": "Sharon Cable"
     },
     "addressList": [
         {
-            "id": "integer($int32)",
-            "line1": "string",
-            "line2": "string",
-            "city": "string",
-            "state": "string",
-            "zip": "string",
-            "county": {
-                "id": "integer($int32)",
-                "countyCode": "string",
-                "name": "string"
-            }
+            "id": "1234",
+            "line1": "1234 Mill Lake Dr.",
+            "line2": "248",
+            "city": "Burlington",
+            "state": "MA",
+            "zip": "01803",
+            "county": "Lake"
+        },
+        {
+            "id": "1123",
+            "line1": "4567 Mill Lake Dr.",
+            "line2": "249",
+            "city": "Burlington",
+            "state": "MA",
+            "zip": "01803",
+            "county": "Lake"
         }
     ]
 }
