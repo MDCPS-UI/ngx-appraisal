@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+import { forkJoin } from "rxjs/observable/forkJoin";
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
@@ -16,6 +17,11 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
    * @public
    */
   public config: any = {};
+
+  /**
+   * @public
+   */
+  public responses: any = {};
 
   /**
    * @public
@@ -96,12 +102,21 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
    * @private
    */
   private _init(): void {
-    const appraisalId: string = this.util.getQueryStringValue('appraisalId');
+    const appraisalId: string = this.util.getQueryStringValue('appraisalId')
 
-    this.appraisal.init(appraisalId, 'getDmgInfo')
+      // services to call concurrently
+      , getCounties: any = this.appraisal.request('getCounties')
+      , getNavWorkers: any = this.appraisal.request('getNavWorkers')
+      , getDmgInfo: any = this.appraisal.init(appraisalId, 'getDmgInfo');
+
+
+    forkJoin([getCounties, getNavWorkers, getDmgInfo])
       .subscribe(data => {
-        if (!!data) {
-          this._process(data);
+        this.responses['counties'] = data[0];
+        this.responses['navWorkers'] = data[1];
+
+        if (!!data[2]) {
+          this._process(data[2]);
         }
       });
   }
@@ -146,11 +161,18 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
     let addressStr: string = '';
     for (const address of list) {
       addressStr +=
-      address.line1 + ',\n' +
-      address.line2 + ',\n' +
-      address.city + ',' + address.state + ' ' + address.zip + '\n' +
-      '\n';
+        address.line1 + ',\n' +
+        address.line2 + ',\n' +
+        address.city + ',' + address.state + ' ' + address.zip + '\n' +
+        '\n';
     }
     return addressStr;
+  }
+
+  /**
+   * @private
+   */
+  public compare(val1: any, val2: any): boolean {
+    return (val1 == val2) || (_.get(val1, 'id') == _.get(val2, 'id'));
   }
 }

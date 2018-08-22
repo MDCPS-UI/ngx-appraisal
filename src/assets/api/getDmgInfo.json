@@ -23,14 +23,14 @@
     "isOther": false,
     "lgbtqOtherType": "",
     "cor": {
-        "countyCode": "370",
-        "id": 45,
-        "name": "Lamar"
+        "countyCode": "840",
+        "id": 93,
+        "name": "West Chickasaw"
     },
     "cos": {
-        "countyCode": "010",
-        "id": 11,
-        "name": "Adams"
+        "countyCode": "380",
+        "id": 46,
+        "name": "Lauderdale"
     },
     "hasHealthInsurance": true,
     "hasMedicaid": false,
