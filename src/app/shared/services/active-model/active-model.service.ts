@@ -1,3 +1,4 @@
+import * as _ from 'lodash';
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -17,6 +18,11 @@ export class ActiveModelService {
    * @type: any
    */
   private _childData: any;
+  /**
+   * @private
+   * @type: any
+   */
+  private _responses: any = {};
 
   /**
    * @private
@@ -104,5 +110,38 @@ export class ActiveModelService {
    */
   public getChildren(): any {
     return this._children;
+  }
+
+  /**
+   * @public
+   * @param: {value<any>}
+   * @param: {key<string>}
+   * @param: {extend<boolean>}
+   * @returns: void
+   * @description: N/A
+   */
+  public setResponse(value: any, key?: string, extend?: boolean): void {
+    if (_.isObject(value) && extend) {
+      this._responses = _.extend({}, this._responses, value);
+      return;
+    }
+
+    if (value && key) {
+      this._responses[key] = value;
+      return;
+    }
+    console.log(`Invalid data`);
+  }
+
+  /**
+   * @public
+   * @returns: any
+   * @description: N/A
+   */
+  public getResponse(key?: string): any {
+    if (key) {
+      return this._responses[key] || null;
+    }
+    return this._responses;
   }
 }

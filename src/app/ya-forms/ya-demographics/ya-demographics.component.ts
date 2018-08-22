@@ -6,6 +6,7 @@ import { UtilService } from './../../shared/services/util/util.service';
 import { ProfileService } from './../../shared/services/profile/profile.service';
 import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
 import { YA_DG_NAVG_LIST, YA_DG_GENDER_LIST, DMG_FIELDS } from './ya-demographics.constants';
+import { ActiveModelService } from '../../shared/services/active-model/active-model.service';
 
 @Component({
   selector: 'mdcps-ya-demographics',
@@ -38,7 +39,8 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
     private fb: FormBuilder,
     private util: UtilService,
     private appraisal: AppraisalService,
-    private profileService: ProfileService) {
+    private profileService: ProfileService,
+    private activeModel: ActiveModelService) {
 
     // navigator list
     this.config.navgList = YA_DG_NAVG_LIST;
@@ -117,7 +119,11 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
 
         if (!!data[2]) {
           this._process(data[2]);
+          this.responses['dmg'] = data[2];
         }
+
+        // setting the responses so it can be retrieved
+        this.activeModel.setResponse(this.responses, null, true);
       });
   }
 
