@@ -52,10 +52,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
   /**
    * @public
    */
-  public ngOnInit(): void {
-    // listen to youth appraisal selection
-    // this.subscribeToYaSelection();
-  }
+  public ngOnInit(): void {}
 
   /**
    * @public
@@ -110,7 +107,6 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
       , getCounties: any = this.appraisal.request('getCounties')
       , getNavWorkers: any = this.appraisal.request('getNavWorkers')
       , getDmgInfo: any = this.appraisal.init(appraisalId, 'getDmgInfo');
-
 
     forkJoin([getCounties, getNavWorkers, getDmgInfo])
       .subscribe(data => {

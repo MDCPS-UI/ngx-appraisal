@@ -49,6 +49,8 @@ export class AppraisalService {
       );
     }
 
+    // if the data wasn't found in the cache,
+    // make a fresh call and cache it if opted in.
     const config: any = serviceConstants[serviceName];
     if (!config) { return Observable.empty(); }
 
