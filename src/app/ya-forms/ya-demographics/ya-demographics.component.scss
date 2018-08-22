@@ -1,5 +1,12 @@
 .mdcps-demographics-container {
     .row {
         padding: 8px 0;
+
+        .mdcps-address-list {
+            background-color: #e9ecef;
+            opacity: 1;
+            padding: 25px;
+            border: 1px solid #ced4da;
+        }
     }
 }
