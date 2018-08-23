@@ -5,8 +5,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:demo": "ng serve -e=demo",
     "start:local": "ng serve -e=local",
     "build": "ng build --prod",
+    "build:demo": "ng build --prod -e=demo",
+    "build:local": "ng build --prod -e=local",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
