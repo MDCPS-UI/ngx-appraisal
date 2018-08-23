@@ -61,8 +61,8 @@ export class YouthAppraisalComponent implements OnInit {
     private appraisal: AppraisalService,
     private profileService: ProfileService,
     private activeModel: ActiveModelService) {
-      this.getChildren();
-    }
+    this.getChildren();
+  }
 
   /**
    * @public
@@ -90,7 +90,12 @@ export class YouthAppraisalComponent implements OnInit {
       map(term => {
         const results: any[] = !(term.length < this.typeaheadLength)
           ? this.children.filter(child => {
-            return child.macwisID.indexOf(term) > -1;
+
+            const macId: string = (child.macwisID
+              || child.macwisId || child.MacwisId
+            );
+
+            return macId && macId.indexOf(term) > -1;
           })
           : [];
 
