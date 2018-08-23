@@ -74,6 +74,7 @@ export class BaseFormComponent implements OnInit {
    * @public
    */
   public onNext(form?: FormGroup, value?: any): void {
+    this.baseFormGroup.reset();
     this.next.emit({
       form: form || this.baseFormGroup,
       value: value || this.baseFormGroup.value
@@ -84,6 +85,7 @@ export class BaseFormComponent implements OnInit {
    * @public
    */
   public onPrevious(e?: MouseEvent): void {
+    this.baseFormGroup.reset();
     this.previous.emit({
       e: e,
       form: this.baseFormGroup,
@@ -101,7 +103,7 @@ export class BaseFormComponent implements OnInit {
 
         // in case if the form is dirty, prompt
         // user to save or discard it.
-        if (this.baseFormGroup.dirty) {
+        if (this.baseFormGroup && this.baseFormGroup.dirty) {
           this.openVerticallyCentered(this.content);
         } else {
           this.proceedWithNavigation(config);
@@ -120,6 +122,7 @@ export class BaseFormComponent implements OnInit {
       + config.navigationUrl + (config.routeSuffix || ''));
 
     // navigate to the requested route
+    this.baseFormGroup.reset();
     this.router.navigate([url], {queryParamsHandling: 'merge', preserveQueryParams: true});
   }
 
@@ -137,14 +140,11 @@ export class BaseFormComponent implements OnInit {
    * @public
    */
   public onAction(dismiss: Function, action: string): void {
-    console.log(this.baseFormGroup.value);
-
     if (action == 'save') {
       dismiss('save');
       this.onNext();
     } else if (action == 'discard') {
       dismiss('discard');
-      this.baseFormGroup.reset();
       this.proceedWithNavigation();
     }
   }
