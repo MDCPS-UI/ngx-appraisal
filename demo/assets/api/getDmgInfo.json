@@ -1,0 +1,83 @@
+{
+    "completeDateString": "",
+    "completedBy": null,
+    "progress": 0,
+    "id": 12,
+    "appraisalId": 11,
+    "completedById": 1,
+    "youthName": "Joe Jonas",
+    "age": 15,
+    "dob": "1995-09-30",
+    "race": "BLACK",
+    "gender": "M",
+    "phone": "6014454321",
+    "email": "none@noemail.com",
+    "custodyStatus": false,
+    "dischargeDate": "2016-09-30",
+    "isLGBTQ": "yes",
+    "isLesbian": false,
+    "isGay": true,
+    "isBisexual": false,
+    "isTransgender": false,
+    "isQuestioning": true,
+    "isOther": false,
+    "lgbtqOtherType": "",
+    "cor": {
+        "countyCode": "840",
+        "id": 93,
+        "name": "West Chickasaw"
+    },
+    "cos": {
+        "countyCode": "380",
+        "id": 46,
+        "name": "Lauderdale"
+    },
+    "hasHealthInsurance": true,
+    "hasMedicaid": false,
+    "medicaidNumber": "",
+    "hasLanguageBarriers": false,
+    "languageBarriersText": "",
+    "hasMentor": false,
+    "wantsMentorInvolved": false,
+    "permPlan": "Reunif W/aPrim Caretkr Parents",
+    "corWorkerInfo":     {
+        "email": "Jaszmen.Hawthorne@mdcps.ms.gov",
+        "firstName": "Jaszmen",
+        "id": 1354,
+        "isTransitionNav": true,
+        "lastName": "Hawthorne",
+        "macwisId": "009771638",
+        "phone": "(228) 297-4259",
+        "workerName": "Jaszmen Hawthorne"
+    },
+    "navigatorInfo": {
+        "email": "Sharon.Cable@mdcps.ms.gov",
+        "firstName": "Sharon",
+        "id": 123,
+        "isTransitionNav": true,
+        "lastName": "Cable",
+        "macwisId": "007018800",
+        "phone": "(601) 757-7395",
+        "workerName": "Sharon Cable"
+    },
+    "addressList": [
+        {
+            "id": "1234",
+            "line1": "1234 Mill Lake Dr.",
+            "line2": "248",
+            "city": "Burlington",
+            "state": "MA",
+            "zip": "01803",
+            "county": "Lake"
+        },
+        {
+            "id": "1123",
+            "line1": "4567 Mill Lake Dr.",
+            "line2": "249",
+            "city": "Burlington",
+            "state": "MA",
+            "zip": "01803",
+            "county": "Lake"
+        }
+    ]
+}

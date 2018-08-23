@@ -1,0 +1,233 @@
+.navbar {
+    border-radius: 0;
+    border: none;
+}
+
+.search-form {
+    position: relative;
+    margin-bottom: 10px;
+    z-index: 99;
+}
+
+.search-form .form-group {
+    width: 80%;
+    float: left;
+}
+
+.search-form .form-group input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 1px solid #dedede;
+    border-right: 0;
+}
+
+.search-form .search-submit {
+    width: 20%;
+    height: 34px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: none;
+    background-color: #00a79d;
+    color: white;
+}
+
+.sidebar .search-submit .glyphicon {
+    margin-right: 0;
+}
+
+.navbar-nav li {
+    float: none;
+}
+
+.navbar-nav li .dropdown-toggle {
+    font-weight: 700;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #adadad;
+    position: relative;
+    display: block;
+    font-weight: 400;
+}
+
+.navbar .dropdown-menu>.active>a, .navbar .dropdown-menu>.active>a:focus, .navbar .dropdown-menu>.active>a:hover{
+    background-color: #00a79d;
+    background-image:none;
+    color: #fff;
+}
+
+.navbar .nav > li > a:hover, .navbar .nav > li > a:focus {
+    background-color: transparent;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #080808;
+}
+
+.navbar-toggle {
+    padding: 8px 10px;
+}
+
+.dropdown-menu {
+    min-width: 220px;
+    margin: 0;
+    border: none;
+    border-top: 3px solid #00a79d;
+    border-radius: 0;
+}
+
+.well {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+li .menu-item {
+    width: 100%;
+}
+
+@media (min-width: 1001px) {
+    .navbar-nav {
+        float: left;
+    }
+
+    .navbar-nav li {
+        float: left;
+    }
+
+    .navbar-nav li .dropdown-toggle {
+        font-weight: normal;
+    }
+
+    .navbar-form {
+        margin-top: 3px;
+        padding: 0;
+    }
+
+    .navbar-form .form-group {
+        margin: 5px 0;
+        margin-right: 0;
+    }
+
+    .navbar-form .form-group input {
+        width: 100%;
+    }
+
+    .navbar-form .search-submit {
+        width: auto;
+        margin: 5px 0;
+    }
+}
+
+
+
+@media (max-width: 767px) {
+    .navbar .navbar-nav .open .dropdown-menu>.active>a, .navbar .navbar-nav .open .dropdown-menu>.active>a:focus, .navbar .navbar-nav .open .dropdown-menu>.active>a:hover {
+        background-color: #00a79d;
+        background-image: none;
+    }
+}
+
+.tab {
+    margin-left: 40px !important;
+}
+
+.fa-product-hunt {
+    color: #1b49a0;
+}
+
+@media (min-width: 1001px) {
+    .navbar-form {
+        width: 212px;
+    }
+    .navbar-form .form-group {
+        width: 174px;
+    }
+    #google_translate_element {
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .navbar-form {
+        width: 263px;
+    }
+    .navbar-form .form-group {
+        width: 225px;
+    }
+    #google_translate_element {
+        float: left;
+    }
+}
+
+@media (max-width: 1000px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in {
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+    .navbar-nav .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .navbar-right {
+        float: none !important;
+    }
+    .navbar-form {
+        width: auto;
+        padding: 0;
+        margin: 15px -15px 0;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    .navbar-form .form-group {
+        margin-bottom: 8px;
+    }
+    .navbar-form .form-control {
+        width: 100%;
+    }
+}
+.btn-link,
+.btn-xs {
+    font-weight: 600;
+}
