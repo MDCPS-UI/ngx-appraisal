@@ -8,7 +8,7 @@
     "start:demo": "ng serve -e=demo",
     "start:local": "ng serve -e=local",
     "build": "ng build --prod",
-    "build:demo": "ng build --prod -e=demo --output-path=demo",
+    "build:demo": "ng build --prod -e=demo --output-path=demo --base-href=./ --deploy-url=.",
     "build:local": "ng build --prod -e=local",
     "test": "ng test",
     "lint": "ng lint",

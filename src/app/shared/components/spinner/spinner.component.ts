@@ -18,7 +18,7 @@ export interface SpinnerConfig {
 const spinnerDefaults: SpinnerConfig = {
   backdrop: 'black',
   spinnerText: 'Loading...',
-  imageSource: '/assets/images/mdcps-spinner.gif'
+  imageSource: './assets/images/mdcps-spinner.gif'
 };
 
 
