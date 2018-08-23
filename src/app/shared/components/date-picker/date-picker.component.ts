@@ -34,16 +34,42 @@ export class DatePickerComponent implements OnInit {
   public type: string = 'text';
 
   /**
+   * @private
+   */
+  private _disabled: boolean = false;
+
+  /**
    * @public
+   *
+   * @description: set value accessor
    */
   @Input()
-  public disabled: boolean = false;
+  public get disabled(): boolean {
+    return this.disabled;
+  }
+
+  /**
+   * @public
+   *
+   * @description: set value accessor
+   */
+  public set disabled(state: boolean) {
+    this._disabled = state || false;
+
+    if (!this.group || !this.controlName) {
+      return;
+    }
+
+    this.group.get(this.controlName).disable({
+      onlySelf: this._disabled
+    });
+  }
 
   /**
    * @public
    */
   @Input()
-  public controlName: FormControlName;
+  public controlName: string;
 
   /**
    * @public

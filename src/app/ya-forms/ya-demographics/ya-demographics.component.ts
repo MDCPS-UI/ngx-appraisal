@@ -98,6 +98,13 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
   }
 
   /**
+   * @public
+   */
+  public compare(val1: any, val2: any): boolean {
+    return (val1 == val2) || (_.get(val1, 'id') == _.get(val2, 'id'));
+  }
+
+  /**
    * @private
    */
   private _init(): void {
@@ -169,12 +176,5 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
         '\n';
     }
     return addressStr;
-  }
-
-  /**
-   * @private
-   */
-  public compare(val1: any, val2: any): boolean {
-    return (val1 == val2) || (_.get(val1, 'id') == _.get(val2, 'id'));
   }
 }
