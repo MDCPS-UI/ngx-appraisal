@@ -121,7 +121,7 @@ export class YouthAppraisalComponent implements OnInit {
    * @public
    */
   public formatter(selection: any): string {
-    return selection.macwisID;
+    return selection.macwisId;
   };
 
   /**
@@ -144,7 +144,7 @@ export class YouthAppraisalComponent implements OnInit {
    */
   public prePopulate(): void {
     const selection: any = this.profileService.getItem('appraisal') || {};
-    const macId: any = selection['macwisID'];
+    const macId: any = selection['macwisId'];
 
     if (selection && macId) {
       this.populateForm(macId);
