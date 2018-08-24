@@ -70,7 +70,7 @@ export class YouthAppraisalComponent implements OnInit {
   public ngOnInit(): void {
     this.youthApprForm = this.fb.group({
       status: new FormControl('', []),
-      macwisID: new FormControl('', []),
+      macwisId: new FormControl('', []),
       youthName: new FormControl('', []),
       appraisalDate: new FormControl('', [])
     });
@@ -90,11 +90,7 @@ export class YouthAppraisalComponent implements OnInit {
       map(term => {
         const results: any[] = !(term.length < this.typeaheadLength)
           ? this.children.filter(child => {
-
-            const macId: string = (child.macwisID
-              || child.macwisId || child.MacwisId
-            );
-
+            const macId: string = (child.macwisId || '');
             return macId && macId.indexOf(term) > -1;
           })
           : [];
@@ -121,7 +117,7 @@ export class YouthAppraisalComponent implements OnInit {
    * @public
    */
   public formatter(selection: any): string {
-    return selection.macwisID;
+    return selection.macwisId;
   };
 
   /**
@@ -129,7 +125,7 @@ export class YouthAppraisalComponent implements OnInit {
    */
   public populateForm(data: any): void {
     this.youthApprForm.setValue({
-      macwisID: data,
+      macwisId: data,
       appraisalDate: data.dobString,
       youthName: `${data.firstName} ${data.lastName}`,
       status: (data.isActive) ? 'Active' : 'Inactive'
@@ -144,7 +140,7 @@ export class YouthAppraisalComponent implements OnInit {
    */
   public prePopulate(): void {
     const selection: any = this.profileService.getItem('appraisal') || {};
-    const macId: any = selection['macwisID'];
+    const macId: any = selection['macwisId'];
 
     if (selection && macId) {
       this.populateForm(macId);

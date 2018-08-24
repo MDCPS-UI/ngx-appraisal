@@ -120,6 +120,6 @@ export class ProfileService {
    */
   public hasAppraisal(): boolean {
     const selection: any = this.activeModel.getChildData() || {};
-    return selection && selection['macwisID'];
+    return selection && selection['macwisId'];
   }
 }
