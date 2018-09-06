@@ -9,7 +9,7 @@ const commonHeaders: any = {
 };
 
 /**
- * @author: Shoukath Mohammed
+ * @author: Sai Nagulapally
  */
 @Injectable()
 export class AjaxService {

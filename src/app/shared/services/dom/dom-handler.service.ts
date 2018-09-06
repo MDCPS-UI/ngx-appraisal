@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 declare const window: any;
 
 /**
- * @author: Shoukath Mohammed
+ * @author: Sai Nagulapally
  */
 @Injectable()
 export class DomHandler {

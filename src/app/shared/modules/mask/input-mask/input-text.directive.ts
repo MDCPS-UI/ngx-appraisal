@@ -1,9 +1,6 @@
 import { NgModel } from '@angular/forms';
 import { NgModule, Directive, ElementRef, HostListener, Input, DoCheck, Optional } from '@angular/core';
 
-/**
- * @author: Shoukath Mohammed
- */
 @Directive({
     selector: '[pInputText]',
     host: {

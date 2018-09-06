@@ -15,9 +15,6 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 // access the native document object
 declare const document: any;
 
-/**
- * @author: Shoukath Mohammed
- */
 export const INPUTMASK_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => InputMaskComponent),
