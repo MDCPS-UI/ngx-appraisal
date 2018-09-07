@@ -151,9 +151,22 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
       )
     }
 
-    this.demographicsForm = this.fb.group(form);
+    if (form['custodyStatus'].value == true) {
+      form['phone'].disable();
+      form['email'].disable();
+      form['hasMedicaid'].disable();
+      form['corWorkerInfo'].disable();
+    } else {
+      form['phone'].enable();
+      form['email'].enable();
+      form['hasMedicaid'].enable();
+      form['corWorkerInfo'].enable();
+    }
+
+    this.demographicsForm = this.fb.group(form);   
   }
 
+  
   /**
    * @private
    */

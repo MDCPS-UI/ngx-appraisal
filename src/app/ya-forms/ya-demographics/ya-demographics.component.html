@@ -21,7 +21,7 @@
       <div class="col-12 col-md-6 pt-2 pt-md-0">
         <label for="demographics.age">Age</label>
         <input type="text" class="form-control" id="demographics.age" placeholder="Age" formControlName="age">
-        <div class="form-control-feedback" *ngIf="!demographicsForm.get('age').valid && (demographicsForm.get('age').dirty || demographicsForm.get('dateOfBirth')?.touched)">
+        <div class="form-control-feedback" *ngIf="!demographicsForm.get('age').valid && (demographicsForm.get('age').dirty || demographicsForm.get('age')?.touched)">
           <small *ngIf="!demographicsForm.get('age').valid" class="has-error small-text text-danger">
             Please enter a valid age
           </small>
@@ -33,11 +33,21 @@
       <div class="col-12 col-md-6">
         <label for="demographics.phone">Phone</label>
         <mdcps-input-mask [autoClear]="false" [inputId]="'demographics.phone'" [styleClass]="'form-control'" [mask]="'(999) 999 9999'"
-          [formControlName]="'phone'" placeholder="Phone"></mdcps-input-mask>
+          [formControlName]="'phone'"  placeholder="Phone"></mdcps-input-mask>
+          <div class="form-control-feedback" *ngIf="!demographicsForm.get('phone').valid && (demographicsForm.get('phone').dirty || demographicsForm.get('phone')?.touched)">
+            <small *ngIf="!demographicsForm.get('phone').valid" class="has-error small-text text-danger">
+              Please enter a valid email
+            </small>
+          </div>
       </div>
       <div class="col-12 col-md-6 pt-2 pt-md-0">
         <label for="demographics.email">Email</label>
         <input type="email" class="form-control" id="demographics.email" placeholder="Email" formControlName="email">
+        <div class="form-control-feedback" *ngIf="!demographicsForm.get('email').valid && (demographicsForm.get('email').dirty || demographicsForm.get('email')?.touched)">
+          <small *ngIf="!demographicsForm.get('email').valid" class="has-error small-text text-danger">
+            Please enter a valid phone number
+          </small>
+        </div>
       </div>
     </div>
 

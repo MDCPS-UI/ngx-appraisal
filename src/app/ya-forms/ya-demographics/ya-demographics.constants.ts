@@ -1,3 +1,5 @@
+import { Validators } from "../../../../node_modules/@angular/forms";
+
 /**
  * @type: constant
  */
@@ -41,13 +43,13 @@ export const DMG_FIELDS: any[] = [
   },
   {
     "controlName": "phone",
-    "validators": [],
+    "validators": [Validators.pattern],
     "isDisabled": true,
     "isPrefilled": true
   },
   {
     "controlName": "email",
-    "validators": [],
+    "validators": [Validators.email],
     "isDisabled": true,
     "isPrefilled": true
   },

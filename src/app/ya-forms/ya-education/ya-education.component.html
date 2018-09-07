@@ -99,7 +99,7 @@
     </div>
   </div> <!-- form-row -->
   <!-- If yes select one -->
-  <div class="row">
+  <div class="row" *ngIf="educationForm?.get('isCurrentlyEnrolled')?.value == 'yes'">
     <div class="col-12">
       <label for="education.currentlyenrolledat" class="pr-2">
         If yes, select one of the following</label><br />

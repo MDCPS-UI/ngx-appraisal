@@ -126,7 +126,7 @@ export class YouthAppraisalComponent implements OnInit {
   public populateForm(data: any): void {
     this.youthApprForm.setValue({
       macwisId: data,
-      appraisalDate: data.dobString,
+      appraisalDate: Date.now(),
       youthName: `${data.firstName} ${data.lastName}`,
       status: (data.isActive) ? 'Active' : 'Inactive'
     });
