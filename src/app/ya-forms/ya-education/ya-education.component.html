@@ -1,5 +1,7 @@
 <mdcps-base-form [baseFormGroup]="educationForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="educationForm">
+
+  <div class="mdcps-education-container" *ngIf="educationForm">
   <div class="row">
     <div class="col-12 ">
       <label for="education.receiveEtvFunds" class="col-form-label">
@@ -879,5 +881,6 @@
       </table>
     </div>
   </div> <!-- form-row -->
+  </div>
 
 </mdcps-base-form>

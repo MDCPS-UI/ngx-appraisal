@@ -22,12 +22,12 @@
     "isQuestioning": true,
     "isOther": false,
     "lgbtqOtherType": "",
-    "cor": {
+    "corName": {
         "countyCode": "840",
         "id": 93,
         "name": "West Chickasaw"
     },
-    "cos": {
+    "cosName": {
         "countyCode": "380",
         "id": 46,
         "name": "Lauderdale"

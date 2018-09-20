@@ -138,15 +138,15 @@ export const DMG_FIELDS: any[] = [
     "isPrefilled": false
   },
   {
-    "controlName": "cor",
+    "controlName": "corName",
     "validators": [],
-    "isDisabled": true,
+    "isDisabled": false,
     "isPrefilled": true
   },
   {
-    "controlName": "cos",
+    "controlName": "cosName",
     "validators": [],
-    "isDisabled": true,
+    "isDisabled": false,
     "isPrefilled": true
   },
   {

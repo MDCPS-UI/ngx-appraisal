@@ -1,12 +1,14 @@
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { YA_CHILDREN_DATA } from './youth-appraisal';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { ProfileService } from './../../services/profile/profile.service';
 import { AppraisalService } from '../../services/appraisal/appraisal.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActiveModelService } from './../../services/active-model/active-model.service';
+import { controlNameBinding } from '../../../../../node_modules/@angular/forms/src/directives/reactive_directives/form_control_name';
+import { resolve } from 'url';
 
 @Component({
   selector: 'mdcps-youth-appraisal',
@@ -90,11 +92,11 @@ export class YouthAppraisalComponent implements OnInit {
       map(term => {
         const results: any[] = !(term.length < this.typeaheadLength)
           ? this.children.filter(child => {
-            const macId: string = (child.macwisId || '');
-            return macId && macId.indexOf(term) > -1;
+            const macId: string = (child.macwisId || '');           
+            return macId && macId.indexOf(term) > -1;                     
           })
           : [];
-
+          
         this.isProcessing = false;
         return results;
       })
