@@ -1,0 +1,32 @@
+export const GET_EMPLYMENT_INFO: any = {
+    "Concerns":[
+    ],
+    "Goals":[
+    ],
+    "Progress":1,
+    "id":1,
+    "appraisalId":1,
+    "completeDt":"\/Date(1536784246613-0500)\/",
+    "commitDt":null,
+    "completedBy":"Kadeshia.Hunt@mdcps.ms.gov",
+    "isDisabled":false,
+    "isDisabledSSI":false,
+    "isDisabledSSA":false,
+    "disabilityExplain":null,
+    "hasHadJob":true,
+    "hasChildCare":false,
+    "hasFoodServices":true,
+    "hasHealthCare":true,
+    "hasClerical":true,
+    "hasMechanical":false,
+    "hasElectrical":false,
+    "hasSales":true,
+    "hasCustService":true,
+    "hasOther":false,
+    "hasOtherExplain":null,
+    "employmentType":"Full-Time",
+    "employmentLength":"13-18 months",
+    "enrolledEmpBenefit":"N\/A",
+    "hourlyPayRate":"$10.00 - $15.00",
+    "hourlyPayOtherExplain":null
+}
