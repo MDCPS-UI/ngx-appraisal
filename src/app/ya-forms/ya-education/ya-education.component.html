@@ -384,6 +384,8 @@
         </div>
       </div>
     </div>
+    </div>
+    <div class="row">
     <div class="col-12 col-md-6">
       <label class="col-form-label">
         Do you have a Behaviour Intervention Plan (BID)?
@@ -411,6 +413,8 @@
       <input type="text" class="form-control w-75" id="education.creditstograduate" placeholder="Credits needed"
         formControlName="creditsNeeded">
     </div>
+  </div>
+  <div class="row">
     <div class="col-12 col-md-6">
       <label class="col-form-label" for="education.currentcredits">
         How many credits do you have?
@@ -436,7 +440,7 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-6" *ngIf="educationForm?.get('correctGradeForAge')?.value == 'yes'">
       <label class="col-form-label" for="education.notCorrectGrade">
         If no, reason </label>
       <textarea type="text" class="form-control" id="education.grade" placeholder="Reason" rows="2" formControlName="notCurrectGradeExplain">
@@ -537,7 +541,7 @@
         </div>
         <div class="form-check">
           <div class="row">
-            <div class="col-6">
+            <div class="col-4">
               <label class="form-check-label">
                 <input type="checkbox" class="form-check-input" value="other" formControlName="needHelpOther"> &nbsp;
                 Other
@@ -546,6 +550,7 @@
             <div class="col-6">
               <input type="text" class="form-check-input" formControlName="needHelpOtherExplain">
             </div>
+            <div class="col-2"></div>
           </div>
         </div>
 
@@ -763,7 +768,7 @@
         </div>
         <div class="form-check">
           <div class="row">
-            <div class="col-6">
+            <div class="col-4">
               <label class="form-check-label">
                 <input type="checkbox" class="form-check-input" value="other" formControlName="ps_needHelpOther">
                 &nbsp;
@@ -773,6 +778,7 @@
             <div class="col-6">
               <input type="text" class="form-check-input" formControlName="ps_needHelpOtherText">
             </div>
+            <div class="col-2"></div>
           </div>
         </div>
 
@@ -787,6 +793,8 @@
       <input type="text" class="form-control" id="education.educationalprogramenrolled" formControlName="ps_whereEnrolled"
         placeholder="Where enrolled">
     </div>
+    </div>
+    <div class="row">
     <div class="col-12 col-md-6">
       <label class="col-form-label">
         Are you enrolled?</label>
