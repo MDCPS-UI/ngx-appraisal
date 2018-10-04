@@ -111,40 +111,57 @@
             <div class="form-check">
               <label class="form-check-label col-12 pt-2">
                 <input type="radio" class="form-check-input form-check-input-inline" value="middleschool"
-                  formControlName="currentEnrollType"> &nbsp;
+                  formControlName="currentEnrollType"
+                  [attr.disabled]="educationForm?.get('currentEnrollType')?.value == 'highschool' ? 'disabled'  : null ||
+                                  educationForm?.get('currentEnrollType')?.value == 'GED' ? 'disabled'  : null || 
+                                  educationForm?.get('isHomeSchool')?.value ? 'disabled'  : null ||
+                                  educationForm?.get('isVocational')?.value ? 'disabled'  : null ||
+                                  educationForm?.get('isOccupationalCertificate')?.value ? 'disabled'  : null ||
+                                  educationForm?.get('isPostSecondary')?.value ? 'disabled'  : null"> &nbsp;
                 Middle School
               </label>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-6" *ngIf="educationForm?.get('currentEnrollType')?.value == 'middleschool'">
             <input type="text" class="form-check-input " placeholder="Middle School Grade" formControlName="grade">
           </div>
         </div>
         <div class="row">
           <div class="col-6">
             <div class="form-check">
-              <label class="form-check-label col-4 pt-2">
-                <input type="radio" class="form-check-input form-check-input-inline" value="highschool" formControlName="currentEnrollType">
+              <label class="form-check-label col-12 pt-2">
+                <input type="radio" class="form-check-input form-check-input-inline" value="highschool" formControlName="currentEnrollType"
+                [attr.disabled]="educationForm?.get('currentEnrollType')?.value == 'middleschool' ? 'disabled'  : null ||
+                                educationForm?.get('currentEnrollType')?.value == 'GED' ? 'disabled'  : null ||
+                                educationForm?.get('isHomeSchool')?.value ? 'disabled'  : null ||
+                                educationForm?.get('isVocational')?.value ? 'disabled'  : null ||
+                                educationForm?.get('isOccupationalCertificate')?.value ? 'disabled'  : null">
                 &nbsp;
                 High School
               </label>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-6" *ngIf="educationForm?.get('currentEnrollType')?.value == 'highschool'">
             <input type="text" class="form-check-input" placeholder="High School Grade" formControlName="grade">
           </div>
         </div>
         <div class="row">
           <div class="col-6">
             <div class="form-check">
-              <label class="form-check-label col-4 pt-2">
+              <label class="form-check-label col-12 pt-2">
                 <input type="checkbox" class="form-check-input form-check-input-inline" value="homeSchool"
-                  formControlName="isHomeSchool"> &nbsp;
+                  formControlName="isHomeSchool" 
+                  [attr.disabled]="educationForm?.get('currentEnrollType')?.value == 'middleschool' ? 'disabled'  : null ||
+                                   educationForm?.get('currentEnrollType')?.value == 'GED' ? 'disabled'  : null ||
+                                   educationForm?.get('currentEnrollType')?.value == 'highschool' ? 'disabled'  : null ||
+                                   educationForm?.get('isVocational')?.value ? 'disabled'  : null ||
+                                   educationForm?.get('isOccupationalCertificate')?.value ? 'disabled'  : null ||
+                                   educationForm?.get('isPostSecondary')?.value ? 'disabled'  : null"> &nbsp;
                 Home School
               </label>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-6" *ngIf="educationForm?.get('isHomeSchool')?.value">
             <input type="text" class="form-check-input" placeholder="Home School Grade" formControlName="grade">
           </div>
         </div>
@@ -152,22 +169,31 @@
           <div class="col-6">
             <div class="form-check">
               <label class="form-check-label col-4 pt-2">
-                <input type="radio" class="form-check-input form-check-input-inline" value="GED" formControlName="currentEnrollType">
+                <input type="radio" class="form-check-input form-check-input-inline" value="GED" formControlName="currentEnrollType"
+                [attr.disabled]="educationForm?.get('currentEnrollType')?.value == 'middleschool' ? 'disabled'  : null ||
+                                 educationForm?.get('currentEnrollType')?.value == 'highschool' ? 'disabled'  : null ||
+                                 educationForm?.get('isHomeSchool')?.value ? 'disabled'  : null ||
+                                 educationForm?.get('isVocational')?.value ? 'disabled'  : null || 
+                                 educationForm?.get('isOccupationalCertificate')?.value ? 'disabled'  : null">
                 &nbsp;
                 GED
               </label>
             </div>
           </div>
-          <div class="col-6">
-            <input type="text" class="form-check-input datepicker" placeholder="GED Expected Test Date" formControlName="expectedTestDate">
+          <div class="col-6" *ngIf="educationForm?.get('currentEnrollType')?.value == 'GED'">
+            <input type="date" class="form-check-input datepicker" placeholder="GED Expected Test Date" formControlName="expectedTestDate">
           </div>
         </div>
         <div class="row">
           <div class="col-6">
             <div class="form-check">
               <label class="form-check-label col-4 pt-2">
-                <input type="checkbox" class="form-check-input form-check-input-inline" value="vocational"
-                  formControlName="isVocational"> &nbsp;
+                <input type="checkbox" class="form-check-input form-check-input-inline" value="vocational" formControlName="isVocational"
+                [attr.disabled]="educationForm?.get('currentEnrollType')?.value == 'middleschool' ? 'disabled'  : null ||
+                                 educationForm?.get('currentEnrollType')?.value == 'GED' ? 'disabled'  : null ||
+                                 educationForm?.get('isHomeSchool')?.value ? 'disabled'  : null ||
+                                 educationForm?.get('isOccupationalCertificate')?.value ? 'disabled'  : null ||
+                                 educationForm?.get('isPostSecondary')?.value ? 'disabled'  : null"> &nbsp;
                 Vocational
               </label>
             </div>
@@ -180,7 +206,13 @@
             <div class="form-check">
               <label class="form-check-label col-12 pt-2">
                 <input type="checkbox" class="form-check-input form-check-input-inline" value="occupationalcertificate"
-                  formControlName="isOccupationalCertificate"> &nbsp;
+                  formControlName="isOccupationalCertificate" 
+                  [attr.disabled]="educationForm?.get('currentEnrollType')?.value == 'middleschool' ? 'disabled'  : null || 
+                                   educationForm?.get('currentEnrollType')?.value == 'highschool' ? 'disabled'  : null || 
+                                   educationForm?.get('isHomeSchool')?.value ? 'disabled'  : null ||
+                                   educationForm?.get('currentEnrollType')?.value == 'GED' ? 'disabled'  : null ||
+                                   educationForm?.get('isVocational')?.value ? 'disabled'  : null ||
+                                   educationForm?.get('isPostSecondary')?.value ? 'disabled'  : null"> &nbsp;
                 Occupational Certificate
               </label>
             </div>
@@ -191,37 +223,39 @@
         <div class="row">
           <div class="col-6">
             <div class="form-check">
-              <label class="form-check-label col-6 pt-2">
+              <label class="form-check-label col-12 pt-2">
                 <input type="checkbox" class="form-check-input form-check-input-inline" value="postsecondary"
-                  formControlName="currentEnrollType"> &nbsp;
+                  formControlName="isPostSecondary" 
+                  [attr.disabled]="educationForm?.get('currentEnrollType')?.value == 'middleschool' ? 'disabled'  : null ||
+                                   educationForm?.get('isHomeSchool')?.value ? 'disabled'  : null ||
+                                   educationForm?.get('isOccupationalCertificate')?.value ? 'disabled'  : null"> &nbsp;
                 Post-Secondary
               </label>
-
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-6" *ngIf="educationForm?.get('isPostSecondary')?.value">
             <div class="form-group">
               <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" value="freshman" formControlName="currentEnrollType">
+                  <input type="checkbox" class="form-check-input" value="freshman" formControlName="ps_Grade">
                   Freshman
                 </label>
               </div>
               <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" value="sophmore" formControlName="currentEnrollType">
+                  <input type="checkbox" class="form-check-input" value="sophmore" formControlName="ps_Grade">
                   Sophmore
                 </label>
               </div>
               <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" value="junior" formControlName="currentEnrollType">
+                  <input type="checkbox" class="form-check-input" value="junior" formControlName="ps_Grade">
                   Junior
                 </label>
               </div>
               <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" value="senior" formControlName="currentEnrollType">
+                  <input type="checkbox" class="form-check-input" value="senior" formControlName="ps_Grade">
                   Senior
                 </label>
               </div>
@@ -358,6 +392,9 @@
   </div> <!-- form-row -->
 
   <!-- Currently Enrolled -->
+  <div *ngIf="educationForm?.get('currentEnrollType')?.value == 'middleschool' || 
+              educationForm?.get('currentEnrollType')?.value == 'highschool' ||
+              educationForm?.get('isHomeSchool')?.value">
   <div class="row">
     <div class="col-12 ">
      <strong>
@@ -440,7 +477,7 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6" *ngIf="educationForm?.get('correctGradeForAge')?.value == 'yes'">
+    <div class="col-12 col-md-6" *ngIf="educationForm?.get('correctGradeForAge')?.value == 'no'">
       <label class="col-form-label" for="education.notCorrectGrade">
         If no, reason </label>
       <textarea type="text" class="form-control" id="education.grade" placeholder="Reason" rows="2" formControlName="notCurrectGradeExplain">
@@ -547,7 +584,7 @@
                 Other
               </label>
             </div>
-            <div class="col-6">
+            <div class="col-6" *ngIf="educationForm?.get('needHelpOther')?.value">
               <input type="text" class="form-check-input" formControlName="needHelpOtherExplain">
             </div>
             <div class="col-2"></div>
@@ -609,7 +646,7 @@
         </div>
       </div>
     </div>
-    <div class="col-12 ">
+    <div class="col-12" *ngIf="educationForm?.get('passedStateLevelTests')?.value == 'notpassed'">
       <label class="col-form-label" for="education.duelEnrollmentExplain">
         If no, which subjects were not passed?
       </label>
@@ -641,14 +678,17 @@
       </div>
     </div>
   </div> <!-- form-row -->
+  </div>
   <!-- Currently Enrolled -->
+  <div *ngIf="educationForm?.get('isPostSecondary')?.value">
   <div class="row">
     <div class="col-12 ">
       <strong>
         Post-Secondary Section
       </strong>
     </div> <!-- col-12 -->
-  </div> <!-- form-row -->
+  </div>
+  
 
   <!-- ETV -->
   <div class="row">
@@ -775,7 +815,7 @@
                 Other
               </label>
             </div>
-            <div class="col-6">
+            <div class="col-6" *ngIf="educationForm?.get('ps_needHelpOther')?.value">
               <input type="text" class="form-check-input" formControlName="ps_needHelpOtherText">
             </div>
             <div class="col-2"></div>
@@ -834,12 +874,14 @@
         placeholder="Expected area of study">
     </div>
   </div>
+</div> <!-- form-row -->
+
   <div class="row">
-    <div class="col-12" id="employmentGoalsComponent">
+    <div class="col-12" id="employmentGoalsComponent" formArrayName="goals">
         <label>
             <h3>Education Goals</h3>
         </label>
-        <button style="float:right;">Add Goal</button>
+        <button type="button" style="float:right;" (click)="onAddGoal()">Add Goal</button>
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -848,10 +890,31 @@
             <th class="text-center">Person(s) Responsible for Tasks</th>
             <th class="text-center">Progress</th>
             <th class="text-center">Completion Date</th>
+            <th class="text-center">Delete</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let g of educationForm.get('goals').controls; let i = index" [formGroupName]="i">
+            <th scope="row">
+              <input class="form-control form-control-sm" formControlName="goalText">
+            </th>
+            <td>
+              <textarea class="form-control form-control-sm" formControlName="tasks"></textarea>
+            </td>
+            <td>
+              <textarea class="form-control form-control-sm" formControlName="personResp"></textarea>
+            </td>
+            <td>
+              <textarea class="form-control form-control-sm" formControlName="progress"> </textarea>
+            </td>
+            <td>
+              <input class="form-control form-control-sm datepicker" type="date" formControlName="completeDt">
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" (click)="onDeleteGoal(i)">X</button>
+            </td>
+          </tr>
+          <!-- <tr>
             <th scope="row">
               <input class="form-control form-control-sm" formControlName="goalText">
             </th>
@@ -884,7 +947,7 @@
             <td>
               <input class="form-control form-control-sm datepicker">
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>

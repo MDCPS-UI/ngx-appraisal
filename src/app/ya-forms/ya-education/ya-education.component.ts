@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 
 @Component({
@@ -43,6 +43,7 @@ export class YaEducationComponent implements OnInit {
       isHomeSchool: new FormControl('', []),
       isVocational: new FormControl('', []),
       isOccupationalCertificate: new FormControl('', []),
+      isPostSecondary: new FormControl('', []),
       pastYearSuspendExpel: new FormControl('', []),
       hasBIDPlan: new FormControl('', []),
       hasIEPRuling: new FormControl('', []),
@@ -72,6 +73,7 @@ export class YaEducationComponent implements OnInit {
       noPassBiologyI: new FormControl('', []),
       noPassEnglishII: new FormControl('', []),
       noPassUSHistory: new FormControl('', []),
+      ps_Grade: new FormControl('', []),
       ps_isEnrolledETV: new FormControl('', []),
       ps_lastETVFundDate: new FormControl('', []),
       ps_sixMonthA: new FormControl('', []),
@@ -92,13 +94,41 @@ export class YaEducationComponent implements OnInit {
       ps_enrollType: new FormControl('', []),
       ps_careerGoals: new FormControl('', []),
       expectedArea: new FormControl('', []),
-      goalText: new FormControl('', []),
-      tasks: new FormControl('', []),
-      personResp: new FormControl('', []),
-      progress: new FormControl('', []),
-      completeDt: new FormControl('',[])
+      goals: new FormArray([
+        new FormGroup({
+          goalText: new FormControl('', []),
+          tasks: new FormControl('', []),
+          personResp: new FormControl('', []),
+          progress: new FormControl('', []),
+          completeDt: new FormControl('',[])
+        }) 
+      ])  
     });
+
   }
+
+  /**
+   * @public
+   */
+  public onAddGoal() {
+    (<FormArray>this.educationForm.get('goals')).push(
+      new FormGroup({
+        goalText: new FormControl('', []),
+        tasks: new FormControl('', []),
+        personResp: new FormControl('', []),
+        progress: new FormControl('', []),
+        completeDt: new FormControl('',[])
+      })
+    )
+  }
+
+  /**
+   * @public
+   */
+  public onDeleteGoal(index) {
+    (<FormArray>this.educationForm.get('goals')).removeAt(index);
+  }
+
 
   /**
    * @public

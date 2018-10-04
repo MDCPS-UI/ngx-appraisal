@@ -118,7 +118,7 @@
                 <input type="checkbox" class="form-check-input" value="other" formControlName="whHasOther"> &nbsp;Other
               </label>
             </div>
-            <div class="col-3">
+            <div class="col-3" *ngIf="employmentForm?.get('whHasOther')?.value">
               <input type="text" class="form-check-input" formControlName="whOtherText">
             </div>
           </div>
@@ -149,7 +149,9 @@
         </div>
       </div>
     </div>
-    <div class="col-12" >
+    <div class="col-12" 
+        *ngIf="employmentForm?.get('ceIsCurrentlyEmployed')?.value == 'Part-Time' ||
+               employmentForm?.get('ceIsCurrentlyEmployed')?.value == 'Full-Time'">
       <label class="col-form-label">If yes, how long?</label>
       <div class="form-group">
         <div class="form-check">
@@ -174,7 +176,9 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-4 pt-2 pt-md-0">
+    <div class="col-12 col-md-4 pt-2 pt-md-0" 
+         *ngIf="employmentForm?.get('ceIsCurrentlyEmployed')?.value == 'Part-Time' ||
+                employmentForm?.get('ceIsCurrentlyEmployed')?.value == 'Full-Time'">
       <label class="col-form-label">If yes, in employee's benefit program?</label>
       <div class="form-group">
         <div class="form-check form-check-inline">
@@ -217,7 +221,7 @@
                 <input type="radio" class="form-check-input" value="other" formControlName="ceHourlyPayRate"> &nbsp;Other
               </label>
             </div>
-            <div class="col-6">
+            <div class="col-6" *ngIf="employmentForm?.get('ceHourlyPayRate')?.value == 'other'">
               <input type="text" class="form-check-input" formControlName="ceOtherHourlyRate">
             </div>
           </div>
