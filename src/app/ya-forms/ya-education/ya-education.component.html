@@ -13,7 +13,7 @@
             &nbsp;Some High School
           </label>
         </div>
-        <div class="form-check ">
+        <div class="form-check">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" value="somemiddleschool" formControlName="over18HighestEd">
             &nbsp;Some Middle School
@@ -101,7 +101,7 @@
     </div>
   </div> <!-- form-row -->
   <!-- If yes select one -->
-  <div class="row" *ngIf="educationForm?.get('isCurrentlyEnrolled')?.value == 'yes'">
+  <div class="row">
     <div class="col-12">
       <label for="education.currentlyenrolledat" class="pr-2">
         If yes, select one of the following</label><br />
@@ -110,8 +110,8 @@
           <div class="col-6">
             <div class="form-check">
               <label class="form-check-label col-12 pt-2">
-                <input type="radio" class="form-check-input form-check-input-inline" value="middleschool"
-                  formControlName="currentEnrollType"> &nbsp;
+                <input type="checkbox" class="form-check-input form-check-input-inline" value="middleschool"
+                  formControlName="isMiddleSchool"> &nbsp;
                 Middle School
               </label>
             </div>
@@ -123,8 +123,8 @@
         <div class="row">
           <div class="col-6">
             <div class="form-check">
-              <label class="form-check-label col-4 pt-2">
-                <input type="radio" class="form-check-input form-check-input-inline" value="highschool" formControlName="currentEnrollType">
+              <label class="form-check-label col-12 pt-2">
+                <input type="checkbox" class="form-check-input form-check-input-inline" value="highschool" formControlName="isHighSchool">
                 &nbsp;
                 High School
               </label>
@@ -137,7 +137,7 @@
         <div class="row">
           <div class="col-6">
             <div class="form-check">
-              <label class="form-check-label col-4 pt-2">
+              <label class="form-check-label col-12 pt-2">
                 <input type="checkbox" class="form-check-input form-check-input-inline" value="homeSchool"
                   formControlName="isHomeSchool"> &nbsp;
                 Home School
@@ -151,8 +151,8 @@
         <div class="row">
           <div class="col-6">
             <div class="form-check">
-              <label class="form-check-label col-4 pt-2">
-                <input type="radio" class="form-check-input form-check-input-inline" value="GED" formControlName="currentEnrollType">
+              <label class="form-check-label col-12 pt-2">
+                <input type="checkbox" class="form-check-input form-check-input-inline" value="GED" formControlName="isGED">
                 &nbsp;
                 GED
               </label>
@@ -165,7 +165,7 @@
         <div class="row">
           <div class="col-6">
             <div class="form-check">
-              <label class="form-check-label col-4 pt-2">
+              <label class="form-check-label col-12 pt-2">
                 <input type="checkbox" class="form-check-input form-check-input-inline" value="vocational"
                   formControlName="isVocational"> &nbsp;
                 Vocational
@@ -191,37 +191,36 @@
         <div class="row">
           <div class="col-6">
             <div class="form-check">
-              <label class="form-check-label col-6 pt-2">
+              <label class="form-check-label col-12 pt-2">
                 <input type="checkbox" class="form-check-input form-check-input-inline" value="postsecondary"
-                  formControlName="currentEnrollType"> &nbsp;
+                  formControlName="isPostSecondaryEducationalProgram"> &nbsp;
                 Post-Secondary
               </label>
-
             </div>
           </div>
           <div class="col-6">
             <div class="form-group">
               <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" value="freshman" formControlName="currentEnrollType">
+                  <input type="radio" class="form-check-input" value="freshman" formControlName="ps_Grade">
                   Freshman
                 </label>
               </div>
               <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" value="sophmore" formControlName="currentEnrollType">
+                  <input type="radio" class="form-check-input" value="sophmore" formControlName="ps_Grade">
                   Sophmore
                 </label>
               </div>
               <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" value="junior" formControlName="currentEnrollType">
+                  <input type="radio" class="form-check-input" value="junior" formControlName="ps_Grade">
                   Junior
                 </label>
               </div>
               <div class="form-check form-check-inline">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" value="senior" formControlName="currentEnrollType">
+                  <input type="radio" class="form-check-input" value="senior" formControlName="ps_Grade">
                   Senior
                 </label>
               </div>
