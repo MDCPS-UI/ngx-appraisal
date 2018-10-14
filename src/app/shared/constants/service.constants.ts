@@ -5,7 +5,7 @@ import { environment } from './../../../environments/environment';
  */
 const __local_switch__: any = {
     getDmgInfo: true,
-    saveDmgInfo: true,
+    saveDmgInfo: false,
     getCounties: true,
     getNavWorkers: true,
     getAllChildren: true,
