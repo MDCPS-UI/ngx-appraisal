@@ -5,6 +5,7 @@ import { environment } from './../../../environments/environment';
  */
 const __local_switch__: any = {
     getDmgInfo: true,
+    saveDmgInfo: true,
     getCounties: true,
     getNavWorkers: true,
     getAllChildren: true,
@@ -45,6 +46,12 @@ export const serviceConstants: any = {
         url: `${__base__}/GetDemographicInfo?appraisalId={0}`,
         localUrl: '/assets/api/getDmgInfo.json',
         isLocal:  shouldUseLocal('getDmgInfo')
+    },
+    saveDmgInfo: {
+        method: 'POST',
+        url: `${__base__}/InsertDemographicInfo?appraisalId={0}`,
+        localUrl: '/assets/api/saveDmgInfo.json',
+        isLocal:  shouldUseLocal('saveDmgInfo')
     },
     createAppraisal: {
         method: 'GET',

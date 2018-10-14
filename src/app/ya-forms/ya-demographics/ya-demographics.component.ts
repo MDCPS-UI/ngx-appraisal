@@ -22,6 +22,11 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
   /**
    * @public
    */
+  public appraisalId: string;
+
+  /**
+   * @public
+   */
   public responses: any = {};
 
   /**
@@ -84,10 +89,23 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
    * @public
    */
   public onNext(event: any): void {
-    if (event.form && event.form.valid) {
-      console.log(event.form.value);
-    }
+    // if (event.form && event.form.valid) {
+    //   console.log(event.form.value);
+    // }
+    console.log(event.form.value);
+
+    this._saveInfo(event.form.value);
     this.util.navigate('education');
+  }
+
+  /**
+   * @private
+   */
+  private _saveInfo(data: any): void {
+    this.appraisal.init(this.appraisalId, 'saveDmgInfo', {...data})
+      .subscribe(v => {
+        console.log(v);
+      });
   }
 
   /**
@@ -108,12 +126,12 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
    * @private
    */
   private _init(): void {
-    const appraisalId: string = this.util.getQueryStringValue('appraisalId')
+    this.appraisalId = this.util.getQueryStringValue('appraisalId')
 
       // services to call concurrently
-      , getCounties: any = this.appraisal.request('getCounties')
+      const getCounties: any = this.appraisal.request('getCounties')
       , getNavWorkers: any = this.appraisal.request('getNavWorkers')
-      , getDmgInfo: any = this.appraisal.init(appraisalId, 'getDmgInfo');
+      , getDmgInfo: any = this.appraisal.init(this.appraisalId, 'getDmgInfo');
 
     forkJoin([getCounties, getNavWorkers, getDmgInfo])
       .subscribe(data => {
@@ -140,38 +158,51 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
     for (const control of controls) {
 
       let val: any = (control.controlName == 'addressList')
-        ? this._getAddress(this._get(data, control.controlName))
-        : this._get(data, control.controlName);
+        ? this._getAddress(this._get(data, control.controlName, control))
+        : this._get(data, control.controlName, control);
 
       form[control.controlName] = new FormControl(
         {
           disabled: control.isDisabled,
           value: val
-        }, control.validators
+        },
+        control.validators
       )
     }
 
-    if (form['custodyStatus'].value == true) {
-      form['phone'].disable();
-      form['email'].disable();
-      form['hasMedicaid'].disable();
-      form['corWorkerInfo'].disable();
-    } else {
-      form['phone'].enable();
-      form['email'].enable();
-      form['hasMedicaid'].enable();
-      form['corWorkerInfo'].enable();
-    }
+    const state: string = (form['custodyStatus'].value)
+      ? 'disable'
+      : 'enable';
 
-    this.demographicsForm = this.fb.group(form);   
+    this.setState(state, form);
+    this.demographicsForm = this.fb.group(form);
   }
 
-  
   /**
    * @private
    */
-  private _get(data: any, key: string): any {
-    return data[key] || '';
+  private setState(action: string, form: any): void {
+    const fields: string[] = [
+      'phone', 'email', 'hasMedicaid', 'corWorkerInfo'
+    ];
+
+    _.each(fields, (field) => {
+        form[field][action]();
+    });
+  }
+
+  /**
+   * @private
+   */
+  private _get(data: any, key: string,  control: any): any {
+    let val: any;
+
+    if (control && control['isBool']) {
+      val = data[key] || false;
+    } else {
+      val = data[key] || '';
+    }
+    return val;
   }
 
   /**
