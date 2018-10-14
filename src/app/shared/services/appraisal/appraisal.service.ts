@@ -66,9 +66,11 @@ export class AppraisalService {
     const headers: any = _.extend({}, (config.headers || {}), commonHeaders);
     return this.ajax.request<any>({
       url: url,
-      body: req.body,
-      headers: headers,
-      method: method
+      method: method,
+      options: {
+        headers: headers,
+        body: (req.body) ? JSON.stringify(req.body): null
+      }
     });
   }
 
