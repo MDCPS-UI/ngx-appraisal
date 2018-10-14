@@ -118,7 +118,7 @@
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="'no'" formControlName="isLGBTQ" [checked]="demographicsForm.get('isLGBTQ').value == false">              No
+              <input type="radio" class="form-check-input" [value]="'no'" formControlName="isLGBTQ" [checked]="demographicsForm.get('isLGBTQ').value == false">No
             </label>
           </div>
           <div class="form-check form-check-inline">
@@ -177,14 +177,14 @@
         <label for="demographics_COR">COR</label>
         <select class="custom-select form-control" formControlName="corName" [compareWith]="compare">
           <option [ngValue]="''">Select COR</option>
-          <option *ngFor="let r of responses?.counties" [ngValue]="r">{{r.Name}}</option>
+          <option *ngFor="let r of responses?.counties" [ngValue]="r">{{r.Name || r.name}}</option>
         </select>
       </div>
       <div class="col-12 col-md-6 pt-2 pt-md-0">
         <label for="demographics.COS">COS</label>
         <select class="custom-select form-control" formControlName="cosName" [compareWith]="compare">
           <option [ngValue]="''">Select COS</option>
-          <option *ngFor="let s of responses?.counties" [ngValue]="s">{{s.Name}}</option>
+          <option *ngFor="let s of responses?.counties" [ngValue]="s">{{s.Name || s.name}}</option>
         </select>
       </div>
     </div>

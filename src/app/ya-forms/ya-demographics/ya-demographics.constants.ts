@@ -1,4 +1,4 @@
-import { Validators } from "../../../../node_modules/@angular/forms";
+import { Validators } from "./../../../../node_modules/@angular/forms";
 
 /**
  * @type: constant
@@ -61,6 +61,7 @@ export const DMG_FIELDS: any[] = [
   },
   {
     "controlName": "custodyStatus",
+    "isBool": true,
     "validators": [],
     "isDisabled": true,
     "isPrefilled": true
@@ -97,24 +98,28 @@ export const DMG_FIELDS: any[] = [
   },
   {
     "controlName": "isLesbian",
+    "isBool": true,
     "validators": [],
     "isDisabled": false,
     "isPrefilled": false
   },
   {
     "controlName": "isGay",
+    "isBool": true,
     "validators": [],
     "isDisabled": false,
     "isPrefilled": false
   },
   {
     "controlName": "isBisexual",
+    "isBool": true,
     "validators": [],
     "isDisabled": false,
     "isPrefilled": false
   },
   {
     "controlName": "isTransgender",
+    "isBool": true,
     "validators": [],
     "isDisabled": false,
     "isPrefilled": false
@@ -127,6 +132,7 @@ export const DMG_FIELDS: any[] = [
   },
   {
     "controlName": "isOther",
+    "isBool": true,
     "validators": [],
     "isDisabled": false,
     "isPrefilled": false
@@ -151,18 +157,21 @@ export const DMG_FIELDS: any[] = [
   },
   {
     "controlName": "hasHealthInsurance",
+    "isBool": true,
     "validators": [],
     "isDisabled": false,
     "isPrefilled": false
   },
   {
     "controlName": "hasMedicaid",
+    "isBool": true,
     "validators": [],
     "isDisabled": true,
     "isPrefilled": true
   },
   {
     "controlName": "hasLanguageBarriers",
+    "isBool": true,
     "validators": [],
     "isDisabled": false,
     "isPrefilled": false
