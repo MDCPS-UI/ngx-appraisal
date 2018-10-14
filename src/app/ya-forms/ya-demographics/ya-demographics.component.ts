@@ -92,9 +92,9 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
     // if (event.form && event.form.valid) {
     //   console.log(event.form.value);
     // }
-    console.log(event.form.value);
+    console.log(event.value);
 
-    this._saveInfo(event.form.value);
+    this._saveInfo(event.value);
     this.util.navigate('education');
   }
 
@@ -102,7 +102,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId, 'saveDmgInfo', {...data})
+    this.appraisal.init(this.appraisalId, 'saveDmgInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });
