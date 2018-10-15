@@ -118,7 +118,7 @@
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="'no'" formControlName="isLGBTQ" [checked]="demographicsForm.get('isLGBTQ').value == false">No
+              <input type="radio" class="form-check-input" [value]="'no'" formControlName="isLGBTQ" [checked]="false">No
             </label>
           </div>
           <div class="form-check form-check-inline">
@@ -200,7 +200,7 @@
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="false" formControlName="hasHealthInsurance" [checked]="demographicsForm.get('hasHealthInsurance').value == false">              No
+              <input type="radio" class="form-check-input" [value]="false" formControlName="hasHealthInsurance" [checked]="false">              No
             </label>
           </div>
         </div>
@@ -218,7 +218,7 @@
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="false" formControlName="hasMedicaid" [checked]="demographicsForm.get('hasMedicaid').value == false">              No
+              <input type="radio" class="form-check-input" [value]="false" formControlName="hasMedicaid" [checked]="false">              No
             </label>
           </div>
         </div>
@@ -236,7 +236,7 @@
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="false" formControlName="hasLanguageBarriers" [checked]="demographicsForm.get('hasLanguageBarriers').value == false">              No
+              <input type="radio" class="form-check-input" [value]="false" formControlName="hasLanguageBarriers" [checked]="false">              No
             </label>
           </div>
         </div>
@@ -253,7 +253,7 @@
         <label for="demographics.corWorker">COR MDCPS Worker</label>
         <select class="custom-select form-control" formControlName="corWorkerInfo" [compareWith]="compare">
           <option [ngValue]="''">Choose COR MDCPS Worker</option>
-          <option *ngFor="let worker of responses?.navWorkers" [ngValue]="worker">{{worker.firstName + ' ' + worker.lastName}}</option>
+          <option *ngFor="let worker of responses?.allWorkers" [ngValue]="worker">{{worker.firstName + ' ' + worker.lastName}}</option>
         </select>
       </div>
       <div class="col-12 col-md-6 pt-2 pt-md-0">

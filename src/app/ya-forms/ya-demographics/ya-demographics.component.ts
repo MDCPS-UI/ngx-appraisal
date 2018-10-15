@@ -131,16 +131,18 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
       // services to call concurrently
       const getCounties: any = this.appraisal.request('getCounties')
       , getNavWorkers: any = this.appraisal.request('getNavWorkers')
+      , getAllWorkers: any = this.appraisal.request('getAllWorkers')
       , getDmgInfo: any = this.appraisal.init(this.appraisalId, 'getDmgInfo');
 
-    forkJoin([getCounties, getNavWorkers, getDmgInfo])
+    forkJoin([getCounties, getNavWorkers, getAllWorkers, getDmgInfo])
       .subscribe(data => {
         this.responses['counties'] = data[0];
         this.responses['navWorkers'] = data[1];
+        this.responses['allWorkers'] = data[2];
 
-        if (!!data[2]) {
-          this._process(data[2]);
-          this.responses['dmg'] = data[2];
+        if (!!data[3]) {
+          this._process(data[3]);
+          this.responses['dmg'] = data[3];
         }
 
         // setting the responses so it can be retrieved

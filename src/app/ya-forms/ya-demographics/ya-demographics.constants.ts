@@ -94,7 +94,7 @@ export const DMG_FIELDS: any[] = [
     "controlName": "isLGBTQ",
     "validators": [],
     "isDisabled": false,
-    "isPrefilled": false
+    "isPrefilled": true
   },
   {
     "controlName": "isLesbian",
@@ -148,20 +148,20 @@ export const DMG_FIELDS: any[] = [
     "controlName": "corName",
     "validators": [],
     "isDisabled": false,
-    "isPrefilled": false
+    "isPrefilled": true
   },
   {
     "controlName": "cosName",
     "validators": [],
     "isDisabled": false,
-    "isPrefilled": false
+    "isPrefilled": true
   },
   {
     "controlName": "hasHealthInsurance",
     "isBool": true,
     "validators": [],
     "isDisabled": false,
-    "isPrefilled": false
+    "isPrefilled": true
   },
   {
     "controlName": "hasMedicaid",
@@ -175,13 +175,13 @@ export const DMG_FIELDS: any[] = [
     "isBool": true,
     "validators": [],
     "isDisabled": false,
-    "isPrefilled": false
+    "isPrefilled": true
   },
   {
     "controlName": "languageBarriersText",
     "validators": [],
     "isDisabled": false,
-    "isPrefilled": false
+    "isPrefilled": true
   },
   {
     "controlName": "corWorkerInfo",

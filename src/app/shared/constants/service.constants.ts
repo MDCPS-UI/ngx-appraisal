@@ -41,6 +41,12 @@ export const serviceConstants: any = {
         localUrl: '/assets/api/getNavWorkers.json',
         isLocal:  shouldUseLocal('getNavWorkers')
     },
+    getAllWorkers: {
+        method: 'GET',
+        url: `${__base__}/GetAllWorkers`,
+        localUrl: '/assets/api/getNavWorkers.json',
+        isLocal:  shouldUseLocal('getAllWorkers')
+    },
     getDmgInfo: {
         method: 'GET',
         url: `${__base__}/GetDemographicInfo?appraisalId={0}`,
