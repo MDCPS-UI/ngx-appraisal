@@ -49,7 +49,7 @@ export const serviceConstants: any = {
     },
     saveDmgInfo: {
         method: 'POST',
-        url: `${__base__}/InsertDemographicInfo?appraisalId={0}`,
+        url: `${__base__}/InsertDemographicInfo`,
         localUrl: '/assets/api/saveDmgInfo.json',
         isLocal:  shouldUseLocal('saveDmgInfo')
     },

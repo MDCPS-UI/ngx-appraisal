@@ -67,9 +67,9 @@ export class AppraisalService {
     return this.ajax.request<any>({
       url: url,
       method: method,
+      headers: headers, 
       options: {
-        headers: headers,
-        body: (req.body) ? JSON.stringify(req.body): null
+       body: req.body
       }
     });
   }
