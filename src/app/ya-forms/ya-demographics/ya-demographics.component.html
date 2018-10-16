@@ -251,7 +251,7 @@
     <div class="form-row">
       <div class="col-12 col-md-6">
         <label for="demographics.corWorker">COR MDCPS Worker</label>
-        <select class="custom-select form-control" formControlName="corWorkerInfo" [compareWith]="compare">
+        <select class="custom-select form-control" formControlName="corWorker" [compareWith]="compare">
           <option [ngValue]="''">Choose COR MDCPS Worker</option>
           <option *ngFor="let worker of responses?.allWorkers" [ngValue]="worker">{{worker.firstName + ' ' + worker.lastName}}</option>
         </select>

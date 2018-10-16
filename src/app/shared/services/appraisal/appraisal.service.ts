@@ -69,7 +69,7 @@ export class AppraisalService {
       method: method,
       headers: headers, 
       options: {
-       body: req.body
+       body: JSON.stringify(req.body)
       }
     });
   }

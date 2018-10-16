@@ -185,7 +185,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
    */
   private setState(action: string, form: any): void {
     const fields: string[] = [
-      'phone', 'email', 'hasMedicaid', 'corWorkerInfo'
+      'phone', 'email', 'hasMedicaid', 'corWorker'
     ];
 
     _.each(fields, (field) => {
