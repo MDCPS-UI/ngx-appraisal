@@ -8,7 +8,7 @@
 
 export const GET_DEMOGRAPHIC_INFO: any = {
     "completeDt": "/Date(1530566560000-0500)/",
-    "commitDt": null,
+    "commitDt": "/Date(1530566560000-0500)/",
     "progress": 0,
     "id": 12,
     "appraisalId": 11,

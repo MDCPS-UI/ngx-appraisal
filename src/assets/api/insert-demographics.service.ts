@@ -1,11 +1,11 @@
-//example: http://10.15.66.88:5100/YTL/GetDemographicInfo
+//example: http://10.15.66.88:5100/YTL.YTL.svc/JSON/InsertDemographicInfo
 
 
 
 export const INSERT_DEMOGRAPHIC_INFO: any = {
-    "completeDt": null,
-    "commitDt": null,
-    "progress": "",
+    "completeDt": "/Date(1530566560000-0500)/",
+    "commitDt": "/Date(1530566560000-0500)/",
+    "progress": 0,
     "id": 12,
     "appraisalId": 11,
     "completedBy": "Trisha.Kelly@mdcps.ms.gov",
