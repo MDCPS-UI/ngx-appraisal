@@ -34,25 +34,27 @@ export class YaEmploymentComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.employmentForm = this.fb.group({
-      workDisabled: new FormControl('', []),
-      dIsDisabledType: new FormControl('', []),
-      dExplainSSA: new FormControl('', []),
-      whHasHadJob: new FormControl('', []),
-      whHasChildCare: new FormControl('', []),
-      whHasFoodServices: new FormControl('', []),
-      whHasHealthCare: new FormControl('', []),
-      whHasClerical: new FormControl('', []),
-      whHasMechanical: new FormControl('', []),
-      whHasElectrical: new FormControl('', []),
-      whHasSales: new FormControl('', []),
-      whHasCustService: new FormControl('', []),
-      whHasOther: new FormControl('', []),
-      whOtherText: new FormControl('', []),
-      ceIsCurrentlyEmployed: new FormControl('', []),
-      ceEmployLength: new FormControl('', []),
-      ceEmployHealthBenefit: new FormControl('', []),
-      ceHourlyPayRate: new FormControl('', []),
-      ceOtherHourlyRate: new FormControl('', [])
+      isDisabled: new FormControl('', []),
+      isDisabledSSI: new FormControl('', []),
+      isDisabledSSA: new FormControl('', []),
+      isDisabilityNone: new FormControl('', []),
+      disabilityExplain: new FormControl('', []),
+      hasHadJob: new FormControl('', []),
+      hasChildCare: new FormControl('', []),
+      hasFoodServices: new FormControl('', []),
+      hasHealthCare: new FormControl('', []),
+      hasClerical: new FormControl('', []),
+      hasMechanical: new FormControl('', []),
+      hasElectrical: new FormControl('', []),
+      hasSales: new FormControl('', []),
+      hasCustService: new FormControl('', []),
+      hasOther: new FormControl('', []),
+      hasOtherExplain: new FormControl('', []),
+      employmentType: new FormControl('', []),
+      employmentLength: new FormControl('', []),
+      enrolledEmpBenefit: new FormControl('', []),
+      hourlyPayRate: new FormControl('', []),
+      hourlyPayOtherExplain: new FormControl('', [])
     });
   }
 
