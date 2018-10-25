@@ -1,213 +1,242 @@
 <mdcps-base-form [baseFormGroup]="housingForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="housingForm">
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">
-        What is your housing plan?</label>
-      <div class="form-group">
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="planpayingRentOrMortgage" formControlName="housingPlan"> Own home paying rent or mortgage
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="plansharedhousing" formControlName="housingPlan"> Shared Housing (roommate)
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="planlivingwithrelative" formControlName="housingPlan"> Live with relatives
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="planfosterparent" formControlName="housingPlan"> Live with current/former foster parent
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="planfacilityinstitution" formControlName="housingPlan"> Facility / Institution
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <h4 class="text-left">
-        Youth Out of Care</h4>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">What is your current housing situation?</label>
-      <div class="form-group">
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="payingRentOrMortgage" formControlName="housingStatus"> Paying Rent or Mortgage
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="livingWithRelative" formControlName="housingStatus"> Living with a Relative
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="collegeDorm" formControlName="housingStatus"> College Dorm
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="transitionalLiving" formControlName="housingStatus"> Transitional Living Program
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="emergencyShelter" formControlName="housingStatus"> Emergency Shelter
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="homeless" formControlName="housingStatus"> Homeless
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="motelHotel" formControlName="housingStatus"> Motel/Hotel
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6">
-      <label for="demographics_phone">Length of Time in Current Housing:</label>
-      <input type="tel" class="form-control" id="housing.timeInCurrentHousing" placeholder="Time in Current Housing" formControlName="timeInCurrentHousing">
-    </div>
-  </div>
-  <!-- form-row -->
-  <!-- Homelessness -->
-  <div class="row">
-    <div class="col-12 col-md-3">
-      <label class="col-form-label">Have you ever been homeless?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="homelessStatus"> Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="homelessStatus"> No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12">
-      <label class="col-form-label">how long?</label>
-      <div class="form-group">
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="zerotosix" formControlName="homelessHowlong"> 0 - 6 months
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="seventotwelve" formControlName="homelessHowlong"> 7 - 12 months
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="thirteentoeighteen" formControlName="homelessHowlong"> 13 - 18 months
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="nineteentotwentyfour" formControlName="homelessHowlong"> 19 - 24 months
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="morethantwentyfour" formControlName="homelessHowlong"> More than 24 months
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">Have you ever been evicted?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="evictedStatus"> Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="evictedStatus"> No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12">
-      <label class="col-form-label">how long?</label>
-      <div class="form-group">
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="zerotothree" formControlName="evictedhowlong"> 0 - 3 months
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="fourtosix" formControlName="evictedhowlong"> 4 - 6 months
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="seventonine" formControlName="evictedhowlong"> 7 - 9 months
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="tentotwelve" formControlName="evictedhowlong"> 10 - 12 months
-          </label>
-        </div>
-        <div class="form-check">
+  <div class="mdcps-housing-container" *ngIf="housingForm">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <label class="col-form-label">
+          What is your housing plan?</label>
+        <div class="form-group">
+          <div class="form-check">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="morethantwelve" formControlName="evictedhowlong"> More than 12 months
+              <input type="radio" class="form-check-input" value="planpayingRentOrMortgage" formControlName="housingPlan">
+              Own home paying rent or mortgage
             </label>
           </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="plansharedhousing" formControlName="housingPlan">
+              Shared Housing (roommate)
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="planlivingwithrelative" formControlName="housingPlan">
+              Live with relatives
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="planfosterparent" formControlName="housingPlan"> Live
+              with current/former foster parent
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="planfacilityinstitution" formControlName="housingPlan">
+              Facility / Institution
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 pt-2 pt-md-0">
       </div>
     </div>
-  </div>
-  <!-- form-row -->
-  <!-- Homelessness -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">Are you able to meet all of your monthly obligations?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="meetMonthlyReq"> Yes
-          </label>
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <h4 class="text-left">
+          Youth Out of Care</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">What is your current housing situation?</label>
+        <div class="form-group">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="payingRentOrMortgage" formControlName="housingSituation">
+              Paying Rent or Mortgage
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="livingWithRelative" formControlName="housingSituation">
+              Living with a Relative
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="collegeDorm" formControlName="housingSituation">
+              College Dorm
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="transitionalLiving" formControlName="housingSituation">
+              Transitional Living Program
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="emergencyShelter" formControlName="housingSituation">
+              Emergency Shelter
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="homeless" formControlName="housingSituation">
+              Homeless
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="motelHotel" formControlName="housingSituation">
+              Motel/Hotel
+            </label>
+          </div>
         </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="meetMonthlyReq"> No
-          </label>
+      </div>
+      <div class="col-12 col-md-6">
+        <label for="demographics_phone">Length of Time in Current Housing:</label>
+        <input type="tel" class="form-control" id="housing.timeInCurrentHousing" placeholder="Time in Current Housing"
+          formControlName="currentHousingLength">
+      </div>
+    </div>
+    <!-- form-row -->
+    <!-- Homelessness -->
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <label class="col-form-label">Have you ever been homeless?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="hasBeenHomeless"> Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="hasBeenHomeless"> No
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <label class="col-form-label">how long?</label>
+        <div class="form-group">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="zerotosix" formControlName="homelessLength"> 0 - 6
+              months
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="seventotwelve" formControlName="homelessLength"> 7 -
+              12 months
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="thirteentoeighteen" formControlName="homelessLength">
+              13 - 18 months
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="nineteentotwentyfour" formControlName="homelessLength">
+              19 - 24 months
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="morethantwentyfour" formControlName="homelessLength">
+              More than 24 months
+            </label>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
-      <label for="demographics_phone">Please, explain:</label>
-      <input type="tel" class="form-control" id="demographics_phone" placeholder="Obligations" formControlName="obligations">
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <label class="col-form-label">Have you ever been evicted?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="hasBeenEvicted"> Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="hasBeenEvicted"> No
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <label class="col-form-label">how long?</label>
+        <div class="form-group">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="zerotothree" formControlName="evictedLength"> 0 - 3
+              months
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="fourtosix" formControlName="evictedLength"> 4 - 6
+              months
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="seventonine" formControlName="evictedLength"> 7 - 9
+              months
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="tentotwelve" formControlName="evictedLength"> 10 - 12
+              months
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="morethantwelve" formControlName="evictedLength"> More
+              than 12 months
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- form-row -->
+
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">Are you able to meet all of your monthly obligations?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="meetMonthlyObligations"> Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="meetMonthlyObligations"> No
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <label for="demographics_phone">Please, explain:</label>
+        <input type="tel" class="form-control" id="demographics_phone" placeholder="Obligations" formControlName="monthlyObligationsText">
+      </div>
+    </div>
+    <!-- form-row -->
   </div>
-  <!-- form-row -->
 </mdcps-base-form>

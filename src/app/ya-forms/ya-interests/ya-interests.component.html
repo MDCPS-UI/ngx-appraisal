@@ -1,157 +1,185 @@
 <mdcps-base-form [baseFormGroup]="interestsForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="interestsForm">
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">Are you involved in extracurricular activities?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="extraActivities"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="extraActivities"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- form-row -->
-  <!-- Activities -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Please, select all that apply:
-      </label>
-      <div class="form-group">
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="dance" formControlName="schoolaAtivities"> &nbsp;Dance
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input"  value="cheerleading" formControlName="schoolaAtivities"> &nbsp;Cheerleeding
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="science" formControlName="schoolaAtivities"> &nbsp;Choir/Chorus
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="band" formControlName="schoolaAtivities"> &nbsp;Band
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="drama_theater" formControlName="schoolaAtivities"> &nbsp;Drama Theater
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="baseball" formControlName="schoolaAtivities"> &nbsp;Baseball
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="softball" formControlName="schoolaAtivities"> &nbsp;Softball
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input"  value="football" formControlName="schoolaAtivities"> &nbsp;Football
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="soccer" formControlName="schoolaAtivities"> &nbsp;Soccer
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input"  value="track" formControlName="schoolaAtivities"> &nbsp;Track
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="golf" formControlName="schoolaAtivities"> &nbsp;Golf
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="basketball" formControlName="schoolaAtivities"> &nbsp;Basketball
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="swimming" formControlName="schoolaAtivities"> &nbsp;Swimming
-          </label>
-        </div>
-        <div class="form-check">
-          <div class="row">
-            <div class="col-2">
-              <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" value="other" formControlName="schoolaAtivities"> &nbsp; Other
-              </label>
-            </div>
-            <div class="col-6">
-              <input type="text" class="form-check-input" formControlName="schoolaAtivitiesOther">
-            </div>
+
+  <div class="mdcps-interests-container" *ngIf="interestsForm">
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">Are you involved in extracurricular activities?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="isInvolved"> &nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="isInvolved"> &nbsp;No
+            </label>
           </div>
         </div>
+      </div>
+    </div>
+    <!-- form-row -->
+    <!-- Activities -->
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">
+          Please, select all that apply:
+        </label>
+        <div class="form-group">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="dance" formControlName="dance">
+              &nbsp;Dance
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="cheerleading" formControlName="cheerleading">
+              &nbsp;Cheerleeding
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="science" formControlName="choirChorus">
+              &nbsp;Choir/Chorus
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="band" formControlName="band">
+              &nbsp;Band
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="drama_theater" formControlName="dramaTheater">
+              &nbsp;Drama Theater
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="baseball" formControlName="baseball">
+              &nbsp;Baseball
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="softball" formControlName="softball">
+              &nbsp;Softball
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="football" formControlName="football">
+              &nbsp;Football
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="soccer" formControlName="soccer">
+              &nbsp;Soccer
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="track" formControlName="track">
+              &nbsp;Track
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="golf" formControlName="golf">
+              &nbsp;Golf
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="basketball" formControlName="basketball">
+              &nbsp;Basketball
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="swimming" formControlName="swimming">
+              &nbsp;Swimming
+            </label>
+          </div>
+          <div class="form-check">
+            <div class="row">
+              <div class="col-2">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="other" formControlName="other">
+                  &nbsp; Other
+                </label>
+              </div>
+              <div class="col-6">
+                <input type="text" class="form-check-input" formControlName="otherExplain">
+              </div>
+            </div>
+          </div>
 
+        </div>
       </div>
     </div>
-  </div>
-  <!-- form-row -->
+    <!-- form-row -->
 
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">Are you involved in religious activities or spiritual practices?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="religiousActivities"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="religiousActivities"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6">
-      <label for="socialinterests.listActivities">Please, list:</label>
-      <textarea type="tel" class="form-control" id="socialinterests.listReligiousActivities" placeholder="List your activities"
-        formControlName="listReligiousActivities" rows="3"></textarea>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">Are you involved in hobbies or clubs?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="hobbies"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="hobbies"> &nbsp;No
-          </label>
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">Are you involved in religious activities or spiritual practices?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="participatesReligion"> &nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="participatesReligion"> &nbsp;No
+            </label>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
-      <label for="socialinterests.listActivities">Please, list:</label>
-      <textarea type="tel" class="form-control" id="socialinterests.listhobbies" placeholder="List your hobbies or other interests"
-        formControlName="listhobbies" rows="3"></textarea>
+
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12 col-md-6 col-sm-12">
+        <label for="socialinterests.listActivities">Please, list:</label>
+        <textarea type="tel" class="form-control" id="socialinterests.listReligiousActivities" placeholder="List your activities"
+          formControlName="religionOtherExplain" rows="3"></textarea>
+      </div>
     </div>
+    <!-- form-row -->
+
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">Are you involved in hobbies or clubs?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="clubsHobbies"> &nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="hasClubsHobbies"> &nbsp;No
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- form-row -->
+    
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <label for="socialinterests.listActivities">Please, list:</label>
+        <textarea type="tel" class="form-control" id="socialinterests.listhobbies" placeholder="List your hobbies or other interests"
+          formControlName="clubsHobbies" rows="3"></textarea>
+      </div>
+    </div>
+    <!-- form-row -->
   </div>
-  <!-- form-row -->
 </mdcps-base-form>

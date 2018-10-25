@@ -36,14 +36,14 @@ export class YaHousingComponent implements OnInit {
   public ngOnInit(): void {
     this.housingForm = this.fb.group({
       housingPlan: new FormControl('', []),
-      housingStatus: new FormControl('', []),
-      timeInCurrentHousing: new FormControl('', []),
-      homelessStatus: new FormControl('', []),
-      homelessHowlong: new FormControl('', []),
-      evictedStatus: new FormControl('', []),
-      evictedhowlong: new FormControl('', []),
-      meetMonthlyReq: new FormControl('', []),
-      obligations: new FormControl('', [])
+      housingSituation: new FormControl('', []),
+      currentHousingLength: new FormControl('', []),
+      hasBeenHomeless: new FormControl('', []),
+      homelessLength: new FormControl('', []),
+      hasBeenEvicted: new FormControl('', []),
+      evictedLength: new FormControl('', []),
+      meetMonthlyObligations: new FormControl('', []),
+      monthlyObligationsText: new FormControl('', [])
     });
   }
 
