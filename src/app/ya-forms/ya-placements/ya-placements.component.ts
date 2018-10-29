@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 
 @Component({
@@ -34,23 +34,53 @@ export class YaPlacementsComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.placementsForm = this.fb.group({
-      timeInPlacement: new FormControl('', []),
-      placementsInCare: new FormControl('', []),
-      whyChangedPlacements: new FormControl('', []),
+      currentPlacementLength: new FormControl('', []),
+      pastTwoYearCount: new FormControl('', []),
+      changePlacementReason: new FormControl('', []),
       feelSafeInPlacement: new FormControl('', []),
-      whynotsafeInPlacement: new FormControl('', []),
-      positivePlacementExperiences: new FormControl('', []),
-      maintainContact: new FormControl('', []),
-      usedForPermancyPlan: new FormControl('', []),
-      additionalFosterCareInfo: new FormControl('', []),
+      noFeelSafeExplain: new FormControl('', []),
+      positiveExperienceText: new FormControl('', []),
+      maintainContactBioFam: new FormControl('', []),
+      bioFamUsedInPlanning: new FormControl('', []),
+      additionalInfo: new FormControl('', []),
       contactName: new FormControl('', []),
       contactRelationship: new FormControl('', []),
       contactPhone: new FormControl('', []),
       contactEmail: new FormControl('', []),
-      idmentor: new FormControl('', []),
-      mentorname: new FormControl('', [])
+      mentorIdentified: new FormControl('', []),
+      mentorExplain: new FormControl('', []),
+      maintainContact: new FormArray([
+        new FormGroup({
+          name: new FormControl('', []),
+          number: new FormControl('', []),
+          email: new FormControl('', []),
+          relationship: new FormControl('', [])
+        })
+      ])
     });
   }
+
+  /**
+   * @public
+   */
+  public onAddContact() {
+    (<FormArray>this.placementsForm.get('maintainContact')).push(
+      new FormGroup({
+        name: new FormControl('', []),
+        number: new FormControl('', []),
+        email: new FormControl('', []),
+        relationship: new FormControl('', [])
+      })
+    )
+  }
+
+  /**
+   * @public
+   */
+  public onDeleteContact(index) {
+    (<FormArray>this.placementsForm.get('maintainContact')).removeAt(index);
+  }
+
 
   /**
   * @public

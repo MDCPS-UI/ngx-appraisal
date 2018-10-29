@@ -1,232 +1,226 @@
 <mdcps-base-form [baseFormGroup]="placementsForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="placementsForm">
-  <div class="row">
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
-      <label class="col-form-label">Length of time in current placement </label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="zerotosix" formControlName="timeInPlacement"> 0 - 6 months
-          </label>
+
+  <div class="mdcps-placements-container" *ngIf="placementsForm">
+    <div class="row">
+      <div class="col-12 col-md-8 pt-2 pt-md-0">
+        <label class="col-form-label">Length of time in current placement </label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="zerotosix" formControlName="currentPlacementLength">
+              0 - 6
+              months
+            </label>
+          </div>
+          <div class="form-check form-check-inline pl-2">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="sixtotwelve" formControlName="currentPlacementLength">
+              7 -
+              12 months
+            </label>
+          </div>
+          <br />
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="twelvetoeighteen" formControlName="currentPlacementLength">
+              13 - 18 months
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="eighteentotwentyfour" formControlName="currentPlacementLength">
+              19 - 24 months
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="morethantwentyfour" formControlName="currentPlacementLength">
+              More than 24 months
+            </label>
+          </div>
         </div>
-        <div class="form-check form-check-inline pl-2">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="sixtotwelve" formControlName="timeInPlacement"> 7 - 12 months
-          </label>
-        </div>
-        <br/>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="twelvetoeighteen" formControlName="timeInPlacement"> 13 - 18 months
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="eighteentotwentyfour" formControlName="timeInPlacement"> 19 - 24 months
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="morethantwentyfour" formControlName="timeInPlacement"> More than 24 months
-          </label>
+      </div>
+      <div class="col-12 col-md-6 pt-2 pt-md-0">
+      </div>
+    </div>
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">How many placements have you had while in care?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="1to3" formControlName="pastTwoYearCount"> &nbsp;1 - 3
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="4to6" formControlName="pastTwoYearCount"> &nbsp;4 - 6
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="6plus" formControlName="pastTwoYearCount"> &nbsp;More
+              than 6
+            </label>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    <div class="row">
+      <div class="col-12 col-md-6 col-sm-10">
+        <label for="placementandsafety.What is a positive or influential placement experience you have encountered? ">
+          If applicable, why have you changed placements?</label>
+        <input type="tel" class="form-control" id="placementandsafety.whychangedlacements" formControlName="changePlacementReason"
+          placeholder="Why Changed?">
+      </div>
     </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">How many placements have you had while in care?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="1to3" formControlName="placementsInCare"> &nbsp;1 - 3
-          </label>
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">Do you feel safe in your placement? </label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="feelSafeInPlacement"> &nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="feelSafeInPlacement"> &nbsp;No
+            </label>
+          </div>
         </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="4to6" formControlName="placementsInCare"> &nbsp;4 - 6
-          </label>
+      </div>
+      <div class="col-12 col-md-6">
+        <label for="placementandsafety.whynotsafeInPlacement">If no, why?</label>
+        <input type="tel" class="form-control" id="placementandsafety.whynotsafeInPlacement" formControlName="noFeelSafeExplain"
+          placeholder="Why?">
+      </div>
+    </div>
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12 col-sm-10 col-md-6">
+        <label for="placementandsafety.positivePlacementExperiences">
+          What is a positive or influential placement experience you have encountered?</label>
+        <textarea type="text" class="form-control" rows="3" id="placementandsafety.positivePlacementExperiences"
+          formControlName="positiveExperienceText" placeholder="Positive experiences?"></textarea>
+      </div>
+    </div>
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">
+          Do you maintain contact with his/her biological family?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="maintainContactBioFam">
+              &nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="maintainContactBioFam"> &nbsp;No
+            </label>
+          </div>
         </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="6plus" formControlName="placementsInCare"> &nbsp;More than 6
-          </label>
+      </div>
+      <div class="col-12 col-md-6">
+        <label class="col-form-label">
+          If so, will these connections be used for his/her permanency plan?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="bioFamUsedInPlanning">
+              &nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="bioFamUsedInPlanning"> &nbsp;No
+            </label>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
-      <label for="placementandsafety.What is a positive or influential placement experience you have encountered? ">If applicable, why have you changed placements?</label>
-      <input type="tel" class="form-control" id="placementandsafety.whychangedlacements" formControlName="whyChangedPlacements"
-        placeholder="Why Changed?">
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12" formArrayName="maintainContact">
+        <label>
+          List the names and contact information of the individuals the you plan to maintain contact with.
+        </label>
+        <br />
+        <button mat-raised-button type="button" (click)="onAddContact()">Add Line</button>
+        <br />
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th class="text-center">Name</th>
+              <th class="text-center">Relationship</th>
+              <th class="text-center">Phone</th>
+              <th class="text-center">Email</th>
+              <th class="text-center">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let contact of placementsForm.get('maintainContact').controls; let i = index" [formGroupName]="i">
+              <td>
+                <input class="form-control form-control-sm" formControlName="name">
+              </td>
+              <td>
+                <input class="form-control form-control-sm" formControlName="relationship">
+              </td>
+              <td>
+                <input class="form-control form-control-sm" formControlName="number">
+              </td>
+              <td>
+                <input class="form-control form-control-sm" formControlName="email">
+              </td>
+              <td>
+                <button mat-button type="button" class="btn btn-danger" (click)="onDeleteContact(i)">X</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">Do you feel safe in your placement? </label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="feelSafeInPlacement"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="feelSafeInPlacement"> &nbsp;No
-          </label>
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">
+          Do you identify with any of the above people as a mentor? </label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="mentorIdentified"> &nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="mentorIdentified"> &nbsp;No
+            </label>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
-      <label for="placementandsafety.whynotsafeInPlacement">If no, why?</label>
-      <input type="tel" class="form-control" id="placementandsafety.whynotsafeInPlacement" formControlName="whynotsafeInPlacement"
-        placeholder="Why?">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label for="placementandsafety.positivePlacementExperiences">
-        What is a positive or influential placement experience you have encountered?</label>
-      <textarea type="text" class="form-control" rows="3" id="placementandsafety.positivePlacementExperiences" formControlName="positivePlacementExperiences"
-        placeholder="Positive experiences?"></textarea>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Do you maintain contact with his/her biological family?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="maintainContact"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="maintainContact"> &nbsp;No
-          </label>
-        </div>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <label for="placementandsafety.mentorname">
+          If yes, who?</label>
+        <input type="tel" class="form-control" id="placementandsafety.mentorname" formControlName="mentorExplain"
+          placeholder="Name">
       </div>
     </div>
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">
-        If so, will these connections be used for his/her permanency plan?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="usedForPermancyPlan"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="usedForPermancyPlan"> &nbsp;No
-          </label>
-        </div>
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12">
+        <label for="placementandsafety.positivePlacementExperiences">
+          Any additional information about your foster care experience:</label>
+        <textarea type="text" class="form-control" rows="3" id="placementandsafety.additionalFosterCareInfo"
+          formControlName="additionalInfo" placeholder="Additional Foster Care Info"></textarea>
       </div>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label>List the names and contact information of the individuals the you plan to maintain contact with. </label>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>
-              <button>Add Line</button>
-            </th>
-            <th>Name</th>
-            <th>Relationship</th>
-            <th>Phone</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>
-              <input class="form-control form-control-sm" formControlName="contactName">
-            </td>
-            <td>
-              <input class="form-control form-control-sm" formControlName="contactRelationship">
-            </td>
-            <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
-            </td>
-            <td>
-              <input class="form-control form-control-sm" formControlName="contactEmail">
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>
-              <input class="form-control form-control-sm" formControlName="contactName">
-            </td>
-            <td>
-              <input class="form-control form-control-sm" formControlName="contactRelationship">
-            </td>
-            <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
-            </td>
-            <td>
-              <input class="form-control form-control-sm" formControlName="contactEmail">
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>
-              <input class="form-control form-control-sm" formControlName="contactName">
-            </td>
-            <td>
-              <input class="form-control form-control-sm" formControlName="contactRelationship">
-            </td>
-            <td>
-              <input class="form-control form-control-sm" formControlName="contactPhone">
-            </td>
-            <td>
-              <input class="form-control form-control-sm" formControlName="contactEmail">
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Do you identify with any of the above people as a mentor? </label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="idmentor"> &nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="idmentor"> &nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6">
-      <label for="placementandsafety.mentorname">
-        If yes, who?</label>
-      <input type="tel" class="form-control" id="placementandsafety.mentorname" formControlName="mentorname" placeholder="Name">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label for="placementandsafety.positivePlacementExperiences">
-        Any additional information about your foster care experience:</label>
-      <textarea type="text" class="form-control" rows="3" id="placementandsafety.additionalFosterCareInfo" formControlName="additionalFosterCareInfo"
-        placeholder="Additional Foster Care Info"></textarea>
     </div>
   </div>
   <!-- form-row -->

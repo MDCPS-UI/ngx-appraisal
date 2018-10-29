@@ -7,6 +7,7 @@ import { BaseFormModule } from './../../shared/components/base-form/base-form.mo
 
 // Components
 import { YaPlacementsComponent } from './ya-placements.component';
+import { MaterialModule } from './../../shared/modules/material/material.module';
 
 // YA Placements Form Routes
 const ROUTES: Route[] = [
@@ -21,6 +22,7 @@ const ROUTES: Route[] = [
     FormsModule,
     CommonModule,
     BaseFormModule,
+    MaterialModule,
     ReactiveFormsModule,
     RouterModule.forChild(ROUTES)
   ],
