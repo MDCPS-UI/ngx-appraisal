@@ -7,5 +7,5 @@ export interface AjaxRequest {
     url?: string;
     headers?: any;
     method?: string;
-    options?: any;
+    options?: any;      
 }

@@ -19,7 +19,7 @@ export const getInsertDmgReqPayload: Function =
     // commitDt: "/Date(1530566560000-0500)/",
     progress: opts.dmgInfo.progress,
     id: opts.dmgInfo.id,
-    appraisalId: +(opts.dmgInfo.id || ''),
+    appraisalId: +(opts.dmgInfo.appraisalId || ''),
     completedBy: opts.emailId,
     youthName: opts.data.youthName,
     age: opts.data.age,

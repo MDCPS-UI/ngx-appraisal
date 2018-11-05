@@ -63,7 +63,7 @@ export class YaPlacementsComponent implements OnInit {
   /**
    * @public
    */
-  public onAddContact() {
+  public onAddContact(e: MouseEvent) {
     (<FormArray>this.placementsForm.get('maintainContact')).push(
       new FormGroup({
         name: new FormControl('', []),
@@ -77,7 +77,10 @@ export class YaPlacementsComponent implements OnInit {
   /**
    * @public
    */
-  public onDeleteContact(index) {
+  public onDeleteContact(index, e: MouseEvent) {
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    }
     (<FormArray>this.placementsForm.get('maintainContact')).removeAt(index);
   }
 
