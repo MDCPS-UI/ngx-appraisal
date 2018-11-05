@@ -41,11 +41,6 @@ export class BaseFormComponent implements OnInit {
   /**
    * @public
    */
-  public navEvent: MdcpsNavigationEvent;
-
-  /**
-   * @public
-   */
   @Output()
   public next: EventEmitter<BaseFormEvent> = new EventEmitter<BaseFormEvent>();
 
@@ -61,14 +56,14 @@ export class BaseFormComponent implements OnInit {
   constructor(
     private router: Router,
     private modalService: NgbModal,
-    private profileService: ProfileService) {
-    this.subscribeToNavigationReq();
-  }
+    private profileService: ProfileService) { }
 
   /**
    * @public
    */
-  public ngOnInit(): void { }
+  public ngOnInit(): void {
+    this.subscribeToNavigationReq();
+  }
 
   /**
    * @public
@@ -99,15 +94,7 @@ export class BaseFormComponent implements OnInit {
   public subscribeToNavigationReq(): void {
     this.profileService.getNavigation()
       .subscribe((config: MdcpsNavigationEvent) => {
-        this.navEvent = config;
-
-        // in case if the form is dirty, prompt
-        // user to save or discard it.
-        if (this.baseFormGroup && this.baseFormGroup.dirty) {
-          this.openVerticallyCentered(this.content);
-        } else {
-          this.proceedWithNavigation(config);
-        }
+        this.proceedWithNavigation(config);
       });
   }
 
@@ -115,37 +102,15 @@ export class BaseFormComponent implements OnInit {
    * @public
    */
   public proceedWithNavigation(config?: MdcpsNavigationEvent): void {
-    config = config || this.navEvent;
-
     // construct the navigation url
     const url: string = ((config.routePrefix || '')
       + config.navigationUrl + (config.routeSuffix || ''));
 
     // navigate to the requested route
     this.baseFormGroup.reset();
-    this.router.navigate([url], {queryParamsHandling: 'merge', preserveQueryParams: true});
-  }
-
-  /**
-   * @public
-   */
-  public openVerticallyCentered(content: any) {
-    this.modalService.open(content, {
-      centered: true,
-      windowClass: 'mdcps-modal'
+    this.router.navigate([url], {
+      queryParamsHandling: 'merge',
+      preserveQueryParams: true
     });
-  }
-
-  /**
-   * @public
-   */
-  public onAction(dismiss: Function, action: string): void {
-    if (action == 'save') {
-      dismiss('save');
-      this.onNext();
-    } else if (action == 'discard') {
-      dismiss('discard');
-      this.proceedWithNavigation();
-    }
   }
 }
