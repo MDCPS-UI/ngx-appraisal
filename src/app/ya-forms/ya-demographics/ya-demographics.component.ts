@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import { forkJoin } from "rxjs/observable/forkJoin";
+import { getInsertDmgReqPayload } from './ya-demographics';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
@@ -7,7 +8,6 @@ import { ProfileService } from './../../shared/services/profile/profile.service'
 import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
 import { YA_DG_NAVG_LIST, YA_DG_GENDER_LIST, DMG_FIELDS } from './ya-demographics.constants';
 import { ActiveModelService } from '../../shared/services/active-model/active-model.service';
-import { getInsertDmgReqPayload } from './ya-demographics';
 
 @Component({
   selector: 'mdcps-ya-demographics',
