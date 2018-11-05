@@ -1,299 +1,342 @@
 <mdcps-base-form [baseFormGroup]="parentingForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)"
   [formGroup]="parentingForm">
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Are currently pregnant or gotten someone pregnant?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="pregnancyResponsible"> &nbsp;&nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="pregnancyResponsible"> &nbsp;&nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6">
-      <label for="pregnantParenting.preNatalCare">
-        If yes, Are you receiving pre-natal care?</label>
-      <input type="tel" class="form-control" id="pregnantParenting.preNatalCare" formControlName="preNatalCare" placeholder="Prenatal Care?">
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Are you a parent?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="parent"> &nbsp;&nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="parent"> &nbsp;&nbsp;No
-          </label>
+
+  <div class="mdcps-parenting-container" *ngIf="parentingForm">
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">
+          Are you currently pregnant or gotten someone pregnant?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="isPregnant">
+              &nbsp;&nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="isPregnant">
+              &nbsp;&nbsp;No
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-12 col-md-6">
-      <label for="pregnantParenting.myChildren">
-        If yes, List names/ages of child(ren)</label>
-      <textarea type="text" class="form-control" rows="3" id="pregnantparenting.nameAgesOfChildren" formControlName="nameAgesOfChildren"
-        placeholder="List Name/Ages"></textarea>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Do they live with you?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="childrenLiveWithYou"> &nbsp;&nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="childrenLiveWithYou"> &nbsp;&nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12">
-      <label class="col-form-label">
-        If yes, Do you have legal custody?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="legalCustody"> &nbsp;&nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="legalCustody"> &nbsp;&nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6">
-      <label for="pregnantParenting.preNatalCare">
-        If no, Explain</label>
-      <textarea type="tel" class="form-control" rows="3" id="pregnantParenting.noLegalCustody" formControlName="noLegalCustody"
-        placeholder="Explain"></textarea>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Have you had to miss school because of parenting/pregnancy responsibilities?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="missSchoolBecauseofPregnant"> &nbsp;&nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="missSchoolBecauseofPregnant"> &nbsp;&nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
     </div>
     <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        As a parent, have you had a MDCPS investigation done on you? </label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="MDCPSInvestigationDone"> &nbsp;&nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="MDCPSInvestigationDone"> &nbsp;&nbsp;No
-          </label>
-        </div>
+      <div class="col-12 col-md-6">
+        <label for="pregnantParenting.preNatalCare">
+          If yes, Are you receiving pre-natal care?</label>
+        <input type="tel" class="form-control" id="pregnantParenting.preNatalCare" formControlName="isExpectingChild"
+          placeholder="Prenatal Care?">
       </div>
     </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Does your child have any medical issues?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="medicalIssues"> &nbsp;&nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="medicalIssues"> &nbsp;&nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6">
-      <label for="pregnantParenting.explainMedicalIssues">
-        If yes, Explain</label>
-      <textarea type="text" class="form-control" rows="3" id="pregnantparenting.explainMedicalIssues" formControlName="explainMedicalIssues"
-        placeholder="Explain"></textarea>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Are you currently receiving child support for your child/children?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="receivingChildSupport"> &nbsp;&nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="receivingChildSupport"> &nbsp;&nbsp;No
-          </label>
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">
+          Are you a parent?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="isParent"> &nbsp;&nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="isParent"> &nbsp;&nbsp;No
+            </label>
+          </div>
         </div>
       </div>
-    </div>
     </div>
     <div class="row">
-    <div class="col-12 col-md-6 pt-2">
-      <label for="pregnantParenting.explainMedicalIssues">
-        If yes, Enter support amount</label>
-      <input type="number" class="form-control w-75" id="pregnantparenting.receivingChildSupportAmount" formControlName="childSupportAmount"
-        placeholder="Amount">
-    </div>
+      <div class="col-12 col-md-6">
+        <label for="pregnantParenting.myChildren">
+          If yes, List names/ages of child(ren)</label>
+        <textarea type="text" class="form-control" rows="3" id="pregnantparenting.nameAgesOfChildren" formControlName="childNames"
+          placeholder="List Name/Ages"></textarea>
+      </div>
     </div>
     <div class="row">
-    <div class="col-12 col-md-6 pt-2">
-      <label for="pregnantParenting.explainMedicalIssues">
-        If no, Reason</label>
-      <textarea type="text" class="form-control rows-4" id="pregnantparenting.noReceivingChildSupport" formControlName="childSupportAmount"
-        placeholder="Why no child support"></textarea>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Are you currently paying child support for your child(ren)?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="payingChildSupport"> &nbsp;&nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="payingChildSupport"> &nbsp;&nbsp;No
-          </label>
+      <div class="col-12">
+        <label class="col-form-label">
+          Do they live with you?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="childrenLiveWithYou">
+              &nbsp;&nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="childrenLiveWithYou">
+              &nbsp;&nbsp;No
+            </label>
+          </div>
         </div>
       </div>
-    </div>
     </div>
     <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Is the other parent involved with the child(ren)?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="otherParentInvolved"> &nbsp;&nbsp;Yes
-          </label>
+      <div class="col-12">
+        <label class="col-form-label">
+          If yes, Do you have legal custody?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="iHaveLegalCustody">
+              &nbsp;&nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="iHaveLegalCustody">
+              &nbsp;&nbsp;No
+            </label>
+          </div>
         </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="otherParentInvolved"> &nbsp;&nbsp;No
-          </label>
+      </div>
+      <div class="col-12 col-md-6">
+        <label for="pregnantParenting.preNatalCare">
+          If no, Explain</label>
+        <textarea type="tel" class="form-control" rows="3" id="pregnantParenting.noLegalCustody" formControlName="noLegalCustodyExplain"
+          placeholder="Explain"></textarea>
+      </div>
+    </div>
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">
+          Have you had to miss school because of parenting/pregnancy responsibilities?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="missSchoolBecauseParenting">
+              &nbsp;&nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="missSchoolBecauseParenting">
+              &nbsp;&nbsp;No
+            </label>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6 pt-2">
-      <label for="pregnantParenting.explainMedicalIssues">
-        If no, How</label>
-      <textarea type="text" class="form-control rows-4" id="pregnantparenting.noChildSupport" formControlName="howOtherParentInvolved"
-        placeholder="Why not involved"></textarea>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <label class="col-form-label">
-        Is your child/children currently enrolled in daycare, pre-school or elementary school?</label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="currentyEnrolledInSchool"> &nbsp;&nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="currentyEnrolledInSchool"> &nbsp;&nbsp;No
-          </label>
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">
+          As a parent, have you had a MDCPS investigation done on you? </label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="hasHadInvestigation">
+              &nbsp;&nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="hasHadInvestigation">
+              &nbsp;&nbsp;No
+            </label>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">
-        If no, Is your child(ren) regularly cared for by another adult? </label>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="regularlyCaredFor"> &nbsp;&nbsp;Yes
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="regularlyCaredFor"> &nbsp;&nbsp;No
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- form-row -->
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <label class="col-form-label">
-        How do you pay for childcare services?</label>
-      <div class="form-group">
-        <div class="form-check">
-          <label class="form-check-label ">
-            <input type="checkbox" class="form-check-input" value="01" formControlName="childcareServicesPayMethod"> &nbsp; &nbsp;Childcare Voucher
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="02" formControlName="childcareServicesPayMethod"> &nbsp; &nbsp;With your own funds
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label ">
-            <input type="checkbox" class="form-check-input" value="03" formControlName="childcareServicesPayMethod"> &nbsp; &nbsp;Child Support
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="04" formControlName="childcareServicesPayMethod"> &nbsp; &nbsp;Assistance from an outside source
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label ">
-            <input type="checkbox" class="form-check-input" value="05" formControlName="childcareServicesPayMethod"> &nbsp; &nbsp;N/A
-          </label>
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">
+          Does your child have any medical issues?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="childrenHaveMedIssues">
+              &nbsp;&nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="childrenHaveMedIssues">
+              &nbsp;&nbsp;No
+            </label>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6 pt-2 pt-md-0">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <label for="pregnantParenting.explainMedicalIssues">
+          If yes, Explain</label>
+        <textarea type="text" class="form-control" rows="3" id="pregnantparenting.explainMedicalIssues" formControlName="childrenMedIssuesExplain"
+          placeholder="Explain"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">
+          Are you currently receiving child support for your child/children?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="receivingChildSupport">
+              &nbsp;&nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="receivingChildSupport">
+              &nbsp;&nbsp;No
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 pt-2">
+        <label for="pregnantParenting.explainMedicalIssues">
+          If yes, Enter support amount</label>
+        <input type="number" class="form-control w-75" id="pregnantparenting.receivingChildSupportAmount"
+          formControlName="childSupportAmount" placeholder="Amount">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 pt-2">
+        <label for="pregnantParenting.explainMedicalIssues">
+          If no, Reason</label>
+        <textarea type="text" class="form-control rows-4" id="pregnantparenting.noReceivingChildSupport"
+          formControlName="noChildSupportExplain" placeholder="Why no child support"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">
+          Are you currently paying child support for your child(ren)?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="payingChildSupport">
+              &nbsp;&nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="payingChildSupport">
+              &nbsp;&nbsp;No
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">
+          Is the other parent involved with the child(ren)?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="otherParentInvolved">
+              &nbsp;&nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="otherParentInvolved">
+              &nbsp;&nbsp;No
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 pt-2">
+        <label for="pregnantParenting.explainMedicalIssues">
+          If no, How</label>
+        <textarea type="text" class="form-control rows-4" id="pregnantparenting.noChildSupport" formControlName="otherParentInvolvedExplain"
+          placeholder="Why not involved"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">
+          Is your child/children currently enrolled in daycare, pre-school or elementary school?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="childrenInDaycare">
+              &nbsp;&nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="childrenInDaycare">
+              &nbsp;&nbsp;No
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">
+          If no, Is your child(ren) regularly cared for by another adult? </label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="childrenRegularlyCaredFor">
+              &nbsp;&nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="childrenRegularlyCaredFor">
+              &nbsp;&nbsp;No
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- form-row -->
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <label class="col-form-label">
+          How do you pay for childcare services?</label>
+        <div class="form-group">
+          <div class="form-check">
+            <label class="form-check-label ">
+              <input type="checkbox" class="form-check-input" value="01" formControlName="payVoucher">
+              &nbsp; &nbsp;Childcare Voucher
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="02" formControlName="payOwnFunds">
+              &nbsp; &nbsp;With your own funds
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label ">
+              <input type="checkbox" class="form-check-input" value="03" formControlName="payChildSupport">
+              &nbsp; &nbsp;Child Support
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="04" formControlName="payOutsideSource">
+              &nbsp; &nbsp;Assistance from an outside source
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label ">
+              <input type="checkbox" class="form-check-input" value="05" formControlName="payNA">
+              &nbsp; &nbsp;N/A
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 pt-2 pt-md-0">
+      </div>
     </div>
   </div>
   <!-- form-row -->

@@ -94,8 +94,8 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
     // }
     
     event.value['appraisalId'] = 66;
-    event.value['completeDt'] = "/Date(1530566560000-0500)/";
-    event.value['commitDt'] = "/Date(1530566560000-0500)/";
+    //event.form.value['completeDt'] = "/Date(1530566560000-0500)/";
+    //event.form.value['commitDt'] = "/Date(1530566560000-0500)/";
     event.value['progress'] = 0;
     event.value['id'] = 12;
     event.value['completedBy'] = "Trisha.Kelly@mdcps.ms.gov";
@@ -132,7 +132,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
    */
   private _saveInfo(data: any): void {
   
-    this.appraisal.init(this.appraisalId, 'saveDmgInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId,'saveDmgInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

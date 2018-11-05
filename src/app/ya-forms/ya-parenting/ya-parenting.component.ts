@@ -35,25 +35,30 @@ export class YaParentingComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.parentingForm = this.fb.group({
-      pregnancyResponsible: new FormControl('', []),
-      preNatalCare: new FormControl('', []),
-      parent: new FormControl('', []),
-      nameAgesOfChildren: new FormControl('', []),
+      isPregnant: new FormControl('', []),
+      isExpectingChild: new FormControl('', []),
+      isParent: new FormControl('', []),
+      childNames: new FormControl('', []),
       childrenLiveWithYou: new FormControl('', []),
-      legalCustody: new FormControl('', []),
-      noLegalCustody: new FormControl('', []),
-      missSchoolBecauseofPregnant: new FormControl('', []),
-      MDCPSInvestigationDone: new FormControl('', []),
-      medicalIssues: new FormControl('', []),
-      explainMedicalIssues: new FormControl('', []),
+      iHaveLegalCustody: new FormControl('', []),
+      noLegalCustodyExplain: new FormControl('', []),
+      missSchoolBecauseParenting: new FormControl('', []),
+      hasHadInvestigation: new FormControl('', []),
+      childrenHaveMedIssues: new FormControl('', []),
+      childrenMedIssuesExplain: new FormControl('', []),
       receivingChildSupport: new FormControl('', []),
       childSupportAmount: new FormControl('', []),
+      noChildSupportExplain: new FormControl('', []),
       payingChildSupport: new FormControl('', []),
       otherParentInvolved: new FormControl('', []),
-      howOtherParentInvolved: new FormControl('', []),
-      currentyEnrolledInSchool: new FormControl('', []),
-      regularlyCaredFor: new FormControl('', []),
-      childcareServicesPayMethod: new FormControl('', [])
+      otherParentInvolvedExplain: new FormControl('', []),
+      childrenInDaycare: new FormControl('', []),
+      childrenRegularlyCaredFor: new FormControl('', []),
+      payVoucher: new FormControl('', []),
+      payOwnFunds: new FormControl('', []),
+      payChildSupport: new FormControl('', []),
+      payOutsideSource: new FormControl('', []),
+      payNA: new FormControl('', [])
     });
   }
 
