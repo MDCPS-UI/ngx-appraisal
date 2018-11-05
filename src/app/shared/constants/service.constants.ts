@@ -7,6 +7,7 @@ const __local_switch__: any = {
     getDmgInfo: true,
     saveDmgInfo: true,
     getCounties: true,
+    getAllWorkers: true,
     getNavWorkers: true,
     getAllChildren: true,
     createAppraisal: true

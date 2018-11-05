@@ -7,6 +7,7 @@ import { ProfileService } from './../../shared/services/profile/profile.service'
 import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
 import { YA_DG_NAVG_LIST, YA_DG_GENDER_LIST, DMG_FIELDS } from './ya-demographics.constants';
 import { ActiveModelService } from '../../shared/services/active-model/active-model.service';
+import { getInsertDmgReqPayload } from './ya-demographics';
 
 @Component({
   selector: 'mdcps-ya-demographics',
@@ -92,46 +93,18 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
     // if (event.form && event.form.valid) {
     //   console.log(event.form.value);
     // }
-    
-    event.value['appraisalId'] = 66;
-    event.value['completeDt'] = "/Date(1530566560000-0500)/";
-    event.value['commitDt'] = "/Date(1530566560000-0500)/";
-    event.value['progress'] = 0;
-    event.value['id'] = 12;
-    event.value['completedBy'] = "Trisha.Kelly@mdcps.ms.gov";
-    event.value['dob'] = "1995-09-30"
-    event.value['age'] = 21
-    event.value['goals'] = [];
-    event.value['concerns'] = [];
-    event.value['addressList'] = [];
-    event.value['youthName'] = "Chester Bradshaw";
-    event.value['permPlan'] = "Reunif W/aPrim Caretkr Parents";
-    event.value['race'] = "BLACK";
-    event.value['gender'] = "M";
-    event.value['custodyStatus'] = false;
-    event.value['dischargeDate'] =  "2016-09-30";
-    event.value['navigator'] =  {
-      "email": "Eunice.Marsaw@mdcps.ms.gov",
-      "firstName": "Eunice",
-      "id": 1,
-      "isTransitionNav": false,
-      "lastName": "Marsaw",
-      "macwisId": "000000019",
-      "phone": "(601) 443-1046",
-      "workerName": "Eunice Marsaw"
-   };
-    
-
-    this._saveInfo(event.value);
+    this._saveInfo(getInsertDmgReqPayload({
+      data: event.value,
+      dmgInfo: this.responses['dmg'],
+      emailId: this.util.getQueryStringValue('uname')
+    }));
     this.util.navigate('education');
-    console.log(event.value);
   }
 
   /**
    * @private
    */
   private _saveInfo(data: any): void {
-  
     this.appraisal.init(this.appraisalId, 'saveDmgInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
