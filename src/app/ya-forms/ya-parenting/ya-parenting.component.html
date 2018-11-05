@@ -23,11 +23,23 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12 col-md-6">
+      <div class="col-12">
         <label for="pregnantParenting.preNatalCare">
           If yes, Are you receiving pre-natal care?</label>
-        <input type="tel" class="form-control" id="pregnantParenting.preNatalCare" formControlName="isExpectingChild"
-          placeholder="Prenatal Care?">
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" value="yes" formControlName="isReceivingPrenatalCare">
+                &nbsp;&nbsp;Yes
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" value="no" formControlName="isReceivingPrenatalCare">
+                &nbsp;&nbsp;No
+              </label>
+            </div>
+          </div>
       </div>
     </div>
     <!-- form-row -->
@@ -53,7 +65,7 @@
       <div class="col-12 col-md-6">
         <label for="pregnantParenting.myChildren">
           If yes, List names/ages of child(ren)</label>
-        <textarea type="text" class="form-control" rows="3" id="pregnantparenting.nameAgesOfChildren" formControlName="childNames"
+        <textarea type="text" class="form-control" rows="3" id="pregnantparenting.nameAgesOfChildren" formControlName="childNamesAndAges"
           placeholder="List Name/Ages"></textarea>
       </div>
     </div>
@@ -171,6 +183,26 @@
           If yes, Explain</label>
         <textarea type="text" class="form-control" rows="3" id="pregnantparenting.explainMedicalIssues" formControlName="childrenMedIssuesExplain"
           placeholder="Explain"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <label class="col-form-label">
+          Do they have medical insurance?</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="yes" formControlName="haveMedicalInsurance">
+              &nbsp;&nbsp;Yes
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" value="no" formControlName="haveMedicalInsurance">
+              &nbsp;&nbsp;No
+            </label>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">

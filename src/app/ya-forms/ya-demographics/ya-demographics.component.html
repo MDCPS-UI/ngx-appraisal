@@ -175,14 +175,14 @@
     <div class="row">
       <div class="col-12 col-md-6">
         <label for="demographics_COR">COR</label>
-        <select class="custom-select form-control" formControlName="corName" [compareWith]="compare">
+        <select class="custom-select form-control" formControlName="cor" [compareWith]="compare">
           <option [ngValue]="''">Select COR</option>
           <option *ngFor="let r of responses?.counties" [ngValue]="r">{{r.Name || r.name}}</option>
         </select>
       </div>
       <div class="col-12 col-md-6 pt-2 pt-md-0">
         <label for="demographics.COS">COS</label>
-        <select class="custom-select form-control" formControlName="cosName" [compareWith]="compare">
+        <select class="custom-select form-control" formControlName="cos" [compareWith]="compare">
           <option [ngValue]="''">Select COS</option>
           <option *ngFor="let s of responses?.counties" [ngValue]="s">{{s.Name || s.name}}</option>
         </select>
@@ -258,7 +258,7 @@
       </div>
       <div class="col-12 col-md-6 pt-2 pt-md-0">
         <label for="transitionNavigator">Assigned Transition Navigator</label>
-        <select class="custom-select form-control" formControlName="navigatorInfo" [compareWith]="compare">
+        <select class="custom-select form-control" formControlName="navigator" [compareWith]="compare">
           <option [ngValue]="''">Choose Transition Navigator</option>
           <option *ngFor="let worker of responses?.navWorkers" [ngValue]="worker">{{worker.firstName + ' ' + worker.lastName}}</option>
         </select>

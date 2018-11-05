@@ -36,9 +36,9 @@ export class YaParentingComponent implements OnInit {
   public ngOnInit(): void {
     this.parentingForm = this.fb.group({
       isPregnant: new FormControl('', []),
-      isExpectingChild: new FormControl('', []),
+      isReceivingPrenatalCare: new FormControl('', []),
       isParent: new FormControl('', []),
-      childNames: new FormControl('', []),
+      childNamesAndAges: new FormControl('', []),
       childrenLiveWithYou: new FormControl('', []),
       iHaveLegalCustody: new FormControl('', []),
       noLegalCustodyExplain: new FormControl('', []),
@@ -46,6 +46,7 @@ export class YaParentingComponent implements OnInit {
       hasHadInvestigation: new FormControl('', []),
       childrenHaveMedIssues: new FormControl('', []),
       childrenMedIssuesExplain: new FormControl('', []),
+      haveMedicalInsurance: new FormControl('', []),
       receivingChildSupport: new FormControl('', []),
       childSupportAmount: new FormControl('', []),
       noChildSupportExplain: new FormControl('', []),

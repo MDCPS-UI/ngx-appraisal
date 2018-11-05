@@ -6,68 +6,70 @@
 
 
 
-export const GET_DEMOGRAPHIC_INFO: any = {
-    "completeDt": "/Date(1530566560000-0500)/",
-    "commitDt": "/Date(1530566560000-0500)/",
-    "progress": 0,
-    "id": 12,
-    "appraisalId": 11,
-    "completedBy": "Trisha.Kelly@mdcps.ms.gov",
-    "youthName": "Joe Jonas",
-    "age": 15,
-    "dob": "1995-09-30",
-    "race": "BLACK",
-    "gender": "M",
-    "phone": "6014454321",
-    "email": "none@noemail.com",
-    "custodyStatus": false,
-    "dischargeDate": "2016-09-30",
-    "isLGBTQ": "No",
-    "isLesbian": false,
-    "isGay": true,
-    "isBisexual": false,
-    "isTransgender": false,
-    "isQuestioning": true,
-    "isOther": false,
-    "lgbtqOtherType": "",
-    "corName": "Quitman",   
-    "cosName": "Yalobusha",
-    "hasHealthInsurance": false,
-    "hasMedicaid": true,
-    "hasLanguageBarriers": false,
-    "languageBarriersText": "",
-    "permPlan": "Reunif W/aPrim Caretkr Parents",
-    "corWorker":    {
-       "email": "Eunice.Marsaw@mdcps.ms.gov",
-       "firstName": "Eunice",
-       "id": 1,
-       "isTransitionNav": false,
-       "lastName": "Marsaw",
-       "macwisId": "000000019",
-       "phone": "(601) 443-1046",
-       "workerName": "Eunice Marsaw"
+export const GET_DEMOGRAPHIC_INFO: any = {  
+    "progress":0,
+    "id":34,
+    "appraisalId":67,
+    "completedBy":"Trisha.Kelly@mdcps.ms.gov",
+    "youthName":"Desirae           Martin                ",
+    "age":18,
+    "dob":"03/19/2000",
+    "race":null,
+    "gender":"F",
+    "phone":"(601)-371-1809",
+    "email":"test@test.com",
+    "custodyStatus":false,
+    "dischargeDate":"5/29/2018 ",
+    "isLGBTQ":"yes",
+    "isLesbian":false,
+    "isGay":false,
+    "isBisexual":false,
+    "isTransgender":false,
+    "isQuestioning":false,
+    "isOther":true,
+    "lgbtqOtherType":"string",
+    "cor":{  
+       "id":91,
+       "countyCode":"820",
+       "name":"Yazoo"
     },
-    "navigator":    {
-       "email": "Eunice.Marsaw@mdcps.ms.gov",
-       "firstName": "Eunice",
-       "id": 1,
-       "isTransitionNav": false,
-       "lastName": "Marsaw",
-       "macwisId": "000000019",
-       "phone": "(601) 443-1046",
-       "workerName": "Eunice Marsaw"
+    "cos":{  
+       "id":7,
+       "countyCode":"250",
+       "name":"Hinds"
     },
-    "addressList": [
-        {
-            "id":	"integer($int32)",
-            "line1": "string",
-            "line2": "string",
-            "city":	"string",
-            "state": "string",
-            "zip":	"string",
-            "county": "string"
-        }
+    "hasHealthInsurance":true,
+    "hasMedicaid":false,
+    "hasLanguageBarriers":true,
+    "languageBarriersText":"string",
+    "permPlan":"Custody W/ a Relative         ",
+    "corWorker":{  
+       "id":11,
+       "macwisId":"006227082",
+       "firstName":"Kimberly",
+       "lastName":"Simpson",
+       "workerName":"Kimberly Simpson",
+       "email":"Kimberly.Simpson@mdcps.ms.gov",
+       "phone":"(601) 443-7952",
+       "isTransitionNav":false
+    },
+    "navigator":{  
+       "id":123,
+       "macwisId":"007018800",
+       "firstName":"Sharon",
+       "lastName":"Cable",
+       "workerName":"Sharon Cable",
+       "email":"Sharon.Cable@mdcps.ms.gov",
+       "phone":"(601) 757-7395",
+       "isTransitionNav":true
+    },
+    "addressList":[  
+ 
     ],
-    "concerns": [],   
-    "goals": []
+    "concerns":[  
+ 
+    ],
+    "goals":[  
+ 
+    ]
  }
