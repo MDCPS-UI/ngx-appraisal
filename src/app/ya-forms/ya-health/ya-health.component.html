@@ -12,12 +12,12 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="tramaticEvent"> &nbsp;&nbsp;Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="hasTraumaticEvent"> &nbsp;&nbsp;Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="tramaticEvent"> &nbsp;&nbsp;No
+            <input type="radio" class="form-check-input" value="no" formControlName="hasTraumaticEvent"> &nbsp;&nbsp;No
           </label>
         </div>
       </div>
@@ -25,40 +25,40 @@
   </div>
   <!-- form-row -->
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12">
       <label for="health.plannedattendance" class="pr-2">
         Have you ever been the victim of any of the following types of abuse? </label>
       <br/>
       <div class="form-group">
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="physical" formControlName="abuseVictim"> &nbsp;&nbsp;Physical
+            <input type="checkbox" class="form-check-input" value="physical" formControlName="isVictimPhysical"> &nbsp;Physical
           </label>
         </div>
         <div class="form-check ">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="emotional" formControlName="abuseVictim"> &nbsp;&nbsp;Emotional
+            <input type="checkbox" class="form-check-input" value="emotional" formControlName="isVictimEmotional"> &nbsp;Emotional
           </label>
         </div>
         <div class="form-check ">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="sexual" formControlName="abuseVictim"> &nbsp;Sexual
+            <input type="checkbox" class="form-check-input" value="sexual" formControlName="isVictimSexual"> &nbsp;Sexual
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="neglect" formControlName="abuseVictim"> &nbsp;Neglect
+            <input type="checkbox" class="form-check-input" value="neglect" formControlName="isVictimNeglect"> &nbsp;Neglect
           </label>
         </div>
         <div class="form-check">
           <div class="row">
             <div class="col-2">
               <label class="form-check-label">
-                <input type="checkbox" class="form-check-input form-check-input-inline" value="other" formControlName="abuseVictim"> &nbsp;Other
+                <input type="checkbox" class="form-check-input form-check-input-inline" value="other" formControlName="isVictimOther"> &nbsp;Other
               </label>
             </div>
             <div class="col-4">
-              <input type="text" class="form-check-input" formControlName="abuseVictimOther">
+              <input type="text" class="form-check-input" formControlName="victimOtherText">
             </div>
           </div>
         </div>
@@ -76,19 +76,19 @@
   <div class="row">
     <div class="col-12 col-md-3">
       <label class="col-form-label" for="health.dental">Dental </label>
-      <input type="text" class="form-control" id="health.dental" placeholder="" formControlName="dental">
+      <input type="text" class="form-control" id="health.dental" placeholder="" formControlName="lastDentalExam">
     </div>
     <div class="col-12 col-md-3">
       <label class="col-form-label" for="health.medical">Medical </label>
-      <input type="text" class="form-control" id="health.medical" placeholder="" formControlName="medical">
+      <input type="text" class="form-control" id="health.medical" placeholder="" formControlName="lastMedicalExam">
     </div>
     <div class="col-12 col-md-3">
       <label class="col-form-label" for="health.vision">Vision </label>
-      <input type="text" class="form-control" id="health.vision" placeholder="" formControlName="vision">
+      <input type="text" class="form-control" id="health.vision" placeholder="" formControlName="lastVisionExam">
     </div>
     <div class="col-12 col-md-3">
       <label class="col-form-label" for="health.psycological">Psycological </label>
-      <input type="text" class="form-control" id="health.psycological" placeholder="" formControlName="psycological">
+      <input type="text" class="form-control" id="health.psycological" placeholder="" formControlName="lastPsychExam">
     </div>
   </div>
   <!-- form-row -->
@@ -100,12 +100,12 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="sexuallyActive"> &nbsp;&nbsp;Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="isSexuallyActive"> &nbsp;&nbsp;Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="sexuallyActive"> &nbsp;&nbsp;No
+            <input type="radio" class="form-check-input" value="no" formControlName="isSexuallyActive"> &nbsp;&nbsp;No
           </label>
         </div>
       </div>
@@ -120,12 +120,12 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="adultToTalkTo"> &nbsp;&nbsp;Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="hasAdult"> &nbsp;&nbsp;Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="adultToTalkTo"> &nbsp;&nbsp;No
+            <input type="radio" class="form-check-input" value="no" formControlName="hasAdult"> &nbsp;&nbsp;No
           </label>
         </div>
       </div>
@@ -140,12 +140,12 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="testedForHIV_AIDS"> &nbsp;&nbsp;Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="hasBeenTestedHIV"> &nbsp;&nbsp;Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="testedForHIV_AIDS"> &nbsp;&nbsp;No
+            <input type="radio" class="form-check-input" value="no" formControlName="hasBeenTestedHIV"> &nbsp;&nbsp;No
           </label>
         </div>
       </div>
@@ -157,7 +157,7 @@
       <div class="form-group">
         <label for="health.HIV_AIDSTestDate" class="col-form-label">HIV/AIDS Date</label>
         <!-- HIV/AIDS Date Block -->
-        <mdcps-date-picker [class]="'form-control form-control-sm datepicker w-50'" [controlName]="'HIV_AIDSTestDate'" [id]="'health.HIV_AIDSTestDate'"
+        <mdcps-date-picker [class]="'form-control form-control-sm datepicker w-50'" [controlName]="'lastHIVTestDate'" [id]="'health.HIV_AIDSTestDate'"
           [group]="healthForm">
         </mdcps-date-picker>
       </div>
@@ -169,7 +169,7 @@
       <div class="form-group">
         <label for="health.HIV_AIDSTestResults">
           Test Results?</label>
-        <textarea type="text" class="form-control rows-4" id="health.HIV_AIDSTestResults" formControlName="HIV_AIDSTestResults" placeholder="Test Results"></textarea>
+        <textarea type="text" class="form-control rows-4" id="health.HIV_AIDSTestResults" formControlName="hivTestResults" placeholder="Test Results"></textarea>
       </div>
     </div>
   </div>
@@ -182,12 +182,12 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="testedForSTD_STI"> &nbsp;&nbsp;Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="hasBeenTestedSTD"> &nbsp;&nbsp;Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="testedForSTD_STI"> &nbsp;&nbsp;No
+            <input type="radio" class="form-check-input" value="no" formControlName="hasBeenTestedSTD"> &nbsp;&nbsp;No
           </label>
         </div>
       </div>
@@ -200,7 +200,7 @@
 
       <!-- STD/STI Date Block -->
       <div class="form-group">
-        <mdcps-date-picker [class]="'form-control form-control-sm datepicker w-50'" [controlName]="'STD_STITestDate'" [id]="'health.STD_STITestDate'"
+        <mdcps-date-picker [class]="'form-control form-control-sm datepicker w-50'" [controlName]="'lastSTDTestDate'" [id]="'health.STD_STITestDate'"
           [group]="healthForm">
         </mdcps-date-picker>
       </div>
@@ -212,7 +212,7 @@
       <div class="form-group">
         <label for="health.STD_STITestResults">
           Test Results?</label>
-        <textarea type="text" class="form-control rows-4" id="health.STD_STITestResults" formControlName="STD_STITestResults" placeholder="Test Results"></textarea>
+        <textarea type="text" class="form-control rows-4" id="health.STD_STITestResults" formControlName="stdTestResults" placeholder="Test Results"></textarea>
       </div>
     </div>
   </div>
@@ -226,27 +226,27 @@
       <div class="form-group">
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="mentalhealth" formControlName="receivingServices"> &nbsp;Mental Health
+            <input type="checkbox" class="form-check-input" value="mentalhealth" formControlName="isMentalHealth"> &nbsp;Mental Health
           </label>
-          d </div>
+         </div>
         <div class="form-check ">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="substanceAbuse" formControlName="receivingServices"> &nbsp;&nbsp;Substance Abuse
+            <input type="checkbox" class="form-check-input" value="substanceAbuse" formControlName="isSubstanceAbuse"> &nbsp;Substance Abuse
           </label>
         </div>
         <div class="form-check ">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="learningdisability" formControlName="receivingServices"> &nbsp;&nbsp;Learning Disability
+            <input type="checkbox" class="form-check-input" value="learningdisability" formControlName="isLearningDisability"> &nbsp;Learning Disability
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="developmentaldisability" formControlName="receivingServices"> &nbsp;Developmental Disability
+            <input type="checkbox" class="form-check-input" value="developmentaldisability" formControlName="isDevelopDisability"> &nbsp;Developmental Disability
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="physicaldisability" formControlName="receivingServices"> &nbsp;Physical Disability
+            <input type="checkbox" class="form-check-input" value="physicaldisability" formControlName="isPhysicalDisability"> &nbsp;Physical Disability
           </label>
         </div>
       </div>
@@ -261,12 +261,12 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="takingMedications"> &nbsp;&nbsp;Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="isTakingMedication"> &nbsp;&nbsp;Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="takingMedications"> &nbsp;&nbsp;No
+            <input type="radio" class="form-check-input" value="no" formControlName="isTakingMedication"> &nbsp;&nbsp;No
           </label>
         </div>
       </div>
@@ -277,24 +277,24 @@
     <div class="col-12 col-md-6">
       <label for="health.STD_STITestResults">
         If yes, please list</label>
-      <textarea type="text" class="form-control rows-4" id="health.listMedications" formControlName="listMedications" placeholder="List Medications"></textarea>
+      <textarea type="text" class="form-control rows-4" id="health.listMedications" formControlName="currentMedicationText" placeholder="List Medications"></textarea>
     </div>
   </div>
   <!-- form-row -->
   <div class="row">
-    <div class="col-12 col-md-4">
+    <div class="col-12">
       <label class="col-form-label">
         Are your medications administered to you?
       </label>
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="medicationsAdministered"> &nbsp;&nbsp;Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="areMedicationsAdministered"> &nbsp;&nbsp;Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="medicationsAdministered"> &nbsp;&nbsp;No
+            <input type="radio" class="form-check-input" value="no" formControlName="areMedicationsAdministered"> &nbsp;&nbsp;No
           </label>
         </div>
       </div>
@@ -309,12 +309,12 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="yes" formControlName="trackMedicalAppts"> &nbsp;&nbsp;Yes
+            <input type="radio" class="form-check-input" value="yes" formControlName="keepTrackOfAppointments"> &nbsp;&nbsp;Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="no" formControlName="trackMedicalAppts"> &nbsp;&nbsp;No
+            <input type="radio" class="form-check-input" value="no" formControlName="keepTrackOfAppointments"> &nbsp;&nbsp;No
           </label>
         </div>
       </div>
