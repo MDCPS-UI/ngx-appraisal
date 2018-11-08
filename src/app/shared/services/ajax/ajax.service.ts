@@ -89,6 +89,6 @@ export class AjaxService {
    * @return {Observable<HttpEvent<T>>}
    */
   public request<T>(req: AjaxRequest): Observable<HttpEvent<T>> {
-    return this.http.request<T>(req.method, req.url, req.options);
+    return this.http.request<T>(req.method, req.url, req.options.body);
   }
 }

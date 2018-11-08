@@ -18,7 +18,7 @@ export const getInsertDmgReqPayload: Function =
     // completeDt: opts.dmgInfo.completeDt,
     // commitDt: opts.dmgInfo.commitDt,
     progress: opts.dmgInfo.progress,
-    id: opts.dmgInfo.id,
+    id: +(opts.dmgInfo.id),
     appraisalId: +(opts.dmgInfo.appraisalId || ''),
     completedBy: opts.emailId,
     youthName: opts.dmgInfo.youthName,

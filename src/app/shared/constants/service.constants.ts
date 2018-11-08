@@ -17,7 +17,7 @@ const __local_switch__: any = {
  * @constant
  */
 const __base__: string = 'http://10.15.66.88:5100/YTL.YTL.svc/JSON';
- //const __base__: string = 'http://10.15.66.88:11737/YIL.svc';
+// const __base__: string = 'http://10.15.66.88:5100/YTL/JSON';
 
 /**
  * @function
