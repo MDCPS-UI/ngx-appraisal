@@ -6,87 +6,87 @@ export const YA_SKILLS_LIST: any[] = [
         title: 'Please indicate which of the following skills apply?',
         skills: [
             {
-                optionName: 'emailSkills',
+                optionName: 'iCanUseEmailAccount',
                 label: 'I know how to use my email account',
                 value: '01'
             },
             {
-                optionName: 'cookingSkills',
+                optionName: 'iCanMakeMealsWithoutRecipe',
                 label: 'I can make meals without using a recipe',
                 value: '02'
             },
             {
-                optionName: 'laundrySkills',
+                optionName: 'iCanDoMyOwnLaundry',
                 label: 'I know how to do my own laundry',
                 value: '03'
             },
             {
-                optionName: 'medicalCareSkills',
+                optionName: 'iCanGetMedicalDentalCareWhenNeeded',
                 label: 'I can get medical and dental care when I need it',
                 value: '04'
             },
             {
-                optionName: 'bathingSkills',
+                optionName: 'iBatheDaily',
                 label: 'I bathe daily',
                 value: '05'
             },
             {
-                optionName: 'brushingSkills',
+                optionName: 'iBrushTeethDaily',
                 label: 'I brush my teeth daily',
                 value: '06'
             },
             {
-                optionName: 'protectionSkills',
+                optionName: 'iCanGetAwayFromHarmfulSituations',
                 label: 'I know how to get myself away from harmful situations',
                 value: '07'
             },
             {
-                optionName: 'speakingSkills',
+                optionName: 'iCanSpeakUpForMyself',
                 label: 'I can speak up for myself',
                 value: '08'
             },
             {
-                optionName: 'abusiveRelationSkills',
+                optionName: 'iKnowSignsOfAbusiveRelationship',
                 label: 'I know the signs of an abusive relationship',
                 value: '08'
             },
             {
-                optionName: 'angerManagementSkills',
+                optionName: 'iCanDealWithAnger',
                 label: 'I can deal with anger without hurting myself or others',
                 value: '09'
             },
             {
-                optionName: 'finacialSkills',
+                optionName: 'iCanBalanceBankAccount',
                 label: 'I know how to balance my bank account',
                 value: '10'
             },
             {
-                optionName: 'budgetSkills',
+                optionName: 'iCanDevelopABudget',
                 label: 'I know how to develop a budget',
                 value: '11'
             },
             {
-                optionName: 'resumeSkills',
+                optionName: 'iCanCreateAResume',
                 label: 'I know how to create a resume',
                 value: '12'
             },
             {
-                optionName: 'jobApplicationSkills',
+                optionName: 'iCanCompleteAJobApplication',
                 label: 'I can complete a job application',
                 value: '13'
             },
             {
-                optionName: 'jobInterviewSkills',
+                optionName: 'iKnowHowToPrepareForInterview',
                 label: 'I know how to prepare for a job interview',
                 value: '14'
             },
             {
-                optionName: 'visionSkills',
+                optionName: 'iCanDescribeVisionForMyself',
                 label: 'I can describe my vision for myself',
                 value: '15'
             },
             {
-                optionName: 'drivingSkills',
+                optionName: 'iKnowHowToDrive',
                 label: 'I know how to drive',
                 value: '16'
             }
@@ -96,37 +96,37 @@ export const YA_SKILLS_LIST: any[] = [
         title: 'Which of the following Independent Living Services have you received?',
         skills: [
             {
-                optionName: 'educationalSupport',
+                optionName: 'hasHadEducationalSupport',
                 label: 'Educational Support',
                 value: '01'
             },
             {
-                optionName: 'employmentServices',
+                optionName: 'hasHadEmploymentServices',
                 label: 'Employment Services',
                 value: '02'
             },
             {
-                optionName: 'healthCare',
+                optionName: 'hasHadHealthCare',
                 label: 'Health Care',
                 value: '03'
             },
             {
-                optionName: 'moneyManagement',
+                optionName: 'hasHadMoneyManagement',
                 label: 'Money Management',
                 value: '04'
             },
             {
-                optionName: 'housingServices',
+                optionName: 'hasHadHousing',
                 label: 'Housing',
                 value: '05'
             },
             {
-                optionName: 'afterCare',
+                optionName: 'hasHadAfterCare',
                 label: 'After Care',
                 value: '06'
             },
             {
-                optionName: 'etvServices',
+                optionName: 'hasHadETV',
                 label: 'ETV',
                 value: '07'
             }

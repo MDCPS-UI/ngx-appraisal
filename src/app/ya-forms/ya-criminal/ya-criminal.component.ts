@@ -41,17 +41,17 @@ export class YaCriminalComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.criminalForm = this.fb.group({
-      everArrested: new FormControl('', []),
-      everConvicted: new FormControl('', []),
-      warrantOut: new FormControl('', []),
-      onProbation: new FormControl('', []),
-      legalRepresentation: new FormControl('', []),
-      onParole: new FormControl('', []),
-      openCase: new FormControl('', []),
-      freeOnBond: new FormControl('', []),
-      gangRelated: new FormControl('', []),
-      gangRelatedYes: new FormControl('', []),
-      possessWeapon: new FormControl('', []),
+      hasBeenArrested: new FormControl('', []),
+      hasBeenConvicted: new FormControl('', []),
+      hasCurrentWarrant: new FormControl('', []),
+      isOnProbation: new FormControl('', []),
+      hasLegalRepresentation: new FormControl('', []),
+      isOnParole: new FormControl('', []),
+      hasOpenCase: new FormControl('', []),
+      isFreeOnBond: new FormControl('', []),
+      hasGangActivity: new FormControl('', []),
+      gangActivityText: new FormControl('', []),
+      possessWeapon: new FormControl('', [])
     });
   }
 

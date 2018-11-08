@@ -43,17 +43,17 @@ export class YaRelationshipsComponent implements OnInit {
   public ngOnInit(): void {
     this.relationshipForm = this.fb.group({
       abusivePartner: new FormGroup({
-        verbally: new FormControl(false, []),
-        mentally: new FormControl(false, []),
-        physically: new FormControl(false, [])
+        isPartnerAbusiveVerbal: new FormControl(false, []),
+        isPartnerAbusiveEmotional: new FormControl(false, []),
+        isPartnerAbusivePhysical: new FormControl(false, [])
       }),
-      inRelationship: new FormControl('', []),
-      afraidOfPartner: new FormControl('', []),
-      forcedToHaveSex: new FormControl('', []),
-      forcedSexualContact: new FormControl('', []),
-      violentRelationship: new FormControl('', []),
-      involvedInProstitution: new FormControl('', []),
-      compensationForSexualServices: new FormControl('', [])
+      isInRelationship: new FormControl('', []),
+      currentlyLeavingRelationship: new FormControl('', []),
+      forcedSexAgainstMe: new FormControl('', []),
+      forcedSexAgainstOther: new FormControl('', []),
+      isAfraidOfPartner: new FormControl('', []),
+      isCurrentProstitution: new FormControl('', []),
+      hasReceivedGoodsForSex: new FormControl('', [])
     })
   }
 

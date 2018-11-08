@@ -5,53 +5,53 @@
     items: [
         {
             desc: 'Apply for medicaid',
-            optionName: 'applyMedicaid',
-            optionReason: 'applyMedicaidOther'
+            optionName: 'medicaid',
+            optionReason: 'medicaidOtherText'
         },
         {
             desc: 'Locate Mental Health Services',
-            optionName: 'locateMentalHealth',
-            optionReason: 'locateMentalhealthOther'
+            optionName: 'mentalHealth',
+            optionReason: 'mentalHealthOtherText'
         },
         {
             desc: 'Enroll in parenting classes',
             optionName: 'parentingClasses',
-            optionReason: 'parentingClassesOther'
+            optionReason: 'parentingClassesOtherText'
         },
         {
             desc: 'Identify and secure transportation',
-            optionName: 'secureTransport',
-            optionReason: 'secureTransportOther'
+            optionName: 'transportation',
+            optionReason: 'transportationOtherText'
         },
         {
             desc: 'Apply for SNAP benefits',
-            optionName: 'snapBenefits',
-            optionReason: 'snapBenefitsOther'
+            optionName: 'snap',
+            optionReason: 'snapOtherText'
         },
         {
             desc: 'Apply for TANF Benefits',
-            optionName: 'tanfBenefits',
-            optionReason: 'tanfBenefitsOther'
+            optionName: 'tanf',
+            optionReason: 'tanfOtherText'
         },
         {
             desc: 'Apply for childcare voucher',
-            optionName: 'childcareVoucher',
-            optionReason: 'childcareVoucherOther'
+            optionName: 'childCareVoucher',
+            optionReason: 'childCareVoucherOtherText'
         },
         {
             desc: 'Locate Housing',
             optionName: 'locateHousing',
-            optionReason: 'locateHousingOther'
+            optionReason: 'locateHousingOtherText'
         },
         {
             desc: 'Schedule Counseling',
             optionName: 'scheduleCounseling',
-            optionReason: 'scheduleCounselingOther'
+            optionReason: 'scheduleCounselingOtherText'
         },
         {
             desc: 'Other',
             optionname: 'other',
-            optionReason: 'otherExplain'
+            optionReason: 'otherOtherText'
         }
     ],
     options: [
