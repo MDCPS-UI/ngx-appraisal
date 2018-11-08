@@ -1,4 +1,6 @@
 <mdcps-base-form [baseFormGroup]="healthForm" (next)="onNext($event)" [config]="config" (previous)="onPrevious($event)" [formGroup]="healthForm">
+
+  <div class="mdcps-health-container" *ngIf="healthForm">
   <div class="row">
     <div class="col-12 col-md-6">
       <label for="health.medicalIssues">Do you have any medical issues to address?</label>
@@ -319,5 +321,6 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </mdcps-base-form>
