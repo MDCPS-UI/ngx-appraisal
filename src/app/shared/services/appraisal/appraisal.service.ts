@@ -9,7 +9,7 @@ import { ActiveModelService } from '../active-model/active-model.service';
 
 // putting common headers outside the request
 const commonHeaders: any = {
-  'Content-Type': 'application/json'
+  'Content-Type': 'application/json',
 };
 
 // mapping for cached services
@@ -87,5 +87,35 @@ export class AppraisalService {
     }
     this.util.navigateIt('landing');
     return Observable.empty();
+  }
+
+  /**
+   * @public
+   */
+
+  public post(appraisalId: string, serviceName, paramsArr?: any[], req?: AjaxRequest): Observable<any> {
+
+
+    // if the data wasn't found in the cache,
+    // make a fresh call and cache it if opted in.
+    const config: any = serviceConstants[serviceName];
+    if (!config) { return Observable.empty(); }
+
+    req = req || {};
+    const url: string = (!config.isLocal)
+      ? this.util.format((config.url || req.url), paramsArr)
+      : config.localUrl;
+
+    const headers: any = _.extend({}, (config.headers || {}), commonHeaders);
+    const request: any =({
+      url: url,
+      headers: headers,
+      // body: JSON.stringify(req.body)
+      options: {
+       body: JSON.stringify(req.body)
+      }
+    });
+
+    return this.ajax.post(request)
   }
 }

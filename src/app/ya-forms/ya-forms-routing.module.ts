@@ -115,13 +115,13 @@ const ROUTES: Route[] = [
           formName: 'Personal'
         }
       },
-      {
-        path: 'actions',
-        loadChildren: './ya-actions/ya-actions.module#YaActionsModule',
-        data: {
-          formName: 'Goals and Actions'
-        }
-      },
+      // {
+      //   path: 'actions',
+      //   loadChildren: './ya-actions/ya-actions.module#YaActionsModule',
+      //   data: {
+      //     formName: 'Goals and Actions'
+      //   }
+      // },
       {
         path: 'documents',
         loadChildren: './ya-documents/ya-documents.module#YaDocumentsModule',

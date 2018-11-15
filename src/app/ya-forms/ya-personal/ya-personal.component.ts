@@ -42,23 +42,23 @@ export class YaPersonalComponent implements OnInit {
   public ngOnInit(): void {
     this.personalForm = this.fb.group({
       supportInNext6Months: new FormGroup({
-        education: new FormControl('', []),
-        employment: new FormControl('', []),
-        parenting: new FormControl('', []),
-        mentalHealth: new FormControl('', []),
-        transportation: new FormControl('', []),
-        medical: new FormControl('', []),
-        other: new FormControl('', []),
-        supportInNext6MonthsOther: new FormControl('', [])
+        isEducation: new FormControl('', []),
+        isEmployment: new FormControl('', []),
+        isParenting: new FormControl('', []),
+        isMentalHealth: new FormControl('', []),
+        isTransportation: new FormControl('', []),
+        isMedical: new FormControl('', []),
+        isOther: new FormControl('', []),
+        otherText: new FormControl('', [])
       }),
-      goalInNext6Months: new FormControl('', []),
+      oneGoalSixMonths: new FormControl('', []),
       currentChallenges: new FormControl('', []),
-      motivationForGoals: new FormControl('', []),
-      supportlookslike: new FormControl('', []),
-      haveTransportation: new FormControl('', []),
-      transportationType: new FormControl('', []),
+      whatMotivatesYou: new FormControl('', []),
+      supportLooksLike: new FormControl('', []),
+      hasTransportation: new FormControl('', []),
+      transportationKind: new FormControl('', []),
       transportationBarriers: new FormControl('', []),
-      transportationPlan: new FormControl('', [])
+      transportationPlans: new FormControl('', [])
     });
   }
 
@@ -69,7 +69,7 @@ export class YaPersonalComponent implements OnInit {
     this.config = {
       nextBtn: true,
       prevBtn: true,
-      nextBtnLabel: 'Goals and Actions',
+      nextBtnLabel: 'Received Documents',
       previousBtnLabel: 'Continuing Support/Services'
     };
   }
@@ -80,7 +80,7 @@ export class YaPersonalComponent implements OnInit {
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
-      this.util.navigate('/actions');
+      this.util.navigate('/documents');
       console.log(event.form.value);
     }
   }

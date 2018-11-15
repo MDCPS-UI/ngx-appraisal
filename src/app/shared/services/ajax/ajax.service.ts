@@ -66,7 +66,7 @@ export class AjaxService {
     };
 
     return this.http.post<T>(
-      request.url, request.body, httpOptions
+      request.url, request.options.body, httpOptions.headers
     );
   }
 

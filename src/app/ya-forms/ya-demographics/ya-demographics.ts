@@ -47,7 +47,7 @@ export const getInsertDmgReqPayload: Function =
     permPlan: opts.dmgInfo.permPlan,
     corWorker: opts.data.corWorker,
     navigator: opts.data.navigator,
-    addressList: opts.data.addressList,
+    addressList: opts.dmgInfo.addressList,
     concerns: [],
     goals: []
   };

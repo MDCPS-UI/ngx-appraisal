@@ -78,7 +78,7 @@ export class YaDocumentsComponent implements OnInit {
    * @param {event<any>}
    */
   public onPrevious(event: any): void {
-    this.util.navigate('/actions');
+    this.util.navigate('/personal');
   }
 
   /**
@@ -89,7 +89,7 @@ export class YaDocumentsComponent implements OnInit {
       nextBtn: true,
       prevBtn: true,
       nextBtnLabel: 'Review & Sign',
-      previousBtnLabel: 'Goals and Actions'
+      previousBtnLabel: 'Personal'
     };
   }
 

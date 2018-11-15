@@ -4,77 +4,77 @@
 export const YA_DOCS_LIST: any[] = [
     {
         'desc': 'His/her original Birth Certificate',
-        'optionName': 'birthCertificate',
-        'inputName': 'noBirthCertificate'
+        'optionName': 'hasBirthCert',
+        'inputName': 'birthCertText'
     },
     {
         'desc': 'His/her original Social Security Card',
-        'optionName': 'socialSecurity',
-        'inputName': 'noSocialSecurity'
+        'optionName': 'hasSSCard',
+        'inputName': 'ssCardText'
     },
     {
         'desc': 'Medicaid Card',
-        'optionName': 'medicaidCard',
-        'inputName': 'noMedicaidCard'
+        'optionName': 'hasMedicaidCard',
+        'inputName': 'medicaidCardText'
     },
     {
         'desc': 'His/her original State I.D. or Drivers License',
-        'optionName': 'driversLicense',
-        'inputName': 'noDriversLicense'
+        'optionName': 'hasStateId',
+        'inputName': 'stateIdText'
     },
     {
         'desc': 'Court Orders',
-        'optionName': 'courtOrders',
-        'inputName': 'noCourtOrders'
+        'optionName': 'hasCourtOrders',
+        'inputName': 'courtOrdersText'
     },
     {
         'desc': 'Education Documents (report card etc.)',
-        'optionName': 'educationDocuments',
-        'inputName': 'noEducationDocuments'
+        'optionName': 'hasEdDocs',
+        'inputName': 'edDocsText'
     },
     {
         'desc': 'Original Death Certificates (if parents are deceased)',
-        'optionName': 'deathCertificates',
-        'inputName': 'noDeathCertificates'
+        'optionName': 'hasDeathCert',
+        'inputName': 'deathCertText'
     },
     {
         'desc': 'Original Documentation of citizenship or naturalization if applicable.',
-        'optionName': 'citizenshipDocuments',
-        'inputName': 'noCitizenshipDocuments'
+        'optionName': 'hasCitizenDocs',
+        'inputName': 'citizenDocsText'
     },
     {
         'desc': 'Medical/immunization records',
-        'optionName': 'medicalRecords',
-        'inputName': 'noMedicalRecords'
+        'optionName': 'hasMedRecords',
+        'inputName': 'medRecordsText'
     },
     {
         'desc': 'Religious documents and Information',
-        'optionName': 'religiousDocuments',
-        'inputName': 'noReligiousDocuments'
+        'optionName': 'hasReligiousDocs',
+        'inputName': 'religiousDocsText'
     },
     {
         'desc': 'List of known relatives with relationship and contact information.',
-        'optionName': 'relativesInformation',
-        'inputName': 'noRelativesInformation'
+        'optionName': 'hasListOfRelatives',
+        'inputName': 'listOfRelativesText'
     },
     {
         'desc': 'Previous placement information',
-        'optionName': 'previousPlacementInfo',
-        'inputName': 'noPreviousPlacementInfo'
+        'optionName': 'hasPreviousPlacement',
+        'inputName': 'previousPlacementText'
     },
     {
         'desc': 'Passport (if applicable)',
-        'optionName': 'passport',
-        'inputName': 'noPassport'
+        'optionName': 'hasPassport',
+        'inputName': 'passportText'
     },
     {
         'desc': 'Photographs (if applicable)',
-        'optionName': 'photographs',
-        'inputName': 'noPhotographs'
+        'optionName': 'hasPhotographs',
+        'inputName': 'photographsText'
     },
     {
         'desc': 'Resource Guide',
-        'optionName': 'resourceGuide',
-        'inputName': 'noResourceGuide'
+        'optionName': 'hasResourceGuide',
+        'inputName': 'resourceGuideText'
     }
 ];

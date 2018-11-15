@@ -58,10 +58,10 @@ export const SIDE_NAV_TABS: any[] = [
         'navigationUrl': '/personal',
         'label': 'Personal'
     },
-    {
-        'navigationUrl': '/actions',
-        'label': 'Goals and Actions'
-    },
+    // {
+    //     'navigationUrl': '/actions',
+    //     'label': 'Goals and Actions'
+    // },
     {
         'navigationUrl': '/documents',
         'label': 'Received Documents'
