@@ -1,6 +1,10 @@
+import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
+import { ProfileService } from './../../shared/services/profile/profile.service';
+import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
+import { ActiveModelService } from '../../shared/services/active-model/active-model.service';
 
 
 @Component({
@@ -20,14 +24,29 @@ export class YaHousingComponent implements OnInit {
   public housingForm: FormGroup;
 
   /**
+   * @public
+   */
+  public appraisalId: string;
+
+
+  /**
+   * @public
+   */
+  public response: any = {};
+
+  /**
    * @constructor
    * @param {fb<FormBuilder>}
    * @param {util<UtilService>}
    */
   constructor(
     private fb: FormBuilder,
-    private util: UtilService) {
+    private util: UtilService,
+    private appraisal: AppraisalService,
+    private profileService: ProfileService,
+    private activeModel: ActiveModelService) {
     this.initFormConfig();
+    this._init();
   }
 
   /**
@@ -45,6 +64,18 @@ export class YaHousingComponent implements OnInit {
       meetMonthlyObligations: new FormControl('', []),
       monthlyObligationsText: new FormControl('', [])
     });
+  }
+
+  /**
+   * @private
+   */
+  private _init(): void {
+    this.appraisalId = this.util.getQueryStringValue('appraisalId');
+
+    this.appraisal.init(this.appraisalId, 'getHousingInfo')
+      .subscribe(data => {
+        this.response = data;
+      })
   }
 
   /**

@@ -12,6 +12,7 @@ export const GET_EMPLYMENT_INFO: any = {
     "isDisabled":false,
     "isDisabledSSI":false,
     "isDisabledSSA":false,
+    "isDisabilityNone": true,
     "disabilityExplain":null,
     "hasHadJob":true,
     "hasChildCare":false,

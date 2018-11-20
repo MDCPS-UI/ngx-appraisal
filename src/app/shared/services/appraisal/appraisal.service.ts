@@ -9,7 +9,7 @@ import { ActiveModelService } from '../active-model/active-model.service';
 
 // putting common headers outside the request
 const commonHeaders: any = {
-  'Content-Type': 'application/json',
+  'Content-Type': 'application/json'
 };
 
 // mapping for cached services

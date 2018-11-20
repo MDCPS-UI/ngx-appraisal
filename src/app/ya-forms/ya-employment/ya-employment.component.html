@@ -27,22 +27,24 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="ssi" formControlName="isDisabledSSI"> &nbsp;SSI
+              <input type="checkbox" class="form-check-input" value="ssi" formControlName="isDisabledSSI"> &nbsp;SSI
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="SSA" formControlName="isDisabledSSA"> &nbsp;SSA
+              <input type="checkbox" class="form-check-input" value="SSA" formControlName="isDisabledSSA"> &nbsp;SSA
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" value="none" formControlName="isDisabilityNone"> &nbsp;None
+              <input type="checkbox" class="form-check-input" value="none" formControlName="isDisabilityNone">
+              &nbsp;None
             </label>
           </div>
         </div>
       </div>
-
+    </div>
+    <div class="row">
       <div class="col-12 col-md-6">
         <label for="employment.explainWorkDisabled">If yes to disability, please explain:</label>
         <input type="tel" class="form-control" id="employment.explainWorkDisabled" placeholder="Explain Work Disabled"
@@ -161,6 +163,9 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="row">
       <div class="col-12">
         <label class="col-form-label">If yes, how long?</label>
         <div class="form-group">
@@ -190,7 +195,10 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-4 pt-2 pt-md-0">
+    </div>
+
+    <div class="row">
+      <div class="col-12">
         <label class="col-form-label">If yes, in employee's benefit program?</label>
         <div class="form-group">
           <div class="form-check form-check-inline">

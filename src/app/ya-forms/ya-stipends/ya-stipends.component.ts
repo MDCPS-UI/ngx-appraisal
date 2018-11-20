@@ -1,7 +1,11 @@
+import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
 import { YA_STPNDS_LIST } from './ya-stipends.constants';
 import { UtilService } from './../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
+import { ProfileService } from './../../shared/services/profile/profile.service';
+import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
+import { ActiveModelService } from '../../shared/services/active-model/active-model.service';
 
 @Component({
   selector: 'mdcps-ya-stipends',
@@ -25,14 +29,29 @@ export class YaStipendsComponent implements OnInit {
   public stipendList: any = {};
 
   /**
+   * @public
+   */
+  public appraisalId: string;
+
+
+  /**
+   * @public
+   */
+  public response: any = {};
+
+  /**
    * @constructor
    * @param {fb<FormBuilder>}
    * @param {util<UtilService>}
    */
   constructor(
     private fb: FormBuilder,
-    private util: UtilService) {
+    private util: UtilService,
+    private appraisal: AppraisalService,
+    private profileService: ProfileService,
+    private activeModel: ActiveModelService) {
     this.initFormConfig();
+    this._init();
 
     // dynamic stipends data list
     this.stipendList = YA_STPNDS_LIST;
@@ -62,6 +81,18 @@ export class YaStipendsComponent implements OnInit {
       collegeBoundStipendRequestedOther: new FormControl('', []),
       graduationYearStipendRequestedOther: new FormControl('', [])
     });
+  }
+
+  /**
+   * @private
+   */
+  private _init(): void {
+    this.appraisalId = this.util.getQueryStringValue('appraisalId');
+
+    this.appraisal.init(this.appraisalId, 'getStipendInfo')
+      .subscribe(data => {
+        this.response = data;
+      })
   }
 
   /**

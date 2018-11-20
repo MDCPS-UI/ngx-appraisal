@@ -1,7 +1,11 @@
+import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
 import { YA_PERSONAL_LIST } from './ya-personal.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
+import { ProfileService } from './../../shared/services/profile/profile.service';
+import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
+import { ActiveModelService } from '../../shared/services/active-model/active-model.service';
 
 
 @Component({
@@ -23,6 +27,17 @@ export class YaPersonalComponent implements OnInit {
    */
   public personalForm: FormGroup;
 
+   /**
+   * @public
+   */
+  public appraisalId: string;
+
+
+  /**
+   * @public
+   */
+  public response: any = {};
+
   /**
    * @constructor
    * @param {fb<FormBuilder>}
@@ -30,8 +45,12 @@ export class YaPersonalComponent implements OnInit {
    */
   constructor(
     private fb: FormBuilder,
-    private util: UtilService) {
+    private util: UtilService,
+    private appraisal: AppraisalService,
+    private profileService: ProfileService,
+    private activeModel: ActiveModelService) {
     this.initFormConfig();
+    this._init();
 
     this.questions = YA_PERSONAL_LIST;
   }
@@ -60,6 +79,18 @@ export class YaPersonalComponent implements OnInit {
       transportationBarriers: new FormControl('', []),
       transportationPlans: new FormControl('', [])
     });
+  }
+
+  /**
+   * @private
+   */
+  private _init(): void {
+    this.appraisalId = this.util.getQueryStringValue('appraisalId');
+
+    this.appraisal.init(this.appraisalId, 'getPersonalInfo')
+      .subscribe(data => {
+        this.response = data;
+      })
   }
 
   /**

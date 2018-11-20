@@ -98,6 +98,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
       dmgInfo: this.responses['dmg'],
       emailId: this.util.getQueryStringValue('uname')
     }));
+
     this.util.navigate('education');
   }
 
@@ -105,7 +106,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId, 'saveDmgInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId,'saveDmgInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

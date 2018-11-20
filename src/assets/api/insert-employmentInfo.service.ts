@@ -12,6 +12,7 @@ export const INSERT_EMPINFO_SERVICE: any = {
     "isDisabled":false,
     "isDisabledSSI":false,
     "isDisabledSSA":false,
+    "isDisabilityNone": true,
     "disabilityExplain":null,
     "hasHadJob":true,
     "hasChildCare":false,

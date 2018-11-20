@@ -1,7 +1,11 @@
+import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
 import { YA_SKILLS_LIST } from './ya-skills.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
+import { ProfileService } from './../../shared/services/profile/profile.service';
+import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
+import { ActiveModelService } from '../../shared/services/active-model/active-model.service';
 
 @Component({
   selector: 'mdcps-ya-skills',
@@ -25,14 +29,29 @@ export class YaSkillsComponent implements OnInit {
   public skillsForm: FormGroup;
 
   /**
+   * @public
+   */
+  public appraisalId: string;
+
+
+  /**
+   * @public
+   */
+  public response: any = {};
+
+  /**
    * @constructor
    * @param {fb<FormBuilder>}
    * @param {util<UtilService>}
    */
   constructor(
     private fb: FormBuilder,
-    private util: UtilService) {
+    private util: UtilService,
+    private appraisal: AppraisalService,
+    private profileService: ProfileService,
+    private activeModel: ActiveModelService) {
     this.initFormConfig();
+    this._init();
   }
 
   /**
@@ -67,6 +86,18 @@ export class YaSkillsComponent implements OnInit {
     });
 
     this.sections = YA_SKILLS_LIST;
+  }
+
+  /**
+   * @private
+   */
+  private _init(): void {
+    this.appraisalId = this.util.getQueryStringValue('appraisalId');
+
+    this.appraisal.init(this.appraisalId, 'getSkillsInfo')
+      .subscribe(data => {
+        this.response = data;
+      })
   }
 
   /**

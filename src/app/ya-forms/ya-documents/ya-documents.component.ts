@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { YA_DOCS_LIST } from './ya-documents.constants';
 import { UtilService } from './../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ProfileService } from './../../shared/services/profile/profile.service';
+import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
+import { ActiveModelService } from '../../shared/services/active-model/active-model.service';
 
 @Component({
   selector: 'mdcps-ya-documents',
@@ -25,13 +28,27 @@ export class YaDocumentsComponent implements OnInit {
   public documentsForm: FormGroup;
 
   /**
+   * @public
+   */
+  public appraisalId: string;
+
+
+  /**
+   * @public
+   */
+  public response: any = {};
+
+  /**
    * @constructor
    * @param {fb<FormBuilder>}
    * @param {util<UtilService>}
    */
   constructor(
     private fb: FormBuilder,
-    private util: UtilService) {
+    private util: UtilService,
+    private appraisal: AppraisalService,
+    private profileService: ProfileService,
+    private activeModel: ActiveModelService) {
     this.documentsList = YA_DOCS_LIST;
   }
 
@@ -42,6 +59,19 @@ export class YaDocumentsComponent implements OnInit {
     // construct & initialize the form
     this.initFormConfig();
     this.initDocumentsForm();
+    this._init();
+  }
+
+  /**
+   * @private
+   */
+  private _init(): void {
+    this.appraisalId = this.util.getQueryStringValue('appraisalId');
+
+    this.appraisal.init(this.appraisalId, 'getDocumentInfo')
+      .subscribe(data => {
+        this.response = data;
+      })
   }
 
   /**
