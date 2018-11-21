@@ -14,7 +14,6 @@ const commonHeaders: any = {
 
 // mapping for cached services
 const cachedKeys: any = {
-  getDmgInfo: 'dmg',
   getCounties: 'counties',
   getNavWorkers: 'navWorkers'
 };
@@ -64,15 +63,20 @@ export class AppraisalService {
       : 'GET';
 
     const headers: any = _.extend({}, (config.headers || {}), commonHeaders);
-    return this.ajax.request<any>({
+    const request: any = ({
       url: url,
       method: method,
       headers: headers,
-      // body: JSON.stringify(req.body)
       options: {
-       body: JSON.stringify(req.body)
+       body: req.body
       }
-    });
+      })
+
+    if (method == 'POST') {
+      return this.ajax.post(request)
+    } 
+    
+    return this.ajax.request<any>(request);
   }
 
   /**
@@ -93,29 +97,28 @@ export class AppraisalService {
    * @public
    */
 
-  public post(appraisalId: string, serviceName, paramsArr?: any[], req?: AjaxRequest): Observable<any> {
+  // public post(serviceName, paramsArr?: any[], req?: AjaxRequest): Observable<any> {
 
 
-    // if the data wasn't found in the cache,
-    // make a fresh call and cache it if opted in.
-    const config: any = serviceConstants[serviceName];
-    if (!config) { return Observable.empty(); }
+  //   // if the data wasn't found in the cache,
+  //   // make a fresh call and cache it if opted in.
+  //   const config: any = serviceConstants[serviceName];
+  //   if (!config) { return Observable.empty(); }
 
-    req = req || {};
-    const url: string = (!config.isLocal)
-      ? this.util.format((config.url || req.url), paramsArr)
-      : config.localUrl;
+  //   req = req || {};
+  //   const url: string = (!config.isLocal)
+  //     ? this.util.format((config.url || req.url), paramsArr)
+  //     : config.localUrl;
 
-    const headers: any = _.extend({}, (config.headers || {}), commonHeaders);
-    const request: any =({
-      url: url,
-      headers: headers,
-      // body: JSON.stringify(req.body)
-      options: {
-       body: JSON.stringify(req.body)
-      }
-    });
+  //   const headers: any = _.extend({}, (config.headers || {}), commonHeaders);
+  //   const request: any =({
+  //     url: url,
+  //     headers: headers,
+  //     options: {
+  //      body: req.body
+  //     }
+  //   });
 
-    return this.ajax.post(request)
-  }
+  //   return this.ajax.post(request)
+  // }
 }
