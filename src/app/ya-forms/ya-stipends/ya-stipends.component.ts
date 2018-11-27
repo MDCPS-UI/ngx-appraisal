@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
+import { getInsertStpdReqPayload } from './ya-stipends';
 import { YA_STPNDS_LIST } from './ya-stipends.constants';
 import { UtilService } from './../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
@@ -91,8 +92,57 @@ export class YaStipendsComponent implements OnInit {
 
     this.appraisal.init(this.appraisalId, 'getStipendInfo')
       .subscribe(data => {
-        this.response = data;
+
+        if (!!data) {
+          this._process(data);
+          this.response = data;
+        }
+
+        // setting the responses so it can be retrieved
+      this.activeModel.setResponse(this.response, null, true);
+        
       })
+  }
+
+  /**
+   * @private
+   */
+  private _process(data: any): void {
+
+    const options: any = YA_STPNDS_LIST;
+    
+    const form: any = {};
+
+   
+      for (const option of options.items) {
+
+        let val: any = this._get(data, option.optionName, option);
+
+        form[option.optionName] = new FormControl(
+          {
+            disabled: option.isDisabled,
+            value: val
+          },
+          option.validators
+        )
+      }
+    
+    this.stipendsForm = this.fb.group(form);
+
+  }
+
+  /**
+   * @private
+   */
+  private _get(data: any, key: string, control: any): any {
+    let val: any;
+
+    if (control && control['isBool']) {
+      val = data[key] || false;
+    } else {
+      val = data[key] || '';
+    }
+    return val;
   }
 
   /**
@@ -111,10 +161,24 @@ export class YaStipendsComponent implements OnInit {
    * @public
    */
   public onNext(event: any): void {
-    if (event.form && event.form.valid) {
-      this.util.navigate('/services');
-      console.log(event.form.value);
-    }
+
+    this._saveInfo(getInsertStpdReqPayload({
+      data: event.value,
+      stipendsInfo: this.response,
+      emailId: this.util.getQueryStringValue('uname')
+    }))
+    this.util.navigate('/services');
+    
+  }
+
+  /**
+   * @private
+   */
+  private _saveInfo(data: any): void {
+    this.appraisal.init(this.appraisalId,'saveStipendInfo', null, {body: data})
+      .subscribe(v => {
+        console.log(v);
+      });
   }
 
   /**

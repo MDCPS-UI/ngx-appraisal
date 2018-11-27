@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
+import { getEmpReqPayload } from './ya-employment';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 import { ProfileService } from './../../shared/services/profile/profile.service';
@@ -107,9 +108,23 @@ export class YaEmploymentComponent implements OnInit {
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
+      this._saveInfo(getEmpReqPayload({
+        data: event.value,
+        empInfo: this.response,
+        emailId: this.util.getQueryStringValue('uname')
+      }));
       this.util.navigate('/interests');
-      console.log(event.form.value);
     }
+  }
+
+  /**
+   * @private
+   */
+  private _saveInfo(data: any): void {
+    this.appraisal.init(this.appraisalId,'saveEmpInfo', null, {body: data})
+      .subscribe(v => {
+        console.log(v);
+      });
   }
 
   /**

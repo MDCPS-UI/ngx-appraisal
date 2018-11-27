@@ -6,20 +6,20 @@
       <div class="form-group">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="Yes" [formControlName]="que.optionName"> &nbsp;Yes
+            <input type="radio" class="form-check-input" [value]="true" [formControlName]="que.optionName"> &nbsp;Yes
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="No" [formControlName]="que.optionName"> &nbsp;No
+            <input type="radio" class="form-check-input" [value]="false" [formControlName]="que.optionName" [checked]= "false"> &nbsp;No
           </label>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6" *ngIf="(que.optionName == 'gangRelated') && (criminalForm?.get(que.optionName)?.value == 'Yes')">
+    <div class="col-12 col-md-6" *ngIf="(que.optionName == 'hasGangActivity') && (criminalForm?.get(que.optionName)?.value)">
       <label for="criminal.gangYes"> Please, Explain:
       </label>
-      <textarea type="text" class="form-control" id="criminal.gangYes" formControlname="gangRelatedYes" rows="2"></textarea>
+      <textarea type="text" class="form-control" id="criminal.gangYes" formControlname="gangActivityText" rows="2"></textarea>
     </div>
   </div>
 </mdcps-base-form>

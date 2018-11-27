@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
+import { getInsertSrvcReqPayload } from './ya-services';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 import { ProfileService } from './../../shared/services/profile/profile.service';
@@ -98,18 +99,78 @@ export class YaServicesComponent implements OnInit {
 
     this.appraisal.init(this.appraisalId, 'getCssInfo')
       .subscribe(data => {
+
+      if (!!data) {
+        this._process(data);
         this.response = data;
+      }
+
+      // setting the responses so it can be retrieved
+      this.activeModel.setResponse(this.response, null, true);
+        
       })
+  }
+
+  /**
+   * @private
+   */
+  private _process(data: any): void {
+
+    const options: any[] = YA_SRVC_LIST;
+    
+    const form: any = {};
+    for (const option of options) {
+
+      let val: any = this._get(data, option.optionName, option)
+
+      form[option.optionName] = new FormControl(
+        {
+          disabled: option.isDisabled,
+          value: val
+        },
+        option.validators
+      )
+    }
+    this.servicesForm = this.fb.group(form);
+
+  }
+
+  /**
+   * @private
+   */
+  private _get(data: any, key: string,  control: any): any {
+    let val: any;
+
+    if (control && control['isBool']) {
+      val = data[key] || false;
+    } else {
+      val = data[key] || '';
+    }
+    return val;
   }
 
   /**
    * @public
    */
   public onNext(event: any): void {
-    if (event.form && event.form.valid) {
-      this.util.navigate('/personal');
-      console.log(event.form.value);
-    }
+
+    this._saveInfo(getInsertSrvcReqPayload({
+      data: event.value,
+      srvcInfo: this.response,
+      emailId: this.util.getQueryStringValue('uname')
+    }));
+
+    this.util.navigate('/personal');
+  }
+
+  /**
+   * @private
+   */
+  private _saveInfo(data: any): void {
+    this.appraisal.init(this.appraisalId,'saveCssInfo', null, {body: data})
+      .subscribe(v => {
+        console.log(v);
+      });
   }
 
   /**

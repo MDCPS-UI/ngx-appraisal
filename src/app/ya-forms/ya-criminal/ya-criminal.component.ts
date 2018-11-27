@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
+import { getInsertCriminalInfoReqPayload } from './ya-criminal';
 import { YA_CRMNL_LIST } from './ya-criminal.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
@@ -82,8 +83,53 @@ export class YaCriminalComponent implements OnInit {
 
     this.appraisal.init(this.appraisalId, 'getCriminalInfo')
       .subscribe(data => {
-        this.response = data;
+
+        if(!!data) {
+          this._process(data);
+          this.response = data;
+        }
       })
+
+      // setting the responses so it can be retrieved
+      this.activeModel.setResponse(this.response, null, true);
+  }
+
+  /**
+   * @private
+   */
+  private _process(data: any): void {
+
+    const options: any[] = YA_CRMNL_LIST;
+    
+    const form: any = {};
+    for (const option of options) {
+
+      let val: any = this._get(data, option.optionName, option);
+
+      form[option.optionName] = new FormControl(
+        {
+          disabled: option.isDisabled,
+          value: val
+        },
+        option.validators
+      )
+    }
+    this.criminalForm = this.fb.group(form);
+
+  }
+
+  /**
+   * @private
+   */
+  private _get(data: any, key: string,  control: any): any {
+    let val: any;
+
+    if (control && control['isBool']) {
+      val = data[key] || false;
+    } else {
+      val = data[key] || '';
+    }
+    return val;
   }
 
   /**
@@ -102,10 +148,24 @@ export class YaCriminalComponent implements OnInit {
    * @public
    */
   public onNext(event: any): void {
-    if (event.form && event.form.valid) {
-      this.util.navigate('/skills');
-      console.log(event.form.value);
-    }
+    
+    this._saveInfo(getInsertCriminalInfoReqPayload({
+      data: event.value,
+      criminalInfo: this.response,
+      emailId: this.util.getQueryStringValue('uname')
+    }));
+
+    this.util.navigate('/skills');
+  }
+
+  /**
+   * @private
+   */
+  private _saveInfo(data: any): void {
+    this.appraisal.init(this.appraisalId,'saveCriminalInfo', null, {body: data})
+      .subscribe(v => {
+        console.log(v);
+      });
   }
 
   /**

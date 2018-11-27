@@ -8,36 +8,42 @@ export const YA_STPNDS_LIST: any = {
             optionName: 'seniorYearStipendRequested',
             optionReason: 'seniorYearStipendRequestedOther',
             optionReqDate: 'seniorStipendRequestDate',
+            isBool: false
         },
         {
             level: 'Graduation',
             optionName: 'graduationYearStipendRequested',
             optionReason: 'graduationYearStipendRequestedOther',
-            optionReqDate: 'graduationStipendRequestDate'
+            optionReqDate: 'graduationStipendRequestDate',
+            isBool: false
         },
         {
             level: 'College Bound',
             optionName: 'collegeBoundStipendRequested',
             optionReason: 'collegeBoundStipendRequestedOther',
-            optionReqDate: 'collegeBoundStipendRequestDate'
+            optionReqDate: 'collegeBoundStipendRequestDate',
+            isBool: false
         },
         {
             level: 'Start Up',
             optionName: 'startUpStipendRequested',
             optionReason: 'startUpStipendRequestedOther',
-            optionReqDate: 'startUpStipendRequestDate'
+            optionReqDate: 'startUpStipendRequestDate',
+            isBool: false
         },
         {
             level: 'Life Skill Participation',
             optionName: 'lifeSkillStipendRequested',
             optionReason: 'lifeSkillStipendRequestedOther',
-            optionReqDate: 'lifeSkillStipendRequestDate'
+            optionReqDate: 'lifeSkillStipendRequestDate',
+            isBool: false
         },
         {
             level: 'Personal Enhancement',
             optionName: 'personalStipendRequested',
             optionReason: 'personalStipendRequestedOther',
-            optionReqDate: 'personalStipendRequestDate'
+            optionReqDate: 'personalStipendRequestDate',
+            isBool: false
         }
     ],
     options: [

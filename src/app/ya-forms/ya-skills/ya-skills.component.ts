@@ -1,6 +1,7 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
 import { YA_SKILLS_LIST } from './ya-skills.constants';
+import { getInsertSkillsReqPayload } from './ya-skills';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 import { ProfileService } from './../../shared/services/profile/profile.service';
@@ -96,8 +97,56 @@ export class YaSkillsComponent implements OnInit {
 
     this.appraisal.init(this.appraisalId, 'getSkillsInfo')
       .subscribe(data => {
+
+      if(!!data) {
+        this._process(data);
         this.response = data;
+      }
+
+      // setting the responses so it can be retrieved
+      this.activeModel.setResponse(this.response, null, true);
       })
+  }
+
+  /**
+   * @private
+   */
+  private _process(data: any): void {
+
+    const controls: any[] = YA_SKILLS_LIST;
+    
+    const form: any = {};
+    for (const control of controls) {
+
+      for (const option of control.skills) {
+
+      let val: any = this._get(data, option.optionName, option);
+
+      form[option.optionName] = new FormControl(
+        {
+          disabled: option.isDisabled,
+          value: val
+        },
+        option.validators
+      )
+     }
+    }
+    this.skillsForm = this.fb.group(form);
+
+  }
+
+  /**
+   * @private
+   */
+  private _get(data: any, key: string,  control: any): any {
+    let val: any;
+
+    if (control && control['isBool']) {
+      val = data[key] || false;
+    } else {
+      val = data[key] || '';
+    }
+    return val;
   }
 
   /**
@@ -116,10 +165,25 @@ export class YaSkillsComponent implements OnInit {
    * @public
    */
   public onNext(event: any): void {
-    if (event.form && event.form.valid) {
-      this.util.navigate('/stipends');
-      console.log(event.form.value);
-    }
+
+    this._saveInfo(getInsertSkillsReqPayload({
+      data: event.value,
+      skillsInfo: this.response,
+      emailId: this.util.getQueryStringValue('uname')
+    }))
+      
+    this.util.navigate('/stipends');
+    
+  }
+
+  /**
+   * @private
+   */
+  private _saveInfo(data: any): void {
+    this.appraisal.init(this.appraisalId,'saveSkillsInfo', null, {body: data})
+      .subscribe(v => {
+        console.log(v);
+      });
   }
 
   /**
