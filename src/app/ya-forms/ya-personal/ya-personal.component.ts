@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
+import { getInsertPersonalPayload } from './ya-personal';
 import { YA_PERSONAL_LIST } from './ya-personal.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
@@ -111,9 +112,23 @@ export class YaPersonalComponent implements OnInit {
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
+      this._saveInfo(getInsertPersonalPayload({
+        data: event.value,
+        personalInfo: this.response,
+        emailId: this.util.getQueryStringValue('uname')
+      }));
       this.util.navigate('/documents');
-      console.log(event.form.value);
     }
+  }
+
+  /**
+   * @private
+   */
+  private _saveInfo(data: any): void {
+    this.appraisal.init(this.appraisalId,'savePersonalInfo', null, {body: data})
+      .subscribe(v => {
+        console.log(v);
+      });
   }
 
   /**

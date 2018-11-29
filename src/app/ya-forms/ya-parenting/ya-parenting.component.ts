@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
+import { getInsertPrtgReqPayload } from './ya-parenting';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 import { ProfileService } from './../../shared/services/profile/profile.service';
@@ -111,9 +112,23 @@ export class YaParentingComponent implements OnInit {
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
+      this._saveInfo(getInsertPrtgReqPayload({
+        data: event.value,
+        prtgInfo: this.response,
+        emailId: this.util.getQueryStringValue('uname')
+      }));
       this.util.navigate('/health');
-      console.log(event.form.value);
     }
+  }
+
+  /**
+   * @private
+   */
+  private _saveInfo(data: any): void {
+    this.appraisal.init(this.appraisalId,'saveParentingInfo', null, {body: data})
+      .subscribe(v => {
+        console.log(v);
+      });
   }
 
   /**

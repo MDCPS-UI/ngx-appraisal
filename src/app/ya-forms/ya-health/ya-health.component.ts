@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
+import { getInsertHealthReqPayload } from './ya-health';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 import { ProfileService } from './../../shared/services/profile/profile.service';
@@ -117,10 +118,23 @@ export class YaHealthComponent implements OnInit {
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
-      //this.util.navigate('/relationships');
-      console.log(event.form.value);
+      this._saveInfo(getInsertHealthReqPayload({
+        data: event.value,
+        healthInfo: this.response,
+        emailId: this.util.getQueryStringValue('uname')
+      }));
     }
     this.util.navigate('/relationships');
+  }
+
+  /**
+   * @private
+   */
+  private _saveInfo(data: any): void {
+    this.appraisal.init(this.appraisalId,'saveHealthInfo', null, {body: data})
+      .subscribe(v => {
+        console.log(v);
+      });
   }
 
   /**

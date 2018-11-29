@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
+import { getInsertHsgReqPayload } from './ya-housing';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
 import { ProfileService } from './../../shared/services/profile/profile.service';
@@ -94,10 +95,24 @@ export class YaHousingComponent implements OnInit {
    * @public
    */
   public onNext(event: any): void {
-    if (event.form && event.form.valid) {
+
+    this._saveInfo(getInsertHsgReqPayload({
+      data: event.value,
+      hsgInfo: this.response,
+      emailId: this.util.getQueryStringValue('uname')
+    }));
+
       this.util.navigate('/placements');
-      console.log(event.form.value);
-    }
+  }
+
+  /**
+   * @private
+   */
+  private _saveInfo(data: any): void {
+    this.appraisal.init(this.appraisalId,'saveHousingInfo', null, {body: data})
+      .subscribe(v => {
+        console.log(v);
+      });
   }
 
   /**

@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
+import { getInsertRltReqPayload } from './ya-relationships';
 import { YA_RELSHP_LIST } from './ya-relationships.constants';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { UtilService } from './../../shared/services/util/util.service';
@@ -105,9 +106,23 @@ export class YaRelationshipsComponent implements OnInit {
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
+      this._saveInfo(getInsertRltReqPayload({
+        data: event.value,
+        rltInfo: this.response,
+        emailId: this.util.getQueryStringValue('uname')
+      }));
       this.util.navigate('/criminal');
-      console.log(event.form.value);
     }
+  }
+
+  /**
+   * @private
+   */
+  private _saveInfo(data: any): void {
+    this.appraisal.init(this.appraisalId,'saveRelationInfo', null, {body: data})
+      .subscribe(v => {
+        console.log(v);
+      });
   }
 
   /**

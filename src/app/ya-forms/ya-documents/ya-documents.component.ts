@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
+import { getInsertDocReqPayload } from './ya-documents';
 import { YA_DOCS_LIST } from './ya-documents.constants';
 import { UtilService } from './../../shared/services/util/util.service';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -97,10 +98,23 @@ export class YaDocumentsComponent implements OnInit {
    */
   public onNext(event: any): void {
     if (event.form && event.form.valid) {
-
-      console.log(event.form.value);
+      this._saveInfo(getInsertDocReqPayload({
+        data: event.value,
+        docInfo: this.response,
+        emailId: this.util.getQueryStringValue('uname')
+      }));
     }
     this.util.navigate('/review');
+  }
+
+  /**
+   * @private
+   */
+  private _saveInfo(data: any): void {
+    this.appraisal.init(this.appraisalId,'saveDocumentInfo', null, {body: data})
+      .subscribe(v => {
+        console.log(v);
+      });
   }
 
   /**

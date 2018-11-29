@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MaterialModule } from './../../shared/modules/material/material.module';
 import { BaseFormModule } from './../../shared/components/base-form/base-form.module';
 import { DatePickerModule } from './../../shared/components/date-picker/date-picker.module';
 
@@ -22,6 +23,7 @@ const ROUTES: Route[] = [
   imports: [
     FormsModule,
     CommonModule,
+    MaterialModule,
     BaseFormModule,
     DatePickerModule,
     ReactiveFormsModule,
