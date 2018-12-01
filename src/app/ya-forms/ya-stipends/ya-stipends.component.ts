@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { getInsertStpdReqPayload } from './ya-stipends';
 import { YA_STPNDS_LIST } from './ya-stipends.constants';
 import { UtilService } from './../../shared/services/util/util.service';
-import { FormControl, FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 import { ProfileService } from './../../shared/services/profile/profile.service';
+import { FormControl, FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
-import { ActiveModelService } from '../../shared/services/active-model/active-model.service';
+import { ActiveModelService } from './../../shared/services/active-model/active-model.service';
 
 @Component({
   selector: 'mdcps-ya-stipends',
@@ -195,7 +195,7 @@ export class YaStipendsComponent implements OnInit {
     const field: AbstractControl = this.stipendsForm.get(stipend.optionName);
     const fieldVal: string = (field) ? field.value : '';
 
-    if (fieldVal == 'yes' || fieldVal == 'other') {
+    if (fieldVal === 'yes' || fieldVal === 'other') {
       return true;
     }
     return false;

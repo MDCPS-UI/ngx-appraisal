@@ -7,8 +7,6 @@ import { ProfileService } from './../../shared/services/profile/profile.service'
 import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
 import { ActiveModelService } from '../../shared/services/active-model/active-model.service';
 
-
-
 @Component({
   selector: 'mdcps-ya-interests',
   templateUrl: './ya-interests.component.html',

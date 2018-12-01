@@ -106,19 +106,19 @@ export class UtilService {
 
     // convert the numbered format to
     // string so we can check the length
-    if (typeof value == 'number') {
+    if (typeof value === 'number') {
       strToFormat = value.toString();
     }
 
     // in case if the length is `1`, prepend
     // zero before the value
-    if (strToFormat && strToFormat.length == 1) {
+    if (strToFormat && strToFormat.length === 1) {
       strToFormat = ('0' + strToFormat);
     }
 
     // if the value is requested in numbered
     // format
-    if (format && format == 'num') {
+    if (format && format === 'num') {
       strToFormat = +strToFormat;
     }
     return strToFormat;

@@ -103,7 +103,7 @@ export class YouthAppraisalComponent implements OnInit {
    */
   public onSearch(e: MouseEvent): void {
     if (e && (<any>e.target).value
-      && (<any>e.target).value.length == this.typeaheadLength) {
+      && (<any>e.target).value.length === this.typeaheadLength) {
       this.isProcessing = true;
     } else {
       this.isProcessing = false;

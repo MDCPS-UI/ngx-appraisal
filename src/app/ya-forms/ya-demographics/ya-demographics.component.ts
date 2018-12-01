@@ -120,7 +120,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
    * @public
    */
   public compare(val1: any, val2: any): boolean {
-    return (val1 == val2) || (_.get(val1, 'id') == _.get(val2, 'id'));
+    return (val1 === val2) || (_.get(val1, 'id') === _.get(val2, 'id'));
   }
 
   /**
@@ -160,7 +160,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
     const form: any = {};
     for (const control of controls) {
 
-      const val: any = (control.controlName == 'addressList')
+      const val: any = (control.controlName === 'addressList')
         ? this._getAddress(this._get(data, control.controlName, control))
         : this._get(data, control.controlName, control);
 

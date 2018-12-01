@@ -4,13 +4,13 @@
         "directive-selector": [
             false,
             "attribute",
-            "cvs",
+            "mdcps",
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
-            "cvs",
+            "mdcps",
             "kebab-case"
         ]
     }

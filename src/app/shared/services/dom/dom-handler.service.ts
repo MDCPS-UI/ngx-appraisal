@@ -36,7 +36,7 @@ export class DomHandler {
         const trident = ua.indexOf('Trident/');
         if (trident > 0) {
             // IE 11 => return version number
-            let rv = ua.indexOf('rv:');
+            const rv = ua.indexOf('rv:');
             return true;
         }
 
