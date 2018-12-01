@@ -16,9 +16,6 @@ import { ProfileService } from './shared/services/profile/profile.service';
 import { AppraisalService } from './shared/services/appraisal/appraisal.service';
 import { ActiveModelService } from './shared/services/active-model/active-model.service';
 
-// Misc
-import { environment } from './../environments/environment';
-
 // MDCPS Routes
 const ROUTES: Route[] = [
   {
@@ -61,7 +58,7 @@ const ROUTES: Route[] = [
     CommonModule,
     HeaderModule,
     RouterModule.forRoot(ROUTES, {
-      useHash: environment.useHash
+      useHash: true
     })
   ],
   exports: [RouterModule],

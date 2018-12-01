@@ -63,19 +63,15 @@ export class AppraisalService {
       : 'GET';
 
     const headers: any = _.extend({}, (config.headers || {}), commonHeaders);
-    const request: any = ({
+    const request: any = {
       url: url,
       method: method,
       headers: headers,
       options: {
-       body: req.body
+        body: req.body
       }
-      })
+    };
 
-    // if (method == 'POST') {
-    //   return this.ajax.post(request)
-    // } 
-    
     return this.ajax.request<any>(request);
   }
 
@@ -92,6 +88,9 @@ export class AppraisalService {
     this.util.navigateIt('landing');
     return Observable.empty();
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 82109115190ab7cff17eb789563565b92eac84dc
 }
