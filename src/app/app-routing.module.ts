@@ -61,7 +61,7 @@ const ROUTES: Route[] = [
     CommonModule,
     HeaderModule,
     RouterModule.forRoot(ROUTES, {
-      useHash: environment.useHash
+      useHash: true
     })
   ],
   exports: [RouterModule],
