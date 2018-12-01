@@ -90,9 +90,6 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
    * @public
    */
   public onNext(event: any): void {
-    // if (event.form && event.form.valid) {
-    //   console.log(event.form.value);
-    // }
     this._saveInfo(getInsertDmgReqPayload({
       data: event.value,
       dmgInfo: this.responses['dmg'],
