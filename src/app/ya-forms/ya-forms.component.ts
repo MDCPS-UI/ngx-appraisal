@@ -47,7 +47,7 @@ export class YaFormsComponent implements OnInit {
           // setting the activated route so it can be
           // consumed by other pages.
           this.profileService.setActivePage(firstChild.url[0].path);
-        } catch(e) {
+        } catch (e) {
           console.log('Unable to set the form name...');
         }
       }

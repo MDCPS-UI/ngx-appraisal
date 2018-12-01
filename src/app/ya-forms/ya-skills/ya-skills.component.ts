@@ -98,14 +98,14 @@ export class YaSkillsComponent implements OnInit {
     this.appraisal.init(this.appraisalId, 'getSkillsInfo')
       .subscribe(data => {
 
-      if(!!data) {
+      if (!!data) {
         this._process(data);
         this.response = data;
       }
 
       // setting the responses so it can be retrieved
       this.activeModel.setResponse(this.response, null, true);
-      })
+      });
   }
 
   /**
@@ -114,13 +114,13 @@ export class YaSkillsComponent implements OnInit {
   private _process(data: any): void {
 
     const controls: any[] = YA_SKILLS_LIST;
-    
+
     const form: any = {};
     for (const control of controls) {
 
       for (const option of control.skills) {
 
-      let val: any = this._get(data, option.optionName, option);
+      const val: any = this._get(data, option.optionName, option);
 
       form[option.optionName] = new FormControl(
         {
@@ -128,7 +128,7 @@ export class YaSkillsComponent implements OnInit {
           value: val
         },
         option.validators
-      )
+      );
      }
     }
     this.skillsForm = this.fb.group(form);
@@ -170,17 +170,17 @@ export class YaSkillsComponent implements OnInit {
       data: event.value,
       skillsInfo: this.response,
       emailId: this.util.getQueryStringValue('uname')
-    }))
-      
+    }));
+
     this.util.navigate('/stipends');
-    
+
   }
 
   /**
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId,'saveSkillsInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId, 'saveSkillsInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

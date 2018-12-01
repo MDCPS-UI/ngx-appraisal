@@ -97,7 +97,7 @@ export class YaHealthComponent implements OnInit {
     this.appraisal.init(this.appraisalId, 'getHealthInfo')
       .subscribe(data => {
         this.response = data;
-      })
+      });
   }
 
   /**
@@ -109,7 +109,7 @@ export class YaHealthComponent implements OnInit {
       prevBtn: true,
       nextBtnLabel: 'Relationships',
       previousBtnLabel: 'Pregnant/Parenting'
-    }
+    };
   }
 
   /**
@@ -131,7 +131,7 @@ export class YaHealthComponent implements OnInit {
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId,'saveHealthInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId, 'saveHealthInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

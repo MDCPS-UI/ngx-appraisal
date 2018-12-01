@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { AjaxRequest } from './ajax.interface';
 import { HttpClient, HttpHeaders, HttpEvent } from '@angular/common/http';
@@ -88,7 +88,7 @@ export class AjaxService {
    * @param: {req<AjaxRequest>}
    * @return {Observable<HttpEvent<T>>}
    */
-  public request<T>(req: AjaxRequest): Observable<HttpEvent<T>> {   
+  public request<T>(req: AjaxRequest): Observable<HttpEvent<T>> {
     return this.http.request<T>(req.method, req.url, req.options);
   }
 }

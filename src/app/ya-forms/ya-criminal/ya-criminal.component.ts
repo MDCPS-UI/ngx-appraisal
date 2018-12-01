@@ -84,11 +84,11 @@ export class YaCriminalComponent implements OnInit {
     this.appraisal.init(this.appraisalId, 'getCriminalInfo')
       .subscribe(data => {
 
-        if(!!data) {
+        if (!!data) {
           this._process(data);
           this.response = data;
         }
-      })
+      });
 
       // setting the responses so it can be retrieved
       this.activeModel.setResponse(this.response, null, true);
@@ -100,11 +100,11 @@ export class YaCriminalComponent implements OnInit {
   private _process(data: any): void {
 
     const options: any[] = YA_CRMNL_LIST;
-    
+
     const form: any = {};
     for (const option of options) {
 
-      let val: any = this._get(data, option.optionName, option);
+      const val: any = this._get(data, option.optionName, option);
 
       form[option.optionName] = new FormControl(
         {
@@ -112,7 +112,7 @@ export class YaCriminalComponent implements OnInit {
           value: val
         },
         option.validators
-      )
+      );
     }
     this.criminalForm = this.fb.group(form);
 
@@ -148,7 +148,7 @@ export class YaCriminalComponent implements OnInit {
    * @public
    */
   public onNext(event: any): void {
-    
+
     this._saveInfo(getInsertCriminalInfoReqPayload({
       data: event.value,
       criminalInfo: this.response,
@@ -162,7 +162,7 @@ export class YaCriminalComponent implements OnInit {
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId,'saveCriminalInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId, 'saveCriminalInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

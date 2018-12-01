@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { UtilService } from './../../util/util.service';
 import { NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
-
 @Injectable()
 export class DatePickerFormatterService extends NgbDateParserFormatter {
   /**

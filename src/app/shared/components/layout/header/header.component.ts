@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'mdcps-header',
   templateUrl: './header.component.html',

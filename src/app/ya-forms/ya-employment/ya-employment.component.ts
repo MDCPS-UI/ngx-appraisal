@@ -8,7 +8,7 @@ import { AppraisalService } from './../../shared/services/appraisal/appraisal.se
 import { ActiveModelService } from '../../shared/services/active-model/active-model.service';
 
 
- 
+
 @Component({
   selector: 'mdcps-ya-employment',
   templateUrl: './ya-employment.component.html',
@@ -88,7 +88,7 @@ export class YaEmploymentComponent implements OnInit {
     this.appraisal.init(this.appraisalId, 'getEmpInfo')
       .subscribe(data => {
         this.response = data;
-      })
+      });
   }
 
   /**
@@ -121,7 +121,7 @@ export class YaEmploymentComponent implements OnInit {
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId,'saveEmpInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId, 'saveEmpInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

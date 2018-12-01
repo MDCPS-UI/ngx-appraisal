@@ -40,5 +40,5 @@ export const getInsertSrvcReqPayload: Function =
         other: opts.data.other,
         otherOtherText: opts.data.otherOtherText,
         notes: opts.data.notes
-    }
-}
+    };
+};

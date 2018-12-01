@@ -72,7 +72,7 @@ export class YaDocumentsComponent implements OnInit {
     this.appraisal.init(this.appraisalId, 'getDocumentInfo')
       .subscribe(data => {
         this.response = data;
-      })
+      });
   }
 
   /**
@@ -111,7 +111,7 @@ export class YaDocumentsComponent implements OnInit {
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId,'saveDocumentInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId, 'saveDocumentInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

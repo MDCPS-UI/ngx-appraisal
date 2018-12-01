@@ -35,5 +35,5 @@ export const getInsertPersonalPayload: Function =
         transportationPlans: opts.data.transportationPlans,
         goals: opts.personalInfo.goals,
         concerns: opts.personalInfo.concerns
-    }
-}
+    };
+};

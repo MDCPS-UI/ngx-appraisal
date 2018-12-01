@@ -46,8 +46,8 @@ export const getInsertDocReqPayload: Function =
         previousPlacementText: opts.data.previousPlacementText,
         passportText: opts.data.passportText,
         photographsText: opts.data.photographsText,
-        resourceGuideText:opts.data.resourceGuideText,
+        resourceGuideText: opts.data.resourceGuideText,
         concerns: opts.docInfo.concerns,
         goals: opts.docInfo.goals
-    }
-}
+    };
+};

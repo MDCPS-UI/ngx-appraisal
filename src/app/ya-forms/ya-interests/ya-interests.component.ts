@@ -7,8 +7,6 @@ import { ProfileService } from './../../shared/services/profile/profile.service'
 import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
 import { ActiveModelService } from '../../shared/services/active-model/active-model.service';
 
-
-
 @Component({
   selector: 'mdcps-ya-interests',
   templateUrl: './ya-interests.component.html',
@@ -89,7 +87,7 @@ export class YaInterestsComponent implements OnInit {
     this.appraisal.init(this.appraisalId, 'getSocialInfo')
       .subscribe(data => {
         this.response = data;
-      })
+      });
   }
 
   /**
@@ -122,7 +120,7 @@ export class YaInterestsComponent implements OnInit {
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId,'saveSocialInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId, 'saveSocialInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

@@ -1,0 +1,25 @@
+.goals-form {
+    .btn-mdcps {
+        float: right;
+        border-radius: 0;
+        border: 1px solid #ccc;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: #fff;
+            background: #6f751a;
+            border-color: #6f751a;
+        }
+    }
+
+    .mdcps-user-action {
+        margin: 20px 0;
+        padding-bottom: 20px;
+    }
+
+    .btn-delete {
+        color: #cc1010;
+        cursor: pointer;
+    }
+}

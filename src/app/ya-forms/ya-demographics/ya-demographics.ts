@@ -50,5 +50,5 @@ export const getInsertDmgReqPayload: Function =
       concerns: [],
       goals: []
     }
-  }
+  };
 };

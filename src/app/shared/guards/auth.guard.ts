@@ -1,5 +1,5 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { UtilService } from './../services/util/util.service';
 import { ProfileService } from './../services/profile/profile.service';
 import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
