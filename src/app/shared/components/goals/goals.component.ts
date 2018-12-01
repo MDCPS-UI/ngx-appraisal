@@ -1,5 +1,5 @@
 import { Goal, Concern } from './goals';
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { FormGroup, FormBuilder, FormArray } from "@angular/forms";
 
 @Component({
@@ -10,6 +10,14 @@ import { FormGroup, FormBuilder, FormArray } from "@angular/forms";
 export class GoalsComponent implements OnInit {
   /**
    * @public
+   * @type: string
+   * @Input
+   */
+  @Input()
+  public compName: string;
+  /**
+   * @public
+   * @type: FormGroup
    */
   public goalsForm: FormGroup;
 
