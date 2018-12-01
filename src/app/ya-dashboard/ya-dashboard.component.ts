@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SIDE_NAV_TABS } from './../shared/constants/side-nav.constants';
 import { ProfileService } from './../shared/services/profile/profile.service';
 
-
 @Component({
   selector: 'mdcps-dashboard',
   templateUrl: './ya-dashboard.component.html',
