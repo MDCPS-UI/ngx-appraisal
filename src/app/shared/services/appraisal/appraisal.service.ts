@@ -88,9 +88,4 @@ export class AppraisalService {
     this.util.navigateIt('landing');
     return Observable.empty();
   }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 82109115190ab7cff17eb789563565b92eac84dc
 }
