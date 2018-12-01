@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule, NgbDateAdapter, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { DatePickerAdapterService, DatePickerFormatterService } from './../../services/date-picker/';
 
-
 @NgModule({
   imports: [
     NgbModule

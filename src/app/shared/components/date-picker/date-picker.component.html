@@ -1,23 +1,25 @@
 <div [formGroup]="group" *ngIf="group">
-  <input ngbDatepicker
-  [type]="type"
-  [class]="class"
-  [id]="id"
-  [placeholder]="placeholder"
-  [formControlName]="controlName"
-  [dayTemplate]="customDay"
-  #d="ngbDatepicker"
-  (focus)="d.toggle()"
-/>
+    <input ngbDatepicker
+      [type]="type"
+      [class]="class"
+      [id]="id"
+      [placeholder]="placeholder"
+      [formControlName]="controlName"
+      [dayTemplate]="customDay"
+      #d="ngbDatepicker"
+      (focus)="d.toggle()"
+    />
 </div>
 
-<!-- Date Picker Customized Template-->
-<ng-template #customDay let-date="date" let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
-  <span class="mdcps-dp-day"
-    [class.focused]="focused"
-    [class.mdcps-primary]="selected"
-    [class.hidden]="date.month !== currentMonth"
-    [class.mdcps-text-muted]="disabled">
-    {{ date.day }}
-  </span>
-</ng-template>
+<!-- Date Picker Customized Template -->
+
+  <ng-template #customDay let-date="date" let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
+    <span class="mdcps-dp-day"
+      [class.focused]="focused"
+      [class.mdcps-primary]="selected"
+      [class.hidden]="date.month !== currentMonth"
+      [class.mdcps-text-muted]="disabled">
+      {{ date.day }}
+    </span>
+  </ng-template>
+

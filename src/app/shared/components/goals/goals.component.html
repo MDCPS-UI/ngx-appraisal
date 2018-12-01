@@ -1,4 +1,5 @@
 <form [formGroup]="goalsForm" *ngIf="goalsForm" class="goals-form">
+
   <!-- Goals Block -->
   <div class="row mdcps-user-action">
     <div class="col-12" id="" formArrayName="goals">
@@ -54,11 +55,12 @@
               </textarea>
             </td>
             <td>
-              <input
-                class="form-control form-control-sm datepicker"
-                type="date"
-                formControlName="goalsCompleteDt"
-              />
+              <mdcps-date-picker
+                [class]="'form-control'"
+                [controlName]="'goalsCompleteDt'"
+                [group]="goalsForm.get('goals')?.controls[i]"
+              >
+              </mdcps-date-picker>
             </td>
             <td>
               <button
@@ -82,7 +84,12 @@
       <label *ngIf="compName">
         <h3>{{ compName + " Concerns" }}</h3>
       </label>
-      <button type="button" class="btn btn-default btn-mdcps" style="float:right;" (click)="onAddConcern()">
+      <button
+        type="button"
+        class="btn btn-default btn-mdcps"
+        style="float:right;"
+        (click)="onAddConcern()"
+      >
         Add Concern
       </button>
       <table class="table table-bordered">
@@ -120,11 +127,12 @@
               </textarea>
             </td>
             <td>
-              <input
-                class="form-control form-control-sm datepicker"
-                type="date"
-                formControlName="concCompleteDt"
-              />
+              <mdcps-date-picker
+                [class]="'form-control'"
+                [controlName]="'concCompleteDt'"
+                [group]="goalsForm.get('concerns')?.controls[i]"
+              >
+              </mdcps-date-picker>
             </td>
             <td>
               <button

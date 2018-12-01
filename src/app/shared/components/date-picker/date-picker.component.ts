@@ -1,5 +1,5 @@
+import { FormGroup } from '@angular/forms';
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControlName } from '@angular/forms';
 import { NgbDateStruct, NgbDatepickerConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
