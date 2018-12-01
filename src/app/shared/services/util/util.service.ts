@@ -138,7 +138,7 @@ export class UtilService {
    */
   public getQueryStringValue(key: string, parse?: boolean): string {
     let value: any = window.unescape(
-      window.location.search.replace(new RegExp('^(?:.*[&\\?]' +
+      (window.location.search || window.location.hash).replace(new RegExp('^(?:.*[&\\?]' +
         window.escape(key).replace(/[\.\+\*]/g, '\\$&') + '(?:\\=([^&]*))?)?.*$', 'i'), '$1')
     );
 

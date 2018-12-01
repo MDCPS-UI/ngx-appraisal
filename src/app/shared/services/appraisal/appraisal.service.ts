@@ -71,6 +71,9 @@ export class AppraisalService {
         body: req.body
       }
     };
+    // if (method == 'POST') {
+    //   return this.ajax.post(request);
+    // }
 
     return this.ajax.request<any>(request);
   }
