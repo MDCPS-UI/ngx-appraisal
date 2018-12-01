@@ -2,10 +2,10 @@
 * @config
 */
 export class EnvBaseConfig {
-  public local: boolean = false;
-  public useHash: boolean = false;
-  public production: boolean = false;
-  public development: boolean = false;
+  public local = false;
+  public useHash = false;
+  public production = false;
+  public development = false;
 
   /**
    * @constructor

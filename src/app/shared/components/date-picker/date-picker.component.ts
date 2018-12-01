@@ -13,13 +13,13 @@ export class DatePickerComponent implements OnInit {
    * @public
    */
   @Input()
-  public id: string = '';
+  public id = '';
 
   /**
    * @public
    */
   @Input()
-  public class: string = '';
+  public class = '';
 
   /**
    * @public
@@ -31,12 +31,12 @@ export class DatePickerComponent implements OnInit {
    * @public
    */
   @Input()
-  public type: string = 'text';
+  public type = 'text';
 
   /**
    * @private
    */
-  private _disabled: boolean = false;
+  private _disabled = false;
 
   /**
    * @public
@@ -75,13 +75,13 @@ export class DatePickerComponent implements OnInit {
    * @public
    */
   @Input()
-  public placeholder: string = 'MM/DD/YYYY';
+  public placeholder = 'MM/DD/YYYY';
 
   /**
    * @public
    */
   @Input()
-  public disableWeekends: boolean = false;
+  public disableWeekends = false;
 
   /**
    * @constructor

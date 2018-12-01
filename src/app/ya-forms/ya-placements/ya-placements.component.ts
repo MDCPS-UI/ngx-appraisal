@@ -89,7 +89,7 @@ export class YaPlacementsComponent implements OnInit {
     this.appraisal.init(this.appraisalId, 'getPlacementsInfo')
       .subscribe(data => {
         this.response = data;
-      })
+      });
   }
 
   /**
@@ -103,7 +103,7 @@ export class YaPlacementsComponent implements OnInit {
         email: new FormControl('', []),
         relationship: new FormControl('', [])
       })
-    )
+    );
   }
 
   /**
@@ -139,7 +139,7 @@ export class YaPlacementsComponent implements OnInit {
         dmgInfo: this.response,
         emailId: this.util.getQueryStringValue('uname')
       }));
-  
+
       this.util.navigate('/parenting');
       console.log(event.form.value);
     }
@@ -149,7 +149,7 @@ export class YaPlacementsComponent implements OnInit {
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId,'savePlacementsInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId, 'savePlacementsInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

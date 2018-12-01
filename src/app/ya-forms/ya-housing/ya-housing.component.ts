@@ -76,7 +76,7 @@ export class YaHousingComponent implements OnInit {
     this.appraisal.init(this.appraisalId, 'getHousingInfo')
       .subscribe(data => {
         this.response = data;
-      })
+      });
   }
 
   /**
@@ -109,7 +109,7 @@ export class YaHousingComponent implements OnInit {
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId,'saveHousingInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId, 'saveHousingInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

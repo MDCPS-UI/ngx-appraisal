@@ -37,5 +37,5 @@ export const getInsertStpdReqPayload: Function =
         graduationYearStipendRequestedOther: opts.data.graduationYearStipendRequestedOther || '',
         concerns: opts.stipendsInfo.concerns,
         goals: opts.stipendsInfo.goals
-    }
-}
+    };
+};

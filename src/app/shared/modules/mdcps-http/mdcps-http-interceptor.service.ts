@@ -48,6 +48,6 @@ export class MdcpsHttpInterceptor implements HttpInterceptor {
   private onJsErrors(): void {
     window.onerror = (e: any): void => {
       this.spinner.hide();
-    }
+    };
   }
 }

@@ -25,23 +25,23 @@ export class YouthAppraisalComponent implements OnInit {
    * @public
    */
   @Input()
-  public preset: boolean = false;
+  public preset = false;
 
   /**
    * @public
    */
-  public typeaheadLength: number = 3;
+  public typeaheadLength = 3;
 
   /**
    * @public
    */
-  public isProcessing: boolean = false;
+  public isProcessing = false;
 
   /**
    * @public
    */
   @Input()
-  public enableButton: boolean = false;
+  public enableButton = false;
 
   /**
    * @public
@@ -115,7 +115,7 @@ export class YouthAppraisalComponent implements OnInit {
    */
   public formatter(selection: any): string {
     return selection.macwisId;
-  };
+  }
 
   /**
    * @public
@@ -181,6 +181,6 @@ export class YouthAppraisalComponent implements OnInit {
         this.children = data;
         this.activeModel.setChildren(data);
       }
-    )
+    );
   }
 }

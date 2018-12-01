@@ -100,7 +100,7 @@ export class YaEducationComponent implements OnInit {
       tasks: new FormControl('', []),
       personResp: new FormControl('', []),
       progress: new FormControl('', []),
-      completeDt: new FormControl('',[])
+      completeDt: new FormControl('', [])
     });
   }
 

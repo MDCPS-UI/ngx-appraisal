@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { forkJoin } from "rxjs";
+import { forkJoin } from 'rxjs';
 import { getInsertDmgReqPayload } from './ya-demographics';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
@@ -103,7 +103,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId,'saveDmgInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId, 'saveDmgInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });
@@ -127,7 +127,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
    * @private
    */
   private _init(): void {
-    this.appraisalId = this.util.getQueryStringValue('appraisalId')
+    this.appraisalId = this.util.getQueryStringValue('appraisalId');
 
       // services to call concurrently
       const getCounties: any = this.appraisal.request('getCounties')
@@ -160,7 +160,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
     const form: any = {};
     for (const control of controls) {
 
-      let val: any = (control.controlName == 'addressList')
+      const val: any = (control.controlName == 'addressList')
         ? this._getAddress(this._get(data, control.controlName, control))
         : this._get(data, control.controlName, control);
 
@@ -170,7 +170,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
           value: val
         },
         control.validators
-      )
+      );
     }
 
     const state: string = (form['custodyStatus'].value)
@@ -214,7 +214,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
   private _getAddress(list: any): string {
     if (!list) { return ''; }
 
-    let addressStr: string = '';
+    let addressStr = '';
     for (const address of list) {
       addressStr +=
         address.line1 + ',\n' +

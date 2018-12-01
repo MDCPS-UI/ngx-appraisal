@@ -17,5 +17,5 @@ export const getInsertPlcReqPayload: Function =
         id: +(opts.plcInfo.id),
         appraisalId: +(opts.plcInfo.appraisalId || ''),
         completedBy: opts.emailId
-    }
-} 
+    };
+};

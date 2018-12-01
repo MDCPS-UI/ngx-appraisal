@@ -48,5 +48,5 @@ export const getInsertHealthReqPayload: Function =
         keepTrackOfAppointments: opts.data.keepTrackOfAppointments,
         goals: opts.healthInfo.goals,
         concerns: opts.healthInfo.concerns
-    }
-}
+    };
+};

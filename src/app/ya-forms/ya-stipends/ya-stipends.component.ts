@@ -100,8 +100,8 @@ export class YaStipendsComponent implements OnInit {
 
         // setting the responses so it can be retrieved
       this.activeModel.setResponse(this.response, null, true);
-        
-      })
+
+      });
   }
 
   /**
@@ -110,13 +110,13 @@ export class YaStipendsComponent implements OnInit {
   private _process(data: any): void {
 
     const options: any = YA_STPNDS_LIST;
-    
+
     const form: any = {};
 
-   
+
       for (const option of options.items) {
 
-        let val: any = this._get(data, option.optionName, option);
+        const val: any = this._get(data, option.optionName, option);
 
         form[option.optionName] = new FormControl(
           {
@@ -124,9 +124,9 @@ export class YaStipendsComponent implements OnInit {
             value: val
           },
           option.validators
-        )
+        );
       }
-    
+
     this.stipendsForm = this.fb.group(form);
 
   }
@@ -166,16 +166,16 @@ export class YaStipendsComponent implements OnInit {
       data: event.value,
       stipendsInfo: this.response,
       emailId: this.util.getQueryStringValue('uname')
-    }))
+    }));
     this.util.navigate('/services');
-    
+
   }
 
   /**
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId,'saveStipendInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId, 'saveStipendInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

@@ -11,7 +11,7 @@ interface BaseFormEvent {
   e?: any;
   form: FormGroup;
   value: AbstractControl;
-};
+}
 
 
 @Component({

@@ -74,7 +74,7 @@ export class YaRelationshipsComponent implements OnInit {
       isAfraidOfPartner: new FormControl('', []),
       isCurrentProstitution: new FormControl('', []),
       hasReceivedGoodsForSex: new FormControl('', [])
-    })
+    });
   }
 
   /**
@@ -86,7 +86,7 @@ export class YaRelationshipsComponent implements OnInit {
     this.appraisal.init(this.appraisalId, 'getRelationInfo')
       .subscribe(data => {
         this.response = data;
-      })
+      });
   }
 
   /**
@@ -98,7 +98,7 @@ export class YaRelationshipsComponent implements OnInit {
       prevBtn: true,
       nextBtnLabel: 'Criminal Justice System',
       previousBtnLabel: 'Health'
-    }
+    };
   }
 
   /**
@@ -119,7 +119,7 @@ export class YaRelationshipsComponent implements OnInit {
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId,'saveRelationInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId, 'saveRelationInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

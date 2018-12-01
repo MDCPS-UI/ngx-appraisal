@@ -10,7 +10,7 @@ export interface SpinnerConfig {
   backdrop?: string;
   spinnerText?: string;
   imageSource?: string;
-};
+}
 
 /**
  * @default
@@ -31,7 +31,7 @@ export class SpinnerComponent implements OnInit {
    * @public
    * @type: boolean
    */
-  public display: boolean = false;
+  public display = false;
   /**
    * @public
    * @type: Subscription

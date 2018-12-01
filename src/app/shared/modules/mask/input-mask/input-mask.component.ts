@@ -61,7 +61,7 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
    * @support: all HTML5 input types.
    */
   @Input()
-  public type: string = 'text';
+  public type = 'text';
 
   /**
    * @type: string
@@ -74,7 +74,7 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
    * `<cvs-input-mask [mask]="'(000)-000-0000'" [slotChar]="'.'"></cvs-input-mask>`
    */
   @Input()
-  public slotChar: string = '_';
+  public slotChar = '_';
 
   /**
    * @type: boolean
@@ -83,7 +83,7 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
    * @description: clears the incomplete input value on blur.
    */
   @Input()
-  public autoClear: boolean = true;
+  public autoClear = true;
 
   /**
    * @default: null
@@ -192,7 +192,7 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
    * @description: Regex pattern for alpha characters.
    */
   @Input()
-  public characterPattern: string = '[A-Za-z]';
+  public characterPattern = '[A-Za-z]';
 
   /**
    * @type: ElementRef
@@ -528,21 +528,18 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
       end = (typeof last === 'number') ? last : begin;
       if (this.el.setSelectionRange) {
         this.el.setSelectionRange(begin, end);
-      }
-      else if (this.el['createTextRange']) {
+      } else if (this.el['createTextRange']) {
         range = this.el['createTextRange']();
         range.collapse(true);
         range.moveEnd('character', end);
         range.moveStart('character', begin);
         range.select();
       }
-    }
-    else {
+    } else {
       if (this.el.setSelectionRange) {
         begin = this.el.selectionStart;
         end = this.el.selectionEnd;
-      }
-      else if (document['selection'] && document['selection'].createRange) {
+      } else if (document['selection'] && document['selection'].createRange) {
         range = document['selection'].createRange();
         begin = 0 - range.duplicate().moveStart('character', -100000);
         end = begin + range.text.length;
@@ -562,7 +559,7 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
     for (let i = this.firstNonMaskPos;
       i <= this.lastRequiredNonMaskPos; i++) {
 
-      const phr: any = this.getPlaceholder(i)
+      const phr: any = this.getPlaceholder(i);
       if (this.tests[i] && this.buffer[i] === phr) {
         return false;
       }
@@ -598,7 +595,7 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
    * of th next buffer.
    */
   public seekNext(pos: number): any {
-    while (++pos < this.len && !this.tests[pos]);
+    while (++pos < this.len && !this.tests[pos]) { }
     return pos;
   }
 
@@ -610,7 +607,7 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
    * of th previous buffer.
    */
   public seekPrev(pos: number): any {
-    while (--pos >= 0 && !this.tests[pos]);
+    while (--pos >= 0 && !this.tests[pos]) { }
     return pos;
   }
 
@@ -683,11 +680,13 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
       && this.oldVal.length > curVal.length) {
       // a deletion or backspace happened
       this.checkVal(true);
-      while (pos.begin > 0 && !this.tests[pos.begin - 1])
+      while (pos.begin > 0 && !this.tests[pos.begin - 1]) {
         pos.begin--;
+      }
       if (pos.begin === 0) {
-        while (pos.begin < this.firstNonMaskPos && !this.tests[pos.begin])
+        while (pos.begin < this.firstNonMaskPos && !this.tests[pos.begin]) {
           pos.begin++;
+        }
       }
       this.caret(pos.begin, pos.begin);
     } else {
@@ -720,7 +719,7 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
     this.onBlur.emit(e);
 
     if (this.el.value != this.focusText) {
-      let event = document.createEvent('HTMLEvents');
+      const event = document.createEvent('HTMLEvents');
       event.initEvent('change', true, false);
       this.el.dispatchEvent(event);
     }
@@ -743,7 +742,7 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
     const iPhone = /iphone/i.test(this.domHandler.getUserAgent());
     this.oldVal = this.el.value;
 
-    //backspace, delete, and escape get special treatment
+    // backspace, delete, and escape get special treatment
     if (k === 8 || k === 46 || (iPhone && k === 127)) {
       pos = this.caret();
       begin = pos.begin;
@@ -790,8 +789,7 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
     // ignore if the current key is a alt, ctrl or meta key
     if (e.ctrlKey || e.altKey || e.metaKey || k < 32) {
       return;
-    }
-    else if (k && k !== 13) {
+    } else if (k && k !== 13) {
       if (pos.end - pos.begin !== 0) {
         this.clearBuffer(pos.begin, pos.end);
         this.shiftL(pos.begin, pos.end - 1);
@@ -876,7 +874,7 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
    */
   public checkVal(allow?: boolean): any {
     // try to place characters where they belong
-    let lastMatch: number = -1;
+    const lastMatch = -1;
 
     // re-write the buffers
     const idx: number = this.updateBuffer(lastMatch);
@@ -897,8 +895,7 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
     lastMatch: number, allow?: boolean): void {
     if (allow) {
       this.writeBuffer();
-    }
-    else if (lastMatch + 1 < this.partialPosition) {
+    } else if (lastMatch + 1 < this.partialPosition) {
       if (this.autoClear || this.buffer.join('') === this.defaultBuffer) {
         // invalid value. Remove it and replace it with the
         // mask, which is the default behavior.
@@ -976,7 +973,7 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
     // clear the timeouts if there are any
     clearTimeout(this.caretTimeoutId);
 
-    let pos: number = this.checkVal();;
+    const pos: number = this.checkVal();
 
     // set up the focus text
     this.focusText = this.el.value;
@@ -996,7 +993,7 @@ export class InputMaskComponent implements OnInit, ControlValueAccessor {
    * buffer after trigger a timeout.
    */
   public setCaretTimeout(pos: number): any {
-    let len: number = this.mask.replace("?", "").length;
+    const len: number = this.mask.replace('?', '').length;
 
     return setTimeout(() => {
       // do not proceed if the current element is inactive
