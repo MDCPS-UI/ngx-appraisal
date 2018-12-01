@@ -96,7 +96,7 @@ export class YaDemographicsComponent implements OnInit, AfterViewInit {
       emailId: this.util.getQueryStringValue('uname')
     }));
 
-    this.util.navigate('education');
+    this.util.navigate('/education');
   }
 
   /**

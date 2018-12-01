@@ -155,7 +155,7 @@ export class UtilService {
    * @returns void
    */
   public navigateIt(route: string): void {
-    this.router.navigateByUrl(`/${route + window.location.search}`, {
+    this.router.navigate([`/${route}`], {
       queryParamsHandling: 'merge',
       preserveQueryParams: true
     });
