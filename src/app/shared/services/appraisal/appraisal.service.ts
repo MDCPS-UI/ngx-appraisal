@@ -66,14 +66,11 @@ export class AppraisalService {
     const request: any = {
       url: url,
       method: method,
-      headers: headers,
       options: {
+        headers: headers,
         body: req.body
       }
     };
-    // if (method == 'POST') {
-    //   return this.ajax.post(request);
-    // }
 
     return this.ajax.request<any>(request);
   }
