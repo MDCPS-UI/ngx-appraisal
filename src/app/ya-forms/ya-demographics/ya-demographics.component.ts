@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { forkJoin } from "rxjs/observable/forkJoin";
+import { forkJoin } from "rxjs";
 import { getInsertDmgReqPayload } from './ya-demographics';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';

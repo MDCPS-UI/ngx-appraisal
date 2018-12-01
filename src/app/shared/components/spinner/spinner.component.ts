@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { Subscription } from 'rxjs/Rx';
+import { Subscription } from 'rxjs';
 import { Component, OnInit, Input } from '@angular/core';
 import { SpinnerService } from './../../services/spinner/spinner.service';
 
@@ -21,16 +21,27 @@ const spinnerDefaults: SpinnerConfig = {
   imageSource: '/assets/images/mdcps-spinner.gif'
 };
 
-
 @Component({
   selector: 'mdcps-spinner',
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.scss']
 })
 export class SpinnerComponent implements OnInit {
+  /**
+   * @public
+   * @type: boolean
+   */
   public display: boolean = false;
+  /**
+   * @public
+   * @type: Subscription
+   */
   public subsription: Subscription;
-
+  /**
+   * @public
+   * @type: SpinnerConfig
+   * @Input
+   */
   @Input()
   public config: SpinnerConfig;
 

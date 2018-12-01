@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject, BehaviorSubject } from 'rxjs/Rx';
+import { Subject, BehaviorSubject } from 'rxjs';
 import { ActiveModelService } from './../active-model/active-model.service';
 
 // access to the native window object.

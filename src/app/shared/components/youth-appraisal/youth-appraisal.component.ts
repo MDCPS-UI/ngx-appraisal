@@ -1,5 +1,4 @@
 import { Observable } from 'rxjs';
-import { YA_CHILDREN_DATA } from './youth-appraisal';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { ProfileService } from './../../services/profile/profile.service';
@@ -176,7 +175,8 @@ export class YouthAppraisalComponent implements OnInit {
       return;
     }
 
-    this.appraisal.request('getAllChildren').subscribe(
+    this.appraisal.request('getAllChildren')
+    .subscribe(
       (data) => {
         this.children = data;
         this.activeModel.setChildren(data);

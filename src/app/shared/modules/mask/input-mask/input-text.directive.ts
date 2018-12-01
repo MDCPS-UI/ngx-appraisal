@@ -1,5 +1,5 @@
 import { NgModel } from '@angular/forms';
-import { NgModule, Directive, ElementRef, HostListener, Input, DoCheck, Optional } from '@angular/core';
+import { Directive, ElementRef, HostListener, DoCheck, Optional } from '@angular/core';
 
 @Directive({
     selector: '[pInputText]',
@@ -18,13 +18,13 @@ export class InputTextkDirective implements DoCheck {
 
     /**
      * @constructor
-     * @param: {el<ElementRef>} 
-     * @param: {ngModel<NgModel>} 
+     * @param: {el<ElementRef>}
+     * @param: {ngModel<NgModel>}
      */
     constructor(public el: ElementRef,
         @Optional() public ngModel: NgModel) { }
 
-    // to trigger change detection to manage ui-state-filled 
+    // to trigger change detection to manage ui-state-filled
     // for material labels when there is no value binding
     @HostListener('input', ['$event'])
     public onInput(e: Event): void {

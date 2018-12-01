@@ -1,11 +1,11 @@
 import { Goal, Concern } from './goals';
-import { Component, OnInit, Input } from "@angular/core";
-import { FormGroup, FormBuilder, FormArray } from "@angular/forms";
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
-  selector: "mdcps-goals",
-  templateUrl: "./goals.component.html",
-  styleUrls: ["./goals.component.scss"]
+  selector: 'mdcps-goals',
+  templateUrl: './goals.component.html',
+  styleUrls: ['./goals.component.scss']
 })
 export class GoalsComponent implements OnInit {
   /**
@@ -47,7 +47,7 @@ export class GoalsComponent implements OnInit {
    * @public
    */
   public onAddGoal(): void {
-    (<FormArray>this.goalsForm.get("goals")).push(
+    (<FormArray>this.goalsForm.get('goals')).push(
       new FormGroup(new Goal().fields)
     );
   }
@@ -56,7 +56,7 @@ export class GoalsComponent implements OnInit {
    * @public
    */
   public onAddConcern(): void {
-    (<FormArray>this.goalsForm.get("concerns")).push(
+    (<FormArray>this.goalsForm.get('concerns')).push(
       new FormGroup(new Concern().fields)
     );
   }
@@ -65,13 +65,13 @@ export class GoalsComponent implements OnInit {
    * @public
    */
   public onDeleteGoal(idx: number): void {
-    (<FormArray>this.goalsForm.get("goals")).removeAt(idx);
+    (<FormArray>this.goalsForm.get('goals')).removeAt(idx);
   }
 
   /**
    * @public
    */
   public onDeleteConcern(idx: number): void {
-    (<FormArray>this.goalsForm.get("concerns")).removeAt(idx);
+    (<FormArray>this.goalsForm.get('concerns')).removeAt(idx);
   }
 }
