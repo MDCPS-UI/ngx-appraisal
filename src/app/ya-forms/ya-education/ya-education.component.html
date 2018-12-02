@@ -9,8 +9,8 @@
       <div class="form-group">
         <div class="form-check">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" value="somehighschool" formControlName="over18HighestEd">
-            &nbsp;Some High School
+            <mat-radio-button value="somehighschool" formControlName="over18HighestEd">
+            &nbsp;Some High School </mat-radio-button>
           </label>
         </div>
         <div class="form-check">
@@ -110,28 +110,32 @@
           <div class="col-6">
             <div class="form-check">
               <label class="form-check-label col-12 pt-2">
-                <input type="checkbox" class="form-check-input form-check-input-inline" value="middleschool"
+                <mat-checkbox value="middleschool"
                   formControlName="isMiddleSchool"> &nbsp;
-                Middle School
+                Middle School </mat-checkbox>
               </label>
             </div>
           </div>
           <div class="col-6">
-            <input type="text" class="form-check-input" placeholder="Middle School Grade" formControlName="grade">
+          <mat-form-field>
+            <input matInput placeholder="Middle School Grade" formControlName="grade">
+          </mat-form-field>
           </div>
         </div>
         <div class="row">
           <div class="col-6">
             <div class="form-check">
               <label class="form-check-label col-12 pt-2">
-                <input type="checkbox" class="form-check-input form-check-input-inline" value="highschool" formControlName="isHighSchool">
+                <mat-checkbox value="highschool" formControlName="isHighSchool">
                 &nbsp;
-                High School
+                High School</mat-checkbox>
               </label>
             </div>
           </div>
           <div class="col-6">
-            <input type="text" class="form-check-input" placeholder="High School Grade" formControlName="grade">
+            <mat-form-field>
+            <input matInput placeholder="High School Grade" formControlName="grade">
+            </mat-form-field>
           </div>
         </div>
         <div class="row">
