@@ -1,0 +1,152 @@
+<form [formGroup]="goalsForm" *ngIf="goalsForm" class="goals-form">
+
+  <!-- Goals Block -->
+  <div class="row mdcps-user-action">
+    <div class="col-12" id="" formArrayName="goals">
+      <label *ngIf="compName">
+        <h3>{{ compName + " Goals" }}</h3>
+      </label>
+      <button
+        type="button"
+        class="btn btn-default btn-mdcps"
+        (click)="onAddGoal()"
+      >
+        Add Goal
+      </button>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="text-center">Goals</th>
+            <th class="text-center">Tasks to Complete</th>
+            <th class="text-center">Person(s) Responsible for Tasks</th>
+            <th class="text-center">Progress</th>
+            <th class="text-center">Completion Date</th>
+            <th class="text-center">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let goal of goalsForm.get('goals').controls; let i = index"
+            [formGroupName]="i"
+          >
+            <th scope="row">
+              <input
+                class="form-control form-control-sm"
+                formControlName="goalText"
+              />
+            </th>
+            <td>
+              <textarea
+                class="form-control form-control-sm"
+                formControlName="tasks"
+              ></textarea>
+            </td>
+            <td>
+              <textarea
+                class="form-control form-control-sm"
+                formControlName="personResp"
+              ></textarea>
+            </td>
+            <td>
+              <textarea
+                class="form-control form-control-sm"
+                formControlName="progress"
+              >
+              </textarea>
+            </td>
+            <td>
+              <mdcps-date-picker
+                [class]="'form-control'"
+                [controlName]="'goalsCompleteDt'"
+                [group]="goalsForm.get('goals')?.controls[i]"
+              >
+              </mdcps-date-picker>
+            </td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-default btn-delete"
+                (click)="onDeleteGoal(i)"
+              >
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- form-row -->
+
+  <!-- Concerns Block -->
+  <div class="row mdcps-user-action">
+    <div class="col-12" id="" formArrayName="concerns">
+      <label *ngIf="compName">
+        <h3>{{ compName + " Concerns" }}</h3>
+      </label>
+      <button
+        type="button"
+        class="btn btn-default btn-mdcps"
+        style="float:right;"
+        (click)="onAddConcern()"
+      >
+        Add Concern
+      </button>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="text-center">Concerns</th>
+            <th class="text-center">Resolutions</th>
+            <th class="text-center">Person(s) Responsible for Tasks</th>
+            <th class="text-center">Completion Date</th>
+            <th class="text-center">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let c of goalsForm.get('concerns').controls; let i = index"
+            [formGroupName]="i"
+          >
+            <th scope="row">
+              <input
+                class="form-control form-control-sm"
+                formControlName="concernsText"
+              />
+            </th>
+            <td>
+              <textarea
+                class="form-control form-control-sm"
+                formControlName="resolutionsText"
+              ></textarea>
+            </td>
+            <td>
+              <textarea
+                class="form-control form-control-sm"
+                formControlName="personText"
+              >
+              </textarea>
+            </td>
+            <td>
+              <mdcps-date-picker
+                [class]="'form-control'"
+                [controlName]="'concCompleteDt'"
+                [group]="goalsForm.get('concerns')?.controls[i]"
+              >
+              </mdcps-date-picker>
+            </td>
+            <td>
+              <button
+                class="btn btn-default btn-delete"
+                type="button"
+                (click)="onDeleteConcern(i)"
+              >
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- form-row -->
+</form>

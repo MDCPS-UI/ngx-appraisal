@@ -40,5 +40,5 @@ export const getInterestsReqPayload: Function =
         listhobbies: opts.data.listhobbies,
         goals: opts.intrInfo.goals,
         concerns: opts.intrInfo.concerns
-    }
-}
+    };
+};

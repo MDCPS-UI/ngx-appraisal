@@ -65,7 +65,7 @@
         },
         {
             label: 'Not Applicable',
-            value:'notApplicable'
+            value: 'notApplicable'
         },
         {
             label: 'Other',

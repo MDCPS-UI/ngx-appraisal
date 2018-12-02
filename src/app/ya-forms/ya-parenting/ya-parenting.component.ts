@@ -92,7 +92,7 @@ export class YaParentingComponent implements OnInit {
     this.appraisal.init(this.appraisalId, 'getParentingInfo')
       .subscribe(data => {
         this.response = data;
-      })
+      });
   }
 
   /**
@@ -125,7 +125,7 @@ export class YaParentingComponent implements OnInit {
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId,'saveParentingInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId, 'saveParentingInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

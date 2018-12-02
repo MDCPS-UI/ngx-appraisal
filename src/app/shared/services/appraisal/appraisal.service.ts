@@ -1,11 +1,12 @@
 import * as _ from 'lodash';
-import { Observable } from 'rxjs';
+import { mapTo } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
+import { Observable, of, empty } from 'rxjs';
 import { UtilService } from './../util/util.service';
 import { AjaxService } from './../ajax/ajax.service';
 import { AjaxRequest } from './../ajax/ajax.interface';
 import { serviceConstants } from './../../constants/service.constants';
-import { ActiveModelService } from '../active-model/active-model.service';
+import { ActiveModelService } from './../active-model/active-model.service';
 
 // putting common headers outside the request
 const commonHeaders: any = {
@@ -43,15 +44,17 @@ export class AppraisalService {
     // retrieve it without making an http call.
     const cachedResponses: any = this.activeModel.getResponse();
     if (cachedKeys[serviceName] && cachedResponses[cachedKeys[serviceName]]) {
-      return Observable.of(new Object()).mapTo(
-        cachedResponses[cachedKeys[serviceName]]
+      return of(new Object()).pipe(
+        mapTo(
+          cachedResponses[cachedKeys[serviceName]]
+        )
       );
     }
 
     // if the data wasn't found in the cache,
     // make a fresh call and cache it if opted in.
     const config: any = serviceConstants[serviceName];
-    if (!config) { return Observable.empty(); }
+    if (!config) { return empty(); }
 
     req = req || {};
     const url: string = (!config.isLocal)
@@ -86,6 +89,6 @@ export class AppraisalService {
       );
     }
     this.util.navigateIt('landing');
-    return Observable.empty();
+    return empty();
   }
 }

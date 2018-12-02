@@ -10,12 +10,15 @@ import { ProfileService, MdcpsNavigationEvent } from './../../../services/profil
 export class SideBarComponent implements OnInit {
   /**
    * @public
+   * @type: any[]
+   * @Input
    */
   @Input()
   public tabs: any[] = [];
 
   /**
    * @public
+   * @type: string
    */
   public activePage: string;
 

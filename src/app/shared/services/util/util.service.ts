@@ -18,6 +18,23 @@ export class UtilService {
 
   /**
    * @public
+   * @param: {arr<Subscription[]>}
+   * @return: void
+   * @description: unsubscribes active subscriptions on the page.
+   */
+  public static unsubscribe(arr: Subscription[]): void {
+    if (!Array.isArray(arr)) { return; }
+
+    // safely unsubscribe the subscriptions
+    for (let i = 0; i < arr.length; i++) {
+      if (!!arr[i]) {
+        arr[i].unsubscribe();
+      }
+    }
+  }
+
+  /**
+   * @public
    * @description:  takes the unformatted string
    * and formats it by replacing the the arbitary
    * text inside the curly braces with the dynamic
@@ -47,27 +64,10 @@ export class UtilService {
     // construct the url by replacing the arbitary
     // text inside the curly braces
     for (let i = 0; i < (<any[]>args).length; i++) {
-      str = str.replace(new RegExp("\\{" + i + "\\}", "gi"),
+      str = str.replace(new RegExp('\\{' + i + '\\}', 'gi'),
         (<any[]>args)[i]);
     }
     return str;
-  }
-
-  /**
-   * @public
-   * @param: {arr<Subscription[]>}
-   * @return: void
-   * @description: unsubscribes active subscriptions on the page.
-   */
-  public static unsubscribe(arr: Subscription[]): void {
-    if (!Array.isArray(arr)) { return; }
-
-    // safely unsubscribe the subscriptions
-    for (let i = 0; i < arr.length; i++) {
-      if (!!arr[i]) {
-        arr[i].unsubscribe();
-      }
-    }
   }
 
   /**
@@ -80,7 +80,7 @@ export class UtilService {
     if (!path) { return; }
 
     const isPath: boolean = (path.indexOf('/') > -1);
-    let _path: string = (!isPath) ? `/${path}` : path;
+    const _path: string = (!isPath) ? `/${path}` : path;
     this.spinner.show();
 
     // for demo purpose
@@ -106,19 +106,19 @@ export class UtilService {
 
     // convert the numbered format to
     // string so we can check the length
-    if (typeof value == 'number') {
+    if (typeof value === 'number') {
       strToFormat = value.toString();
     }
 
     // in case if the length is `1`, prepend
     // zero before the value
-    if (strToFormat && strToFormat.length == 1) {
+    if (strToFormat && strToFormat.length === 1) {
       strToFormat = ('0' + strToFormat);
     }
 
     // if the value is requested in numbered
     // format
-    if (format && format == 'num') {
+    if (format && format === 'num') {
       strToFormat = +strToFormat;
     }
     return strToFormat;

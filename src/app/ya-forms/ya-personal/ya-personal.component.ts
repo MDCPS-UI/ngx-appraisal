@@ -91,7 +91,7 @@ export class YaPersonalComponent implements OnInit {
     this.appraisal.init(this.appraisalId, 'getPersonalInfo')
       .subscribe(data => {
         this.response = data;
-      })
+      });
   }
 
   /**
@@ -125,7 +125,7 @@ export class YaPersonalComponent implements OnInit {
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId,'savePersonalInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId, 'savePersonalInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

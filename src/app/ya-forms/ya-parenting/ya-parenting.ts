@@ -10,7 +10,7 @@ interface InsertPrtgOptions {
 /**
  * @constant
  */
-export const getInsertPrtgReqPayload: Function = 
+export const getInsertPrtgReqPayload: Function =
 (opts: InsertPrtgOptions): any => {
     return {
         progress: opts.prtgInfo.progress,
@@ -44,5 +44,5 @@ export const getInsertPrtgReqPayload: Function =
         payNA: opts.data.payNA,
         goals: opts.prtgInfo.goals,
         concerns: opts.prtgInfo.concerns
-    }
-}
+    };
+};

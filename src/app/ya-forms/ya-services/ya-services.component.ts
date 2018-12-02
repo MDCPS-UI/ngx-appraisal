@@ -7,7 +7,7 @@ import { ProfileService } from './../../shared/services/profile/profile.service'
 import { AppraisalService } from './../../shared/services/appraisal/appraisal.service';
 import { ActiveModelService } from '../../shared/services/active-model/active-model.service';
 
-//constant
+// constant
 import { YA_SRVC_LIST } from './ya-services.constants';
 
 @Component({
@@ -57,7 +57,7 @@ export class YaServicesComponent implements OnInit {
     this.initFormConfig();
     this._init();
 
-    //dynamic service data list
+    // dynamic service data list
     this.serviceList = YA_SRVC_LIST;
   }
 
@@ -67,27 +67,27 @@ export class YaServicesComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.servicesForm = this.fb.group({
-      medicaid: new FormControl('',[]),
-      medicaidOtherText: new FormControl('',[]),
-      mentalHealth: new FormControl('',[]),
-      mentalHealthOtherText: new FormControl('',[]),
-      parentingClasses: new FormControl('',[]),
-      parentingClassesOtherText: new FormControl('',[]),
-      transportation: new FormControl('',[]),
-      transportationOtherText: new FormControl('',[]),
-      snap: new FormControl('',[]),
-      snapOtherText: new FormControl('',[]),
-      tanf: new FormControl('',[]),
-      tanfOtherText: new FormControl('',[]),
-      childCareVoucher: new FormControl('',[]),
+      medicaid: new FormControl('', []),
+      medicaidOtherText: new FormControl('', []),
+      mentalHealth: new FormControl('', []),
+      mentalHealthOtherText: new FormControl('', []),
+      parentingClasses: new FormControl('', []),
+      parentingClassesOtherText: new FormControl('', []),
+      transportation: new FormControl('', []),
+      transportationOtherText: new FormControl('', []),
+      snap: new FormControl('', []),
+      snapOtherText: new FormControl('', []),
+      tanf: new FormControl('', []),
+      tanfOtherText: new FormControl('', []),
+      childCareVoucher: new FormControl('', []),
       childCareVoucherOtherText: new FormControl('', []),
-      locateHousing: new FormControl('',[]),
-      locateHousingOtherText: new FormControl('',[]),
-      scheduleCounseling: new FormControl('',[]),
-      scheduleCounselingOtherText: new FormControl('',[]),
-      other: new FormControl('',[]),
-      otherOtherText: new FormControl('',[]),
-      notes: new FormControl('',[])
+      locateHousing: new FormControl('', []),
+      locateHousingOtherText: new FormControl('', []),
+      scheduleCounseling: new FormControl('', []),
+      scheduleCounselingOtherText: new FormControl('', []),
+      other: new FormControl('', []),
+      otherOtherText: new FormControl('', []),
+      notes: new FormControl('', [])
     });
   }
 
@@ -107,8 +107,8 @@ export class YaServicesComponent implements OnInit {
 
       // setting the responses so it can be retrieved
       this.activeModel.setResponse(this.response, null, true);
-        
-      })
+
+      });
   }
 
   /**
@@ -117,11 +117,11 @@ export class YaServicesComponent implements OnInit {
   private _process(data: any): void {
 
     const options: any[] = YA_SRVC_LIST;
-    
+
     const form: any = {};
     for (const option of options) {
 
-      let val: any = this._get(data, option.optionName, option)
+      const val: any = this._get(data, option.optionName, option);
 
       form[option.optionName] = new FormControl(
         {
@@ -129,7 +129,7 @@ export class YaServicesComponent implements OnInit {
           value: val
         },
         option.validators
-      )
+      );
     }
     this.servicesForm = this.fb.group(form);
 
@@ -167,7 +167,7 @@ export class YaServicesComponent implements OnInit {
    * @private
    */
   private _saveInfo(data: any): void {
-    this.appraisal.init(this.appraisalId,'saveCssInfo', null, {body: data})
+    this.appraisal.init(this.appraisalId, 'saveCssInfo', null, {body: data})
       .subscribe(v => {
         console.log(v);
       });

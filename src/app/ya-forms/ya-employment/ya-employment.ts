@@ -40,5 +40,5 @@ export const getEmpReqPayload: Function =
         hourlyPayOtherExplain: opts.data.hourlyPayOtherExplain,
         goals: opts.empInfo.goals,
         concerns: opts.empInfo.concerns
-    }
-}
+    };
+};

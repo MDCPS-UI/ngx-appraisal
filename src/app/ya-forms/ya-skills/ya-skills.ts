@@ -44,5 +44,5 @@
         hasHadETV: opts.data.hasHadETV,
         goals: opts.skillsInfo.goals,
         concerns: opts.skillsInfo.concerns
-      }
-  }
+      };
+  };

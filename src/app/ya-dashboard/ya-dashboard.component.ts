@@ -16,7 +16,7 @@ export class YaDashboardComponent implements OnInit {
   /**
    * @public
    */
-  public isDisabled: boolean = false;
+  public isDisabled = false;
 
   /**
    * @constructor

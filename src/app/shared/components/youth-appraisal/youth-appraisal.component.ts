@@ -1,5 +1,4 @@
 import { Observable } from 'rxjs';
-import { YA_CHILDREN_DATA } from './youth-appraisal';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { ProfileService } from './../../services/profile/profile.service';
@@ -26,23 +25,23 @@ export class YouthAppraisalComponent implements OnInit {
    * @public
    */
   @Input()
-  public preset: boolean = false;
+  public preset = false;
 
   /**
    * @public
    */
-  public typeaheadLength: number = 3;
+  public typeaheadLength = 3;
 
   /**
    * @public
    */
-  public isProcessing: boolean = false;
+  public isProcessing = false;
 
   /**
    * @public
    */
   @Input()
-  public enableButton: boolean = false;
+  public enableButton = false;
 
   /**
    * @public
@@ -104,7 +103,7 @@ export class YouthAppraisalComponent implements OnInit {
    */
   public onSearch(e: MouseEvent): void {
     if (e && (<any>e.target).value
-      && (<any>e.target).value.length == this.typeaheadLength) {
+      && (<any>e.target).value.length === this.typeaheadLength) {
       this.isProcessing = true;
     } else {
       this.isProcessing = false;
@@ -116,7 +115,7 @@ export class YouthAppraisalComponent implements OnInit {
    */
   public formatter(selection: any): string {
     return selection.macwisId;
-  };
+  }
 
   /**
    * @public
@@ -176,11 +175,12 @@ export class YouthAppraisalComponent implements OnInit {
       return;
     }
 
-    this.appraisal.request('getAllChildren').subscribe(
+    this.appraisal.request('getAllChildren')
+    .subscribe(
       (data) => {
         this.children = data;
         this.activeModel.setChildren(data);
       }
-    )
+    );
   }
 }

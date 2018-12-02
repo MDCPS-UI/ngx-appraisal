@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject, BehaviorSubject } from 'rxjs/Rx';
+import { Subject, BehaviorSubject } from 'rxjs';
 import { ActiveModelService } from './../active-model/active-model.service';
 
 // access to the native window object.
@@ -13,7 +13,7 @@ export interface MdcpsNavigationEvent {
   routePrefix?: string;
   routeSuffix?: string;
   navigationUrl: string;
-};
+}
 
 @Injectable()
 export class ProfileService {
@@ -107,7 +107,7 @@ export class ProfileService {
 
     try {
       parsedVal = JSON.parse(value);
-    } catch(e) {
+    } catch (e) {
       parsedVal = value;
     }
 

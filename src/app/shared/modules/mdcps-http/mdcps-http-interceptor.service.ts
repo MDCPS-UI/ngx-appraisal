@@ -1,9 +1,8 @@
-import 'rxjs/add/operator/do';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { SpinnerService } from './../../services/spinner/spinner.service';
 import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent, HttpResponse } from '@angular/common/http';
-
 
 @Injectable()
 export class MdcpsHttpInterceptor implements HttpInterceptor {
@@ -13,7 +12,7 @@ export class MdcpsHttpInterceptor implements HttpInterceptor {
    * @param spinner
    */
   constructor(private spinner: SpinnerService) {
-    this.onJSErrors();
+    this.onJsErrors();
   }
 
   /**
@@ -28,18 +27,17 @@ export class MdcpsHttpInterceptor implements HttpInterceptor {
     next: HttpHandler): Observable<HttpEvent<any>> {
 
     this.spinner.show();
-    return next.handle(req)
-      .do(evt => {
+    return next.handle(req).pipe(
+      tap(evt => {
         if (evt instanceof HttpResponse) {
-            this.spinner.hide();
+          this.spinner.hide();
         }
       },
       (err) => {
         this.spinner.hide();
       },
-      () => {
-        this.spinner.hide();
-      });
+      () => { })
+    );
   }
 
   /**
@@ -47,10 +45,9 @@ export class MdcpsHttpInterceptor implements HttpInterceptor {
    * @return: void
    * @description: N/A
    */
-  private onJSErrors(): void {
+  private onJsErrors(): void {
     window.onerror = (e: any): void => {
-      console.log(e);
       this.spinner.hide();
-    }
+    };
   }
 }
