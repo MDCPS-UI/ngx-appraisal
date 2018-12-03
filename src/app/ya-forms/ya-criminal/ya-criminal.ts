@@ -15,6 +15,7 @@
 export const getInsertCriminalInfoReqPayload: Function =
 (opts: InsertCriminalOptions): any => {
     return {
+        body: {
         id: +(opts.criminalInfo.id),
         progress: opts.criminalInfo.progress,
         appraisalId: +(opts.criminalInfo.appraisalId),
@@ -32,5 +33,6 @@ export const getInsertCriminalInfoReqPayload: Function =
         possessWeapon: opts.data.possessWeapon,
         concerns: opts.criminalInfo.concerns,
         goals: opts.criminalInfo.goals
+        }
     };
 };

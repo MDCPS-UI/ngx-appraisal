@@ -13,6 +13,7 @@ interface InsertRltOptions {
 export const getInsertRltReqPayload: Function =
 (opts: InsertRltOptions): any => {
     return {
+        body: {
         progress: opts.rltInfo.progress,
         id: +(opts.rltInfo.id),
         appraisalId: +(opts.rltInfo.appraisalId || ''),
@@ -29,5 +30,6 @@ export const getInsertRltReqPayload: Function =
         hasReceivedGoodsForSex: opts.data.hasReceivedGoodsForSex,
         goals: opts.rltInfo.goals,
         concerns: opts.rltInfo.concerns
+        }
     };
 };

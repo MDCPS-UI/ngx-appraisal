@@ -13,6 +13,7 @@ interface InsertHealthOptions {
 export const getInsertHealthReqPayload: Function =
 (opts: InsertHealthOptions): any => {
     return {
+        body: {
         progress: opts.healthInfo.progress,
         id: +(opts.healthInfo.id),
         appraisalId: +(opts.healthInfo.appraisalId || ''),
@@ -48,5 +49,6 @@ export const getInsertHealthReqPayload: Function =
         keepTrackOfAppointments: opts.data.keepTrackOfAppointments,
         goals: opts.healthInfo.goals,
         concerns: opts.healthInfo.concerns
+        }
     };
 };

@@ -13,6 +13,7 @@ interface InsertInterestsOptions {
 export const getInterestsReqPayload: Function =
 (opts: InsertInterestsOptions) => {
     return {
+        body: {
         progress: opts.intrInfo.progress,
         id: +(opts.intrInfo.id),
         appraisalId: +(opts.intrInfo.appraisalId || ''),
@@ -40,5 +41,6 @@ export const getInterestsReqPayload: Function =
         listhobbies: opts.data.listhobbies,
         goals: opts.intrInfo.goals,
         concerns: opts.intrInfo.concerns
+        }
     };
 };

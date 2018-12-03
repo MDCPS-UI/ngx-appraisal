@@ -13,6 +13,7 @@ interface InsertServicesOptions {
 export const getInsertSrvcReqPayload: Function =
 (opts: InsertServicesOptions): any => {
     return {
+        body: {
         id: +(opts.srvcInfo.id),
         progress: opts.srvcInfo.progress,
         appraisalId: +(opts.srvcInfo.appraisalId),
@@ -40,5 +41,6 @@ export const getInsertSrvcReqPayload: Function =
         other: opts.data.other,
         otherOtherText: opts.data.otherOtherText,
         notes: opts.data.notes
+        }
     };
 };

@@ -13,6 +13,7 @@ interface InsertStipendsOptions {
 export const getInsertStpdReqPayload: Function =
 (opts: InsertStipendsOptions): any => {
     return {
+        body: {
         id: +(opts.stipendsInfo.id),
         progress: opts.stipendsInfo.progress,
         appraisalId: +(opts.stipendsInfo.appraisalId),
@@ -37,5 +38,6 @@ export const getInsertStpdReqPayload: Function =
         graduationYearStipendRequestedOther: opts.data.graduationYearStipendRequestedOther || '',
         concerns: opts.stipendsInfo.concerns,
         goals: opts.stipendsInfo.goals
+        }
     };
 };

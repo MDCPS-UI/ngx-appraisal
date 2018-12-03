@@ -13,6 +13,7 @@ interface InsertEmppOptions {
 export const getEmpReqPayload: Function =
 (opts: InsertEmppOptions): any => {
     return {
+        body:{
         progress: opts.empInfo.progress,
         id: +(opts.empInfo.id),
         appraisalId: +(opts.empInfo.appraisalId || ''),
@@ -40,5 +41,6 @@ export const getEmpReqPayload: Function =
         hourlyPayOtherExplain: opts.data.hourlyPayOtherExplain,
         goals: opts.empInfo.goals,
         concerns: opts.empInfo.concerns
+        }
     };
 };

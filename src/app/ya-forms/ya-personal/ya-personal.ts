@@ -13,6 +13,7 @@ interface InsertPersonalOptions {
 export const getInsertPersonalPayload: Function =
 (opts: InsertPersonalOptions): any => {
     return {
+        body: {
         progress: opts.personalInfo.progress,
         id: +(opts.personalInfo.id),
         appraisalId: +(opts.personalInfo.appraisalId || ''),
@@ -35,5 +36,6 @@ export const getInsertPersonalPayload: Function =
         transportationPlans: opts.data.transportationPlans,
         goals: opts.personalInfo.goals,
         concerns: opts.personalInfo.concerns
+        }
     };
 };

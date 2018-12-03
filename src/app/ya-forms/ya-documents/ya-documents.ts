@@ -13,6 +13,7 @@ interface InsertDocOptions {
 export const getInsertDocReqPayload: Function =
 (opts: InsertDocOptions): any => {
     return {
+        body: {
         progress: opts.docInfo.progress,
         id: +(opts.docInfo.id),
         appraisalId: +(opts.docInfo.appraisalId || ''),
@@ -49,5 +50,6 @@ export const getInsertDocReqPayload: Function =
         resourceGuideText: opts.data.resourceGuideText,
         concerns: opts.docInfo.concerns,
         goals: opts.docInfo.goals
+        }
     };
 };

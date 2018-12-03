@@ -14,6 +14,7 @@
  export const getInsertSkillsReqPayload: Function =
   (opts: InsertSkillsOptions): any => {
       return {
+        body: {
         id: +(opts.skillsInfo.id),
         progress: opts.skillsInfo.progress,
         appraisalId: +(opts.skillsInfo.appraisalId),
@@ -44,5 +45,6 @@
         hasHadETV: opts.data.hasHadETV,
         goals: opts.skillsInfo.goals,
         concerns: opts.skillsInfo.concerns
-      };
+      }
+    };
   };

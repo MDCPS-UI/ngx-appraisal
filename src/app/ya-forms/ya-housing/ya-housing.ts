@@ -13,6 +13,7 @@ interface InsertHousingOptions {
 export const getInsertHsgReqPayload: Function =
 (opts: InsertHousingOptions): any => {
     return {
+        body: {
         progress: opts.hsgInfo.progress,
         id: +(opts.hsgInfo.id),
         appraisalId: +(opts.hsgInfo.appraisalId || ''),
@@ -28,5 +29,6 @@ export const getInsertHsgReqPayload: Function =
         monthlyObligationsText: opts.data.monthlyObligationsText,
         goals: opts.hsgInfo.goals,
         concerns: opts.hsgInfo.concerns
+        }
     };
 };
