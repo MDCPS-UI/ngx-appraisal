@@ -67,6 +67,8 @@
  */
 ngb-typeahead-window {
     border-radius: 0 !important;
+    height: 500px;
+    overflow: scroll;
 
     .dropdown-item {
         border-bottom: 1px solid #80808029;
