@@ -200,7 +200,7 @@
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="false" formControlName="hasHealthInsurance" [checked]="false">              No
+              <input type="radio" class="form-check-input" [value]="false" formControlName="hasHealthInsurance" [checked]="false"> No
             </label>
           </div>
         </div>
@@ -213,16 +213,17 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="true" formControlName="hasMedicaid"> Yes
+              <input type="radio" class="form-check-input" [value]="true" formControlName="hasMedicaid" [attr.disabled]="true"> Yes
             </label>
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="false" formControlName="hasMedicaid">              No
+              <input type="radio" class="form-check-input" [value]="false" formControlName="hasMedicaid" [attr.disabled]="true"> No
             </label>
           </div>
         </div>
       </div>
+
     </div>
 
     <div class="row bg-transparent">
@@ -236,7 +237,7 @@
           </div>
           <div class="form-check form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" [value]="false" formControlName="hasLanguageBarriers" [checked]="false">              No
+              <input type="radio" class="form-check-input" [value]="false" formControlName="hasLanguageBarriers"> No
             </label>
           </div>
         </div>

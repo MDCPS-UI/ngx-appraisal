@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { UtilService } from './../../services/util/util.service';
 import { ProfileService } from './../../services/profile/profile.service';
 import { AppraisalService } from '../../services/appraisal/appraisal.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
@@ -39,6 +40,12 @@ export class YouthAppraisalComponent implements OnInit {
 
   /**
    * @public
+   * @type: string
+   */
+  public workerEmail: string;
+
+  /**
+   * @public
    */
   @Input()
   public enableButton = false;
@@ -55,6 +62,7 @@ export class YouthAppraisalComponent implements OnInit {
    */
   constructor(
     private fb: FormBuilder,
+    private util: UtilService,
     private appraisal: AppraisalService,
     private profileService: ProfileService,
     private activeModel: ActiveModelService) {
@@ -65,6 +73,10 @@ export class YouthAppraisalComponent implements OnInit {
    * @public
    */
   public ngOnInit(): void {
+    this.workerEmail = this.util.getQueryStringValue('uname');
+    this.activeModel.setWorkerEmail(this.workerEmail);
+    window.sessionStorage.setItem('workerEmail', this.workerEmail);
+
     this.youthApprForm = this.fb.group({
       status: new FormControl('', []),
       macwisId: new FormControl('', []),
@@ -175,7 +187,7 @@ export class YouthAppraisalComponent implements OnInit {
       return;
     }
 
-    this.appraisal.request('getAllChildren')
+    this.appraisal.request('getAllChildren', [this.workerEmail])
     .subscribe(
       (data) => {
         this.children = data;

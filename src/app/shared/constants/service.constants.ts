@@ -16,8 +16,8 @@ const __local_switch__: any = {
 /**
  * @constant
  */
-const __base__ = 'http://10.15.66.88:5100/YTL.YTL.svc/JSON';
-// const __base__: string = 'http://10.15.66.88:5100/YTL/JSON';
+// const __base__ = 'http://10.15.66.88:5100/YTL.YTL.svc/JSON';
+const __base__: string = 'http://10.15.66.88:5100/YTL/JSON';
 // const __base__: string = 'http://10.160.96.34:5100/YTL.ytl.svc/JSON';
 
 /**
@@ -34,7 +34,7 @@ const shouldUseLocal: Function = (serviceName): boolean => {
 export const serviceConstants: any = {
     getAllChildren: {
         method: 'GET',
-        url: `${__base__}/GetAllChildren`,
+        url: `${__base__}/GetAllChildren?userEmail={0}`,
         localUrl: '/assets/api/getAllChildren.json',
         isLocal:  shouldUseLocal('getAllChildren')
     },
